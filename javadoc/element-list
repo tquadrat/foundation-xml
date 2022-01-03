@@ -1,0 +1,7 @@
+module:org.tquadrat.foundation.xml
+org.tquadrat.foundation.xml.builder
+org.tquadrat.foundation.xml.builder.internal
+org.tquadrat.foundation.xml.builder.spi
+org.tquadrat.foundation.xml.parse
+org.tquadrat.foundation.xml.parse.spi
+org.tquadrat.foundation.xml.stringconverter

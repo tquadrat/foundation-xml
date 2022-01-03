@@ -1,0 +1,396 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:cc="http://creativecommons.org/ns#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:svg="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     version='1.1'
+     baseProfile='full'
+     width='1164.000'
+     height='998.000'>
+    <defs>
+        <style><![CDATA[
+            line
+            {
+              stroke: black;
+            }
+            line.separator
+            {
+              stroke:       black;
+              stroke-width: 1;
+            }
+            marker
+            {
+              fill: white;
+            }
+            path
+            {
+              fill:   white;
+              stroke: black;
+            }
+            path.implementation
+            {
+              fill:             none;
+              stroke-dasharray: 5,5;
+              stroke-width:     3;
+            }
+            path.inheritance
+            {
+              fill:         none;
+              stroke-width: 3;
+            }
+            rect
+            {
+              fill:         none;
+              stroke:       black;
+              stroke-width: 2;
+            }
+            rect.externalClass
+            {
+              fill:         #D0D0D0;
+              fill-opacity: 0.8;
+            }
+            rect.focusClass
+            {
+              fill:         #FFFFF9;
+              fill-opacity: 0.8;
+            }
+            rect.otherClass
+            {
+              fill:         #F0E68C;
+              fill-opacity: 0.8;
+            }
+            rect.template
+            {
+              fill:             #FFFFFF;
+              fill-opacity:     1.0;
+              stroke-dasharray: 3,3;
+            }
+            text
+            {
+              font-family: monospace;
+              font-size:   10px;
+              font-weight: bold;
+            }
+            text.abstract
+            {
+              font-style: italic;
+            }
+            text.final
+            {
+              text-decoration: underline;
+            }
+            text.static
+            {
+              font-weight: normal;
+            }
+            text.stereotype
+            {
+              font-size:   8px;
+              font-weight: normal;
+            }
+            ]]></style>
+        <marker id='inheritance'
+                viewBox='0,0,40,40'
+                markerUnits='strokeWidth'
+                refX='40'
+                refY='20'
+                markerWidth='6'
+                markerHeight='6'
+                orient='auto'>
+            <path d='M40,20 l-40,-20 v40 Z'
+                  fill='#ffffff'
+                  stroke='#000000'
+                  stroke-width='3'/>
+        </marker>
+        <marker id='implementation'
+                viewBox='0,0,40,40'
+                markerUnits='strokeWidth'
+                refX='40'
+                refY='20'
+                markerWidth='6'
+                markerHeight='6'
+                orient='auto'>
+            <path d='M40,20 l-40,-20 v40 Z'
+                  fill='#ffffff'
+                  stroke='#000000'
+                  stroke-width='3'/>
+        </marker>
+        <clipPath id='ID000001'>
+            <rect class='focusClass'
+                  height='249.000'
+                  width='1114.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.xml.builder.internal.ProcessingInstructionImpl'>
+            <g>
+                <g class='focusClass'
+                   clip-path='url(#ID000001)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='1114.000'
+                          height='249.000'
+                          class='focusClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='1114.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='482.000'
+                          y='13.000'>ProcessingInstructionImpl</text>
+                    <line x1='0.000'
+                          y1='67.000'
+                          x2='1114.000'
+                          y2='67.000'
+                          class='separator'/>
+                    <text y='30.000'
+                          class='final'>- m_Attributes:org.tquadrat.foundation.xml.builder.spi.AttributeSupport</text>
+                    <text y='41.000'
+                          class='final'>- m_Data:org.tquadrat.foundation.util.LazyList&lt;java.lang.String&gt;</text>
+                    <text y='52.000'
+                          class='final'>- m_ElementName:java.lang.String</text>
+                    <text y='63.000'>- m_Parent:org.tquadrat.foundation.xml.builder.spi.Element</text>
+                    <text x='5.000'
+                          y='80.000'>+ ProcessingInstructionImpl(name:java.lang.String)</text>
+                    <text x='5.000'
+                          y='91.000'>+ ProcessingInstructionImpl()</text>
+                    <text x='5.000'
+                          y='102.000'>+ ProcessingInstructionImpl(name:java.lang.String,data:java.lang.CharSequence)</text>
+                    <text x='5.000'
+                          y='113.000'>+ addData(data:java.lang.CharSequence):org.tquadrat.foundation.xml.builder.ProcessingInstruction</text>
+                    <text x='5.000'
+                          y='124.000'>+ getAttribute(name:java.lang.String):java.util.Optional&lt;java.lang.String&gt;</text>
+                    <text x='5.000'
+                          y='135.000'>+ getAttributes():java.util.Map&lt;java.lang.String,java.lang.String&gt;</text>
+                    <text x='5.000'
+                          y='146.000'>+ getChildren():java.util.Collection&lt;? extends org.tquadrat.foundation.xml.builder.spi.Element&gt;</text>
+                    <text x='5.000'
+                          y='157.000'>+ getElementName():java.lang.String</text>
+                    <text x='5.000'
+                          y='168.000'>+ getNamespaces():java.util.Collection&lt;org.tquadrat.foundation.xml.builder.Namespace&gt;</text>
+                    <text x='5.000'
+                          y='179.000'>+ getParent():java.util.Optional&lt;org.tquadrat.foundation.xml.builder.spi.Element&gt;</text>
+                    <text x='5.000'
+                          y='190.000'>+ hasChildren():boolean</text>
+                    <text x='5.000'
+                          y='201.000'>+ isBlock():boolean</text>
+                    <text x='5.000'
+                          y='212.000'>+ setAttribute(name:java.lang.String,value:java.lang.CharSequence,append:java.util.Optional&lt;? extends java.lang.CharSequence&gt;):org.tquadrat.foundation.xml.builder.ProcessingInstruction</text>
+                    <text x='5.000'
+                          y='223.000'>+ setParent(parent:E):void</text>
+                    <text x='5.000'
+                          y='234.000'>+ toString(indentationLevel:int,prettyPrint:boolean):java.lang.String</text>
+                    <text x='5.000'
+                          y='245.000'>+ toString():java.lang.String</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000002'>
+            <rect class='externalClass'
+                  height='172.000'
+                  width='244.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='java.lang.Object'>
+            <g>
+                <g clip-path='url(#ID000002)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='244.000'
+                          height='172.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='244.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='104.000'
+                          y='13.000'>Object</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='244.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='30.000'/>
+                    <text x='5.000'
+                          y='47.000'>+ Object()</text>
+                    <text x='5.000'
+                          y='58.000'>+ getClass():java.lang.Class&lt;?&gt;</text>
+                    <text x='5.000'
+                          y='69.000'>+ hashCode():int</text>
+                    <text x='5.000'
+                          y='80.000'>+ equals(arg0:java.lang.Object):boolean</text>
+                    <text x='5.000'
+                          y='91.000'># clone():java.lang.Object</text>
+                    <text x='5.000'
+                          y='102.000'>+ toString():java.lang.String</text>
+                    <text x='5.000'
+                          y='113.000'>+ notify():void</text>
+                    <text x='5.000'
+                          y='124.000'>+ notifyAll():void</text>
+                    <text x='5.000'
+                          y='135.000'>+ wait():void</text>
+                    <text x='5.000'
+                          y='146.000'>+ wait(arg0:long):void</text>
+                    <text x='5.000'
+                          y='157.000'>+ wait(arg0:long,arg1:int):void</text>
+                    <text x='5.000'
+                          y='168.000'># finalize():void</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000003'>
+            <rect class='otherClass'
+                  height='227.000'
+                  width='1114.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.xml.builder.ProcessingInstruction'>
+            <g>
+                <g clip-path='url(#ID000003)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='1114.000'
+                          height='227.000'
+                          class='otherClass'/>
+                    <line x1='0.000'
+                          y1='28.000'
+                          x2='1114.000'
+                          y2='28.000'
+                          class='separator'/>
+                    <text x='530.600'
+                          y='13.000'
+                          class='stereotype'>&#xAB;Interface&#xBB;</text>
+                    <text x='494.000'
+                          y='24.000'
+                          class='abstract'>ProcessingInstruction</text>
+                    <line x1='0.000'
+                          y1='45.000'
+                          x2='1114.000'
+                          y2='45.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='41.000'/>
+                    <text x='5.000'
+                          y='58.000'
+                          class='abstract'>+ addData(data:java.lang.CharSequence):org.tquadrat.foundation.xml.builder.ProcessingInstruction</text>
+                    <text x='5.000'
+                          y='69.000'>&#x2A22; setAttribute(name:java.lang.String,flag:boolean):org.tquadrat.foundation.xml.builder.ProcessingInstruction</text>
+                    <text x='5.000'
+                          y='80.000'>&#x2A22; setAttribute(name:java.lang.String,flag:java.lang.Boolean):org.tquadrat.foundation.xml.builder.ProcessingInstruction</text>
+                    <text x='5.000'
+                          y='91.000'>&#x2A22; setAttribute(name:java.lang.String,value:java.lang.CharSequence):org.tquadrat.foundation.xml.builder.ProcessingInstruction</text>
+                    <text x='5.000'
+                          y='102.000'
+                          class='abstract'>+ setAttribute(name:java.lang.String,value:java.lang.CharSequence,append:java.util.Optional&lt;? extends java.lang.CharSequence&gt;):org.tquadrat.foundation.xml.builder.ProcessingInstruction</text>
+                    <text x='5.000'
+                          y='113.000'>&#x2A22; setAttribute(name:java.lang.String,number:double):org.tquadrat.foundation.xml.builder.ProcessingInstruction</text>
+                    <text x='5.000'
+                          y='124.000'>&#x2A22; setAttribute(name:java.lang.String,enumValue:E):org.tquadrat.foundation.xml.builder.ProcessingInstruction</text>
+                    <text x='5.000'
+                          y='135.000'>&#x2A22; setAttribute(name:java.lang.String,date:java.time.Instant):org.tquadrat.foundation.xml.builder.ProcessingInstruction</text>
+                    <text x='5.000'
+                          y='146.000'>&#x2A22; setAttribute(name:java.lang.String,number:int):org.tquadrat.foundation.xml.builder.ProcessingInstruction</text>
+                    <text x='5.000'
+                          y='157.000'>&#x2A22; setAttribute(name:java.lang.String,date:java.time.LocalDate):org.tquadrat.foundation.xml.builder.ProcessingInstruction</text>
+                    <text x='5.000'
+                          y='168.000'>&#x2A22; setAttribute(name:java.lang.String,date:java.time.LocalDateTime):org.tquadrat.foundation.xml.builder.ProcessingInstruction</text>
+                    <text x='5.000'
+                          y='179.000'>&#x2A22; setAttribute(name:java.lang.String,number:long):org.tquadrat.foundation.xml.builder.ProcessingInstruction</text>
+                    <text x='5.000'
+                          y='190.000'>&#x2A22; setAttribute(name:java.lang.String,number:java.lang.Number):org.tquadrat.foundation.xml.builder.ProcessingInstruction</text>
+                    <text x='5.000'
+                          y='201.000'>&#x2A22; setAttribute(name:java.lang.String,date:java.time.ZonedDateTime):org.tquadrat.foundation.xml.builder.ProcessingInstruction</text>
+                    <text x='5.000'
+                          y='212.000'>&#x2A22; setAttributeIfNotEmpty(name:java.lang.String,value:java.lang.CharSequence):org.tquadrat.foundation.xml.builder.ProcessingInstruction</text>
+                    <text x='5.000'
+                          y='223.000'>&#x2A22; setAttributeIfNotEmpty(name:java.lang.String,optional:java.util.Optional&lt;? extends java.lang.CharSequence&gt;):org.tquadrat.foundation.xml.builder.ProcessingInstruction</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000004'>
+            <rect class='otherClass'
+                  height='161.000'
+                  width='580.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.xml.builder.spi.Element'>
+            <g>
+                <g clip-path='url(#ID000004)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='580.000'
+                          height='161.000'
+                          class='otherClass'/>
+                    <line x1='0.000'
+                          y1='28.000'
+                          x2='580.000'
+                          y2='28.000'
+                          class='separator'/>
+                    <text x='263.600'
+                          y='13.000'
+                          class='stereotype'>&#xAB;Interface&#xBB;</text>
+                    <text x='269.000'
+                          y='24.000'
+                          class='abstract'>Element</text>
+                    <line x1='0.000'
+                          y1='45.000'
+                          x2='580.000'
+                          y2='45.000'
+                          class='separator'/>
+                    <text y='41.000'
+                          class='static final'>+ EMPTY_Element_ARRAY:org.tquadrat.foundation.xml.builder.spi.Element[]</text>
+                    <text x='5.000'
+                          y='58.000'>&#x2A22; getAttribute(name:java.lang.String):java.util.Optional&lt;java.lang.String&gt;</text>
+                    <text x='5.000'
+                          y='69.000'>&#x2A22; getAttributes():java.util.Map&lt;java.lang.String,java.lang.String&gt;</text>
+                    <text x='5.000'
+                          y='80.000'>&#x2A22; getChildren():java.util.Collection&lt;? extends org.tquadrat.foundation.xml.builder.spi.Element&gt;</text>
+                    <text x='5.000'
+                          y='91.000'
+                          class='abstract'>+ getElementName():java.lang.String</text>
+                    <text x='5.000'
+                          y='102.000'>&#x2A22; getNamespaces():java.util.Collection&lt;org.tquadrat.foundation.xml.builder.Namespace&gt;</text>
+                    <text x='5.000'
+                          y='113.000'
+                          class='abstract'>+ getParent():java.util.Optional&lt;org.tquadrat.foundation.xml.builder.spi.Element&gt;</text>
+                    <text x='5.000'
+                          y='124.000'>&#x2A22; hasChildren():boolean</text>
+                    <text x='5.000'
+                          y='135.000'>&#x2A22; isBlock():boolean</text>
+                    <text x='5.000'
+                          y='146.000'
+                          class='abstract'>+ setParent(parent:E):void</text>
+                    <text x='5.000'
+                          y='157.000'>&#x2A22; toString(indentationLevel:int,prettyPrint:boolean):java.lang.String</text>
+                </g>
+            </g>
+        </symbol>
+    </defs>
+    <path class='inheritance'
+          d='M607.000,624.000 c0.000,-412.000,-316.000,0.000,-316.000,-412.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='implementation'
+          d='M557.000,624.000 c0.000,-85.000,25.000,0.000,25.000,-85.000 v-15'
+          marker-end='url(#implementation)'/>
+    <path class='inheritance'
+          d='M582.000,297.000 c0.000,-96.000,291.000,0.000,291.000,-96.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <use x='169.000'
+         y='25.000'
+         xlink:href='#java.lang.Object'/>
+    <use x='583.000'
+         y='25.000'
+         xlink:href='#org.tquadrat.foundation.xml.builder.spi.Element'/>
+    <use x='25.000'
+         y='297.000'
+         xlink:href='#org.tquadrat.foundation.xml.builder.ProcessingInstruction'/>
+    <use x='25.000'
+         y='624.000'
+         xlink:href='#org.tquadrat.foundation.xml.builder.internal.ProcessingInstructionImpl'/>
+</svg>

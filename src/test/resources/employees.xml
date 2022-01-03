@@ -1,0 +1,17 @@
+<?xml version="1.0"
+      encoding="UTF-8"
+      standalone="yes"?>
+<employees>
+    <employee id="101">
+         <name>Lokesh Gupta</name>
+        <title>Author</title>
+    </employee>
+    <employee id="102">
+         <name>Brian Lara</name>
+        <title>Cricketer</title>
+    </employee>
+    <employee id="103">
+         <name>Thomas Thrien</name>
+        <title>Programmer</title>
+    </employee>
+</employees>
