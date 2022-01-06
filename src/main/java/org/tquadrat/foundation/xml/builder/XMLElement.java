@@ -67,7 +67,7 @@ import org.tquadrat.foundation.xml.builder.spi.Element;
  *
  *  @UMLGraph.link
  */
-@SuppressWarnings( {"ClassWithTooManyMethods", "preview"} )
+@SuppressWarnings( "ClassWithTooManyMethods" )
 @ClassVersion( sourceVersion = "$Id: XMLElement.java 859 2021-01-25 16:46:30Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public sealed interface XMLElement extends Element
@@ -607,7 +607,7 @@ public sealed interface XMLElement extends Element
      *  {@link Boolean#toString(boolean)}
      *  to convert the provided flag to a {@code String}.</p>
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  flag    The attribute's value.
      *  @return This instance.
      *  @throws IllegalArgumentException    An attribute with the given name is
@@ -626,7 +626,7 @@ public sealed interface XMLElement extends Element
      *  {@link Boolean#toString()}
      *  to convert the provided flag to a {@code String}.</p>
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  flag    The attribute's value; if {@code null} the
      *      attribute will be removed.
      *  @return This instance.
@@ -643,7 +643,7 @@ public sealed interface XMLElement extends Element
     /**
      *  Sets the attribute with the given name.
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  value   The attribute's value; if {@code null} the
      *      attribute will be removed.
      *  @return This instance.
@@ -660,7 +660,7 @@ public sealed interface XMLElement extends Element
     /**
      *  Sets the attribute with the given name.
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  value   The attribute's value; if {@code null} the
      *      attribute will be removed.
      *  @param  append  If not
@@ -686,7 +686,7 @@ public sealed interface XMLElement extends Element
      *  {@link Double#toString(double)}
      *  to convert the provided number to a {@code String}.</p>
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  number   The attribute's value.
      *  @return This instance.
      *  @throws IllegalArgumentException    An attribute with the given name is
@@ -706,7 +706,7 @@ public sealed interface XMLElement extends Element
      *  to convert the provided value to a {@code String}.</p>
      *
      *  @param  <E> The concrete enum type of {@code value}.
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  enumValue   The attribute's value; if {@code null} the
      *      attribute will be removed.
      *  @return This instance.
@@ -726,7 +726,7 @@ public sealed interface XMLElement extends Element
      *  {@link Instant#toString()}
      *  to convert the provided number to a {@code String}.</p>
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  date    The attribute's value; if {@code null} the
      *      attribute will be removed.
      *  @return This instance.
@@ -746,7 +746,7 @@ public sealed interface XMLElement extends Element
      *  {@link Integer#toString(int)}
      *  to convert the provided number to a {@code String}.</p>
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  number  The attribute's value.
      *  @return This instance.
      *  @throws IllegalArgumentException    An attribute with the given name is
@@ -765,7 +765,7 @@ public sealed interface XMLElement extends Element
      *  {@link LocalDate#toString()}
      *  to convert the provided number to a {@code String}.</p>
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  date    The attribute's value; if {@code null} the
      *      attribute will be removed.
      *  @return This instance.
@@ -785,7 +785,7 @@ public sealed interface XMLElement extends Element
      *  {@link LocalDateTime#toString()}
      *  to convert the provided number to a {@code String}.</p>
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  date    The attribute's value; if {@code null} the
      *      attribute will be removed.
      *  @return This instance.
@@ -805,7 +805,7 @@ public sealed interface XMLElement extends Element
      *  {@link Long#toString(long)}
      *  to convert the provided number to a {@code String}.</p>
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  number   The attribute's value.
      *  @return This instance.
      *  @throws IllegalArgumentException    An attribute with the given name is
@@ -824,7 +824,7 @@ public sealed interface XMLElement extends Element
      *  {@link Number#toString()}
      *  to convert the provided number to a {@code String}.</p>
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  number   The attribute's value; if {@code null} the
      *      attribute will be removed.
      *  @return This instance.
@@ -844,7 +844,7 @@ public sealed interface XMLElement extends Element
      *  {@link ZonedDateTime#toString()}
      *  to convert the provided number to a {@code String}.</p>
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  date    The attribute's value; if {@code null} the
      *      attribute will be removed.
      *  @return This instance.
@@ -1013,6 +1013,7 @@ public sealed interface XMLElement extends Element
      *  @throws IllegalOperationException    Namespaces are not allowed for this
      *      element.
      */
+    @SuppressWarnings( "UseOfConcreteClass" )
     public default XMLElement setNamespace( final Namespace namespace ) throws IllegalOperationException
     {
         throw new IllegalOperationException( format( "No namespace allowed for element '%1$s'", getElementName() ) );

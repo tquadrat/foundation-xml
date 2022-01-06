@@ -45,7 +45,7 @@ import org.tquadrat.foundation.xml.builder.spi.InvalidXMLNameException;
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: DocType.java 820 2020-12-29 20:34:22Z tquadrat $
  *  @since 0.0.5
-*
+ *
  *  @UMLGraph.link
  */
 @ClassVersion( sourceVersion = "$Id: DocType.java 820 2020-12-29 20:34:22Z tquadrat $" )

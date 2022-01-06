@@ -18,7 +18,13 @@
 /**
  *  The internal classes for the implementation of the XML builder tools.
  */
+
+@API( status = INTERNAL, since = "0.1.0" )
 package org.tquadrat.foundation.xml.builder.internal;
+
+import static org.apiguardian.api.API.Status.INTERNAL;
+
+import org.apiguardian.api.API;
 
 /*
  *  End of File

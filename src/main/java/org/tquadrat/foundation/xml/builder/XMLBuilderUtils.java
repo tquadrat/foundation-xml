@@ -181,14 +181,6 @@ public final class XMLBuilderUtils
     @API( status = STABLE, since = "0.0.5" )
     public static class ValidatorChangeEvent extends EventObject
     {
-            /*-----------*\
-        ====** Constants **====================================================
-            \*-----------*/
-        /**
-         *  An empty array of {@code XMLElement} objects.
-         */
-        public static final ValidatorChangeEvent [] EMPTY_ValidatorChangeEvent_ARRAY = new ValidatorChangeEvent [0];
-
             /*------------------------*\
         ====** Static Initialisations **=======================================
             \*------------------------*/
@@ -285,6 +277,7 @@ public final class XMLBuilderUtils
          *
          *  @param  event   The change event.
          */
+        @SuppressWarnings( "UseOfConcreteClass" )
         public void validatorChanged( final ValidatorChangeEvent event );
     }
     //  interface ValidatorChangeListener
@@ -360,7 +353,9 @@ public final class XMLBuilderUtils
         //---* Defines the patterns for the validation *-----------------------
         try
         {
+            //noinspection RegExpUnnecessaryNonCapturingGroup
             m_NMTokenPattern = compile( "(?:[" + XML_NAME_FirstChar + "])(?:[" + XML_NAME_OtherChar + ":])*" );
+            //noinspection RegExpUnnecessaryNonCapturingGroup
             m_XMLNamePattern = compile( "(?:[" + XML_NAME_FirstChar + "])(?:[" + XML_NAME_OtherChar + "])*" );
         }
         catch( final PatternSyntaxException e )
@@ -598,14 +593,14 @@ public final class XMLBuilderUtils
     }   //  createXMLElement()
 
     /**
-     *  Creates an XML element for the given element name that supports
-     *  attributes, namespaces, children, text, {@code CDATA} and comments, and
-     *  add the the given text.<br>
-     *  <br>The given element name is validated using the method that is
+     *  <p>{@summary Creates an XML element for the given element name that
+     *  supports attributes, namespaces, children, text, {@code CDATA} and
+     *  comments, and add the given text.}</p>
+     *  <p>The given element name is validated using the method that is
      *  provided by
-     *  {@link #getElementNameValidator()}.<br>
-     *  <br>The new element allows attributes and children, but will not
-     *  validate them. It also allows text (obviously).
+     *  {@link #getElementNameValidator()}.</p>
+     *  <p>The new element allows attributes and children, but will not
+     *  validate them. It also allows text (obviously).</p>
      *
      *  @param  elementName The element name.
      *  @param  text    The text for the new element.

@@ -39,11 +39,12 @@ import org.tquadrat.foundation.util.LazySet;
 import org.tquadrat.foundation.xml.builder.Namespace;
 
 /**
- *  This class provides the support for namespaces to elements.<br>
- *  <br>Elements that also do support attributes should use
+ *  <p>{@summary This class provides the support for namespaces to
+ *  elements.}</p>
+ *  <p>Elements that also do support attributes should use
  *  {@link AttributeSupport}
  *  instead; that includes support for namespaces. In fact, that class extends
- *  this one.
+ *  this one.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: NamespaceSupport.java 820 2020-12-29 20:34:22Z tquadrat $
@@ -51,7 +52,6 @@ import org.tquadrat.foundation.xml.builder.Namespace;
  *
  *  @UMLGraph.link
  */
-@SuppressWarnings( "preview" )
 @ClassVersion( sourceVersion = "$Id: NamespaceSupport.java 820 2020-12-29 20:34:22Z tquadrat $" )
 @API( status = MAINTAINED, since = "0.0.5" )
 public sealed class NamespaceSupport
@@ -118,6 +118,7 @@ public sealed class NamespaceSupport
      *
      *  @param  namespace   The namespace.
      */
+    @SuppressWarnings( "UseOfConcreteClass" )
     public final void setNamespace( final Namespace... namespace )
     {
         stream( requireNonNullArgument( namespace, "namespace" ) )

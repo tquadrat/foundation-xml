@@ -41,14 +41,6 @@ import org.tquadrat.foundation.annotation.ClassVersion;
 @API( status = MAINTAINED, since = "0.0.5" )
 public class InvalidXMLNameException extends IllegalArgumentException
 {
-        /*-----------*\
-    ====** Constants **========================================================
-        \*-----------*/
-    /**
-     *  An empty array of {@code InvalidXMLNameException} objects.
-     */
-    public static final InvalidXMLNameException [] EMPTY_InvalidXMLNameException_ARRAY = new InvalidXMLNameException [0];
-
         /*------------------------*\
     ====** Static Initialisations **===========================================
         \*------------------------*/

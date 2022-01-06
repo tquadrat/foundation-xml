@@ -136,7 +136,7 @@ public class Comment implements Element
                     /*
                      * A hyphen or minus sign (\u002D) in the comment text may
                      * cause an issue when the resulting document is parsed.
-                     * Therefore we replace it by another character that looks
+                     * Therefore, we replace it by another character that looks
                      * similar, but is not interpreted by XML parsers.
                      */
                     buffer.append( HYPHEN_REPLACEMENT );

@@ -58,7 +58,7 @@ import org.tquadrat.foundation.xml.builder.spi.InvalidXMLNameException;
  *
  *  @UMLGraph.link
  */
-@SuppressWarnings( {"preview", "ClassWithTooManyMethods", "removal"} )
+@SuppressWarnings( "removal" )
 @ClassVersion( sourceVersion = "$Id: XMLElementImpl.java 820 2020-12-29 20:34:22Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.5" )
 public sealed class XMLElementImpl implements XMLElement
@@ -78,13 +78,13 @@ public sealed class XMLElementImpl implements XMLElement
     /**
      *  The attribute support.
      */
-    @SuppressWarnings( "InstanceVariableOfConcreteClass" )
+    @SuppressWarnings( "UseOfConcreteClass" )
     private final AttributeSupport m_Attributes;
 
     /**
      *  The child support.
      */
-    @SuppressWarnings( "InstanceVariableOfConcreteClass" )
+    @SuppressWarnings( "UseOfConcreteClass" )
     private final ChildSupport m_Children;
 
     /**
@@ -101,12 +101,12 @@ public sealed class XMLElementImpl implements XMLElement
     ====** Constructors **=====================================================
         \*--------------*/
     /**
-     *  Creates a new {@code XMLElementImpl} instance.<br>
-     *  <br>The given element name is validated using the method that is
+     *  <p>{@summary Creates a new {@code XMLElementImpl} instance.}</p>
+     *  <p>The given element name is validated using the method that is
      *  provided by
-     *  {@link XMLBuilderUtils#getElementNameValidator()}.<br>
-     *  <br>The new element allows attributes and children, but will not
-     *  validate them. It also allows text.
+     *  {@link XMLBuilderUtils#getElementNameValidator()}.</p>
+     *  <p>The new element allows attributes and children, but will not
+     *  validate them. It also allows text.</p>
      *
      *  @note   This constructor is mainly used by the factory methods in
      *      {@link XMLBuilderUtils}
@@ -124,10 +124,10 @@ public sealed class XMLElementImpl implements XMLElement
     }   //  XMLElementImpl()
 
     /**
-     *  Creates a new {@code XMLElementImpl} instance.<br>
-     *  <br>The given element name is validated using the method that is
+     *  <p>{@summary Creates a new {@code XMLElementImpl} instance.}</p>
+     *  <p>The given element name is validated using the method that is
      *  provided by
-     *  {@link XMLBuilderUtils#getElementNameValidator()}.
+     *  {@link XMLBuilderUtils#getElementNameValidator()}.</p>
      *
      *  @note   This constructor is used for the implementation of XML
      *      specialisations, like SVG or HTML (although this not really XML).
@@ -157,17 +157,17 @@ public sealed class XMLElementImpl implements XMLElement
     }   //  XMLElementImpl()
 
     /**
-     *  Creates a new {@code XMLElementImpl} instance.<br>
-     *  <br>The given element name is validated using the method that is
+     *  <p>{@summary Creates a new {@code XMLElementImpl} instance.}</p>
+     *  <p>The given element name is validated using the method that is
      *  provided by
-     *  {@link XMLBuilderUtils#getElementNameValidator()}.
+     *  {@link XMLBuilderUtils#getElementNameValidator()}.</p>
      *
      *  @param  elementName The element name.
      *  @param  validChildren   The list of the names for valid children; if
      *      {@code null}, no children are allowed, if empty, children are
-     *      allowed, but they will not validated.
+     *      allowed, but they will not be validated.
      *  @param  validAttributes The list of the valid attributes; if empty or
-     *      {@code null}, the attributes will not validated.
+     *      {@code null}, the attributes will not be validated.
      *  @param  attributeSequence   The sequence for the attributes; if empty
      *      or {@code null}, the attributes will be sorted alphabetically.
      *  @param  allowText   {@code true} if the element allows text,
@@ -339,10 +339,10 @@ public sealed class XMLElementImpl implements XMLElement
     public boolean hasChildren() { return m_Children.hasChildren(); }
 
     /**
-     *  Registers an attribute sequence for this element; this modifies any
-     *  sort order that was previously set.<br>
-     *  <br>The names for the attributes are not validated; in particular, it
-     *  is not checked whether an attribute is listed as valid.
+     *  <p>{@summary Registers an attribute sequence for this element}; this
+     *  modifies any sort order that was previously set.</p>
+     *  <p>The names for the attributes are not validated; in particular, it
+     *  is not checked whether an attribute is listed as valid.</p>
      *
      *  @param  attributes  The names of the attributes in the desired
      *      sequence.
@@ -414,10 +414,10 @@ public sealed class XMLElementImpl implements XMLElement
     public final Collection<String> retrieveValidChildren() { return m_Children.retrieveValidChildren(); }
 
     /**
-     *  {@inheritDoc}<br>
-     *  <br>The given attribute name is validated using the method that is
+     *  {@inheritDoc}
+     *  <p>The given attribute name is validated using the method that is
      *  provided by
-     *  {@link XMLBuilderUtils#getAttributeNameValidator()}.
+     *  {@link XMLBuilderUtils#getAttributeNameValidator()}.</p>
      */
     @Override
     public final XMLElement setAttribute( final String name, final CharSequence value, final Optional<? extends CharSequence> append ) throws IllegalArgumentException
@@ -453,10 +453,10 @@ public sealed class XMLElementImpl implements XMLElement
     }   //  setNamespace()
 
     /**
-     *  {@inheritDoc}<br>
-     *  <br>The given prefix is validated using the method that is
+     *  {@inheritDoc}
+     *  <p>The given prefix is validated using the method that is
      *  provided by
-     *  {@link XMLBuilderUtils#getPrefixValidator()}.
+     *  {@link XMLBuilderUtils#getPrefixValidator()}.</p>
      */
     @Override
     public final XMLElement setNamespace( final String prefix, final String identifier ) throws IllegalArgumentException, URISyntaxException
@@ -468,10 +468,10 @@ public sealed class XMLElementImpl implements XMLElement
     }   //  setNamespace()
 
     /**
-     *  {@inheritDoc}<br>
-     *  <br>The given prefix is validated using the method that is
+     *  {@inheritDoc}
+     *  <p>The given prefix is validated using the method that is
      *  provided by
-     *  {@link XMLBuilderUtils#getPrefixValidator()}.
+     *  {@link XMLBuilderUtils#getPrefixValidator()}.</p>
      */
     @Override
     public final XMLElement setNamespace( final String prefix, final URI identifier ) throws IllegalArgumentException
@@ -485,6 +485,7 @@ public sealed class XMLElementImpl implements XMLElement
     /**
      *  {@inheritDoc}
      */
+    @SuppressWarnings( "UseOfConcreteClass" )
     @Override
     public final XMLElement setNamespace( final Namespace namespace ) throws IllegalArgumentException
     {

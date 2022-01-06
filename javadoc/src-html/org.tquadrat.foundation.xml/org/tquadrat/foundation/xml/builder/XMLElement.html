@@ -80,7 +80,7 @@
 <span class="source-line-no">067</span><span id="line-67"> *</span>
 <span class="source-line-no">068</span><span id="line-68"> *  @UMLGraph.link</span>
 <span class="source-line-no">069</span><span id="line-69"> */</span>
-<span class="source-line-no">070</span><span id="line-70">@SuppressWarnings( {"ClassWithTooManyMethods", "preview"} )</span>
+<span class="source-line-no">070</span><span id="line-70">@SuppressWarnings( "ClassWithTooManyMethods" )</span>
 <span class="source-line-no">071</span><span id="line-71">@ClassVersion( sourceVersion = "$Id: XMLElement.java 859 2021-01-25 16:46:30Z tquadrat $" )</span>
 <span class="source-line-no">072</span><span id="line-72">@API( status = STABLE, since = "0.0.5" )</span>
 <span class="source-line-no">073</span><span id="line-73">public sealed interface XMLElement extends Element</span>
@@ -620,7 +620,7 @@
 <span class="source-line-no">607</span><span id="line-607">     *  {@link Boolean#toString(boolean)}</span>
 <span class="source-line-no">608</span><span id="line-608">     *  to convert the provided flag to a {@code String}.&lt;/p&gt;</span>
 <span class="source-line-no">609</span><span id="line-609">     *</span>
-<span class="source-line-no">610</span><span id="line-610">     *  @param  name    The name of the attribute; the name is case sensitive.</span>
+<span class="source-line-no">610</span><span id="line-610">     *  @param  name    The name of the attribute; the name is case-sensitive.</span>
 <span class="source-line-no">611</span><span id="line-611">     *  @param  flag    The attribute's value.</span>
 <span class="source-line-no">612</span><span id="line-612">     *  @return This instance.</span>
 <span class="source-line-no">613</span><span id="line-613">     *  @throws IllegalArgumentException    An attribute with the given name is</span>
@@ -639,7 +639,7 @@
 <span class="source-line-no">626</span><span id="line-626">     *  {@link Boolean#toString()}</span>
 <span class="source-line-no">627</span><span id="line-627">     *  to convert the provided flag to a {@code String}.&lt;/p&gt;</span>
 <span class="source-line-no">628</span><span id="line-628">     *</span>
-<span class="source-line-no">629</span><span id="line-629">     *  @param  name    The name of the attribute; the name is case sensitive.</span>
+<span class="source-line-no">629</span><span id="line-629">     *  @param  name    The name of the attribute; the name is case-sensitive.</span>
 <span class="source-line-no">630</span><span id="line-630">     *  @param  flag    The attribute's value; if {@code null} the</span>
 <span class="source-line-no">631</span><span id="line-631">     *      attribute will be removed.</span>
 <span class="source-line-no">632</span><span id="line-632">     *  @return This instance.</span>
@@ -656,7 +656,7 @@
 <span class="source-line-no">643</span><span id="line-643">    /**</span>
 <span class="source-line-no">644</span><span id="line-644">     *  Sets the attribute with the given name.</span>
 <span class="source-line-no">645</span><span id="line-645">     *</span>
-<span class="source-line-no">646</span><span id="line-646">     *  @param  name    The name of the attribute; the name is case sensitive.</span>
+<span class="source-line-no">646</span><span id="line-646">     *  @param  name    The name of the attribute; the name is case-sensitive.</span>
 <span class="source-line-no">647</span><span id="line-647">     *  @param  value   The attribute's value; if {@code null} the</span>
 <span class="source-line-no">648</span><span id="line-648">     *      attribute will be removed.</span>
 <span class="source-line-no">649</span><span id="line-649">     *  @return This instance.</span>
@@ -673,7 +673,7 @@
 <span class="source-line-no">660</span><span id="line-660">    /**</span>
 <span class="source-line-no">661</span><span id="line-661">     *  Sets the attribute with the given name.</span>
 <span class="source-line-no">662</span><span id="line-662">     *</span>
-<span class="source-line-no">663</span><span id="line-663">     *  @param  name    The name of the attribute; the name is case sensitive.</span>
+<span class="source-line-no">663</span><span id="line-663">     *  @param  name    The name of the attribute; the name is case-sensitive.</span>
 <span class="source-line-no">664</span><span id="line-664">     *  @param  value   The attribute's value; if {@code null} the</span>
 <span class="source-line-no">665</span><span id="line-665">     *      attribute will be removed.</span>
 <span class="source-line-no">666</span><span id="line-666">     *  @param  append  If not</span>
@@ -699,7 +699,7 @@
 <span class="source-line-no">686</span><span id="line-686">     *  {@link Double#toString(double)}</span>
 <span class="source-line-no">687</span><span id="line-687">     *  to convert the provided number to a {@code String}.&lt;/p&gt;</span>
 <span class="source-line-no">688</span><span id="line-688">     *</span>
-<span class="source-line-no">689</span><span id="line-689">     *  @param  name    The name of the attribute; the name is case sensitive.</span>
+<span class="source-line-no">689</span><span id="line-689">     *  @param  name    The name of the attribute; the name is case-sensitive.</span>
 <span class="source-line-no">690</span><span id="line-690">     *  @param  number   The attribute's value.</span>
 <span class="source-line-no">691</span><span id="line-691">     *  @return This instance.</span>
 <span class="source-line-no">692</span><span id="line-692">     *  @throws IllegalArgumentException    An attribute with the given name is</span>
@@ -719,7 +719,7 @@
 <span class="source-line-no">706</span><span id="line-706">     *  to convert the provided value to a {@code String}.&lt;/p&gt;</span>
 <span class="source-line-no">707</span><span id="line-707">     *</span>
 <span class="source-line-no">708</span><span id="line-708">     *  @param  &lt;E&gt; The concrete enum type of {@code value}.</span>
-<span class="source-line-no">709</span><span id="line-709">     *  @param  name    The name of the attribute; the name is case sensitive.</span>
+<span class="source-line-no">709</span><span id="line-709">     *  @param  name    The name of the attribute; the name is case-sensitive.</span>
 <span class="source-line-no">710</span><span id="line-710">     *  @param  enumValue   The attribute's value; if {@code null} the</span>
 <span class="source-line-no">711</span><span id="line-711">     *      attribute will be removed.</span>
 <span class="source-line-no">712</span><span id="line-712">     *  @return This instance.</span>
@@ -739,7 +739,7 @@
 <span class="source-line-no">726</span><span id="line-726">     *  {@link Instant#toString()}</span>
 <span class="source-line-no">727</span><span id="line-727">     *  to convert the provided number to a {@code String}.&lt;/p&gt;</span>
 <span class="source-line-no">728</span><span id="line-728">     *</span>
-<span class="source-line-no">729</span><span id="line-729">     *  @param  name    The name of the attribute; the name is case sensitive.</span>
+<span class="source-line-no">729</span><span id="line-729">     *  @param  name    The name of the attribute; the name is case-sensitive.</span>
 <span class="source-line-no">730</span><span id="line-730">     *  @param  date    The attribute's value; if {@code null} the</span>
 <span class="source-line-no">731</span><span id="line-731">     *      attribute will be removed.</span>
 <span class="source-line-no">732</span><span id="line-732">     *  @return This instance.</span>
@@ -759,7 +759,7 @@
 <span class="source-line-no">746</span><span id="line-746">     *  {@link Integer#toString(int)}</span>
 <span class="source-line-no">747</span><span id="line-747">     *  to convert the provided number to a {@code String}.&lt;/p&gt;</span>
 <span class="source-line-no">748</span><span id="line-748">     *</span>
-<span class="source-line-no">749</span><span id="line-749">     *  @param  name    The name of the attribute; the name is case sensitive.</span>
+<span class="source-line-no">749</span><span id="line-749">     *  @param  name    The name of the attribute; the name is case-sensitive.</span>
 <span class="source-line-no">750</span><span id="line-750">     *  @param  number  The attribute's value.</span>
 <span class="source-line-no">751</span><span id="line-751">     *  @return This instance.</span>
 <span class="source-line-no">752</span><span id="line-752">     *  @throws IllegalArgumentException    An attribute with the given name is</span>
@@ -778,7 +778,7 @@
 <span class="source-line-no">765</span><span id="line-765">     *  {@link LocalDate#toString()}</span>
 <span class="source-line-no">766</span><span id="line-766">     *  to convert the provided number to a {@code String}.&lt;/p&gt;</span>
 <span class="source-line-no">767</span><span id="line-767">     *</span>
-<span class="source-line-no">768</span><span id="line-768">     *  @param  name    The name of the attribute; the name is case sensitive.</span>
+<span class="source-line-no">768</span><span id="line-768">     *  @param  name    The name of the attribute; the name is case-sensitive.</span>
 <span class="source-line-no">769</span><span id="line-769">     *  @param  date    The attribute's value; if {@code null} the</span>
 <span class="source-line-no">770</span><span id="line-770">     *      attribute will be removed.</span>
 <span class="source-line-no">771</span><span id="line-771">     *  @return This instance.</span>
@@ -798,7 +798,7 @@
 <span class="source-line-no">785</span><span id="line-785">     *  {@link LocalDateTime#toString()}</span>
 <span class="source-line-no">786</span><span id="line-786">     *  to convert the provided number to a {@code String}.&lt;/p&gt;</span>
 <span class="source-line-no">787</span><span id="line-787">     *</span>
-<span class="source-line-no">788</span><span id="line-788">     *  @param  name    The name of the attribute; the name is case sensitive.</span>
+<span class="source-line-no">788</span><span id="line-788">     *  @param  name    The name of the attribute; the name is case-sensitive.</span>
 <span class="source-line-no">789</span><span id="line-789">     *  @param  date    The attribute's value; if {@code null} the</span>
 <span class="source-line-no">790</span><span id="line-790">     *      attribute will be removed.</span>
 <span class="source-line-no">791</span><span id="line-791">     *  @return This instance.</span>
@@ -818,7 +818,7 @@
 <span class="source-line-no">805</span><span id="line-805">     *  {@link Long#toString(long)}</span>
 <span class="source-line-no">806</span><span id="line-806">     *  to convert the provided number to a {@code String}.&lt;/p&gt;</span>
 <span class="source-line-no">807</span><span id="line-807">     *</span>
-<span class="source-line-no">808</span><span id="line-808">     *  @param  name    The name of the attribute; the name is case sensitive.</span>
+<span class="source-line-no">808</span><span id="line-808">     *  @param  name    The name of the attribute; the name is case-sensitive.</span>
 <span class="source-line-no">809</span><span id="line-809">     *  @param  number   The attribute's value.</span>
 <span class="source-line-no">810</span><span id="line-810">     *  @return This instance.</span>
 <span class="source-line-no">811</span><span id="line-811">     *  @throws IllegalArgumentException    An attribute with the given name is</span>
@@ -837,7 +837,7 @@
 <span class="source-line-no">824</span><span id="line-824">     *  {@link Number#toString()}</span>
 <span class="source-line-no">825</span><span id="line-825">     *  to convert the provided number to a {@code String}.&lt;/p&gt;</span>
 <span class="source-line-no">826</span><span id="line-826">     *</span>
-<span class="source-line-no">827</span><span id="line-827">     *  @param  name    The name of the attribute; the name is case sensitive.</span>
+<span class="source-line-no">827</span><span id="line-827">     *  @param  name    The name of the attribute; the name is case-sensitive.</span>
 <span class="source-line-no">828</span><span id="line-828">     *  @param  number   The attribute's value; if {@code null} the</span>
 <span class="source-line-no">829</span><span id="line-829">     *      attribute will be removed.</span>
 <span class="source-line-no">830</span><span id="line-830">     *  @return This instance.</span>
@@ -857,7 +857,7 @@
 <span class="source-line-no">844</span><span id="line-844">     *  {@link ZonedDateTime#toString()}</span>
 <span class="source-line-no">845</span><span id="line-845">     *  to convert the provided number to a {@code String}.&lt;/p&gt;</span>
 <span class="source-line-no">846</span><span id="line-846">     *</span>
-<span class="source-line-no">847</span><span id="line-847">     *  @param  name    The name of the attribute; the name is case sensitive.</span>
+<span class="source-line-no">847</span><span id="line-847">     *  @param  name    The name of the attribute; the name is case-sensitive.</span>
 <span class="source-line-no">848</span><span id="line-848">     *  @param  date    The attribute's value; if {@code null} the</span>
 <span class="source-line-no">849</span><span id="line-849">     *      attribute will be removed.</span>
 <span class="source-line-no">850</span><span id="line-850">     *  @return This instance.</span>
@@ -1026,23 +1026,24 @@
 <span class="source-line-no">1013</span><span id="line-1013">     *  @throws IllegalOperationException    Namespaces are not allowed for this</span>
 <span class="source-line-no">1014</span><span id="line-1014">     *      element.</span>
 <span class="source-line-no">1015</span><span id="line-1015">     */</span>
-<span class="source-line-no">1016</span><span id="line-1016">    public default XMLElement setNamespace( final Namespace namespace ) throws IllegalOperationException</span>
-<span class="source-line-no">1017</span><span id="line-1017">    {</span>
-<span class="source-line-no">1018</span><span id="line-1018">        throw new IllegalOperationException( format( "No namespace allowed for element '%1$s'", getElementName() ) );</span>
-<span class="source-line-no">1019</span><span id="line-1019">    }   //  setNamespace()</span>
-<span class="source-line-no">1020</span><span id="line-1020"></span>
-<span class="source-line-no">1021</span><span id="line-1021">    /**</span>
-<span class="source-line-no">1022</span><span id="line-1022">     *  {@inheritDoc}</span>
-<span class="source-line-no">1023</span><span id="line-1023">     */</span>
-<span class="source-line-no">1024</span><span id="line-1024">    @SuppressWarnings( "AbstractMethodOverridesAbstractMethod" )</span>
-<span class="source-line-no">1025</span><span id="line-1025">    @Override</span>
-<span class="source-line-no">1026</span><span id="line-1026">    public &lt;E extends Element&gt; void setParent( final E parent );</span>
-<span class="source-line-no">1027</span><span id="line-1027">}</span>
-<span class="source-line-no">1028</span><span id="line-1028">//  interface XMLElement</span>
-<span class="source-line-no">1029</span><span id="line-1029"></span>
-<span class="source-line-no">1030</span><span id="line-1030">/*</span>
-<span class="source-line-no">1031</span><span id="line-1031"> *  End of File</span>
-<span class="source-line-no">1032</span><span id="line-1032"> */</span>
+<span class="source-line-no">1016</span><span id="line-1016">    @SuppressWarnings( "UseOfConcreteClass" )</span>
+<span class="source-line-no">1017</span><span id="line-1017">    public default XMLElement setNamespace( final Namespace namespace ) throws IllegalOperationException</span>
+<span class="source-line-no">1018</span><span id="line-1018">    {</span>
+<span class="source-line-no">1019</span><span id="line-1019">        throw new IllegalOperationException( format( "No namespace allowed for element '%1$s'", getElementName() ) );</span>
+<span class="source-line-no">1020</span><span id="line-1020">    }   //  setNamespace()</span>
+<span class="source-line-no">1021</span><span id="line-1021"></span>
+<span class="source-line-no">1022</span><span id="line-1022">    /**</span>
+<span class="source-line-no">1023</span><span id="line-1023">     *  {@inheritDoc}</span>
+<span class="source-line-no">1024</span><span id="line-1024">     */</span>
+<span class="source-line-no">1025</span><span id="line-1025">    @SuppressWarnings( "AbstractMethodOverridesAbstractMethod" )</span>
+<span class="source-line-no">1026</span><span id="line-1026">    @Override</span>
+<span class="source-line-no">1027</span><span id="line-1027">    public &lt;E extends Element&gt; void setParent( final E parent );</span>
+<span class="source-line-no">1028</span><span id="line-1028">}</span>
+<span class="source-line-no">1029</span><span id="line-1029">//  interface XMLElement</span>
+<span class="source-line-no">1030</span><span id="line-1030"></span>
+<span class="source-line-no">1031</span><span id="line-1031">/*</span>
+<span class="source-line-no">1032</span><span id="line-1032"> *  End of File</span>
+<span class="source-line-no">1033</span><span id="line-1033"> */</span>
 
 
 

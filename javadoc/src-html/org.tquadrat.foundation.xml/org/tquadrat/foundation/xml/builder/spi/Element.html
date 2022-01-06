@@ -58,131 +58,123 @@
 <span class="source-line-no">045</span><span id="line-45">@API( status = MAINTAINED, since = "0.0.5" )</span>
 <span class="source-line-no">046</span><span id="line-46">public interface Element</span>
 <span class="source-line-no">047</span><span id="line-47">{</span>
-<span class="source-line-no">048</span><span id="line-48">        /*-----------*\</span>
-<span class="source-line-no">049</span><span id="line-49">    ====** Constants **========================================================</span>
-<span class="source-line-no">050</span><span id="line-50">        \*-----------*/</span>
+<span class="source-line-no">048</span><span id="line-48">        /*---------*\</span>
+<span class="source-line-no">049</span><span id="line-49">    ====** Methods **==========================================================</span>
+<span class="source-line-no">050</span><span id="line-50">        \*---------*/</span>
 <span class="source-line-no">051</span><span id="line-51">    /**</span>
-<span class="source-line-no">052</span><span id="line-52">     *  An empty array of {@code Element} objects.</span>
-<span class="source-line-no">053</span><span id="line-53">     */</span>
-<span class="source-line-no">054</span><span id="line-54">    public static final Element [] EMPTY_Element_ARRAY = new Element [0];</span>
-<span class="source-line-no">055</span><span id="line-55"></span>
-<span class="source-line-no">056</span><span id="line-56">        /*---------*\</span>
-<span class="source-line-no">057</span><span id="line-57">    ====** Methods **==========================================================</span>
-<span class="source-line-no">058</span><span id="line-58">        \*---------*/</span>
-<span class="source-line-no">059</span><span id="line-59">    /**</span>
-<span class="source-line-no">060</span><span id="line-60">     *  Returns the value for the attribute with the given name.</span>
-<span class="source-line-no">061</span><span id="line-61">     *</span>
-<span class="source-line-no">062</span><span id="line-62">     *  @param  name    The attribute name.</span>
-<span class="source-line-no">063</span><span id="line-63">     *  @return An instance of</span>
-<span class="source-line-no">064</span><span id="line-64">     *      {@link Optional}</span>
-<span class="source-line-no">065</span><span id="line-65">     *      that holds the value for that attribute.</span>
-<span class="source-line-no">066</span><span id="line-66">     */</span>
-<span class="source-line-no">067</span><span id="line-67">    public default Optional&lt;String&gt; getAttribute( final String name )</span>
-<span class="source-line-no">068</span><span id="line-68">    {</span>
-<span class="source-line-no">069</span><span id="line-69">        requireNotEmptyArgument( name, "name" );</span>
-<span class="source-line-no">070</span><span id="line-70">        final Optional&lt;String&gt; retValue = Optional.empty();</span>
-<span class="source-line-no">071</span><span id="line-71"></span>
-<span class="source-line-no">072</span><span id="line-72">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">073</span><span id="line-73">        return retValue;</span>
-<span class="source-line-no">074</span><span id="line-74">    }   //  getAttribute()</span>
-<span class="source-line-no">075</span><span id="line-75"></span>
-<span class="source-line-no">076</span><span id="line-76">    /**</span>
-<span class="source-line-no">077</span><span id="line-77">     *  Provides read access to the attributes.</span>
+<span class="source-line-no">052</span><span id="line-52">     *  Returns the value for the attribute with the given name.</span>
+<span class="source-line-no">053</span><span id="line-53">     *</span>
+<span class="source-line-no">054</span><span id="line-54">     *  @param  name    The attribute name.</span>
+<span class="source-line-no">055</span><span id="line-55">     *  @return An instance of</span>
+<span class="source-line-no">056</span><span id="line-56">     *      {@link Optional}</span>
+<span class="source-line-no">057</span><span id="line-57">     *      that holds the value for that attribute.</span>
+<span class="source-line-no">058</span><span id="line-58">     */</span>
+<span class="source-line-no">059</span><span id="line-59">    public default Optional&lt;String&gt; getAttribute( final String name )</span>
+<span class="source-line-no">060</span><span id="line-60">    {</span>
+<span class="source-line-no">061</span><span id="line-61">        requireNotEmptyArgument( name, "name" );</span>
+<span class="source-line-no">062</span><span id="line-62">        final Optional&lt;String&gt; retValue = Optional.empty();</span>
+<span class="source-line-no">063</span><span id="line-63"></span>
+<span class="source-line-no">064</span><span id="line-64">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">065</span><span id="line-65">        return retValue;</span>
+<span class="source-line-no">066</span><span id="line-66">    }   //  getAttribute()</span>
+<span class="source-line-no">067</span><span id="line-67"></span>
+<span class="source-line-no">068</span><span id="line-68">    /**</span>
+<span class="source-line-no">069</span><span id="line-69">     *  Provides read access to the attributes.</span>
+<span class="source-line-no">070</span><span id="line-70">     *</span>
+<span class="source-line-no">071</span><span id="line-71">     *  @return A reference to the attributes.</span>
+<span class="source-line-no">072</span><span id="line-72">     */</span>
+<span class="source-line-no">073</span><span id="line-73">    public default Map&lt;String,String&gt; getAttributes() { return emptyMap(); }</span>
+<span class="source-line-no">074</span><span id="line-74"></span>
+<span class="source-line-no">075</span><span id="line-75">    /**</span>
+<span class="source-line-no">076</span><span id="line-76">     *  Provides access to the children for this element; the returned</span>
+<span class="source-line-no">077</span><span id="line-77">     *  collection is not modifiable.</span>
 <span class="source-line-no">078</span><span id="line-78">     *</span>
-<span class="source-line-no">079</span><span id="line-79">     *  @return A reference to the attributes.</span>
-<span class="source-line-no">080</span><span id="line-80">     */</span>
-<span class="source-line-no">081</span><span id="line-81">    public default Map&lt;String,String&gt; getAttributes() { return emptyMap(); }</span>
-<span class="source-line-no">082</span><span id="line-82"></span>
-<span class="source-line-no">083</span><span id="line-83">    /**</span>
-<span class="source-line-no">084</span><span id="line-84">     *  Provides access to the children for this element; the returned</span>
-<span class="source-line-no">085</span><span id="line-85">     *  collection is not modifiable.</span>
+<span class="source-line-no">079</span><span id="line-79">     *  @return A reference to the children of this element; if the element</span>
+<span class="source-line-no">080</span><span id="line-80">     *      does not have children, an empty collection will be returned.</span>
+<span class="source-line-no">081</span><span id="line-81">     */</span>
+<span class="source-line-no">082</span><span id="line-82">    public default Collection&lt;? extends Element&gt; getChildren() { return emptyList(); }</span>
+<span class="source-line-no">083</span><span id="line-83"></span>
+<span class="source-line-no">084</span><span id="line-84">    /**</span>
+<span class="source-line-no">085</span><span id="line-85">     *  Returns the name of the element.</span>
 <span class="source-line-no">086</span><span id="line-86">     *</span>
-<span class="source-line-no">087</span><span id="line-87">     *  @return A reference to the children of this element; if the element</span>
-<span class="source-line-no">088</span><span id="line-88">     *      does not have children, an empty collection will be returned.</span>
-<span class="source-line-no">089</span><span id="line-89">     */</span>
-<span class="source-line-no">090</span><span id="line-90">    public default Collection&lt;? extends Element&gt; getChildren() { return emptyList(); }</span>
-<span class="source-line-no">091</span><span id="line-91"></span>
-<span class="source-line-no">092</span><span id="line-92">    /**</span>
-<span class="source-line-no">093</span><span id="line-93">     *  Returns the name of the element.</span>
+<span class="source-line-no">087</span><span id="line-87">     *  @return The name of the element.</span>
+<span class="source-line-no">088</span><span id="line-88">     */</span>
+<span class="source-line-no">089</span><span id="line-89">    public String getElementName();</span>
+<span class="source-line-no">090</span><span id="line-90"></span>
+<span class="source-line-no">091</span><span id="line-91">    /**</span>
+<span class="source-line-no">092</span><span id="line-92">     *  Provides access to the namespaces for this element; the returned</span>
+<span class="source-line-no">093</span><span id="line-93">     *  collection is not modifiable.</span>
 <span class="source-line-no">094</span><span id="line-94">     *</span>
-<span class="source-line-no">095</span><span id="line-95">     *  @return The name of the element.</span>
-<span class="source-line-no">096</span><span id="line-96">     */</span>
-<span class="source-line-no">097</span><span id="line-97">    public String getElementName();</span>
-<span class="source-line-no">098</span><span id="line-98"></span>
-<span class="source-line-no">099</span><span id="line-99">    /**</span>
-<span class="source-line-no">100</span><span id="line-100">     *  Provides access to the namespaces for this element; the returned</span>
-<span class="source-line-no">101</span><span id="line-101">     *  collection is not modifiable.</span>
-<span class="source-line-no">102</span><span id="line-102">     *</span>
-<span class="source-line-no">103</span><span id="line-103">     *  @return A reference to the namespaces of this element; if the element</span>
-<span class="source-line-no">104</span><span id="line-104">     *      does not have namespaces assigned, an empty collection will be</span>
-<span class="source-line-no">105</span><span id="line-105">     *      returned.</span>
-<span class="source-line-no">106</span><span id="line-106">     */</span>
-<span class="source-line-no">107</span><span id="line-107">    public default Collection&lt;Namespace&gt; getNamespaces() { return emptySet(); }</span>
-<span class="source-line-no">108</span><span id="line-108"></span>
-<span class="source-line-no">109</span><span id="line-109">    /**</span>
-<span class="source-line-no">110</span><span id="line-110">     *  Returns the parent of this element.</span>
-<span class="source-line-no">111</span><span id="line-111">     *</span>
-<span class="source-line-no">112</span><span id="line-112">     *  @return An instance of</span>
-<span class="source-line-no">113</span><span id="line-113">     *      {@link Optional}</span>
-<span class="source-line-no">114</span><span id="line-114">     *      that holds the parent.</span>
+<span class="source-line-no">095</span><span id="line-95">     *  @return A reference to the namespaces of this element; if the element</span>
+<span class="source-line-no">096</span><span id="line-96">     *      does not have namespaces assigned, an empty collection will be</span>
+<span class="source-line-no">097</span><span id="line-97">     *      returned.</span>
+<span class="source-line-no">098</span><span id="line-98">     */</span>
+<span class="source-line-no">099</span><span id="line-99">    public default Collection&lt;Namespace&gt; getNamespaces() { return emptySet(); }</span>
+<span class="source-line-no">100</span><span id="line-100"></span>
+<span class="source-line-no">101</span><span id="line-101">    /**</span>
+<span class="source-line-no">102</span><span id="line-102">     *  Returns the parent of this element.</span>
+<span class="source-line-no">103</span><span id="line-103">     *</span>
+<span class="source-line-no">104</span><span id="line-104">     *  @return An instance of</span>
+<span class="source-line-no">105</span><span id="line-105">     *      {@link Optional}</span>
+<span class="source-line-no">106</span><span id="line-106">     *      that holds the parent.</span>
+<span class="source-line-no">107</span><span id="line-107">     */</span>
+<span class="source-line-no">108</span><span id="line-108">    public Optional&lt;Element&gt; getParent();</span>
+<span class="source-line-no">109</span><span id="line-109"></span>
+<span class="source-line-no">110</span><span id="line-110">    /**</span>
+<span class="source-line-no">111</span><span id="line-111">     *  Returns {@code true} if the element has children, {@code false}</span>
+<span class="source-line-no">112</span><span id="line-112">     *  otherwise.</span>
+<span class="source-line-no">113</span><span id="line-113">     *</span>
+<span class="source-line-no">114</span><span id="line-114">     *  @return {@code true} if the element has children.</span>
 <span class="source-line-no">115</span><span id="line-115">     */</span>
-<span class="source-line-no">116</span><span id="line-116">    public Optional&lt;Element&gt; getParent();</span>
+<span class="source-line-no">116</span><span id="line-116">    public default boolean hasChildren() { return !getChildren().isEmpty(); }</span>
 <span class="source-line-no">117</span><span id="line-117"></span>
 <span class="source-line-no">118</span><span id="line-118">    /**</span>
-<span class="source-line-no">119</span><span id="line-119">     *  Returns {@code true} if the element has children, {@code false}</span>
-<span class="source-line-no">120</span><span id="line-120">     *  otherwise.</span>
-<span class="source-line-no">121</span><span id="line-121">     *</span>
-<span class="source-line-no">122</span><span id="line-122">     *  @return {@code true} if the element has children.</span>
-<span class="source-line-no">123</span><span id="line-123">     */</span>
-<span class="source-line-no">124</span><span id="line-124">    public default boolean hasChildren() { return !getChildren().isEmpty(); }</span>
-<span class="source-line-no">125</span><span id="line-125"></span>
-<span class="source-line-no">126</span><span id="line-126">    /**</span>
-<span class="source-line-no">127</span><span id="line-127">     *  Returns the block flag.&lt;br&gt;</span>
-<span class="source-line-no">128</span><span id="line-128">     *  &lt;br&gt;This flag is used in the conversion of the element into a String;</span>
-<span class="source-line-no">129</span><span id="line-129">     *  it indicates whether the element is 'inline' (like a HTML</span>
-<span class="source-line-no">130</span><span id="line-130">     *  &lt;i&gt;&amp;lt;span&amp;gt;&lt;/i&gt;) or 'block' (as a HTML &lt;i&gt;&amp;lt;div&amp;gt;&lt;/i&gt;). This is</span>
-<span class="source-line-no">131</span><span id="line-131">     *  important only for elements where whitespace is relevant, like for HTML</span>
-<span class="source-line-no">132</span><span id="line-132">     *  elements, as &lt;i&gt;pretty printing&lt;/i&gt; will add additional whitespace</span>
-<span class="source-line-no">133</span><span id="line-133">     *  around inline elements that can become visible on parsing (for HTML: on</span>
-<span class="source-line-no">134</span><span id="line-134">     *  the rendered page).&lt;br&gt;</span>
-<span class="source-line-no">135</span><span id="line-135">     *  &lt;br&gt;XML elements for example will be always &lt;i&gt;block&lt;/i&gt; as there</span>
-<span class="source-line-no">136</span><span id="line-136">     *  whitespace is not that important.&lt;br&gt;</span>
-<span class="source-line-no">137</span><span id="line-137">     *  &lt;br&gt;Obviously, {@code true} indicates a block element, while</span>
-<span class="source-line-no">138</span><span id="line-138">     *  {@code false} stands for an inline element.&lt;br&gt;</span>
-<span class="source-line-no">139</span><span id="line-139">     *  &lt;br&gt;The default is {@code true}.</span>
-<span class="source-line-no">140</span><span id="line-140">     *</span>
-<span class="source-line-no">141</span><span id="line-141">     *  @return  The flag.</span>
+<span class="source-line-no">119</span><span id="line-119">     *  Returns the block flag.&lt;br&gt;</span>
+<span class="source-line-no">120</span><span id="line-120">     *  &lt;br&gt;This flag is used in the conversion of the element into a String;</span>
+<span class="source-line-no">121</span><span id="line-121">     *  it indicates whether the element is 'inline' (like an HTML</span>
+<span class="source-line-no">122</span><span id="line-122">     *  &lt;i&gt;&amp;lt;span&amp;gt;&lt;/i&gt;) or 'block' (as an HTML &lt;i&gt;&amp;lt;div&amp;gt;&lt;/i&gt;). This is</span>
+<span class="source-line-no">123</span><span id="line-123">     *  important only for elements where whitespace is relevant, like for HTML</span>
+<span class="source-line-no">124</span><span id="line-124">     *  elements, as &lt;i&gt;pretty printing&lt;/i&gt; will add additional whitespace</span>
+<span class="source-line-no">125</span><span id="line-125">     *  around inline elements that can become visible on parsing (for HTML: on</span>
+<span class="source-line-no">126</span><span id="line-126">     *  the rendered page).&lt;br&gt;</span>
+<span class="source-line-no">127</span><span id="line-127">     *  &lt;br&gt;XML elements for example will be always &lt;i&gt;block&lt;/i&gt; as there</span>
+<span class="source-line-no">128</span><span id="line-128">     *  whitespace is not that important.&lt;br&gt;</span>
+<span class="source-line-no">129</span><span id="line-129">     *  &lt;br&gt;Obviously, {@code true} indicates a block element, while</span>
+<span class="source-line-no">130</span><span id="line-130">     *  {@code false} stands for an inline element.&lt;br&gt;</span>
+<span class="source-line-no">131</span><span id="line-131">     *  &lt;br&gt;The default is {@code true}.</span>
+<span class="source-line-no">132</span><span id="line-132">     *</span>
+<span class="source-line-no">133</span><span id="line-133">     *  @return  The flag.</span>
+<span class="source-line-no">134</span><span id="line-134">     */</span>
+<span class="source-line-no">135</span><span id="line-135">    public default boolean isBlock() { return true; }</span>
+<span class="source-line-no">136</span><span id="line-136"></span>
+<span class="source-line-no">137</span><span id="line-137">    /**</span>
+<span class="source-line-no">138</span><span id="line-138">     *  Sets the parent for this element.</span>
+<span class="source-line-no">139</span><span id="line-139">     *</span>
+<span class="source-line-no">140</span><span id="line-140">     *  @param  &lt;E&gt; The implementation of {@code Element}.</span>
+<span class="source-line-no">141</span><span id="line-141">     *  @param  parent  The parent.</span>
 <span class="source-line-no">142</span><span id="line-142">     */</span>
-<span class="source-line-no">143</span><span id="line-143">    public default boolean isBlock() { return true; }</span>
+<span class="source-line-no">143</span><span id="line-143">    public &lt;E extends Element&gt; void setParent( final E parent );</span>
 <span class="source-line-no">144</span><span id="line-144"></span>
 <span class="source-line-no">145</span><span id="line-145">    /**</span>
-<span class="source-line-no">146</span><span id="line-146">     *  Sets the parent for this element.</span>
+<span class="source-line-no">146</span><span id="line-146">     *  Returns a String representation for this element instance.</span>
 <span class="source-line-no">147</span><span id="line-147">     *</span>
-<span class="source-line-no">148</span><span id="line-148">     *  @param  &lt;E&gt; The implementation of {@code Element}.</span>
-<span class="source-line-no">149</span><span id="line-149">     *  @param  parent  The parent.</span>
-<span class="source-line-no">150</span><span id="line-150">     */</span>
-<span class="source-line-no">151</span><span id="line-151">    public &lt;E extends Element&gt; void setParent( final E parent );</span>
-<span class="source-line-no">152</span><span id="line-152"></span>
-<span class="source-line-no">153</span><span id="line-153">    /**</span>
-<span class="source-line-no">154</span><span id="line-154">     *  Returns a String representation for this element instance.</span>
-<span class="source-line-no">155</span><span id="line-155">     *</span>
-<span class="source-line-no">156</span><span id="line-156">     *  @param  indentationLevel    The indentation level.</span>
-<span class="source-line-no">157</span><span id="line-157">     *  @param  prettyPrint The pretty print flag.</span>
-<span class="source-line-no">158</span><span id="line-158">     *  @return The String representation.</span>
-<span class="source-line-no">159</span><span id="line-159">     */</span>
-<span class="source-line-no">160</span><span id="line-160">    public default String toString( final int indentationLevel, final boolean prettyPrint )</span>
-<span class="source-line-no">161</span><span id="line-161">    {</span>
-<span class="source-line-no">162</span><span id="line-162">        final var retValue = composeElementString( indentationLevel, prettyPrint, this, true );</span>
-<span class="source-line-no">163</span><span id="line-163"></span>
-<span class="source-line-no">164</span><span id="line-164">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">165</span><span id="line-165">        return retValue;</span>
-<span class="source-line-no">166</span><span id="line-166">    }   //  toString()</span>
-<span class="source-line-no">167</span><span id="line-167">}</span>
-<span class="source-line-no">168</span><span id="line-168">//  interface Element</span>
-<span class="source-line-no">169</span><span id="line-169"></span>
-<span class="source-line-no">170</span><span id="line-170">/*</span>
-<span class="source-line-no">171</span><span id="line-171"> *  End of File</span>
-<span class="source-line-no">172</span><span id="line-172"> */</span>
+<span class="source-line-no">148</span><span id="line-148">     *  @param  indentationLevel    The indentation level.</span>
+<span class="source-line-no">149</span><span id="line-149">     *  @param  prettyPrint The pretty print flag.</span>
+<span class="source-line-no">150</span><span id="line-150">     *  @return The String representation.</span>
+<span class="source-line-no">151</span><span id="line-151">     */</span>
+<span class="source-line-no">152</span><span id="line-152">    public default String toString( final int indentationLevel, final boolean prettyPrint )</span>
+<span class="source-line-no">153</span><span id="line-153">    {</span>
+<span class="source-line-no">154</span><span id="line-154">        final var retValue = composeElementString( indentationLevel, prettyPrint, this, true );</span>
+<span class="source-line-no">155</span><span id="line-155"></span>
+<span class="source-line-no">156</span><span id="line-156">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">157</span><span id="line-157">        return retValue;</span>
+<span class="source-line-no">158</span><span id="line-158">    }   //  toString()</span>
+<span class="source-line-no">159</span><span id="line-159">}</span>
+<span class="source-line-no">160</span><span id="line-160">//  interface Element</span>
+<span class="source-line-no">161</span><span id="line-161"></span>
+<span class="source-line-no">162</span><span id="line-162">/*</span>
+<span class="source-line-no">163</span><span id="line-163"> *  End of File</span>
+<span class="source-line-no">164</span><span id="line-164"> */</span>
 
 
 

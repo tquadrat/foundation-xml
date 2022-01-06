@@ -23,13 +23,12 @@ import java.util.Set;
 
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.xml.builder.XMLBuilderUtils;
-import org.tquadrat.foundation.xml.builder.XMLElement;
 import org.tquadrat.foundation.xml.builder.internal.XMLElementImpl;
 
 /**
  *  The abstract base class for specialised implementations of
- *  {@link XMLElement}. Because it is derived from
+ *  {@link org.tquadrat.foundation.xml.builder.XMLElement}.
+ *  Because it is derived from
  *  {@link XMLElementImpl},
  *  it supports attributes, namespaces, children, text, {@code CDATA} and
  *  comments.
@@ -40,7 +39,7 @@ import org.tquadrat.foundation.xml.builder.internal.XMLElementImpl;
  *
  *  @UMLGraph.link
  */
-@SuppressWarnings( {"AbstractClassNeverImplemented", "AbstractClassExtendsConcreteClass", "preview"} )
+@SuppressWarnings( "AbstractClassExtendsConcreteClass" )
 @ClassVersion( sourceVersion = "$Id: XMLElementAdapter.java 820 2020-12-29 20:34:22Z tquadrat $" )
 @API( status = MAINTAINED, since = "0.0.5" )
 public abstract non-sealed class XMLElementAdapter extends XMLElementImpl
@@ -49,22 +48,22 @@ public abstract non-sealed class XMLElementAdapter extends XMLElementImpl
     ====** Constructors **=====================================================
         \*--------------*/
     /**
-     *  Creates a new {@code XMLElementAdapter} instance.<br>
-     *  <br>The given element name is validated using the method that is
+     *  <p>{@summary Creates a new {@code XMLElementAdapter} instance.}</p>
+     *  <p>The given element name is validated using the method that is
      *  provided by
-     *  {@link XMLBuilderUtils#getElementNameValidator()}.<br>
-     *  <br>The new element allows attributes and children, but will not
-     *  validate them. It also allows text.
+     *  {@link org.tquadrat.foundation.xml.builder.XMLBuilderUtils#getElementNameValidator()}.</p>
+     *  <p>The new element allows attributes and children, but will not
+     *  validate them. It also allows text.</p>
      *
      *  @param  elementName The element name.
      */
     protected XMLElementAdapter( final String elementName ) { super( elementName ); }
 
     /**
-     *  Creates a new {@code XMLElementAdapter} instance.<br>
-     *  <br>The given element name is validated using the method that is
+     *  <p>{@summary Creates a new {@code XMLElementAdapter} instance.}</p>
+     *  <p>The given element name is validated using the method that is
      *  provided by
-     *  {@link XMLBuilderUtils#getElementNameValidator()}.
+     *  {@link org.tquadrat.foundation.xml.builder.XMLBuilderUtils#getElementNameValidator()}.</p>
      *
      *  @note   This constructor is used for the implementation of XML
      *      specialisations, like SVG or HTML (although this not really XML).

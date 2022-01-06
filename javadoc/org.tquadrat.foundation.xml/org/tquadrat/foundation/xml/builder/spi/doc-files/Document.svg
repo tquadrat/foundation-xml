@@ -148,8 +148,8 @@
                           x2='580.000'
                           y2='53.000'
                           class='separator'/>
-                    <text y='49.000'
-                          class='static final'>+ EMPTY_Document_ARRAY:org.tquadrat.foundation.xml.builder.spi.Document[]</text>
+                    <text x='5.000'
+                          y='49.000'/>
                     <text x='5.000'
                           y='66.000'>&#x2A22; getAttribute(name:java.lang.String):java.util.Optional&lt;java.lang.String&gt;</text>
                     <text x='5.000'
@@ -215,8 +215,8 @@
                           x2='1054.000'
                           y2='45.000'
                           class='separator'/>
-                    <text y='41.000'
-                          class='static final'>+ EMPTY_XMDocument_ARRAY:org.tquadrat.foundation.xml.builder.XMLDocument[]</text>
+                    <text x='5.000'
+                          y='41.000'/>
                     <text x='5.000'
                           y='58.000'>&#x2A22; addChild(child:org.tquadrat.foundation.xml.builder.XMLElement):org.tquadrat.foundation.xml.builder.XMLDocument</text>
                     <text x='5.000'

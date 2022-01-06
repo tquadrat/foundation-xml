@@ -45,20 +45,12 @@ import org.tquadrat.foundation.xml.builder.spi.Document;
  *
  *  @UMLGraph.link
  */
-@SuppressWarnings( {"ClassWithTooManyMethods", "preview"} )
+@SuppressWarnings( {"ClassWithTooManyMethods", "InterfaceMayBeAnnotatedFunctional"} )
 @ClassVersion( sourceVersion = "$Id: XMLDocument.java 820 2020-12-29 20:34:22Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public sealed interface XMLDocument extends Document<XMLElement>
     permits XMLDocumentImpl
 {
-        /*-----------*\
-    ====** Constants **========================================================
-        \*-----------*/
-    /**
-     *  An empty array of {@code XMLDocument} objects.
-     */
-    public static final XMLDocument [] EMPTY_XMDocument_ARRAY = new XMLDocument [0];
-
         /*---------*\
     ====** Methods **==========================================================
         \*---------*/
@@ -69,7 +61,7 @@ public sealed interface XMLDocument extends Document<XMLElement>
      *  @return This instance.
      *  @throws IllegalArgumentException    The child is not allowed for the
      *      root element of this document, or the root element does not allow
-     *      to add children at all.
+     *      adding children at all.
      *  @throws IllegalStateException   The child has already a parent that is
      *      not the root XML element.
      */
@@ -87,8 +79,8 @@ public sealed interface XMLDocument extends Document<XMLElement>
      *
      *  @param  comment The comment to add.
      *  @return This instance.
-     *  @throws IllegalArgumentException    The root element does not allow to
-     *      add comments.
+     *  @throws IllegalArgumentException    The root element does not allow
+     *      adding comments.
      */
     @SuppressWarnings( "UnusedReturnValue" )
     public default XMLDocument addComment( final CharSequence comment ) throws IllegalArgumentException
@@ -104,8 +96,8 @@ public sealed interface XMLDocument extends Document<XMLElement>
      *
      *  @param  comment The comment to add.
      *  @return This instance.
-     *  @throws IllegalArgumentException    The document does not allow to
-     *      add comments.
+     *  @throws IllegalArgumentException    The document does not allow adding
+     *      comments.
      */
     @SuppressWarnings( "UnusedReturnValue" )
     public default XMLDocument addDocumentComment( final CharSequence comment ) throws IllegalArgumentException
@@ -122,8 +114,8 @@ public sealed interface XMLDocument extends Document<XMLElement>
      *
      *  @param  markup  The XML markup.
      *  @return This instance.
-     *  @throws IllegalArgumentException    The root element does not allow to
-     *      add children at all.
+     *  @throws IllegalArgumentException    The root element does not allow
+     *      adding children at all.
      */
     @SuppressWarnings( "UnusedReturnValue" )
     public default XMLDocument addPredefinedMarkup( final CharSequence markup ) throws IllegalArgumentException
@@ -139,7 +131,7 @@ public sealed interface XMLDocument extends Document<XMLElement>
      *
      *  @param  processingInstruction   The procession instruction to add.
      *  @return This instance.
-     *  @throws IllegalArgumentException    This document does not allow to add
+     *  @throws IllegalArgumentException    This document does not allow adding
      *      processing instructions.
      *  @throws IllegalStateException   The processing instruction has already
      *      a parent.
@@ -157,7 +149,7 @@ public sealed interface XMLDocument extends Document<XMLElement>
      *  {@link Boolean#toString(boolean)}
      *  to convert the provided flag to a {@code String}.
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  flag    The attribute's value.
      *  @return This instance.
      *  @throws IllegalArgumentException    The attribute is not allowed for
@@ -179,7 +171,7 @@ public sealed interface XMLDocument extends Document<XMLElement>
      *  {@link Boolean#toString()}
      *  to convert the provided flag to a {@code String}.
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  flag    The attribute's value; if {@code null} the
      *      attribute will be removed.
      *  @return This instance.
@@ -199,7 +191,7 @@ public sealed interface XMLDocument extends Document<XMLElement>
      *  Sets the attribute with the given name to the root element of this
      *  document.
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  value   The attribute's value; if {@code null} the
      *      attribute will be removed.
      *  @return This instance.
@@ -219,7 +211,7 @@ public sealed interface XMLDocument extends Document<XMLElement>
      *  Sets the attribute with the given name to the root element of this
      *  document.
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  value   The attribute's value; if {@code null} the
      *      attribute will be removed.
      *  @param  append  If not
@@ -247,7 +239,7 @@ public sealed interface XMLDocument extends Document<XMLElement>
      *  {@link Double#toString(double)}
      *  to convert the provided number to a {@code String}.
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  number   The attribute's value.
      *  @return This instance.
      *  @throws IllegalArgumentException    The attribute is not allowed for
@@ -270,7 +262,7 @@ public sealed interface XMLDocument extends Document<XMLElement>
      *  to convert the provided value to a {@code String}.
      *
      *  @param  <E> The concrete enum type of {@code value}.
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  enumValue   The attribute's value; if {@code null} the
      *      attribute will be removed.
      *  @return This instance.
@@ -293,7 +285,7 @@ public sealed interface XMLDocument extends Document<XMLElement>
      *  {@link Instant#toString()}
      *  to convert the provided number to a {@code String}.
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  date    The attribute's value; if {@code null} the
      *      attribute will be removed.
      *  @return This instance.
@@ -316,7 +308,7 @@ public sealed interface XMLDocument extends Document<XMLElement>
      *  {@link Integer#toString(int)}
      *  to convert the provided number to a {@code String}.
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  number  The attribute's value.
      *  @return This instance.
      *  @throws IllegalArgumentException    The attribute is not allowed for
@@ -338,7 +330,7 @@ public sealed interface XMLDocument extends Document<XMLElement>
      *  {@link LocalDate#toString()}
      *  to convert the provided number to a {@code String}.
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  date    The attribute's value; if {@code null} the
      *      attribute will be removed.
      *  @return This instance.
@@ -361,7 +353,7 @@ public sealed interface XMLDocument extends Document<XMLElement>
      *  {@link LocalDateTime#toString()}
      *  to convert the provided number to a {@code String}.
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  date    The attribute's value; if {@code null} the
      *      attribute will be removed.
      *  @return This instance.
@@ -384,7 +376,7 @@ public sealed interface XMLDocument extends Document<XMLElement>
      *  {@link Long#toString(long)}
      *  to convert the provided number to a {@code String}.
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  number   The attribute's value.
      *  @return This instance.
      *  @throws IllegalArgumentException    The attribute is not allowed for
@@ -406,7 +398,7 @@ public sealed interface XMLDocument extends Document<XMLElement>
      *  {@link Number#toString()}
      *  to convert the provided number to a {@code String}.
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  number   The attribute's value; if {@code null} the
      *      attribute will be removed.
      *  @return This instance.
@@ -429,7 +421,7 @@ public sealed interface XMLDocument extends Document<XMLElement>
      *  {@link ZonedDateTime#toString()}
      *  to convert the provided number to a {@code String}.
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  date    The attribute's value; if {@code null} the
      *      attribute will be removed.
      *  @return This instance.
@@ -593,6 +585,7 @@ public sealed interface XMLDocument extends Document<XMLElement>
      *  @throws IllegalArgumentException    Namespaces are not allowed for this
      *      element.
      */
+    @SuppressWarnings( "UseOfConcreteClass" )
     public default XMLDocument setNamespace( final Namespace namespace ) throws IllegalArgumentException
     {
         getRootElement().setNamespace( namespace );

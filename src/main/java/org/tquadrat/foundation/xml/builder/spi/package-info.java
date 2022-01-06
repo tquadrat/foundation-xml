@@ -14,18 +14,24 @@
  */
 
 /**
- *  Several classes that are not part of the API for the XML builder tools, but
- *  required to implement tools for other, XML-derived languages, like SVG or
- *  HTML.<br>
- *  <br>Unless otherwise stated, {@code null} argument values will cause
+ *  <p>{@summary Several classes that are not part of the API for the XML
+ *  builder tools, but required to implement tools for other, XML-derived
+ *  languages, like SVG or HTML.}</p>
+ *  <p>Unless otherwise stated, {@code null} argument values will cause
  *  methods and constructors of all classes in this package to throw an
  *  {@link java.lang.Exception Exception},
  *  usually a
  *  {@link org.tquadrat.foundation.exception.NullArgumentException},
  *  but in some rare cases, it could be also a
- *  {@link java.lang.NullPointerException}.
+ *  {@link java.lang.NullPointerException}.</p>
  */
+
+@API( status = STABLE, since = "0.1.0" )
 package org.tquadrat.foundation.xml.builder.spi;
+
+import static org.apiguardian.api.API.Status.STABLE;
+
+import org.apiguardian.api.API;
 
 /*
  *  End of File

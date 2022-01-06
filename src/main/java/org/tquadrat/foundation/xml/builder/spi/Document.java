@@ -30,7 +30,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.xml.builder.Namespace;
 
 /**
- *  The definition for a SGML document.
+ *  The definition for an SGML document.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: Document.java 820 2020-12-29 20:34:22Z tquadrat $
@@ -40,19 +40,11 @@ import org.tquadrat.foundation.xml.builder.Namespace;
  *
  *  @UMLGraph.link
  */
+@SuppressWarnings( "InterfaceMayBeAnnotatedFunctional" )
 @ClassVersion( sourceVersion = "$Id: Document.java 820 2020-12-29 20:34:22Z tquadrat $" )
 @API( status = MAINTAINED, since = "0.0.5" )
 public interface Document<E extends Element>
 {
-        /*-----------*\
-    ====** Constants **========================================================
-        \*-----------*/
-    /**
-     *  An empty array of {@code Document} objects.
-     */
-    @SuppressWarnings( "rawtypes" )
-    public static final Document [] EMPTY_Document_ARRAY = new Document [0];
-
         /*---------*\
     ====** Methods **==========================================================
         \*---------*/
@@ -70,7 +62,7 @@ public interface Document<E extends Element>
     public default Optional<String> getAttribute( final String name ) { return getRootElement().getAttribute( name ); }
 
     /**
-     *  Provides read access to the attributes of the.
+     *  Provides read access to the attributes of the
      *  {@linkplain #getRootElement() root element}
      *  of the document as documents itself cannot have attributes.
      *

@@ -45,14 +45,6 @@ import org.tquadrat.foundation.xml.builder.Namespace;
 @API( status = MAINTAINED, since = "0.0.5" )
 public interface Element
 {
-        /*-----------*\
-    ====** Constants **========================================================
-        \*-----------*/
-    /**
-     *  An empty array of {@code Element} objects.
-     */
-    public static final Element [] EMPTY_Element_ARRAY = new Element [0];
-
         /*---------*\
     ====** Methods **==========================================================
         \*---------*/
@@ -126,8 +118,8 @@ public interface Element
     /**
      *  Returns the block flag.<br>
      *  <br>This flag is used in the conversion of the element into a String;
-     *  it indicates whether the element is 'inline' (like a HTML
-     *  <i>&lt;span&gt;</i>) or 'block' (as a HTML <i>&lt;div&gt;</i>). This is
+     *  it indicates whether the element is 'inline' (like an HTML
+     *  <i>&lt;span&gt;</i>) or 'block' (as an HTML <i>&lt;div&gt;</i>). This is
      *  important only for elements where whitespace is relevant, like for HTML
      *  elements, as <i>pretty printing</i> will add additional whitespace
      *  around inline elements that can become visible on parsing (for HTML: on

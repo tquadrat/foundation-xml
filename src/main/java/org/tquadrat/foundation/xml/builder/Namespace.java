@@ -165,7 +165,7 @@ public final class Namespace implements Serializable, Comparable<Namespace>
     /**
      *  {@inheritDoc}
      */
-    @SuppressWarnings( "AccessingNonPublicFieldOfAnotherObject" )
+    @SuppressWarnings( "UseOfConcreteClass" )
     @Override
     public final int compareTo( final Namespace o )
     {
@@ -180,7 +180,6 @@ public final class Namespace implements Serializable, Comparable<Namespace>
     /**
      *  {@inheritDoc}
      */
-    @SuppressWarnings( {"AccessingNonPublicFieldOfAnotherObject", "preview"} )
     @Override
     public final boolean equals( final Object obj )
     {

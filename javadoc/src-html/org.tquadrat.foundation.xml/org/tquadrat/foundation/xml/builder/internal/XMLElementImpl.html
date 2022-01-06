@@ -71,7 +71,7 @@
 <span class="source-line-no">058</span><span id="line-58"> *</span>
 <span class="source-line-no">059</span><span id="line-59"> *  @UMLGraph.link</span>
 <span class="source-line-no">060</span><span id="line-60"> */</span>
-<span class="source-line-no">061</span><span id="line-61">@SuppressWarnings( {"preview", "ClassWithTooManyMethods", "removal"} )</span>
+<span class="source-line-no">061</span><span id="line-61">@SuppressWarnings( "removal" )</span>
 <span class="source-line-no">062</span><span id="line-62">@ClassVersion( sourceVersion = "$Id: XMLElementImpl.java 820 2020-12-29 20:34:22Z tquadrat $" )</span>
 <span class="source-line-no">063</span><span id="line-63">@API( status = INTERNAL, since = "0.0.5" )</span>
 <span class="source-line-no">064</span><span id="line-64">public sealed class XMLElementImpl implements XMLElement</span>
@@ -91,13 +91,13 @@
 <span class="source-line-no">078</span><span id="line-78">    /**</span>
 <span class="source-line-no">079</span><span id="line-79">     *  The attribute support.</span>
 <span class="source-line-no">080</span><span id="line-80">     */</span>
-<span class="source-line-no">081</span><span id="line-81">    @SuppressWarnings( "InstanceVariableOfConcreteClass" )</span>
+<span class="source-line-no">081</span><span id="line-81">    @SuppressWarnings( "UseOfConcreteClass" )</span>
 <span class="source-line-no">082</span><span id="line-82">    private final AttributeSupport m_Attributes;</span>
 <span class="source-line-no">083</span><span id="line-83"></span>
 <span class="source-line-no">084</span><span id="line-84">    /**</span>
 <span class="source-line-no">085</span><span id="line-85">     *  The child support.</span>
 <span class="source-line-no">086</span><span id="line-86">     */</span>
-<span class="source-line-no">087</span><span id="line-87">    @SuppressWarnings( "InstanceVariableOfConcreteClass" )</span>
+<span class="source-line-no">087</span><span id="line-87">    @SuppressWarnings( "UseOfConcreteClass" )</span>
 <span class="source-line-no">088</span><span id="line-88">    private final ChildSupport m_Children;</span>
 <span class="source-line-no">089</span><span id="line-89"></span>
 <span class="source-line-no">090</span><span id="line-90">    /**</span>
@@ -114,12 +114,12 @@
 <span class="source-line-no">101</span><span id="line-101">    ====** Constructors **=====================================================</span>
 <span class="source-line-no">102</span><span id="line-102">        \*--------------*/</span>
 <span class="source-line-no">103</span><span id="line-103">    /**</span>
-<span class="source-line-no">104</span><span id="line-104">     *  Creates a new {@code XMLElementImpl} instance.&lt;br&gt;</span>
-<span class="source-line-no">105</span><span id="line-105">     *  &lt;br&gt;The given element name is validated using the method that is</span>
+<span class="source-line-no">104</span><span id="line-104">     *  &lt;p&gt;{@summary Creates a new {@code XMLElementImpl} instance.}&lt;/p&gt;</span>
+<span class="source-line-no">105</span><span id="line-105">     *  &lt;p&gt;The given element name is validated using the method that is</span>
 <span class="source-line-no">106</span><span id="line-106">     *  provided by</span>
-<span class="source-line-no">107</span><span id="line-107">     *  {@link XMLBuilderUtils#getElementNameValidator()}.&lt;br&gt;</span>
-<span class="source-line-no">108</span><span id="line-108">     *  &lt;br&gt;The new element allows attributes and children, but will not</span>
-<span class="source-line-no">109</span><span id="line-109">     *  validate them. It also allows text.</span>
+<span class="source-line-no">107</span><span id="line-107">     *  {@link XMLBuilderUtils#getElementNameValidator()}.&lt;/p&gt;</span>
+<span class="source-line-no">108</span><span id="line-108">     *  &lt;p&gt;The new element allows attributes and children, but will not</span>
+<span class="source-line-no">109</span><span id="line-109">     *  validate them. It also allows text.&lt;/p&gt;</span>
 <span class="source-line-no">110</span><span id="line-110">     *</span>
 <span class="source-line-no">111</span><span id="line-111">     *  @note   This constructor is mainly used by the factory methods in</span>
 <span class="source-line-no">112</span><span id="line-112">     *      {@link XMLBuilderUtils}</span>
@@ -137,10 +137,10 @@
 <span class="source-line-no">124</span><span id="line-124">    }   //  XMLElementImpl()</span>
 <span class="source-line-no">125</span><span id="line-125"></span>
 <span class="source-line-no">126</span><span id="line-126">    /**</span>
-<span class="source-line-no">127</span><span id="line-127">     *  Creates a new {@code XMLElementImpl} instance.&lt;br&gt;</span>
-<span class="source-line-no">128</span><span id="line-128">     *  &lt;br&gt;The given element name is validated using the method that is</span>
+<span class="source-line-no">127</span><span id="line-127">     *  &lt;p&gt;{@summary Creates a new {@code XMLElementImpl} instance.}&lt;/p&gt;</span>
+<span class="source-line-no">128</span><span id="line-128">     *  &lt;p&gt;The given element name is validated using the method that is</span>
 <span class="source-line-no">129</span><span id="line-129">     *  provided by</span>
-<span class="source-line-no">130</span><span id="line-130">     *  {@link XMLBuilderUtils#getElementNameValidator()}.</span>
+<span class="source-line-no">130</span><span id="line-130">     *  {@link XMLBuilderUtils#getElementNameValidator()}.&lt;/p&gt;</span>
 <span class="source-line-no">131</span><span id="line-131">     *</span>
 <span class="source-line-no">132</span><span id="line-132">     *  @note   This constructor is used for the implementation of XML</span>
 <span class="source-line-no">133</span><span id="line-133">     *      specialisations, like SVG or HTML (although this not really XML).</span>
@@ -170,17 +170,17 @@
 <span class="source-line-no">157</span><span id="line-157">    }   //  XMLElementImpl()</span>
 <span class="source-line-no">158</span><span id="line-158"></span>
 <span class="source-line-no">159</span><span id="line-159">    /**</span>
-<span class="source-line-no">160</span><span id="line-160">     *  Creates a new {@code XMLElementImpl} instance.&lt;br&gt;</span>
-<span class="source-line-no">161</span><span id="line-161">     *  &lt;br&gt;The given element name is validated using the method that is</span>
+<span class="source-line-no">160</span><span id="line-160">     *  &lt;p&gt;{@summary Creates a new {@code XMLElementImpl} instance.}&lt;/p&gt;</span>
+<span class="source-line-no">161</span><span id="line-161">     *  &lt;p&gt;The given element name is validated using the method that is</span>
 <span class="source-line-no">162</span><span id="line-162">     *  provided by</span>
-<span class="source-line-no">163</span><span id="line-163">     *  {@link XMLBuilderUtils#getElementNameValidator()}.</span>
+<span class="source-line-no">163</span><span id="line-163">     *  {@link XMLBuilderUtils#getElementNameValidator()}.&lt;/p&gt;</span>
 <span class="source-line-no">164</span><span id="line-164">     *</span>
 <span class="source-line-no">165</span><span id="line-165">     *  @param  elementName The element name.</span>
 <span class="source-line-no">166</span><span id="line-166">     *  @param  validChildren   The list of the names for valid children; if</span>
 <span class="source-line-no">167</span><span id="line-167">     *      {@code null}, no children are allowed, if empty, children are</span>
-<span class="source-line-no">168</span><span id="line-168">     *      allowed, but they will not validated.</span>
+<span class="source-line-no">168</span><span id="line-168">     *      allowed, but they will not be validated.</span>
 <span class="source-line-no">169</span><span id="line-169">     *  @param  validAttributes The list of the valid attributes; if empty or</span>
-<span class="source-line-no">170</span><span id="line-170">     *      {@code null}, the attributes will not validated.</span>
+<span class="source-line-no">170</span><span id="line-170">     *      {@code null}, the attributes will not be validated.</span>
 <span class="source-line-no">171</span><span id="line-171">     *  @param  attributeSequence   The sequence for the attributes; if empty</span>
 <span class="source-line-no">172</span><span id="line-172">     *      or {@code null}, the attributes will be sorted alphabetically.</span>
 <span class="source-line-no">173</span><span id="line-173">     *  @param  allowText   {@code true} if the element allows text,</span>
@@ -352,10 +352,10 @@
 <span class="source-line-no">339</span><span id="line-339">    public boolean hasChildren() { return m_Children.hasChildren(); }</span>
 <span class="source-line-no">340</span><span id="line-340"></span>
 <span class="source-line-no">341</span><span id="line-341">    /**</span>
-<span class="source-line-no">342</span><span id="line-342">     *  Registers an attribute sequence for this element; this modifies any</span>
-<span class="source-line-no">343</span><span id="line-343">     *  sort order that was previously set.&lt;br&gt;</span>
-<span class="source-line-no">344</span><span id="line-344">     *  &lt;br&gt;The names for the attributes are not validated; in particular, it</span>
-<span class="source-line-no">345</span><span id="line-345">     *  is not checked whether an attribute is listed as valid.</span>
+<span class="source-line-no">342</span><span id="line-342">     *  &lt;p&gt;{@summary Registers an attribute sequence for this element}; this</span>
+<span class="source-line-no">343</span><span id="line-343">     *  modifies any sort order that was previously set.&lt;/p&gt;</span>
+<span class="source-line-no">344</span><span id="line-344">     *  &lt;p&gt;The names for the attributes are not validated; in particular, it</span>
+<span class="source-line-no">345</span><span id="line-345">     *  is not checked whether an attribute is listed as valid.&lt;/p&gt;</span>
 <span class="source-line-no">346</span><span id="line-346">     *</span>
 <span class="source-line-no">347</span><span id="line-347">     *  @param  attributes  The names of the attributes in the desired</span>
 <span class="source-line-no">348</span><span id="line-348">     *      sequence.</span>
@@ -427,10 +427,10 @@
 <span class="source-line-no">414</span><span id="line-414">    public final Collection&lt;String&gt; retrieveValidChildren() { return m_Children.retrieveValidChildren(); }</span>
 <span class="source-line-no">415</span><span id="line-415"></span>
 <span class="source-line-no">416</span><span id="line-416">    /**</span>
-<span class="source-line-no">417</span><span id="line-417">     *  {@inheritDoc}&lt;br&gt;</span>
-<span class="source-line-no">418</span><span id="line-418">     *  &lt;br&gt;The given attribute name is validated using the method that is</span>
+<span class="source-line-no">417</span><span id="line-417">     *  {@inheritDoc}</span>
+<span class="source-line-no">418</span><span id="line-418">     *  &lt;p&gt;The given attribute name is validated using the method that is</span>
 <span class="source-line-no">419</span><span id="line-419">     *  provided by</span>
-<span class="source-line-no">420</span><span id="line-420">     *  {@link XMLBuilderUtils#getAttributeNameValidator()}.</span>
+<span class="source-line-no">420</span><span id="line-420">     *  {@link XMLBuilderUtils#getAttributeNameValidator()}.&lt;/p&gt;</span>
 <span class="source-line-no">421</span><span id="line-421">     */</span>
 <span class="source-line-no">422</span><span id="line-422">    @Override</span>
 <span class="source-line-no">423</span><span id="line-423">    public final XMLElement setAttribute( final String name, final CharSequence value, final Optional&lt;? extends CharSequence&gt; append ) throws IllegalArgumentException</span>
@@ -466,10 +466,10 @@
 <span class="source-line-no">453</span><span id="line-453">    }   //  setNamespace()</span>
 <span class="source-line-no">454</span><span id="line-454"></span>
 <span class="source-line-no">455</span><span id="line-455">    /**</span>
-<span class="source-line-no">456</span><span id="line-456">     *  {@inheritDoc}&lt;br&gt;</span>
-<span class="source-line-no">457</span><span id="line-457">     *  &lt;br&gt;The given prefix is validated using the method that is</span>
+<span class="source-line-no">456</span><span id="line-456">     *  {@inheritDoc}</span>
+<span class="source-line-no">457</span><span id="line-457">     *  &lt;p&gt;The given prefix is validated using the method that is</span>
 <span class="source-line-no">458</span><span id="line-458">     *  provided by</span>
-<span class="source-line-no">459</span><span id="line-459">     *  {@link XMLBuilderUtils#getPrefixValidator()}.</span>
+<span class="source-line-no">459</span><span id="line-459">     *  {@link XMLBuilderUtils#getPrefixValidator()}.&lt;/p&gt;</span>
 <span class="source-line-no">460</span><span id="line-460">     */</span>
 <span class="source-line-no">461</span><span id="line-461">    @Override</span>
 <span class="source-line-no">462</span><span id="line-462">    public final XMLElement setNamespace( final String prefix, final String identifier ) throws IllegalArgumentException, URISyntaxException</span>
@@ -481,10 +481,10 @@
 <span class="source-line-no">468</span><span id="line-468">    }   //  setNamespace()</span>
 <span class="source-line-no">469</span><span id="line-469"></span>
 <span class="source-line-no">470</span><span id="line-470">    /**</span>
-<span class="source-line-no">471</span><span id="line-471">     *  {@inheritDoc}&lt;br&gt;</span>
-<span class="source-line-no">472</span><span id="line-472">     *  &lt;br&gt;The given prefix is validated using the method that is</span>
+<span class="source-line-no">471</span><span id="line-471">     *  {@inheritDoc}</span>
+<span class="source-line-no">472</span><span id="line-472">     *  &lt;p&gt;The given prefix is validated using the method that is</span>
 <span class="source-line-no">473</span><span id="line-473">     *  provided by</span>
-<span class="source-line-no">474</span><span id="line-474">     *  {@link XMLBuilderUtils#getPrefixValidator()}.</span>
+<span class="source-line-no">474</span><span id="line-474">     *  {@link XMLBuilderUtils#getPrefixValidator()}.&lt;/p&gt;</span>
 <span class="source-line-no">475</span><span id="line-475">     */</span>
 <span class="source-line-no">476</span><span id="line-476">    @Override</span>
 <span class="source-line-no">477</span><span id="line-477">    public final XMLElement setNamespace( final String prefix, final URI identifier ) throws IllegalArgumentException</span>
@@ -498,35 +498,36 @@
 <span class="source-line-no">485</span><span id="line-485">    /**</span>
 <span class="source-line-no">486</span><span id="line-486">     *  {@inheritDoc}</span>
 <span class="source-line-no">487</span><span id="line-487">     */</span>
-<span class="source-line-no">488</span><span id="line-488">    @Override</span>
-<span class="source-line-no">489</span><span id="line-489">    public final XMLElement setNamespace( final Namespace namespace ) throws IllegalArgumentException</span>
-<span class="source-line-no">490</span><span id="line-490">    {</span>
-<span class="source-line-no">491</span><span id="line-491">        m_Attributes.setNamespace( namespace );</span>
-<span class="source-line-no">492</span><span id="line-492"></span>
-<span class="source-line-no">493</span><span id="line-493">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">494</span><span id="line-494">        return this;</span>
-<span class="source-line-no">495</span><span id="line-495">    }   //  setNamespace()</span>
-<span class="source-line-no">496</span><span id="line-496"></span>
-<span class="source-line-no">497</span><span id="line-497">    /**</span>
-<span class="source-line-no">498</span><span id="line-498">     *  {@inheritDoc}</span>
-<span class="source-line-no">499</span><span id="line-499">     */</span>
-<span class="source-line-no">500</span><span id="line-500">    @Override</span>
-<span class="source-line-no">501</span><span id="line-501">    public final &lt;E extends Element&gt; void setParent( final E parent )</span>
-<span class="source-line-no">502</span><span id="line-502">    {</span>
-<span class="source-line-no">503</span><span id="line-503">        m_Parent = requireNonNullArgument( parent, "parent" );</span>
-<span class="source-line-no">504</span><span id="line-504">    }   //  setParent()</span>
-<span class="source-line-no">505</span><span id="line-505"></span>
-<span class="source-line-no">506</span><span id="line-506">    /**</span>
-<span class="source-line-no">507</span><span id="line-507">     *  {@inheritDoc}</span>
-<span class="source-line-no">508</span><span id="line-508">     */</span>
-<span class="source-line-no">509</span><span id="line-509">    @Override</span>
-<span class="source-line-no">510</span><span id="line-510">    public String toString() { return toString( 0, true ); }</span>
-<span class="source-line-no">511</span><span id="line-511">}</span>
-<span class="source-line-no">512</span><span id="line-512">//  class XMLElementImpl</span>
-<span class="source-line-no">513</span><span id="line-513"></span>
-<span class="source-line-no">514</span><span id="line-514">/*</span>
-<span class="source-line-no">515</span><span id="line-515"> *  End of File</span>
-<span class="source-line-no">516</span><span id="line-516"> */</span>
+<span class="source-line-no">488</span><span id="line-488">    @SuppressWarnings( "UseOfConcreteClass" )</span>
+<span class="source-line-no">489</span><span id="line-489">    @Override</span>
+<span class="source-line-no">490</span><span id="line-490">    public final XMLElement setNamespace( final Namespace namespace ) throws IllegalArgumentException</span>
+<span class="source-line-no">491</span><span id="line-491">    {</span>
+<span class="source-line-no">492</span><span id="line-492">        m_Attributes.setNamespace( namespace );</span>
+<span class="source-line-no">493</span><span id="line-493"></span>
+<span class="source-line-no">494</span><span id="line-494">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">495</span><span id="line-495">        return this;</span>
+<span class="source-line-no">496</span><span id="line-496">    }   //  setNamespace()</span>
+<span class="source-line-no">497</span><span id="line-497"></span>
+<span class="source-line-no">498</span><span id="line-498">    /**</span>
+<span class="source-line-no">499</span><span id="line-499">     *  {@inheritDoc}</span>
+<span class="source-line-no">500</span><span id="line-500">     */</span>
+<span class="source-line-no">501</span><span id="line-501">    @Override</span>
+<span class="source-line-no">502</span><span id="line-502">    public final &lt;E extends Element&gt; void setParent( final E parent )</span>
+<span class="source-line-no">503</span><span id="line-503">    {</span>
+<span class="source-line-no">504</span><span id="line-504">        m_Parent = requireNonNullArgument( parent, "parent" );</span>
+<span class="source-line-no">505</span><span id="line-505">    }   //  setParent()</span>
+<span class="source-line-no">506</span><span id="line-506"></span>
+<span class="source-line-no">507</span><span id="line-507">    /**</span>
+<span class="source-line-no">508</span><span id="line-508">     *  {@inheritDoc}</span>
+<span class="source-line-no">509</span><span id="line-509">     */</span>
+<span class="source-line-no">510</span><span id="line-510">    @Override</span>
+<span class="source-line-no">511</span><span id="line-511">    public String toString() { return toString( 0, true ); }</span>
+<span class="source-line-no">512</span><span id="line-512">}</span>
+<span class="source-line-no">513</span><span id="line-513">//  class XMLElementImpl</span>
+<span class="source-line-no">514</span><span id="line-514"></span>
+<span class="source-line-no">515</span><span id="line-515">/*</span>
+<span class="source-line-no">516</span><span id="line-516"> *  End of File</span>
+<span class="source-line-no">517</span><span id="line-517"> */</span>
 
 
 
