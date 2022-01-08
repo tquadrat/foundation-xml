@@ -61,14 +61,14 @@ import org.tquadrat.foundation.xml.builder.internal.XMLElementImpl;
  *  elements.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: XMLBuilderUtils.java 840 2021-01-10 21:37:03Z tquadrat $
+ *  @version $Id: XMLBuilderUtils.java 980 2022-01-06 15:29:19Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "ClassWithTooManyMethods" )
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 840 2021-01-10 21:37:03Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 980 2022-01-06 15:29:19Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public final class XMLBuilderUtils
 {
@@ -79,12 +79,12 @@ public final class XMLBuilderUtils
      *  The (default) validators.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: XMLBuilderUtils.java 840 2021-01-10 21:37:03Z tquadrat $
+     *  @version $Id: XMLBuilderUtils.java 980 2022-01-06 15:29:19Z tquadrat $
      *  @since 0.0.5
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 840 2021-01-10 21:37:03Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 980 2022-01-06 15:29:19Z tquadrat $" )
     @API( status = STABLE, since = "0.0.5" )
     public enum Validator
     {
@@ -171,13 +171,13 @@ public final class XMLBuilderUtils
      *  for changes to the validator configuration.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: XMLBuilderUtils.java 840 2021-01-10 21:37:03Z tquadrat $
+     *  @version $Id: XMLBuilderUtils.java 980 2022-01-06 15:29:19Z tquadrat $
      *  @since 0.0.5
      *
      *  @UMLGraph.link
      */
     @SuppressWarnings( "PublicInnerClass" )
-    @ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 840 2021-01-10 21:37:03Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 980 2022-01-06 15:29:19Z tquadrat $" )
     @API( status = STABLE, since = "0.0.5" )
     public static class ValidatorChangeEvent extends EventObject
     {
@@ -259,13 +259,13 @@ public final class XMLBuilderUtils
      *  {@link ValidatorChangeEvent}s
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: XMLBuilderUtils.java 840 2021-01-10 21:37:03Z tquadrat $
+     *  @version $Id: XMLBuilderUtils.java 980 2022-01-06 15:29:19Z tquadrat $
      *  @since 0.0.5
      *
      *  @UMLGraph.link
      */
     @FunctionalInterface
-    @ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 840 2021-01-10 21:37:03Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 980 2022-01-06 15:29:19Z tquadrat $" )
     @API( status = STABLE, since = "0.0.5" )
     public static interface ValidatorChangeListener
     {

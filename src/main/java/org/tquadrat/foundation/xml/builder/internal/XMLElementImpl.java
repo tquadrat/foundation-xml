@@ -53,13 +53,13 @@ import org.tquadrat.foundation.xml.builder.spi.InvalidXMLNameException;
  *  comments.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: XMLElementImpl.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: XMLElementImpl.java 980 2022-01-06 15:29:19Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "removal" )
-@ClassVersion( sourceVersion = "$Id: XMLElementImpl.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: XMLElementImpl.java 980 2022-01-06 15:29:19Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.5" )
 public sealed class XMLElementImpl implements XMLElement
     permits org.tquadrat.foundation.xml.builder.spi.XMLElementAdapter, org.tquadrat.foundation.xml.builder.spi.XMLElementBase
