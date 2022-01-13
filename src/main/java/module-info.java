@@ -21,7 +21,7 @@ import org.tquadrat.foundation.xml.stringconverter.DocumentStringConverter;
 /**
  *  The Foundation library module for XML handling.
  *
- *  @version $Id: module-info.java 895 2021-04-05 12:40:34Z tquadrat $
+ *  @version $Id: module-info.java 984 2022-01-13 00:46:27Z tquadrat $
  *
  *  @todo task.list
  */
@@ -31,7 +31,7 @@ module org.tquadrat.foundation.xml
     requires java.base;
     requires transitive java.xml;
     requires transitive org.tquadrat.foundation.base;
-    requires org.tquadrat.foundation.util;
+    requires transitive org.tquadrat.foundation.util;
 
     //---* Common Use *--------------------------------------------------------
     exports org.tquadrat.foundation.xml.builder;
