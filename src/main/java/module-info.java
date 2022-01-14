@@ -30,7 +30,6 @@ module org.tquadrat.foundation.xml
 {
     requires java.base;
     requires transitive java.xml;
-    requires transitive org.tquadrat.foundation.base;
     requires transitive org.tquadrat.foundation.util;
 
     //---* Common Use *--------------------------------------------------------
