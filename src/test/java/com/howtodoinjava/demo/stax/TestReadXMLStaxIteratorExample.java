@@ -3,6 +3,7 @@ package com.howtodoinjava.demo.stax;
 import static java.lang.System.err;
 import static java.lang.System.out;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.tquadrat.foundation.lang.CommonConstants.UTF8;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
@@ -24,12 +25,10 @@ import org.junit.jupiter.api.Test;
  *  <br>The expected output is:<pre><code>[Employee [id=101, name=Lokesh Gupta, title=Author], Employee [id=102, name=Brian Lara, title=Cricketer]]</code></pre>
  *  for the original XML file.
  *
- *  @extauthor Lokesh Gupta
+ *  @author Lokesh Gupta
  *  @modified   Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestReadXMLStaxIteratorExample.java 820 2020-12-29 20:34:22Z tquadrat $
- *  @since 11
+ *  @version $Id: TestReadXMLStaxIteratorExample.java 1030 2022-04-06 13:42:02Z tquadrat $
  */
-@SuppressWarnings( "MisorderedAssertEqualsArguments" )
 public class TestReadXMLStaxIteratorExample
 {
         /*---------*\
@@ -93,7 +92,7 @@ public class TestReadXMLStaxIteratorExample
         final var factory = XMLInputFactory.newInstance();
 
         //---* Initialising the handler to access the tags in the XML file *---
-        try( final var fileReader = new FileReader( file ) )
+        try( final var fileReader = new FileReader( file, UTF8 ) )
         {
             final var eventReader = factory.createXMLEventReader( fileReader );
 
@@ -114,7 +113,7 @@ public class TestReadXMLStaxIteratorExample
                     final var startElement = xmlEvent.asStartElement();
 
                     /*
-                     * As soon as the employee tag is opened, create new a
+                     * As soon as the employee tag is opened, create new an
                      * Employee object.
                      */
                     if( "employee".equalsIgnoreCase( startElement.getName().getLocalPart() ) )
@@ -139,6 +138,7 @@ public class TestReadXMLStaxIteratorExample
                      * Now every time when content tags are found, move the
                      * iterator and read data.
                      */
+                    //noinspection SwitchStatementWithoutDefaultBranch
                     switch( startElement.getName().getLocalPart() )
                     {
                         case "name" ->

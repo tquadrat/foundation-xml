@@ -46,10 +46,9 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link SGMLPrinter}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestComposeAttributesString.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TestComposeAttributesString.java 1030 2022-04-06 13:42:02Z tquadrat $
  */
-@SuppressWarnings( "MisorderedAssertEqualsArguments" )
-@ClassVersion( sourceVersion = "$Id: TestComposeAttributesString.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestComposeAttributesString.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.spi.sgmlprinter.TestComposeAttributesString" )
 public class TestComposeAttributesString extends XMLTestBase
 {
@@ -62,6 +61,7 @@ public class TestComposeAttributesString extends XMLTestBase
      *
      *  @throws Exception   Something failed unexpectedly.
      */
+    @SuppressWarnings( "OverlyLongMethod" )
     @Test
     final void testComposeAttributesString() throws Exception
     {

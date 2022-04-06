@@ -40,9 +40,9 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link XMLElementAdapter}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestXMLElementAdapter.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TestXMLElementAdapter.java 1030 2022-04-06 13:42:02Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestXMLElementAdapter.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestXMLElementAdapter.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.TestXMLElement" )
 public class TestXMLElementAdapter extends XMLTestBase
 {
@@ -55,9 +55,9 @@ public class TestXMLElementAdapter extends XMLTestBase
      *  only for test purposes.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: TestXMLElementAdapter.java 820 2020-12-29 20:34:22Z tquadrat $
+     *  @version $Id: TestXMLElementAdapter.java 1030 2022-04-06 13:42:02Z tquadrat $
      */
-    @ClassVersion( sourceVersion = "$Id: TestXMLElementAdapter.java 820 2020-12-29 20:34:22Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: TestXMLElementAdapter.java 1030 2022-04-06 13:42:02Z tquadrat $" )
     private static final class SimpleXMLElement extends XMLElementAdapter
     {
             /*--------------*\
@@ -96,7 +96,7 @@ public class TestXMLElementAdapter extends XMLTestBase
          * @see org.tquadrat.foundation.xml.builder.spi.AttributeSupport#registerSequence(String...)
          * @see org.tquadrat.foundation.xml.builder.spi.ChildSupport#registerChildren(String...)
          */
-        public SimpleXMLElement( Set<Flags> flags )
+        public SimpleXMLElement( final Set<Flags> flags )
         {
             this( "element", flags );
         }   //  SimpleXMLElement()
@@ -115,7 +115,7 @@ public class TestXMLElementAdapter extends XMLTestBase
          * @see org.tquadrat.foundation.xml.builder.spi.AttributeSupport#registerSequence(String...)
          * @see org.tquadrat.foundation.xml.builder.spi.ChildSupport#registerChildren(String...)
          */
-        public SimpleXMLElement( final String elementName, Set<Flags> flags )
+        public SimpleXMLElement( final String elementName, final Set<Flags> flags )
         {
             super( elementName, flags );
         }   //  SimpleXMLElement()

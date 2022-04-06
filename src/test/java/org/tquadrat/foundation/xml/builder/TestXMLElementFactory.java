@@ -47,10 +47,9 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link XMLElementFactoryBase}
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestXMLElementFactory.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TestXMLElementFactory.java 1030 2022-04-06 13:42:02Z tquadrat $
  */
-@SuppressWarnings( "MisorderedAssertEqualsArguments" )
-@ClassVersion( sourceVersion = "$Id: TestXMLElementFactory.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestXMLElementFactory.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.TestXMLElementFactory" )
 public class TestXMLElementFactory extends XMLTestBase
 {
@@ -81,6 +80,7 @@ public class TestXMLElementFactory extends XMLTestBase
          *  @param  namespace   The namespace that is used by this XML element
          *      factory.
          */
+        @SuppressWarnings( "UseOfConcreteClass" )
         public SimpleXMLElementFactory( final Namespace namespace ) { super( namespace ); }
     }
     //  class SimpleXMLElementFactory
@@ -105,7 +105,7 @@ public class TestXMLElementFactory extends XMLTestBase
      *  @param  namespace   The namespace to use.
      *  @return The XML element factory.
      */
-    @SuppressWarnings( "static-method" )
+    @SuppressWarnings( {"static-method", "UseOfConcreteClass"} )
     private final XMLElementFactory createXMLElementFactory( final Namespace namespace ) { return new SimpleXMLElementFactory( namespace ); }
 
     /**
@@ -114,6 +114,7 @@ public class TestXMLElementFactory extends XMLTestBase
      *
      *  @param  elementName The name of the new element.
      */
+    @SuppressWarnings( "OverlyComplexMethod" )
     @ParameterizedTest
     @ValueSource( strings =
     {
@@ -128,8 +129,8 @@ public class TestXMLElementFactory extends XMLTestBase
         final var prefix = "prefix";
         final var uri = URI.create( "tquadrat.org/foundation" );
 
-        final var pos = elementName.indexOf( ':' );
-        final var posLast = elementName.lastIndexOf( ':' );
+        final var pos = elementName.indexOf( ":" );
+        final var posLast = elementName.lastIndexOf( ":" );
         final var validWithoutPrefix = pos > 0 && pos == posLast && !elementName.endsWith( ":" );
 
         final Class<? extends Throwable> expectedException = InvalidXMLNameException.class;
@@ -186,6 +187,7 @@ public class TestXMLElementFactory extends XMLTestBase
      *  Tests for
      *  {@link XMLElementFactoryBase#XMLElementFactoryBase(Namespace)}.
      */
+    @SuppressWarnings( "JUnitTestMethodWithNoAssertions" )
     @Test
     final void testConstructor()
     {
@@ -228,6 +230,7 @@ public class TestXMLElementFactory extends XMLTestBase
      *  and
      *  {@link XMLElementFactory#createXMLElement(String, XMLDocument, CharSequence)}.
      */
+    @SuppressWarnings( "OverlyLongMethod" )
     @Test
     final void testCreateXMLElement()
     {
@@ -433,6 +436,7 @@ public class TestXMLElementFactory extends XMLTestBase
      *  and
      *  {@link XMLElementFactory#createXMLElement(String, XMLDocument, CharSequence)}.
      */
+    @SuppressWarnings( "OverlyComplexMethod" )
     @Test
     final void testCreateXMLElementWithEmptyArgument()
     {
@@ -564,6 +568,7 @@ public class TestXMLElementFactory extends XMLTestBase
      *  and
      *  {@link XMLElementFactory#createXMLElement(String, XMLDocument, CharSequence)}.
      */
+    @SuppressWarnings( {"OverlyLongMethod", "OverlyComplexMethod"} )
     @Test
     final void testCreateXMLElementWithNullArgument()
     {

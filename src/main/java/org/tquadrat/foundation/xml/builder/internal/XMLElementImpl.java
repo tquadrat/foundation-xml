@@ -53,13 +53,13 @@ import org.tquadrat.foundation.xml.builder.spi.InvalidXMLNameException;
  *  comments.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: XMLElementImpl.java 980 2022-01-06 15:29:19Z tquadrat $
+ *  @version $Id: XMLElementImpl.java 1030 2022-04-06 13:42:02Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "removal" )
-@ClassVersion( sourceVersion = "$Id: XMLElementImpl.java 980 2022-01-06 15:29:19Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: XMLElementImpl.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.5" )
 public sealed class XMLElementImpl implements XMLElement
     permits org.tquadrat.foundation.xml.builder.spi.XMLElementAdapter, org.tquadrat.foundation.xml.builder.spi.XMLElementBase
@@ -114,6 +114,7 @@ public sealed class XMLElementImpl implements XMLElement
      *
      *  @param  elementName The element name.
      */
+    @SuppressWarnings( "ThisEscapedInObjectConstruction" )
     public XMLElementImpl( final String elementName )
     {
         m_ElementName = requireNotEmptyArgument( elementName, "elementName" );
@@ -142,6 +143,7 @@ public sealed class XMLElementImpl implements XMLElement
      *  @see AttributeSupport#registerSequence(String...)
      *  @see ChildSupport#registerChildren(String...)
      */
+    @SuppressWarnings( "ThisEscapedInObjectConstruction" )
     protected XMLElementImpl( final String elementName, final Set<Flags> flags )
     {
         m_ElementName = requireNotEmptyArgument( elementName, "elementName" );
@@ -181,6 +183,7 @@ public sealed class XMLElementImpl implements XMLElement
      *      {@link #XMLElementImpl(String, Set)}
      *      instead.
      */
+    @SuppressWarnings( "ThisEscapedInObjectConstruction" )
     @Deprecated( forRemoval = true )
     public XMLElementImpl( final String elementName, final String [] validChildren, final String [] validAttributes, final String [] attributeSequence, final boolean allowText )
     {

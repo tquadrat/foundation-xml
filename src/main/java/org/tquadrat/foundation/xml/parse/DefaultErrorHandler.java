@@ -39,12 +39,13 @@ import org.xml.sax.SAXParseException;
  *  Singleton setup because the error handler does not maintain a state.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: DefaultErrorHandler.java 895 2021-04-05 12:40:34Z tquadrat $
+ *  @version $Id: DefaultErrorHandler.java 1030 2022-04-06 13:42:02Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: DefaultErrorHandler.java 895 2021-04-05 12:40:34Z tquadrat $" )
+@SuppressWarnings( "UseOfSystemOutOrSystemErr" )
+@ClassVersion( sourceVersion = "$Id: DefaultErrorHandler.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public final class DefaultErrorHandler implements ErrorHandler
 {

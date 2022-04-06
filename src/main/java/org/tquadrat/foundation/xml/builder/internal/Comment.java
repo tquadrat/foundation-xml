@@ -37,12 +37,12 @@ import org.tquadrat.foundation.xml.builder.spi.Element;
  *  This class defines a SGML comment.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Comment.java 980 2022-01-06 15:29:19Z tquadrat $
+ *  @version $Id: Comment.java 1030 2022-04-06 13:42:02Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: Comment.java 980 2022-01-06 15:29:19Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Comment.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.5" )
 public class Comment implements Element
 {
@@ -114,6 +114,7 @@ public class Comment implements Element
     /**
      *  {@inheritDoc}
      */
+    @SuppressWarnings( "UnnecessaryUnicodeEscape" )
     @Override
     public final String toString( final int indentationLevel, final boolean prettyPrint )
     {
@@ -127,11 +128,11 @@ public class Comment implements Element
         {
             final var filler2 = isEmpty( filler1 ) ? " " : filler1;
             final var buffer = new StringBuilder( m_Text.length() * 2 );
-            char c;
+            char character;
             for( var i = 0; i < m_Text.length(); ++i )
             {
-                c = m_Text.charAt( i );
-                if( c == '\u002D' )
+                character = m_Text.charAt( i );
+                if( character == '\u002D' )
                 {
                     /*
                      * A hyphen or minus sign (\u002D) in the comment text may
@@ -143,7 +144,7 @@ public class Comment implements Element
                 }
                 else
                 {
-                    buffer.append( c );
+                    buffer.append( character );
                 }
             }
 

@@ -45,13 +45,13 @@ import org.tquadrat.foundation.xml.builder.spi.InvalidXMLNameException;
  *  <br>It allows document comments and processing instructions to be added.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: XMLDocumentImpl.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: XMLDocumentImpl.java 1030 2022-04-06 13:42:02Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "ClassWithTooManyConstructors" )
-@ClassVersion( sourceVersion = "$Id: XMLDocumentImpl.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: XMLDocumentImpl.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.5" )
 public final class XMLDocumentImpl implements XMLDocument
 {
@@ -67,7 +67,7 @@ public final class XMLDocumentImpl implements XMLDocument
     /**
      *  The root element for this document.
      */
-    @SuppressWarnings( "InstanceVariableOfConcreteClass" )
+    @SuppressWarnings( "UseOfConcreteClass" )
     private final XMLElementImpl m_RootElement;
 
         /*--------------*\
@@ -107,7 +107,6 @@ public final class XMLDocumentImpl implements XMLDocument
      *  @param  standalone  {@code true} if the XML document is standalone,
      *      {@code false} if not.
      */
-    @SuppressWarnings( "CastToConcreteClass" )
     public XMLDocumentImpl( final XMLElement rootElement, final boolean standalone )
     {
         m_RootElement = (XMLElementImpl) requireNonNullArgument( rootElement, "rootElement" );
@@ -139,7 +138,6 @@ public final class XMLDocumentImpl implements XMLDocument
      *  @param  name    The name for the DTD.
      *  @param  uri The URI for the DTD.
      */
-    @SuppressWarnings( "CastToConcreteClass" )
     public XMLDocumentImpl( final XMLElement rootElement, final Charset encoding, final String name, final URI uri )
     {
         m_RootElement = (XMLElementImpl) requireNonNullArgument( rootElement, "rootElement" );
@@ -170,7 +168,6 @@ public final class XMLDocumentImpl implements XMLDocument
      *  @param  encoding    The encoding for the new XML document.
      *  @param  uri The URI for the DTD.
      */
-    @SuppressWarnings( "CastToConcreteClass" )
     public XMLDocumentImpl( final XMLElement rootElement, final Charset encoding, final URI uri )
     {
         m_RootElement = (XMLElementImpl) requireNonNullArgument( rootElement, "rootElement" );

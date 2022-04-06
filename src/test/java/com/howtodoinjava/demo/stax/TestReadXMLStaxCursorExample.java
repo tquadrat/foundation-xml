@@ -4,6 +4,7 @@ import static java.lang.System.err;
 import static java.lang.System.out;
 import static javax.xml.stream.XMLStreamConstants.START_ELEMENT;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.tquadrat.foundation.lang.CommonConstants.UTF8;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
@@ -27,7 +28,7 @@ import org.junit.jupiter.api.Test;
  *
  *  @extauthor Lokesh Gupta
  *  @modified   Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestReadXMLStaxCursorExample.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TestReadXMLStaxCursorExample.java 1030 2022-04-06 13:42:02Z tquadrat $
  */
 public class TestReadXMLStaxCursorExample
 {
@@ -76,7 +77,7 @@ public class TestReadXMLStaxCursorExample
         //---* Instance of the class which helps on reading tags *-------------
         final var factory = XMLInputFactory.newInstance();
 
-        try( final var fileReader = new FileReader( file ) )
+        try( final var fileReader = new FileReader( file, UTF8 ) )
         {
             final var streamReader = factory.createXMLStreamReader( fileReader );
 

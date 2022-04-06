@@ -32,10 +32,9 @@ import org.xml.sax.SAXException;
  *  {@link AdvancedContentHandler}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: PropertiesHandler.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: PropertiesHandler.java 1030 2022-04-06 13:42:02Z tquadrat $
  */
-@SuppressWarnings( "MisorderedAssertEqualsArguments" )
-@ClassVersion( sourceVersion = "$Id: PropertiesHandler.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: PropertiesHandler.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 public final class PropertiesHandler extends AdvancedContentHandler
 {
         /*---------*\
@@ -44,9 +43,8 @@ public final class PropertiesHandler extends AdvancedContentHandler
     /**
      *  {@inheritDoc}<br>
      *  <br>This implementation does nothing.
-     *
-     *  @see AdvancedContentHandler#openElement(Element)
      */
+    @SuppressWarnings( "UseOfConcreteClass" )
     @Override
     protected void openElement( final Element element ) throws SAXException
     {
@@ -55,9 +53,8 @@ public final class PropertiesHandler extends AdvancedContentHandler
 
     /**
      *  {@inheritDoc}
-     *
-     *  @see AdvancedContentHandler#processElement(Element)
      */
+    @SuppressWarnings( "UseOfConcreteClass" )
     @Override
     protected void processElement( final Element element ) throws SAXException
     {

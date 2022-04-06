@@ -54,10 +54,9 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link XMLElementImpl}
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestXMLElementImpl.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TestXMLElementImpl.java 1030 2022-04-06 13:42:02Z tquadrat $
  */
-@SuppressWarnings( "MisorderedAssertEqualsArguments" )
-@ClassVersion( sourceVersion = "$Id: TestXMLElementImpl.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestXMLElementImpl.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.internal.TestXMLElementImpl" )
 public class TestXMLElementImpl extends XMLTestBase
 {
@@ -70,6 +69,7 @@ public class TestXMLElementImpl extends XMLTestBase
      *
      *  @throws URISyntaxException  The URI is invalid.
      */
+    @SuppressWarnings( {"OverlyLongMethod", "ImplicitNumericConversion", "GrazieInspection"} )
     @Test
     final void testConstructor() throws URISyntaxException
     {

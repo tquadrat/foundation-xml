@@ -48,12 +48,12 @@ import org.tquadrat.foundation.xml.builder.spi.InvalidXMLNameException;
  *  {@link ProcessingInstruction}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ProcessingInstructionImpl.java 840 2021-01-10 21:37:03Z tquadrat $
+ *  @version $Id: ProcessingInstructionImpl.java 1030 2022-04-06 13:42:02Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ProcessingInstructionImpl.java 840 2021-01-10 21:37:03Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ProcessingInstructionImpl.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.5" )
 public final class ProcessingInstructionImpl implements ProcessingInstruction
 {
@@ -63,7 +63,7 @@ public final class ProcessingInstructionImpl implements ProcessingInstruction
     /**
      *  The attributes for the processing instruction.
      */
-    @SuppressWarnings( "InstanceVariableOfConcreteClass" )
+    @SuppressWarnings( "UseOfConcreteClass" )
     private final AttributeSupport m_Attributes;
 
     /**
@@ -94,6 +94,7 @@ public final class ProcessingInstructionImpl implements ProcessingInstruction
     /**
      *  Creates the {@code ProcessingInstruction} instance for the XML header.
      */
+    @SuppressWarnings( "ThisEscapedInObjectConstruction" )
     public ProcessingInstructionImpl()
     {
         m_ElementName = "xml";
@@ -112,6 +113,7 @@ public final class ProcessingInstructionImpl implements ProcessingInstruction
      *  @param  data    The data for the processing instruction; can be
      *      {@code null}.
      */
+    @SuppressWarnings( "ThisEscapedInObjectConstruction" )
     public ProcessingInstructionImpl( final String name, final CharSequence data )
     {
         if( !getElementNameValidator().test( requireNotEmptyArgument( name, "name" ) ) )
@@ -224,7 +226,7 @@ public final class ProcessingInstructionImpl implements ProcessingInstruction
         {
             final var joiner = new StringJoiner( filler + " ", " ", EMPTY_STRING );
             for( final var data : m_Data ) joiner.add( data );
-            text.append( joiner.toString() );
+            text.append( joiner );
         }
 
         //---* Add the attributes *--------------------------------------------

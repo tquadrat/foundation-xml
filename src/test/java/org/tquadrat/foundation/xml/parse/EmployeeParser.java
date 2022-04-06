@@ -37,10 +37,10 @@ import com.howtodoinjava.demo.stax.Employee;
  *  {@link StAXParserBase}
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: EmployeeParser.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: EmployeeParser.java 1030 2022-04-06 13:42:02Z tquadrat $
  *  @since 11
  */
-@ClassVersion( sourceVersion = "$Id: EmployeeParser.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: EmployeeParser.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 public class EmployeeParser extends StAXParserBase<List<Employee>>
 {
         /*--------------*\
@@ -78,6 +78,7 @@ public class EmployeeParser extends StAXParserBase<List<Employee>>
      *      object if {@code target} was {@code null}.
      *  @throws XMLStreamException    Something went wrong.
      */
+    @SuppressWarnings( "UseOfConcreteClass" )
     private final Employee handleEmployee( final XMLEventReader reader, final XMLEvent xmlEvent, final Object target, final HandlerProvider handlerProvider ) throws XMLStreamException
     {
         final var retValue = new Employee();
@@ -177,7 +178,7 @@ public class EmployeeParser extends StAXParserBase<List<Employee>>
      *      object if {@code target} was {@code null}.
      *  @throws XMLStreamException    Something went wrong.
      */
-    @SuppressWarnings( "CastToConcreteClass" )
+    @SuppressWarnings( "UseOfConcreteClass" )
     private final Employee handleName( final XMLEventReader reader, final XMLEvent xmlEvent, final Object target, final HandlerProvider handlerProvider ) throws XMLStreamException
     {
         final var retValue = (Employee) requireNonNullArgument( target, "target" );
@@ -203,7 +204,7 @@ public class EmployeeParser extends StAXParserBase<List<Employee>>
      *      object if {@code target} was {@code null}.
      *  @throws XMLStreamException    Something went wrong.
      */
-    @SuppressWarnings( "CastToConcreteClass" )
+    @SuppressWarnings( "UseOfConcreteClass" )
     private final Employee handleTitle( final XMLEventReader reader, final XMLEvent xmlEvent, final Object target, final HandlerProvider handlerProvider ) throws XMLStreamException
     {
         final var retValue = (Employee) requireNonNullArgument( target, "target" );

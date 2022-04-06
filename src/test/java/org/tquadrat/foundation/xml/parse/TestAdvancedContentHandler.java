@@ -44,9 +44,9 @@ import org.xml.sax.SAXException;
  *  {@link AdvancedContentHandler}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestAdvancedContentHandler.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TestAdvancedContentHandler.java 1030 2022-04-06 13:42:02Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestAdvancedContentHandler.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestAdvancedContentHandler.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.parse.TestAdvancedContentHandler" )
 public class TestAdvancedContentHandler extends XMLTestBase
 {
@@ -64,6 +64,7 @@ public class TestAdvancedContentHandler extends XMLTestBase
     /**
      *  The properties "Stream".
      */
+    @SuppressWarnings( "StaticVariableMayNotBeInitialized" )
     private static String m_Properties;
 
         /*---------*\
@@ -99,8 +100,8 @@ public class TestAdvancedContentHandler extends XMLTestBase
         final var contentHandler = new PropertiesHandler();
 
         //---* Create the input source *---------------------------------------
-        final var sr = new StringReader( m_Properties );
-        final var inputSource = new InputSource( sr );
+        final var stringReader = new StringReader( m_Properties );
+        final var inputSource = new InputSource( stringReader );
 
         //---* Create the PropertiesReader object *----------------------------
         final Class<? extends Throwable> expectedException = NullArgumentException.class;

@@ -32,9 +32,9 @@ import org.xml.sax.helpers.AttributesImpl;
  *  {@link AbstractXMLReader}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: PropertiesReader.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: PropertiesReader.java 1030 2022-04-06 13:42:02Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: PropertiesReader.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: PropertiesReader.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 public final class PropertiesReader extends AbstractXMLReader
 {
         /*--------------*\
@@ -44,17 +44,15 @@ public final class PropertiesReader extends AbstractXMLReader
      *  Creates a new PropertiesReader instance for the given content
      *  handler.
      *
-     *  @param  handler The content handler.
+     *  @param  contentHandler The content handler.
      */
-    public PropertiesReader( final ContentHandler handler ) { super( handler ); }
+    public PropertiesReader( final ContentHandler contentHandler ) { super( contentHandler ); }
 
         /*---------*\
     ====** Methods **==========================================================
         \*---------*/
     /**
      *  {@inheritDoc}
-     *
-     *  @see AbstractXMLReader#process(BufferedReader) process()
      */
     @Override
     protected void process( final BufferedReader input ) throws IOException, SAXException

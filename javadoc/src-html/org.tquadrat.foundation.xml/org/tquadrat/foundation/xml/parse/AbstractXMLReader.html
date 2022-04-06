@@ -31,50 +31,50 @@
 <span class="source-line-no">018</span><span id="line-18">package org.tquadrat.foundation.xml.parse;</span>
 <span class="source-line-no">019</span><span id="line-19"></span>
 <span class="source-line-no">020</span><span id="line-20">import static org.apiguardian.api.API.Status.STABLE;</span>
-<span class="source-line-no">021</span><span id="line-21">import static org.tquadrat.foundation.lang.Objects.nonNull;</span>
-<span class="source-line-no">022</span><span id="line-22">import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;</span>
-<span class="source-line-no">023</span><span id="line-23"></span>
-<span class="source-line-no">024</span><span id="line-24">import java.io.BufferedReader;</span>
-<span class="source-line-no">025</span><span id="line-25">import java.io.IOException;</span>
-<span class="source-line-no">026</span><span id="line-26">import java.io.InputStreamReader;</span>
-<span class="source-line-no">027</span><span id="line-27">import java.net.URL;</span>
-<span class="source-line-no">028</span><span id="line-28">import java.util.HashMap;</span>
-<span class="source-line-no">029</span><span id="line-29">import java.util.Map;</span>
-<span class="source-line-no">030</span><span id="line-30"></span>
-<span class="source-line-no">031</span><span id="line-31">import org.apiguardian.api.API;</span>
-<span class="source-line-no">032</span><span id="line-32">import org.tquadrat.foundation.annotation.ClassVersion;</span>
-<span class="source-line-no">033</span><span id="line-33">import org.xml.sax.Attributes;</span>
-<span class="source-line-no">034</span><span id="line-34">import org.xml.sax.ContentHandler;</span>
-<span class="source-line-no">035</span><span id="line-35">import org.xml.sax.DTDHandler;</span>
-<span class="source-line-no">036</span><span id="line-36">import org.xml.sax.EntityResolver;</span>
-<span class="source-line-no">037</span><span id="line-37">import org.xml.sax.ErrorHandler;</span>
-<span class="source-line-no">038</span><span id="line-38">import org.xml.sax.InputSource;</span>
-<span class="source-line-no">039</span><span id="line-39">import org.xml.sax.Locator;</span>
-<span class="source-line-no">040</span><span id="line-40">import org.xml.sax.SAXException;</span>
-<span class="source-line-no">041</span><span id="line-41">import org.xml.sax.SAXNotRecognizedException;</span>
-<span class="source-line-no">042</span><span id="line-42">import org.xml.sax.SAXNotSupportedException;</span>
-<span class="source-line-no">043</span><span id="line-43">import org.xml.sax.XMLReader;</span>
-<span class="source-line-no">044</span><span id="line-44">import org.xml.sax.helpers.AttributesImpl;</span>
-<span class="source-line-no">045</span><span id="line-45">import org.xml.sax.helpers.LocatorImpl;</span>
-<span class="source-line-no">046</span><span id="line-46"></span>
-<span class="source-line-no">047</span><span id="line-47">/**</span>
-<span class="source-line-no">048</span><span id="line-48"> *  This class is an abstract base implementation for a XMLReader. Use this</span>
-<span class="source-line-no">049</span><span id="line-49"> *  class as a base class for SAX based parsers that will parse other formats</span>
-<span class="source-line-no">050</span><span id="line-50"> *  than XML. This is quite useful in combination with XSLT. Refer to the</span>
-<span class="source-line-no">051</span><span id="line-51"> *  description for the abstract method</span>
-<span class="source-line-no">052</span><span id="line-52"> *  {@link #process(BufferedReader) process()}</span>
-<span class="source-line-no">053</span><span id="line-53"> *  for a brief run-through how to use this class.</span>
-<span class="source-line-no">054</span><span id="line-54"> *</span>
-<span class="source-line-no">055</span><span id="line-55"> *  @see "'Java and XSLT' from Eric M. Burke, O'Reilly 2001"</span>
-<span class="source-line-no">056</span><span id="line-56"> *</span>
-<span class="source-line-no">057</span><span id="line-57"> *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">058</span><span id="line-58"> *  @version $Id: AbstractXMLReader.java 840 2021-01-10 21:37:03Z tquadrat $</span>
-<span class="source-line-no">059</span><span id="line-59"> *  @since 0.0.5</span>
-<span class="source-line-no">060</span><span id="line-60"> *</span>
-<span class="source-line-no">061</span><span id="line-61"> *  @UMLGraph.link</span>
-<span class="source-line-no">062</span><span id="line-62"> */</span>
-<span class="source-line-no">063</span><span id="line-63">@SuppressWarnings( "ClassWithTooManyMethods" )</span>
-<span class="source-line-no">064</span><span id="line-64">@ClassVersion( sourceVersion = "$Id: AbstractXMLReader.java 840 2021-01-10 21:37:03Z tquadrat $" )</span>
+<span class="source-line-no">021</span><span id="line-21">import static org.tquadrat.foundation.lang.CommonConstants.UTF8;</span>
+<span class="source-line-no">022</span><span id="line-22">import static org.tquadrat.foundation.lang.Objects.nonNull;</span>
+<span class="source-line-no">023</span><span id="line-23">import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;</span>
+<span class="source-line-no">024</span><span id="line-24"></span>
+<span class="source-line-no">025</span><span id="line-25">import java.io.BufferedReader;</span>
+<span class="source-line-no">026</span><span id="line-26">import java.io.IOException;</span>
+<span class="source-line-no">027</span><span id="line-27">import java.io.InputStreamReader;</span>
+<span class="source-line-no">028</span><span id="line-28">import java.net.URL;</span>
+<span class="source-line-no">029</span><span id="line-29">import java.util.HashMap;</span>
+<span class="source-line-no">030</span><span id="line-30">import java.util.Map;</span>
+<span class="source-line-no">031</span><span id="line-31"></span>
+<span class="source-line-no">032</span><span id="line-32">import org.apiguardian.api.API;</span>
+<span class="source-line-no">033</span><span id="line-33">import org.tquadrat.foundation.annotation.ClassVersion;</span>
+<span class="source-line-no">034</span><span id="line-34">import org.xml.sax.Attributes;</span>
+<span class="source-line-no">035</span><span id="line-35">import org.xml.sax.ContentHandler;</span>
+<span class="source-line-no">036</span><span id="line-36">import org.xml.sax.DTDHandler;</span>
+<span class="source-line-no">037</span><span id="line-37">import org.xml.sax.EntityResolver;</span>
+<span class="source-line-no">038</span><span id="line-38">import org.xml.sax.ErrorHandler;</span>
+<span class="source-line-no">039</span><span id="line-39">import org.xml.sax.InputSource;</span>
+<span class="source-line-no">040</span><span id="line-40">import org.xml.sax.Locator;</span>
+<span class="source-line-no">041</span><span id="line-41">import org.xml.sax.SAXException;</span>
+<span class="source-line-no">042</span><span id="line-42">import org.xml.sax.SAXNotRecognizedException;</span>
+<span class="source-line-no">043</span><span id="line-43">import org.xml.sax.SAXNotSupportedException;</span>
+<span class="source-line-no">044</span><span id="line-44">import org.xml.sax.XMLReader;</span>
+<span class="source-line-no">045</span><span id="line-45">import org.xml.sax.helpers.AttributesImpl;</span>
+<span class="source-line-no">046</span><span id="line-46">import org.xml.sax.helpers.LocatorImpl;</span>
+<span class="source-line-no">047</span><span id="line-47"></span>
+<span class="source-line-no">048</span><span id="line-48">/**</span>
+<span class="source-line-no">049</span><span id="line-49"> *  This class is an abstract base implementation for a XMLReader. Use this</span>
+<span class="source-line-no">050</span><span id="line-50"> *  class as a base class for SAX based parsers that will parse other formats</span>
+<span class="source-line-no">051</span><span id="line-51"> *  than XML. This is quite useful in combination with XSLT. Refer to the</span>
+<span class="source-line-no">052</span><span id="line-52"> *  description for the abstract method</span>
+<span class="source-line-no">053</span><span id="line-53"> *  {@link #process(BufferedReader) process()}</span>
+<span class="source-line-no">054</span><span id="line-54"> *  for a brief run-through how to use this class.</span>
+<span class="source-line-no">055</span><span id="line-55"> *</span>
+<span class="source-line-no">056</span><span id="line-56"> *  @see "'Java and XSLT' from Eric M. Burke, O'Reilly 2001"</span>
+<span class="source-line-no">057</span><span id="line-57"> *</span>
+<span class="source-line-no">058</span><span id="line-58"> *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
+<span class="source-line-no">059</span><span id="line-59"> *  @version $Id: AbstractXMLReader.java 1030 2022-04-06 13:42:02Z tquadrat $</span>
+<span class="source-line-no">060</span><span id="line-60"> *  @since 0.0.5</span>
+<span class="source-line-no">061</span><span id="line-61"> *</span>
+<span class="source-line-no">062</span><span id="line-62"> *  @UMLGraph.link</span>
+<span class="source-line-no">063</span><span id="line-63"> */</span>
+<span class="source-line-no">064</span><span id="line-64">@ClassVersion( sourceVersion = "$Id: AbstractXMLReader.java 1030 2022-04-06 13:42:02Z tquadrat $" )</span>
 <span class="source-line-no">065</span><span id="line-65">@API( status = STABLE, since = "0.0.5" )</span>
 <span class="source-line-no">066</span><span id="line-66">public abstract class AbstractXMLReader implements XMLReader</span>
 <span class="source-line-no">067</span><span id="line-67">{</span>
@@ -168,476 +168,453 @@
 <span class="source-line-no">155</span><span id="line-155">     *  @throws SAXException    Unable to interpret the data provided with the</span>
 <span class="source-line-no">156</span><span id="line-156">     *      input source.</span>
 <span class="source-line-no">157</span><span id="line-157">     */</span>
-<span class="source-line-no">158</span><span id="line-158">    @SuppressWarnings( "resource" )</span>
-<span class="source-line-no">159</span><span id="line-159">    private BufferedReader createReader( final InputSource input ) throws IOException, SAXException</span>
-<span class="source-line-no">160</span><span id="line-160">    {</span>
-<span class="source-line-no">161</span><span id="line-161">        //---* Create a buffered reader from the input source *----------------</span>
-<span class="source-line-no">162</span><span id="line-162">        BufferedReader retValue = null;</span>
-<span class="source-line-no">163</span><span id="line-163">        //noinspection IfStatementWithTooManyBranches</span>
-<span class="source-line-no">164</span><span id="line-164">        if( nonNull( input.getCharacterStream() ) )</span>
-<span class="source-line-no">165</span><span id="line-165">        {</span>
-<span class="source-line-no">166</span><span id="line-166">            retValue = new BufferedReader( input.getCharacterStream() );</span>
-<span class="source-line-no">167</span><span id="line-167">        }</span>
-<span class="source-line-no">168</span><span id="line-168">        else if( nonNull( input.getByteStream() ) )</span>
-<span class="source-line-no">169</span><span id="line-169">        {</span>
-<span class="source-line-no">170</span><span id="line-170">            retValue = new BufferedReader( nonNull( m_Encoding ) ? new InputStreamReader( input.getByteStream(), m_Encoding ) : new InputStreamReader( input.getByteStream() ) );</span>
-<span class="source-line-no">171</span><span id="line-171">        }</span>
-<span class="source-line-no">172</span><span id="line-172">        else if( nonNull( input.getSystemId() ) )</span>
-<span class="source-line-no">173</span><span id="line-173">        {</span>
-<span class="source-line-no">174</span><span id="line-174">            final var entityResolver = getEntityResolver();</span>
-<span class="source-line-no">175</span><span id="line-175">            if( nonNull( entityResolver ) )</span>
-<span class="source-line-no">176</span><span id="line-176">            {</span>
-<span class="source-line-no">177</span><span id="line-177">                //---* Use the entity resolver to get the reader *-------------</span>
-<span class="source-line-no">178</span><span id="line-178">                retValue = createReader( entityResolver.resolveEntity( input.getPublicId(), input.getSystemId() ) );</span>
-<span class="source-line-no">179</span><span id="line-179">            }</span>
-<span class="source-line-no">180</span><span id="line-180">            else</span>
-<span class="source-line-no">181</span><span id="line-181">            {</span>
-<span class="source-line-no">182</span><span id="line-182">                /*</span>
-<span class="source-line-no">183</span><span id="line-183">                 * If no entity resolver is set, the system id that is stored</span>
-<span class="source-line-no">184</span><span id="line-184">                 * in an InputSource will be taken directly as a fully</span>
-<span class="source-line-no">185</span><span id="line-185">                 * qualified URL to a stream somewhere. Otherwise it will be</span>
-<span class="source-line-no">186</span><span id="line-186">                 * translated using that entity resolver.</span>
-<span class="source-line-no">187</span><span id="line-187">                 */</span>
-<span class="source-line-no">188</span><span id="line-188">                final var url = new URL( input.getSystemId() );</span>
-<span class="source-line-no">189</span><span id="line-189">                retValue = new BufferedReader( nonNull( m_Encoding ) ? new InputStreamReader( url.openStream(), m_Encoding ) : new InputStreamReader( url.openStream() ) );</span>
-<span class="source-line-no">190</span><span id="line-190">            }</span>
-<span class="source-line-no">191</span><span id="line-191">        }</span>
-<span class="source-line-no">192</span><span id="line-192">        else</span>
-<span class="source-line-no">193</span><span id="line-193">        {</span>
-<span class="source-line-no">194</span><span id="line-194">            //---* Something is weird with this input source *-----------------</span>
-<span class="source-line-no">195</span><span id="line-195">            throw new SAXException( "Invalid Input Source" );</span>
-<span class="source-line-no">196</span><span id="line-196">        }</span>
-<span class="source-line-no">197</span><span id="line-197"></span>
-<span class="source-line-no">198</span><span id="line-198">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">199</span><span id="line-199">        return retValue;</span>
-<span class="source-line-no">200</span><span id="line-200">    }   //  createReader()</span>
-<span class="source-line-no">201</span><span id="line-201"></span>
-<span class="source-line-no">202</span><span id="line-202">    /**</span>
-<span class="source-line-no">203</span><span id="line-203">     *  Returns the current content handler.</span>
-<span class="source-line-no">204</span><span id="line-204">     *</span>
-<span class="source-line-no">205</span><span id="line-205">     *  @return A reference to the current content handler.</span>
-<span class="source-line-no">206</span><span id="line-206">     *</span>
-<span class="source-line-no">207</span><span id="line-207">     *  @see org.xml.sax.XMLReader#getContentHandler()</span>
-<span class="source-line-no">208</span><span id="line-208">     */</span>
-<span class="source-line-no">209</span><span id="line-209">    @Override</span>
-<span class="source-line-no">210</span><span id="line-210">    public final ContentHandler getContentHandler() { return m_ContentHandler; }</span>
-<span class="source-line-no">211</span><span id="line-211"></span>
-<span class="source-line-no">212</span><span id="line-212">    /**</span>
-<span class="source-line-no">213</span><span id="line-213">     *  Returns the current DTD handler.</span>
-<span class="source-line-no">214</span><span id="line-214">     *</span>
-<span class="source-line-no">215</span><span id="line-215">     *  @return A reference to the current DTD handler.</span>
-<span class="source-line-no">216</span><span id="line-216">     *</span>
-<span class="source-line-no">217</span><span id="line-217">     *  @see org.xml.sax.XMLReader#getDTDHandler()</span>
-<span class="source-line-no">218</span><span id="line-218">     */</span>
-<span class="source-line-no">219</span><span id="line-219">    @Override</span>
-<span class="source-line-no">220</span><span id="line-220">    public final DTDHandler getDTDHandler() { return m_DTDHandler; }</span>
-<span class="source-line-no">221</span><span id="line-221"></span>
-<span class="source-line-no">222</span><span id="line-222">    /**</span>
-<span class="source-line-no">223</span><span id="line-223">     *  Returns the current entity resolver.</span>
-<span class="source-line-no">224</span><span id="line-224">     *</span>
-<span class="source-line-no">225</span><span id="line-225">     *  @return A reference to the current entity resolver.</span>
-<span class="source-line-no">226</span><span id="line-226">     *</span>
-<span class="source-line-no">227</span><span id="line-227">     *  @see org.xml.sax.XMLReader#getEntityResolver()</span>
-<span class="source-line-no">228</span><span id="line-228">     */</span>
-<span class="source-line-no">229</span><span id="line-229">    @Override</span>
-<span class="source-line-no">230</span><span id="line-230">    public final EntityResolver getEntityResolver() { return m_EntityResolver; }</span>
-<span class="source-line-no">231</span><span id="line-231"></span>
-<span class="source-line-no">232</span><span id="line-232">    /**</span>
-<span class="source-line-no">233</span><span id="line-233">     *  Returns the current error handler. It will never return</span>
-<span class="source-line-no">234</span><span id="line-234">     *  {@code null}; in case no handler was set, a reference to an</span>
-<span class="source-line-no">235</span><span id="line-235">     *  instance of</span>
-<span class="source-line-no">236</span><span id="line-236">     *  {@link DefaultErrorHandler DefaultErrorHandler}</span>
-<span class="source-line-no">237</span><span id="line-237">     *  will be returned.</span>
-<span class="source-line-no">238</span><span id="line-238">     *</span>
-<span class="source-line-no">239</span><span id="line-239">     *  @return A reference to the current error handler.</span>
-<span class="source-line-no">240</span><span id="line-240">     *</span>
-<span class="source-line-no">241</span><span id="line-241">     *  @see org.xml.sax.XMLReader#getErrorHandler()</span>
-<span class="source-line-no">242</span><span id="line-242">     */</span>
-<span class="source-line-no">243</span><span id="line-243">    @Override</span>
-<span class="source-line-no">244</span><span id="line-244">    public final ErrorHandler getErrorHandler() { return m_ErrorHandler; }</span>
-<span class="source-line-no">245</span><span id="line-245"></span>
-<span class="source-line-no">246</span><span id="line-246">    /**</span>
-<span class="source-line-no">247</span><span id="line-247">     *  {@inheritDoc}</span>
-<span class="source-line-no">248</span><span id="line-248">     *  As this is not meant as a base for an &lt;i&gt;XML&lt;/i&gt; parser, this</span>
-<span class="source-line-no">249</span><span id="line-249">     *  implementation does not recognise the required namespaces. If this is</span>
-<span class="source-line-no">250</span><span id="line-250">     *  needed, the derived class has to provide another implementation  for</span>
-<span class="source-line-no">251</span><span id="line-251">     *  {@code getFeature()}</span>
-<span class="source-line-no">252</span><span id="line-252">     *  and</span>
-<span class="source-line-no">253</span><span id="line-253">     *  {@link #setFeature(String, boolean) setFeature()}.</span>
-<span class="source-line-no">254</span><span id="line-254">     *</span>
-<span class="source-line-no">255</span><span id="line-255">     *  @param  name    The name of the feature.</span>
-<span class="source-line-no">256</span><span id="line-256">     *  @return {@code true} if the feature is supported,</span>
-<span class="source-line-no">257</span><span id="line-257">     *      {@code false} if not or if the name is unknown.</span>
-<span class="source-line-no">258</span><span id="line-258">     *  @throws SAXNotRecognizedException   The feature value cannot be</span>
-<span class="source-line-no">259</span><span id="line-259">     *      retrieved.</span>
-<span class="source-line-no">260</span><span id="line-260">     *  @throws SAXNotSupportedException    The XMLReader recognizes the</span>
-<span class="source-line-no">261</span><span id="line-261">     *      feature name but cannot determine its value at this time.</span>
-<span class="source-line-no">262</span><span id="line-262">     *</span>
-<span class="source-line-no">263</span><span id="line-263">     *  @see org.xml.sax.XMLReader#getFeature(java.lang.String)</span>
-<span class="source-line-no">264</span><span id="line-264">     */</span>
-<span class="source-line-no">265</span><span id="line-265">    @Override</span>
-<span class="source-line-no">266</span><span id="line-266">    public boolean getFeature( final String name ) throws SAXNotRecognizedException, SAXNotSupportedException</span>
-<span class="source-line-no">267</span><span id="line-267">    {</span>
-<span class="source-line-no">268</span><span id="line-268">        final var feature = m_Features.get( requireNonNullArgument( name, "name" ) );</span>
-<span class="source-line-no">269</span><span id="line-269">        final var retValue = nonNull( feature ) &amp;&amp; feature.booleanValue();</span>
-<span class="source-line-no">270</span><span id="line-270"></span>
-<span class="source-line-no">271</span><span id="line-271">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">272</span><span id="line-272">        return retValue;</span>
-<span class="source-line-no">273</span><span id="line-273">    }   //  getFeature()</span>
-<span class="source-line-no">274</span><span id="line-274"></span>
-<span class="source-line-no">275</span><span id="line-275">    /**</span>
-<span class="source-line-no">276</span><span id="line-276">     *  Returns the value for the property with the given name. Usually, this</span>
-<span class="source-line-no">277</span><span id="line-277">     *  property name is any fully-qualified URI. It is possible for an</span>
-<span class="source-line-no">278</span><span id="line-278">     *  XMLReader to recognise a property name but temporarily be unable to</span>
-<span class="source-line-no">279</span><span id="line-279">     *  return its value. Some property values may be available only in</span>
-<span class="source-line-no">280</span><span id="line-280">     *  specific contexts, such as before, during, or after a parse.&lt;br&gt;</span>
-<span class="source-line-no">281</span><span id="line-281">     *  &lt;br&gt;XMLReaders are not required to recognize any specific property</span>
-<span class="source-line-no">282</span><span id="line-282">     *  names, though an initial core set is documented for SAX2. But even that</span>
-<span class="source-line-no">283</span><span id="line-283">     *  is not supported by this specific implementation; if this is a</span>
-<span class="source-line-no">284</span><span id="line-284">     *  requirement, a derived class has to provide its own implementation of</span>
-<span class="source-line-no">285</span><span id="line-285">     *  {@code getProperty()}</span>
-<span class="source-line-no">286</span><span id="line-286">     *  and</span>
-<span class="source-line-no">287</span><span id="line-287">     *  {@link #setProperty(String, Object) setProperty()}.</span>
-<span class="source-line-no">288</span><span id="line-288">     *</span>
-<span class="source-line-no">289</span><span id="line-289">     *  @param  name    The property name, which is a fully-qualified URI.</span>
-<span class="source-line-no">290</span><span id="line-290">     *  @return The current value of the property. If the name is not known,</span>
-<span class="source-line-no">291</span><span id="line-291">     *      {@code null} will be returned instead of throwing an</span>
-<span class="source-line-no">292</span><span id="line-292">     *      exception.</span>
-<span class="source-line-no">293</span><span id="line-293">     *</span>
-<span class="source-line-no">294</span><span id="line-294">     *  @throws SAXNotRecognizedException   The property value can't be</span>
-<span class="source-line-no">295</span><span id="line-295">     *      retrieved.</span>
-<span class="source-line-no">296</span><span id="line-296">     *  @throws SAXNotSupportedException    The XMLReader recognizes the</span>
-<span class="source-line-no">297</span><span id="line-297">     *      property name but cannot determine its value at this time.</span>
-<span class="source-line-no">298</span><span id="line-298">     *</span>
-<span class="source-line-no">299</span><span id="line-299">     *  @see org.xml.sax.XMLReader#getProperty(java.lang.String)</span>
-<span class="source-line-no">300</span><span id="line-300">     *  @see #setProperty(String, Object) setProperty()</span>
+<span class="source-line-no">158</span><span id="line-158">    private BufferedReader createReader( final InputSource input ) throws IOException, SAXException</span>
+<span class="source-line-no">159</span><span id="line-159">    {</span>
+<span class="source-line-no">160</span><span id="line-160">        //---* Create a buffered reader from the input source *----------------</span>
+<span class="source-line-no">161</span><span id="line-161">        BufferedReader retValue = null;</span>
+<span class="source-line-no">162</span><span id="line-162">        //noinspection IfStatementWithTooManyBranches</span>
+<span class="source-line-no">163</span><span id="line-163">        if( nonNull( input.getCharacterStream() ) )</span>
+<span class="source-line-no">164</span><span id="line-164">        {</span>
+<span class="source-line-no">165</span><span id="line-165">            retValue = new BufferedReader( input.getCharacterStream() );</span>
+<span class="source-line-no">166</span><span id="line-166">        }</span>
+<span class="source-line-no">167</span><span id="line-167">        else if( nonNull( input.getByteStream() ) )</span>
+<span class="source-line-no">168</span><span id="line-168">        {</span>
+<span class="source-line-no">169</span><span id="line-169">            retValue = new BufferedReader( nonNull( m_Encoding ) ? new InputStreamReader( input.getByteStream(), m_Encoding ) : new InputStreamReader( input.getByteStream(), UTF8 ) );</span>
+<span class="source-line-no">170</span><span id="line-170">        }</span>
+<span class="source-line-no">171</span><span id="line-171">        else if( nonNull( input.getSystemId() ) )</span>
+<span class="source-line-no">172</span><span id="line-172">        {</span>
+<span class="source-line-no">173</span><span id="line-173">            final var entityResolver = getEntityResolver();</span>
+<span class="source-line-no">174</span><span id="line-174">            if( nonNull( entityResolver ) )</span>
+<span class="source-line-no">175</span><span id="line-175">            {</span>
+<span class="source-line-no">176</span><span id="line-176">                //---* Use the entity resolver to get the reader *-------------</span>
+<span class="source-line-no">177</span><span id="line-177">                retValue = createReader( entityResolver.resolveEntity( input.getPublicId(), input.getSystemId() ) );</span>
+<span class="source-line-no">178</span><span id="line-178">            }</span>
+<span class="source-line-no">179</span><span id="line-179">            else</span>
+<span class="source-line-no">180</span><span id="line-180">            {</span>
+<span class="source-line-no">181</span><span id="line-181">                /*</span>
+<span class="source-line-no">182</span><span id="line-182">                 * If no entity resolver is set, the system id that is stored</span>
+<span class="source-line-no">183</span><span id="line-183">                 * in an InputSource will be taken directly as a fully</span>
+<span class="source-line-no">184</span><span id="line-184">                 * qualified URL to a stream somewhere. Otherwise, it will be</span>
+<span class="source-line-no">185</span><span id="line-185">                 * translated using that entity resolver.</span>
+<span class="source-line-no">186</span><span id="line-186">                 */</span>
+<span class="source-line-no">187</span><span id="line-187">                final var url = new URL( input.getSystemId() );</span>
+<span class="source-line-no">188</span><span id="line-188">                retValue = new BufferedReader( nonNull( m_Encoding ) ? new InputStreamReader( url.openStream(), m_Encoding ) : new InputStreamReader( url.openStream(), UTF8 ) );</span>
+<span class="source-line-no">189</span><span id="line-189">            }</span>
+<span class="source-line-no">190</span><span id="line-190">        }</span>
+<span class="source-line-no">191</span><span id="line-191">        else</span>
+<span class="source-line-no">192</span><span id="line-192">        {</span>
+<span class="source-line-no">193</span><span id="line-193">            //---* Something is weird with this input source *-----------------</span>
+<span class="source-line-no">194</span><span id="line-194">            throw new SAXException( "Invalid Input Source" );</span>
+<span class="source-line-no">195</span><span id="line-195">        }</span>
+<span class="source-line-no">196</span><span id="line-196"></span>
+<span class="source-line-no">197</span><span id="line-197">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">198</span><span id="line-198">        return retValue;</span>
+<span class="source-line-no">199</span><span id="line-199">    }   //  createReader()</span>
+<span class="source-line-no">200</span><span id="line-200"></span>
+<span class="source-line-no">201</span><span id="line-201">    /**</span>
+<span class="source-line-no">202</span><span id="line-202">     *  Returns the current content handler.</span>
+<span class="source-line-no">203</span><span id="line-203">     *</span>
+<span class="source-line-no">204</span><span id="line-204">     *  @return A reference to the current content handler.</span>
+<span class="source-line-no">205</span><span id="line-205">     */</span>
+<span class="source-line-no">206</span><span id="line-206">    @Override</span>
+<span class="source-line-no">207</span><span id="line-207">    public final ContentHandler getContentHandler() { return m_ContentHandler; }</span>
+<span class="source-line-no">208</span><span id="line-208"></span>
+<span class="source-line-no">209</span><span id="line-209">    /**</span>
+<span class="source-line-no">210</span><span id="line-210">     *  Returns the current DTD handler.</span>
+<span class="source-line-no">211</span><span id="line-211">     *</span>
+<span class="source-line-no">212</span><span id="line-212">     *  @return A reference to the current DTD handler.</span>
+<span class="source-line-no">213</span><span id="line-213">     */</span>
+<span class="source-line-no">214</span><span id="line-214">    @Override</span>
+<span class="source-line-no">215</span><span id="line-215">    public final DTDHandler getDTDHandler() { return m_DTDHandler; }</span>
+<span class="source-line-no">216</span><span id="line-216"></span>
+<span class="source-line-no">217</span><span id="line-217">    /**</span>
+<span class="source-line-no">218</span><span id="line-218">     *  Returns the current entity resolver.</span>
+<span class="source-line-no">219</span><span id="line-219">     *</span>
+<span class="source-line-no">220</span><span id="line-220">     *  @return A reference to the current entity resolver.</span>
+<span class="source-line-no">221</span><span id="line-221">     */</span>
+<span class="source-line-no">222</span><span id="line-222">    @Override</span>
+<span class="source-line-no">223</span><span id="line-223">    public final EntityResolver getEntityResolver() { return m_EntityResolver; }</span>
+<span class="source-line-no">224</span><span id="line-224"></span>
+<span class="source-line-no">225</span><span id="line-225">    /**</span>
+<span class="source-line-no">226</span><span id="line-226">     *  Returns the current error handler. It will never return</span>
+<span class="source-line-no">227</span><span id="line-227">     *  {@code null}; in case no handler was set, a reference to an</span>
+<span class="source-line-no">228</span><span id="line-228">     *  instance of</span>
+<span class="source-line-no">229</span><span id="line-229">     *  {@link DefaultErrorHandler DefaultErrorHandler}</span>
+<span class="source-line-no">230</span><span id="line-230">     *  will be returned.</span>
+<span class="source-line-no">231</span><span id="line-231">     *</span>
+<span class="source-line-no">232</span><span id="line-232">     *  @return A reference to the current error handler.</span>
+<span class="source-line-no">233</span><span id="line-233">     */</span>
+<span class="source-line-no">234</span><span id="line-234">    @Override</span>
+<span class="source-line-no">235</span><span id="line-235">    public final ErrorHandler getErrorHandler() { return m_ErrorHandler; }</span>
+<span class="source-line-no">236</span><span id="line-236"></span>
+<span class="source-line-no">237</span><span id="line-237">    /**</span>
+<span class="source-line-no">238</span><span id="line-238">     *  {@inheritDoc}</span>
+<span class="source-line-no">239</span><span id="line-239">     *  As this is not meant as a base for an &lt;i&gt;XML&lt;/i&gt; parser, this</span>
+<span class="source-line-no">240</span><span id="line-240">     *  implementation does not recognise the required namespaces. If this is</span>
+<span class="source-line-no">241</span><span id="line-241">     *  needed, the derived class has to provide another implementation  for</span>
+<span class="source-line-no">242</span><span id="line-242">     *  {@code getFeature()}</span>
+<span class="source-line-no">243</span><span id="line-243">     *  and</span>
+<span class="source-line-no">244</span><span id="line-244">     *  {@link #setFeature(String, boolean) setFeature()}.</span>
+<span class="source-line-no">245</span><span id="line-245">     *</span>
+<span class="source-line-no">246</span><span id="line-246">     *  @param  name    The name of the feature.</span>
+<span class="source-line-no">247</span><span id="line-247">     *  @return {@code true} if the feature is supported,</span>
+<span class="source-line-no">248</span><span id="line-248">     *      {@code false} if not or if the name is unknown.</span>
+<span class="source-line-no">249</span><span id="line-249">     *  @throws SAXNotRecognizedException   The feature value cannot be</span>
+<span class="source-line-no">250</span><span id="line-250">     *      retrieved.</span>
+<span class="source-line-no">251</span><span id="line-251">     *  @throws SAXNotSupportedException    The XMLReader recognizes the</span>
+<span class="source-line-no">252</span><span id="line-252">     *      feature name but cannot determine its value at this time.</span>
+<span class="source-line-no">253</span><span id="line-253">     */</span>
+<span class="source-line-no">254</span><span id="line-254">    @Override</span>
+<span class="source-line-no">255</span><span id="line-255">    public boolean getFeature( final String name ) throws SAXNotRecognizedException, SAXNotSupportedException</span>
+<span class="source-line-no">256</span><span id="line-256">    {</span>
+<span class="source-line-no">257</span><span id="line-257">        final var feature = m_Features.get( requireNonNullArgument( name, "name" ) );</span>
+<span class="source-line-no">258</span><span id="line-258">        final var retValue = nonNull( feature ) &amp;&amp; feature.booleanValue();</span>
+<span class="source-line-no">259</span><span id="line-259"></span>
+<span class="source-line-no">260</span><span id="line-260">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">261</span><span id="line-261">        return retValue;</span>
+<span class="source-line-no">262</span><span id="line-262">    }   //  getFeature()</span>
+<span class="source-line-no">263</span><span id="line-263"></span>
+<span class="source-line-no">264</span><span id="line-264">    /**</span>
+<span class="source-line-no">265</span><span id="line-265">     *  Returns the value for the property with the given name. Usually, this</span>
+<span class="source-line-no">266</span><span id="line-266">     *  property name is any fully-qualified URI. It is possible for an</span>
+<span class="source-line-no">267</span><span id="line-267">     *  XMLReader to recognise a property name but temporarily be unable to</span>
+<span class="source-line-no">268</span><span id="line-268">     *  return its value. Some property values may be available only in</span>
+<span class="source-line-no">269</span><span id="line-269">     *  specific contexts, such as before, during, or after a parse.&lt;br&gt;</span>
+<span class="source-line-no">270</span><span id="line-270">     *  &lt;br&gt;XMLReaders are not required to recognise any specific property</span>
+<span class="source-line-no">271</span><span id="line-271">     *  names, though an initial core set is documented for SAX2. But even that</span>
+<span class="source-line-no">272</span><span id="line-272">     *  is not supported by this specific implementation; if this is a</span>
+<span class="source-line-no">273</span><span id="line-273">     *  requirement, a derived class has to provide its own implementation of</span>
+<span class="source-line-no">274</span><span id="line-274">     *  {@code getProperty()}</span>
+<span class="source-line-no">275</span><span id="line-275">     *  and</span>
+<span class="source-line-no">276</span><span id="line-276">     *  {@link #setProperty(String, Object) setProperty()}.</span>
+<span class="source-line-no">277</span><span id="line-277">     *</span>
+<span class="source-line-no">278</span><span id="line-278">     *  @param  name    The property name, which is a fully-qualified URI.</span>
+<span class="source-line-no">279</span><span id="line-279">     *  @return The current value of the property. If the name is not known,</span>
+<span class="source-line-no">280</span><span id="line-280">     *      {@code null} will be returned instead of throwing an</span>
+<span class="source-line-no">281</span><span id="line-281">     *      exception.</span>
+<span class="source-line-no">282</span><span id="line-282">     *</span>
+<span class="source-line-no">283</span><span id="line-283">     *  @throws SAXNotRecognizedException   The property value can't be</span>
+<span class="source-line-no">284</span><span id="line-284">     *      retrieved.</span>
+<span class="source-line-no">285</span><span id="line-285">     *  @throws SAXNotSupportedException    The XMLReader recognizes the</span>
+<span class="source-line-no">286</span><span id="line-286">     *      property name but cannot determine its value at this time.</span>
+<span class="source-line-no">287</span><span id="line-287">     *</span>
+<span class="source-line-no">288</span><span id="line-288">     *  @see #setProperty(String, Object) setProperty()</span>
+<span class="source-line-no">289</span><span id="line-289">     */</span>
+<span class="source-line-no">290</span><span id="line-290">    @Override</span>
+<span class="source-line-no">291</span><span id="line-291">    public Object getProperty( final String name ) throws SAXNotRecognizedException, SAXNotSupportedException</span>
+<span class="source-line-no">292</span><span id="line-292">    {</span>
+<span class="source-line-no">293</span><span id="line-293">        return m_Properties.get( requireNonNullArgument( name, "name" ) );</span>
+<span class="source-line-no">294</span><span id="line-294">    }   //  getProperty()</span>
+<span class="source-line-no">295</span><span id="line-295"></span>
+<span class="source-line-no">296</span><span id="line-296">    /**</span>
+<span class="source-line-no">297</span><span id="line-297">     *  Returns a reference to the locator object provided by this base</span>
+<span class="source-line-no">298</span><span id="line-298">     *  implementation.</span>
+<span class="source-line-no">299</span><span id="line-299">     *</span>
+<span class="source-line-no">300</span><span id="line-300">     *  @return The reference to the locator object.</span>
 <span class="source-line-no">301</span><span id="line-301">     */</span>
-<span class="source-line-no">302</span><span id="line-302">    @Override</span>
-<span class="source-line-no">303</span><span id="line-303">    public Object getProperty( final String name ) throws SAXNotRecognizedException, SAXNotSupportedException</span>
-<span class="source-line-no">304</span><span id="line-304">    {</span>
-<span class="source-line-no">305</span><span id="line-305">        return m_Properties.get( requireNonNullArgument( name, "name" ) );</span>
-<span class="source-line-no">306</span><span id="line-306">    }   //  getProperty()</span>
-<span class="source-line-no">307</span><span id="line-307"></span>
-<span class="source-line-no">308</span><span id="line-308">    /**</span>
-<span class="source-line-no">309</span><span id="line-309">     *  Returns a reference to the locator object provided by this base</span>
-<span class="source-line-no">310</span><span id="line-310">     *  implementation.</span>
-<span class="source-line-no">311</span><span id="line-311">     *</span>
-<span class="source-line-no">312</span><span id="line-312">     *  @return The reference to the locator object.</span>
-<span class="source-line-no">313</span><span id="line-313">     */</span>
-<span class="source-line-no">314</span><span id="line-314">    protected final Locator getLocator() { return m_Locator; }</span>
-<span class="source-line-no">315</span><span id="line-315"></span>
-<span class="source-line-no">316</span><span id="line-316">    /**</span>
-<span class="source-line-no">317</span><span id="line-317">     *  Parses an input data source.&lt;br&gt;</span>
-<span class="source-line-no">318</span><span id="line-318">     *  &lt;br&gt;The application can use this method to instruct the XML reader to</span>
-<span class="source-line-no">319</span><span id="line-319">     *  begin parsing a document from any valid input source (a character</span>
-<span class="source-line-no">320</span><span id="line-320">     *  stream, a byte stream, or a URI).&lt;br&gt;</span>
-<span class="source-line-no">321</span><span id="line-321">     *  &lt;br&gt;Applications may not invoke this method while a parse is in</span>
-<span class="source-line-no">322</span><span id="line-322">     *  progress (they should create a new XMLReader instead for each nested</span>
-<span class="source-line-no">323</span><span id="line-323">     *  document). Once a parse is complete, an application may reuse the same</span>
-<span class="source-line-no">324</span><span id="line-324">     *  XMLReader object, possibly with a different input source. Configuration</span>
-<span class="source-line-no">325</span><span id="line-325">     *  of the XMLReader object (such as handler bindings and values</span>
-<span class="source-line-no">326</span><span id="line-326">     *  established for feature flags and properties) is unchanged by</span>
-<span class="source-line-no">327</span><span id="line-327">     *  completion of a parse, unless the definition of that aspect of the</span>
-<span class="source-line-no">328</span><span id="line-328">     *  configuration explicitly specifies other behavior (For example,</span>
-<span class="source-line-no">329</span><span id="line-329">     *  feature flags or properties exposing characteristics of the document</span>
-<span class="source-line-no">330</span><span id="line-330">     *  being parsed).&lt;br&gt;</span>
-<span class="source-line-no">331</span><span id="line-331">     *  &lt;br&gt;During the parse, the XMLReader will provide information about the</span>
-<span class="source-line-no">332</span><span id="line-332">     *  document through the registered event handlers.&lt;br&gt;</span>
-<span class="source-line-no">333</span><span id="line-333">     *  &lt;br&gt;This method is synchronous: it will not return until parsing has</span>
-<span class="source-line-no">334</span><span id="line-334">     *  ended. If a client application wants to terminate parsing early, it</span>
-<span class="source-line-no">335</span><span id="line-335">     *  should throw an exception.&lt;br&gt;</span>
-<span class="source-line-no">336</span><span id="line-336">     *  &lt;br&gt;This implementation calls</span>
-<span class="source-line-no">337</span><span id="line-337">     *  {@link #process(BufferedReader) process()}</span>
-<span class="source-line-no">338</span><span id="line-338">     *  which is the user provided implementation for the parser.&lt;br&gt;</span>
-<span class="source-line-no">339</span><span id="line-339">     *  &lt;br&gt;If no content handler is set, this method returns immediately</span>
-<span class="source-line-no">340</span><span id="line-340">     *  without any error message.</span>
-<span class="source-line-no">341</span><span id="line-341">     *</span>
-<span class="source-line-no">342</span><span id="line-342">     *  @param  input   The input source for the top-level of the document.</span>
-<span class="source-line-no">343</span><span id="line-343">     *  @throws IOException An IO exception from the parser, possibly from a</span>
-<span class="source-line-no">344</span><span id="line-344">     *      byte stream or character stream supplied by the application.</span>
-<span class="source-line-no">345</span><span id="line-345">     *  @throws SAXException    Any SAX exception, possibly wrapping another</span>
-<span class="source-line-no">346</span><span id="line-346">     *      exception.</span>
-<span class="source-line-no">347</span><span id="line-347">     *</span>
-<span class="source-line-no">348</span><span id="line-348">     *  @see org.xml.sax.XMLReader#parse(org.xml.sax.InputSource)</span>
-<span class="source-line-no">349</span><span id="line-349">     *  @see org.xml.sax.InputSource</span>
-<span class="source-line-no">350</span><span id="line-350">     *  @see #parse(java.lang.String) parse( String )</span>
-<span class="source-line-no">351</span><span id="line-351">     *  @see #setEntityResolver(EntityResolver) setEntityResolver()</span>
-<span class="source-line-no">352</span><span id="line-352">     *  @see #setDTDHandler(DTDHandler) setDTDHandler()</span>
-<span class="source-line-no">353</span><span id="line-353">     *  @see #setContentHandler(ContentHandler) setContentHandler()</span>
-<span class="source-line-no">354</span><span id="line-354">     *  @see #setErrorHandler(ErrorHandler) setErrorHandler()</span>
-<span class="source-line-no">355</span><span id="line-355">     */</span>
-<span class="source-line-no">356</span><span id="line-356">    @Override</span>
-<span class="source-line-no">357</span><span id="line-357">    public final void parse( final InputSource input ) throws IOException, SAXException</span>
-<span class="source-line-no">358</span><span id="line-358">    {</span>
-<span class="source-line-no">359</span><span id="line-359">        final var contentHandler = getContentHandler();</span>
-<span class="source-line-no">360</span><span id="line-360">        if( nonNull( contentHandler ) )</span>
-<span class="source-line-no">361</span><span id="line-361">        {</span>
-<span class="source-line-no">362</span><span id="line-362">            //---* Sets the locator *------------------------------------------</span>
-<span class="source-line-no">363</span><span id="line-363">            /*</span>
-<span class="source-line-no">364</span><span id="line-364">             * m_Locator will never be null.</span>
-<span class="source-line-no">365</span><span id="line-365">             */</span>
-<span class="source-line-no">366</span><span id="line-366">            contentHandler.setDocumentLocator( m_Locator );</span>
-<span class="source-line-no">367</span><span id="line-367"></span>
-<span class="source-line-no">368</span><span id="line-368">            //---* Obtain a reader from the input source *---------------------</span>
-<span class="source-line-no">369</span><span id="line-369">            try( final var reader = createReader( requireNonNullArgument( input, "input" ) ) )</span>
-<span class="source-line-no">370</span><span id="line-370">            {</span>
-<span class="source-line-no">371</span><span id="line-371">                //---* Let someone else do the work *--------------------------</span>
-<span class="source-line-no">372</span><span id="line-372">                process( reader );</span>
-<span class="source-line-no">373</span><span id="line-373">            }</span>
-<span class="source-line-no">374</span><span id="line-374">        }</span>
-<span class="source-line-no">375</span><span id="line-375">    }   //  parse()</span>
-<span class="source-line-no">376</span><span id="line-376"></span>
-<span class="source-line-no">377</span><span id="line-377">    /**</span>
-<span class="source-line-no">378</span><span id="line-378">     *  Parses an XML document from a system identifier (URI).&lt;br&gt;</span>
-<span class="source-line-no">379</span><span id="line-379">     *  &lt;br&gt;This method is a shortcut for the common case of reading a</span>
-<span class="source-line-no">380</span><span id="line-380">     *  document from a system identifier. It is the exact equivalent of the</span>
-<span class="source-line-no">381</span><span id="line-381">     *  following:&lt;br&gt;</span>
-<span class="source-line-no">382</span><span id="line-382">     *  {@code parse( new InputSource( systemId ) );}&lt;br&gt;</span>
-<span class="source-line-no">383</span><span id="line-383">     *  &lt;br&gt;If the system identifier is a URL, it must be fully resolved by</span>
-<span class="source-line-no">384</span><span id="line-384">     *  the application before it is passed to the parser.</span>
-<span class="source-line-no">385</span><span id="line-385">     *</span>
-<span class="source-line-no">386</span><span id="line-386">     *  @param  systemId    The system identifier (URI).</span>
-<span class="source-line-no">387</span><span id="line-387">     *  @throws IOException An IO exception from the parser, possibly from a</span>
-<span class="source-line-no">388</span><span id="line-388">     *      byte stream or character stream supplied by the application.</span>
-<span class="source-line-no">389</span><span id="line-389">     *  @throws SAXException    Any SAX exception, possibly wrapping another</span>
-<span class="source-line-no">390</span><span id="line-390">     *      exception.</span>
-<span class="source-line-no">391</span><span id="line-391">     *</span>
-<span class="source-line-no">392</span><span id="line-392">     *  @see #parse(org.xml.sax.InputSource) parse( InputSource )</span>
-<span class="source-line-no">393</span><span id="line-393">     *  @see org.xml.sax.XMLReader#parse(java.lang.String)</span>
-<span class="source-line-no">394</span><span id="line-394">     */</span>
-<span class="source-line-no">395</span><span id="line-395">    @Override</span>
-<span class="source-line-no">396</span><span id="line-396">    public final void parse( final String systemId ) throws IOException, SAXException { parse( new InputSource( systemId ) ); }</span>
-<span class="source-line-no">397</span><span id="line-397"></span>
-<span class="source-line-no">398</span><span id="line-398">    /**</span>
-<span class="source-line-no">399</span><span id="line-399">     *  This method has to be implemented in order to perform the parsing. It</span>
-<span class="source-line-no">400</span><span id="line-400">     *  will be called either from</span>
-<span class="source-line-no">401</span><span id="line-401">     *  {@link #parse(String) parse( String )}</span>
-<span class="source-line-no">402</span><span id="line-402">     *  or</span>
-<span class="source-line-no">403</span><span id="line-403">     *  {@link #parse(InputSource) parse( InputSource )}.&lt;br&gt;</span>
-<span class="source-line-no">404</span><span id="line-404">     *  &lt;br&gt;The implementation of this method should update the locator by</span>
-<span class="source-line-no">405</span><span id="line-405">     *  appropriate calls to</span>
-<span class="source-line-no">406</span><span id="line-406">     *  {@link #setPublicId(String) setPublicId()},</span>
-<span class="source-line-no">407</span><span id="line-407">     *  {@link #setSystemId(String) setSystemId()},</span>
-<span class="source-line-no">408</span><span id="line-408">     *  and</span>
-<span class="source-line-no">409</span><span id="line-409">     *  {@link #setLocation(int, int) setLocation()} -</span>
-<span class="source-line-no">410</span><span id="line-410">     *  if possible ...&lt;br&gt;</span>
-<span class="source-line-no">411</span><span id="line-411">     *  &lt;br&gt;The input is not meant to be XML, so it is difficult to describe</span>
-<span class="source-line-no">412</span><span id="line-412">     *  here how to parse the input. But assuming that the input stream is a</span>
-<span class="source-line-no">413</span><span id="line-413">     *  Java properties file, the implementation for {@code process()} might</span>
-<span class="source-line-no">414</span><span id="line-414">     *  look like this:</span>
-<span class="source-line-no">415</span><span id="line-415">     *  &lt;pre&gt;&lt;code&gt;</span>
-<span class="source-line-no">416</span><span id="line-416">     *  protected void process( BufferedReader input ) throws IOException, SAXException</span>
-<span class="source-line-no">417</span><span id="line-417">     *  {</span>
-<span class="source-line-no">418</span><span id="line-418">     *      ContentHandler handler = getContentHandler();</span>
-<span class="source-line-no">419</span><span id="line-419">     *</span>
-<span class="source-line-no">420</span><span id="line-420">     *      //---* Load the properties *---------------------------------------</span>
-<span class="source-line-no">421</span><span id="line-421">     *      ExtendedProperties properties = new ExtendedProperties();</span>
-<span class="source-line-no">422</span><span id="line-422">     *      properties.load( input );</span>
-<span class="source-line-no">423</span><span id="line-423">     *</span>
-<span class="source-line-no">424</span><span id="line-424">     *      //---* Create the document *---------------------------------------</span>
-<span class="source-line-no">425</span><span id="line-425">     *      handler.startDocument();</span>
-<span class="source-line-no">426</span><span id="line-426">     *      handler.startElement( null, null, "properties", new AttributesImpl() );</span>
-<span class="source-line-no">427</span><span id="line-427">     *</span>
-<span class="source-line-no">428</span><span id="line-428">     *      //---* Process the properties *------------------------------------</span>
-<span class="source-line-no">429</span><span id="line-429">     *      AttributesImpl attributes;</span>
-<span class="source-line-no">430</span><span id="line-430">     *      char [] value;</span>
-<span class="source-line-no">431</span><span id="line-431">     *      // Each property will be treated as a value with the key as its</span>
-<span class="source-line-no">432</span><span id="line-432">     *      // attribute.</span>
-<span class="source-line-no">433</span><span id="line-433">     *      for( String name : properties.stringPropertyNames() )</span>
-<span class="source-line-no">434</span><span id="line-434">     *      {</span>
-<span class="source-line-no">435</span><span id="line-435">     *          //---* Start the element *-------------------------------------</span>
-<span class="source-line-no">436</span><span id="line-436">     *          attributes = new AttributesImpl();</span>
-<span class="source-line-no">437</span><span id="line-437">     *          attributes.addAttribute( null, null, "name", "ID", name );</span>
-<span class="source-line-no">438</span><span id="line-438">     *          handler.startElement( null, null, "property", attributes );</span>
+<span class="source-line-no">302</span><span id="line-302">    protected final Locator getLocator() { return m_Locator; }</span>
+<span class="source-line-no">303</span><span id="line-303"></span>
+<span class="source-line-no">304</span><span id="line-304">    /**</span>
+<span class="source-line-no">305</span><span id="line-305">     *  Parses an input data source.&lt;br&gt;</span>
+<span class="source-line-no">306</span><span id="line-306">     *  &lt;br&gt;The application can use this method to instruct the XML reader to</span>
+<span class="source-line-no">307</span><span id="line-307">     *  begin parsing a document from any valid input source (a character</span>
+<span class="source-line-no">308</span><span id="line-308">     *  stream, a byte stream, or a URI).&lt;br&gt;</span>
+<span class="source-line-no">309</span><span id="line-309">     *  &lt;br&gt;Applications may not invoke this method while a parse is in</span>
+<span class="source-line-no">310</span><span id="line-310">     *  progress (they should create a new XMLReader instead for each nested</span>
+<span class="source-line-no">311</span><span id="line-311">     *  document). Once a parse is complete, an application may reuse the same</span>
+<span class="source-line-no">312</span><span id="line-312">     *  XMLReader object, possibly with a different input source. Configuration</span>
+<span class="source-line-no">313</span><span id="line-313">     *  of the XMLReader object (such as handler bindings and values</span>
+<span class="source-line-no">314</span><span id="line-314">     *  established for feature flags and properties) is unchanged by</span>
+<span class="source-line-no">315</span><span id="line-315">     *  completion of a parse, unless the definition of that aspect of the</span>
+<span class="source-line-no">316</span><span id="line-316">     *  configuration explicitly specifies other behavior (For example,</span>
+<span class="source-line-no">317</span><span id="line-317">     *  feature flags or properties exposing characteristics of the document</span>
+<span class="source-line-no">318</span><span id="line-318">     *  being parsed).&lt;br&gt;</span>
+<span class="source-line-no">319</span><span id="line-319">     *  &lt;br&gt;During the parse, the XMLReader will provide information about the</span>
+<span class="source-line-no">320</span><span id="line-320">     *  document through the registered event handlers.&lt;br&gt;</span>
+<span class="source-line-no">321</span><span id="line-321">     *  &lt;br&gt;This method is synchronous: it will not return until parsing has</span>
+<span class="source-line-no">322</span><span id="line-322">     *  ended. If a client application wants to terminate parsing early, it</span>
+<span class="source-line-no">323</span><span id="line-323">     *  should throw an exception.&lt;br&gt;</span>
+<span class="source-line-no">324</span><span id="line-324">     *  &lt;br&gt;This implementation calls</span>
+<span class="source-line-no">325</span><span id="line-325">     *  {@link #process(BufferedReader) process()}</span>
+<span class="source-line-no">326</span><span id="line-326">     *  which is the user provided implementation for the parser.&lt;br&gt;</span>
+<span class="source-line-no">327</span><span id="line-327">     *  &lt;br&gt;If no content handler is set, this method returns immediately</span>
+<span class="source-line-no">328</span><span id="line-328">     *  without any error message.</span>
+<span class="source-line-no">329</span><span id="line-329">     *</span>
+<span class="source-line-no">330</span><span id="line-330">     *  @param  input   The input source for the top-level of the document.</span>
+<span class="source-line-no">331</span><span id="line-331">     *  @throws IOException An IO exception from the parser, possibly from a</span>
+<span class="source-line-no">332</span><span id="line-332">     *      byte stream or character stream supplied by the application.</span>
+<span class="source-line-no">333</span><span id="line-333">     *  @throws SAXException    Any SAX exception, possibly wrapping another</span>
+<span class="source-line-no">334</span><span id="line-334">     *      exception.</span>
+<span class="source-line-no">335</span><span id="line-335">     *</span>
+<span class="source-line-no">336</span><span id="line-336">     *  @see org.xml.sax.InputSource</span>
+<span class="source-line-no">337</span><span id="line-337">     *  @see #parse(java.lang.String) parse( String )</span>
+<span class="source-line-no">338</span><span id="line-338">     *  @see #setEntityResolver(EntityResolver) setEntityResolver()</span>
+<span class="source-line-no">339</span><span id="line-339">     *  @see #setDTDHandler(DTDHandler) setDTDHandler()</span>
+<span class="source-line-no">340</span><span id="line-340">     *  @see #setContentHandler(ContentHandler) setContentHandler()</span>
+<span class="source-line-no">341</span><span id="line-341">     *  @see #setErrorHandler(ErrorHandler) setErrorHandler()</span>
+<span class="source-line-no">342</span><span id="line-342">     */</span>
+<span class="source-line-no">343</span><span id="line-343">    @Override</span>
+<span class="source-line-no">344</span><span id="line-344">    public final void parse( final InputSource input ) throws IOException, SAXException</span>
+<span class="source-line-no">345</span><span id="line-345">    {</span>
+<span class="source-line-no">346</span><span id="line-346">        final var contentHandler = getContentHandler();</span>
+<span class="source-line-no">347</span><span id="line-347">        if( nonNull( contentHandler ) )</span>
+<span class="source-line-no">348</span><span id="line-348">        {</span>
+<span class="source-line-no">349</span><span id="line-349">            //---* Sets the locator *------------------------------------------</span>
+<span class="source-line-no">350</span><span id="line-350">            /*</span>
+<span class="source-line-no">351</span><span id="line-351">             * m_Locator will never be null.</span>
+<span class="source-line-no">352</span><span id="line-352">             */</span>
+<span class="source-line-no">353</span><span id="line-353">            contentHandler.setDocumentLocator( m_Locator );</span>
+<span class="source-line-no">354</span><span id="line-354"></span>
+<span class="source-line-no">355</span><span id="line-355">            //---* Obtain a reader from the input source *---------------------</span>
+<span class="source-line-no">356</span><span id="line-356">            try( final var reader = createReader( requireNonNullArgument( input, "input" ) ) )</span>
+<span class="source-line-no">357</span><span id="line-357">            {</span>
+<span class="source-line-no">358</span><span id="line-358">                //---* Let someone else do the work *--------------------------</span>
+<span class="source-line-no">359</span><span id="line-359">                process( reader );</span>
+<span class="source-line-no">360</span><span id="line-360">            }</span>
+<span class="source-line-no">361</span><span id="line-361">        }</span>
+<span class="source-line-no">362</span><span id="line-362">    }   //  parse()</span>
+<span class="source-line-no">363</span><span id="line-363"></span>
+<span class="source-line-no">364</span><span id="line-364">    /**</span>
+<span class="source-line-no">365</span><span id="line-365">     *  Parses an XML document from a system identifier (URI).&lt;br&gt;</span>
+<span class="source-line-no">366</span><span id="line-366">     *  &lt;br&gt;This method is a shortcut for the common case of reading a</span>
+<span class="source-line-no">367</span><span id="line-367">     *  document from a system identifier. It is the exact equivalent of the</span>
+<span class="source-line-no">368</span><span id="line-368">     *  following:&lt;br&gt;</span>
+<span class="source-line-no">369</span><span id="line-369">     *  {@code parse( new InputSource( systemId ) );}&lt;br&gt;</span>
+<span class="source-line-no">370</span><span id="line-370">     *  &lt;br&gt;If the system identifier is a URL, it must be fully resolved by</span>
+<span class="source-line-no">371</span><span id="line-371">     *  the application before it is passed to the parser.</span>
+<span class="source-line-no">372</span><span id="line-372">     *</span>
+<span class="source-line-no">373</span><span id="line-373">     *  @param  systemId    The system identifier (URI).</span>
+<span class="source-line-no">374</span><span id="line-374">     *  @throws IOException An IO exception from the parser, possibly from a</span>
+<span class="source-line-no">375</span><span id="line-375">     *      byte stream or character stream supplied by the application.</span>
+<span class="source-line-no">376</span><span id="line-376">     *  @throws SAXException    Any SAX exception, possibly wrapping another</span>
+<span class="source-line-no">377</span><span id="line-377">     *      exception.</span>
+<span class="source-line-no">378</span><span id="line-378">     *</span>
+<span class="source-line-no">379</span><span id="line-379">     *  @see #parse(org.xml.sax.InputSource) parse( InputSource )</span>
+<span class="source-line-no">380</span><span id="line-380">     */</span>
+<span class="source-line-no">381</span><span id="line-381">    @Override</span>
+<span class="source-line-no">382</span><span id="line-382">    public final void parse( final String systemId ) throws IOException, SAXException { parse( new InputSource( systemId ) ); }</span>
+<span class="source-line-no">383</span><span id="line-383"></span>
+<span class="source-line-no">384</span><span id="line-384">    /**</span>
+<span class="source-line-no">385</span><span id="line-385">     *  This method has to be implemented in order to perform the parsing. It</span>
+<span class="source-line-no">386</span><span id="line-386">     *  will be called either from</span>
+<span class="source-line-no">387</span><span id="line-387">     *  {@link #parse(String) parse( String )}</span>
+<span class="source-line-no">388</span><span id="line-388">     *  or</span>
+<span class="source-line-no">389</span><span id="line-389">     *  {@link #parse(InputSource) parse( InputSource )}.&lt;br&gt;</span>
+<span class="source-line-no">390</span><span id="line-390">     *  &lt;br&gt;The implementation of this method should update the locator by</span>
+<span class="source-line-no">391</span><span id="line-391">     *  appropriate calls to</span>
+<span class="source-line-no">392</span><span id="line-392">     *  {@link #setPublicId(String) setPublicId()},</span>
+<span class="source-line-no">393</span><span id="line-393">     *  {@link #setSystemId(String) setSystemId()},</span>
+<span class="source-line-no">394</span><span id="line-394">     *  and</span>
+<span class="source-line-no">395</span><span id="line-395">     *  {@link #setLocation(int, int) setLocation()} -</span>
+<span class="source-line-no">396</span><span id="line-396">     *  if possible ...&lt;br&gt;</span>
+<span class="source-line-no">397</span><span id="line-397">     *  &lt;br&gt;The input is not meant to be XML, so it is difficult to describe</span>
+<span class="source-line-no">398</span><span id="line-398">     *  here how to parse the input. But assuming that the input stream is a</span>
+<span class="source-line-no">399</span><span id="line-399">     *  Java properties file, the implementation for {@code process()} might</span>
+<span class="source-line-no">400</span><span id="line-400">     *  look like this:</span>
+<span class="source-line-no">401</span><span id="line-401">     *  &lt;pre&gt;&lt;code&gt;</span>
+<span class="source-line-no">402</span><span id="line-402">     *  protected void process( BufferedReader input ) throws IOException, SAXException</span>
+<span class="source-line-no">403</span><span id="line-403">     *  {</span>
+<span class="source-line-no">404</span><span id="line-404">     *      ContentHandler handler = getContentHandler();</span>
+<span class="source-line-no">405</span><span id="line-405">     *</span>
+<span class="source-line-no">406</span><span id="line-406">     *      //---* Load the properties *---------------------------------------</span>
+<span class="source-line-no">407</span><span id="line-407">     *      ExtendedProperties properties = new ExtendedProperties();</span>
+<span class="source-line-no">408</span><span id="line-408">     *      properties.load( input );</span>
+<span class="source-line-no">409</span><span id="line-409">     *</span>
+<span class="source-line-no">410</span><span id="line-410">     *      //---* Create the document *---------------------------------------</span>
+<span class="source-line-no">411</span><span id="line-411">     *      handler.startDocument();</span>
+<span class="source-line-no">412</span><span id="line-412">     *      handler.startElement( null, null, "properties", new AttributesImpl() );</span>
+<span class="source-line-no">413</span><span id="line-413">     *</span>
+<span class="source-line-no">414</span><span id="line-414">     *      //---* Process the properties *------------------------------------</span>
+<span class="source-line-no">415</span><span id="line-415">     *      AttributesImpl attributes;</span>
+<span class="source-line-no">416</span><span id="line-416">     *      char [] value;</span>
+<span class="source-line-no">417</span><span id="line-417">     *      // Each property will be treated as a value with the key as its</span>
+<span class="source-line-no">418</span><span id="line-418">     *      // attribute.</span>
+<span class="source-line-no">419</span><span id="line-419">     *      for( String name : properties.stringPropertyNames() )</span>
+<span class="source-line-no">420</span><span id="line-420">     *      {</span>
+<span class="source-line-no">421</span><span id="line-421">     *          //---* Start the element *-------------------------------------</span>
+<span class="source-line-no">422</span><span id="line-422">     *          attributes = new AttributesImpl();</span>
+<span class="source-line-no">423</span><span id="line-423">     *          attributes.addAttribute( null, null, "name", "ID", name );</span>
+<span class="source-line-no">424</span><span id="line-424">     *          handler.startElement( null, null, "property", attributes );</span>
+<span class="source-line-no">425</span><span id="line-425">     *</span>
+<span class="source-line-no">426</span><span id="line-426">     *          //---* The element contents *----------------------------------</span>
+<span class="source-line-no">427</span><span id="line-427">     *          value = properties.getProperty( name ).toCharArray();</span>
+<span class="source-line-no">428</span><span id="line-428">     *          handler.characters( value, 0, value.length );</span>
+<span class="source-line-no">429</span><span id="line-429">     *</span>
+<span class="source-line-no">430</span><span id="line-430">     *          //---* End the element *---------------------------------------</span>
+<span class="source-line-no">431</span><span id="line-431">     *          handler.endElement( null, null, "property" );</span>
+<span class="source-line-no">432</span><span id="line-432">     *      }</span>
+<span class="source-line-no">433</span><span id="line-433">     *</span>
+<span class="source-line-no">434</span><span id="line-434">     *      //---* Finish the document *---------------------------------------</span>
+<span class="source-line-no">435</span><span id="line-435">     *      handler.endElement( null, null, "properties" );</span>
+<span class="source-line-no">436</span><span id="line-436">     *      handler.endDocument();</span>
+<span class="source-line-no">437</span><span id="line-437">     *  }   //  process()</span>
+<span class="source-line-no">438</span><span id="line-438">     *  &lt;/code&gt;&lt;/pre&gt;</span>
 <span class="source-line-no">439</span><span id="line-439">     *</span>
-<span class="source-line-no">440</span><span id="line-440">     *          //---* The element contents *----------------------------------</span>
-<span class="source-line-no">441</span><span id="line-441">     *          value = properties.getProperty( name ).toCharArray();</span>
-<span class="source-line-no">442</span><span id="line-442">     *          handler.characters( value, 0, value.length );</span>
-<span class="source-line-no">443</span><span id="line-443">     *</span>
-<span class="source-line-no">444</span><span id="line-444">     *          //---* End the element *---------------------------------------</span>
-<span class="source-line-no">445</span><span id="line-445">     *          handler.endElement( null, null, "property" );</span>
-<span class="source-line-no">446</span><span id="line-446">     *      }</span>
-<span class="source-line-no">447</span><span id="line-447">     *</span>
-<span class="source-line-no">448</span><span id="line-448">     *      //---* Finish the document *---------------------------------------</span>
-<span class="source-line-no">449</span><span id="line-449">     *      handler.endElement( null, null, "properties" );</span>
-<span class="source-line-no">450</span><span id="line-450">     *      handler.endDocument();</span>
-<span class="source-line-no">451</span><span id="line-451">     *  }   //  process()</span>
-<span class="source-line-no">452</span><span id="line-452">     *  &lt;/code&gt;&lt;/pre&gt;</span>
-<span class="source-line-no">453</span><span id="line-453">     *</span>
-<span class="source-line-no">454</span><span id="line-454">     *  @param  input   The input stream.</span>
-<span class="source-line-no">455</span><span id="line-455">     *  @throws IOException Problems reading the input stream.</span>
-<span class="source-line-no">456</span><span id="line-456">     *  @throws SAXException    Something has gone wrong.</span>
+<span class="source-line-no">440</span><span id="line-440">     *  @param  input   The input stream.</span>
+<span class="source-line-no">441</span><span id="line-441">     *  @throws IOException Problems reading the input stream.</span>
+<span class="source-line-no">442</span><span id="line-442">     *  @throws SAXException    Something has gone wrong.</span>
+<span class="source-line-no">443</span><span id="line-443">     */</span>
+<span class="source-line-no">444</span><span id="line-444">    protected abstract void process( BufferedReader input ) throws IOException, SAXException;</span>
+<span class="source-line-no">445</span><span id="line-445"></span>
+<span class="source-line-no">446</span><span id="line-446">    /**</span>
+<span class="source-line-no">447</span><span id="line-447">     *  Sets the content handler used by this XMLReader. It allows an</span>
+<span class="source-line-no">448</span><span id="line-448">     *  application to register a content event handler.&lt;br&gt;</span>
+<span class="source-line-no">449</span><span id="line-449">     *  &lt;br&gt;If the application does not register a content handler, all</span>
+<span class="source-line-no">450</span><span id="line-450">     *  content events reported by the SAX parser will be silently</span>
+<span class="source-line-no">451</span><span id="line-451">     *  ignored.&lt;br&gt;</span>
+<span class="source-line-no">452</span><span id="line-452">     *  &lt;br&gt;Applications may register a new or different handler in the middle</span>
+<span class="source-line-no">453</span><span id="line-453">     *  of a parse, and the SAX parser must begin using the new handler</span>
+<span class="source-line-no">454</span><span id="line-454">     *  immediately.</span>
+<span class="source-line-no">455</span><span id="line-455">     *</span>
+<span class="source-line-no">456</span><span id="line-456">     *  @param  handler  The content handler; may be {@code null}.</span>
 <span class="source-line-no">457</span><span id="line-457">     */</span>
-<span class="source-line-no">458</span><span id="line-458">    protected abstract void process( BufferedReader input ) throws IOException, SAXException;</span>
-<span class="source-line-no">459</span><span id="line-459"></span>
-<span class="source-line-no">460</span><span id="line-460">    /**</span>
-<span class="source-line-no">461</span><span id="line-461">     *  Sets the content handler used by this XMLReader. It allows an</span>
-<span class="source-line-no">462</span><span id="line-462">     *  application to register a content event handler.&lt;br&gt;</span>
-<span class="source-line-no">463</span><span id="line-463">     *  &lt;br&gt;If the application does not register a content handler, all</span>
-<span class="source-line-no">464</span><span id="line-464">     *  content events reported by the SAX parser will be silently</span>
-<span class="source-line-no">465</span><span id="line-465">     *  ignored.&lt;br&gt;</span>
+<span class="source-line-no">458</span><span id="line-458">    @Override</span>
+<span class="source-line-no">459</span><span id="line-459">    public final void setContentHandler( final ContentHandler handler )  { m_ContentHandler = handler; }</span>
+<span class="source-line-no">460</span><span id="line-460"></span>
+<span class="source-line-no">461</span><span id="line-461">    /**</span>
+<span class="source-line-no">462</span><span id="line-462">     *  Sets the DTD handler used by this XMLReader. Allows an application to</span>
+<span class="source-line-no">463</span><span id="line-463">     *  register a DTD event handler.&lt;br&gt;</span>
+<span class="source-line-no">464</span><span id="line-464">     *  &lt;br&gt;If the application does not register a DTD handler, all DTD events</span>
+<span class="source-line-no">465</span><span id="line-465">     *  reported by the SAX parser will be silently ignored.&lt;br&gt;</span>
 <span class="source-line-no">466</span><span id="line-466">     *  &lt;br&gt;Applications may register a new or different handler in the middle</span>
 <span class="source-line-no">467</span><span id="line-467">     *  of a parse, and the SAX parser must begin using the new handler</span>
 <span class="source-line-no">468</span><span id="line-468">     *  immediately.</span>
 <span class="source-line-no">469</span><span id="line-469">     *</span>
-<span class="source-line-no">470</span><span id="line-470">     *  @param  handler  The content handler; may be {@code null}.</span>
-<span class="source-line-no">471</span><span id="line-471">     *</span>
-<span class="source-line-no">472</span><span id="line-472">     *  @see org.xml.sax.XMLReader#setContentHandler(org.xml.sax.ContentHandler)</span>
-<span class="source-line-no">473</span><span id="line-473">     */</span>
-<span class="source-line-no">474</span><span id="line-474">    @Override</span>
-<span class="source-line-no">475</span><span id="line-475">    public final void setContentHandler( final ContentHandler handler )  { m_ContentHandler = handler; }</span>
-<span class="source-line-no">476</span><span id="line-476"></span>
-<span class="source-line-no">477</span><span id="line-477">    /**</span>
-<span class="source-line-no">478</span><span id="line-478">     *  Sets the DTD handler used by this XMLReader. Allows an application to</span>
-<span class="source-line-no">479</span><span id="line-479">     *  register a DTD event handler.&lt;br&gt;</span>
-<span class="source-line-no">480</span><span id="line-480">     *  &lt;br&gt;If the application does not register a DTD handler, all DTD events</span>
-<span class="source-line-no">481</span><span id="line-481">     *  reported by the SAX parser will be silently ignored.&lt;br&gt;</span>
-<span class="source-line-no">482</span><span id="line-482">     *  &lt;br&gt;Applications may register a new or different handler in the middle</span>
-<span class="source-line-no">483</span><span id="line-483">     *  of a parse, and the SAX parser must begin using the new handler</span>
-<span class="source-line-no">484</span><span id="line-484">     *  immediately.</span>
-<span class="source-line-no">485</span><span id="line-485">     *</span>
-<span class="source-line-no">486</span><span id="line-486">     *  @param  handler The DTD handler; may be {@code null}.</span>
-<span class="source-line-no">487</span><span id="line-487">     *</span>
-<span class="source-line-no">488</span><span id="line-488">     *  @see org.xml.sax.XMLReader#setDTDHandler(org.xml.sax.DTDHandler)</span>
-<span class="source-line-no">489</span><span id="line-489">     */</span>
-<span class="source-line-no">490</span><span id="line-490">    @Override</span>
-<span class="source-line-no">491</span><span id="line-491">    public final void setDTDHandler( final DTDHandler handler ) { m_DTDHandler = handler; }</span>
-<span class="source-line-no">492</span><span id="line-492"></span>
-<span class="source-line-no">493</span><span id="line-493">    /**</span>
-<span class="source-line-no">494</span><span id="line-494">     *  Sets the encoding for the input source. {@code null} means that</span>
-<span class="source-line-no">495</span><span id="line-495">     *  the platform specific encoding is used.</span>
-<span class="source-line-no">496</span><span id="line-496">     *</span>
-<span class="source-line-no">497</span><span id="line-497">     *  @param  encoding    The encoding to use; may be {@code null}.</span>
-<span class="source-line-no">498</span><span id="line-498">     */</span>
-<span class="source-line-no">499</span><span id="line-499">    public final void setEncoding( final String encoding ) { m_Encoding = encoding; }</span>
-<span class="source-line-no">500</span><span id="line-500"></span>
-<span class="source-line-no">501</span><span id="line-501">    /**</span>
-<span class="source-line-no">502</span><span id="line-502">     *  Sets the entity resolver that is used by this XMLReader. Allows an</span>
-<span class="source-line-no">503</span><span id="line-503">     *  application to register an entity resolver.&lt;br&gt;</span>
-<span class="source-line-no">504</span><span id="line-504">     *  &lt;br&gt;If the application does not register an entity resolver, the</span>
-<span class="source-line-no">505</span><span id="line-505">     *  XMLReader will perform its own default resolution.&lt;br&gt;</span>
-<span class="source-line-no">506</span><span id="line-506">     *  &lt;br&gt;Applications may register a new or different resolver in the</span>
-<span class="source-line-no">507</span><span id="line-507">     *  middle of a parse, and the SAX parser must begin using the new resolver</span>
+<span class="source-line-no">470</span><span id="line-470">     *  @param  handler The DTD handler; may be {@code null}.</span>
+<span class="source-line-no">471</span><span id="line-471">     */</span>
+<span class="source-line-no">472</span><span id="line-472">    @Override</span>
+<span class="source-line-no">473</span><span id="line-473">    public final void setDTDHandler( final DTDHandler handler ) { m_DTDHandler = handler; }</span>
+<span class="source-line-no">474</span><span id="line-474"></span>
+<span class="source-line-no">475</span><span id="line-475">    /**</span>
+<span class="source-line-no">476</span><span id="line-476">     *  Sets the encoding for the input source. {@code null} means that</span>
+<span class="source-line-no">477</span><span id="line-477">     *  the platform specific encoding is used.</span>
+<span class="source-line-no">478</span><span id="line-478">     *</span>
+<span class="source-line-no">479</span><span id="line-479">     *  @param  encoding    The encoding to use; may be {@code null}.</span>
+<span class="source-line-no">480</span><span id="line-480">     */</span>
+<span class="source-line-no">481</span><span id="line-481">    public final void setEncoding( final String encoding ) { m_Encoding = encoding; }</span>
+<span class="source-line-no">482</span><span id="line-482"></span>
+<span class="source-line-no">483</span><span id="line-483">    /**</span>
+<span class="source-line-no">484</span><span id="line-484">     *  Sets the entity resolver that is used by this XMLReader. Allows an</span>
+<span class="source-line-no">485</span><span id="line-485">     *  application to register an entity resolver.&lt;br&gt;</span>
+<span class="source-line-no">486</span><span id="line-486">     *  &lt;br&gt;If the application does not register an entity resolver, the</span>
+<span class="source-line-no">487</span><span id="line-487">     *  XMLReader will perform its own default resolution.&lt;br&gt;</span>
+<span class="source-line-no">488</span><span id="line-488">     *  &lt;br&gt;Applications may register a new or different resolver in the</span>
+<span class="source-line-no">489</span><span id="line-489">     *  middle of a parse, and the SAX parser must begin using the new resolver</span>
+<span class="source-line-no">490</span><span id="line-490">     *  immediately.</span>
+<span class="source-line-no">491</span><span id="line-491">     *</span>
+<span class="source-line-no">492</span><span id="line-492">     *  @param  resolver    The entity resolver; may be {@code null}.</span>
+<span class="source-line-no">493</span><span id="line-493">     */</span>
+<span class="source-line-no">494</span><span id="line-494">    @Override</span>
+<span class="source-line-no">495</span><span id="line-495">    public final void setEntityResolver( final EntityResolver resolver ) { m_EntityResolver = resolver; }</span>
+<span class="source-line-no">496</span><span id="line-496"></span>
+<span class="source-line-no">497</span><span id="line-497">    /**</span>
+<span class="source-line-no">498</span><span id="line-498">     *  Sets the error handler that is used by this XMLReader. Allows an</span>
+<span class="source-line-no">499</span><span id="line-499">     *  application to register an error event handler.&lt;br&gt;</span>
+<span class="source-line-no">500</span><span id="line-500">     *  &lt;br&gt;If the application does not register an error handler, all error</span>
+<span class="source-line-no">501</span><span id="line-501">     *  events reported by the SAX parser will be written to</span>
+<span class="source-line-no">502</span><span id="line-502">     *  {@link System#err System.err}</span>
+<span class="source-line-no">503</span><span id="line-503">     *  and otherwise silently ignored; however, normal processing may not</span>
+<span class="source-line-no">504</span><span id="line-504">     *  continue. It is highly recommended that all SAX applications implement</span>
+<span class="source-line-no">505</span><span id="line-505">     *  an error handler to avoid unexpected bugs.&lt;br&gt;</span>
+<span class="source-line-no">506</span><span id="line-506">     *  &lt;br&gt;Applications may register a new or different handler in the middle</span>
+<span class="source-line-no">507</span><span id="line-507">     *  of a parse, and the SAX parser must begin using the new handler</span>
 <span class="source-line-no">508</span><span id="line-508">     *  immediately.</span>
 <span class="source-line-no">509</span><span id="line-509">     *</span>
-<span class="source-line-no">510</span><span id="line-510">     *  @param  resolver    The entity resolver; may be {@code null}.</span>
+<span class="source-line-no">510</span><span id="line-510">     *  @param  handler The error handler; may be {@code null}.</span>
 <span class="source-line-no">511</span><span id="line-511">     *</span>
-<span class="source-line-no">512</span><span id="line-512">     *  @see org.xml.sax.XMLReader#setEntityResolver(org.xml.sax.EntityResolver)</span>
+<span class="source-line-no">512</span><span id="line-512">     *  @see DefaultErrorHandler</span>
 <span class="source-line-no">513</span><span id="line-513">     */</span>
 <span class="source-line-no">514</span><span id="line-514">    @Override</span>
-<span class="source-line-no">515</span><span id="line-515">    public final void setEntityResolver( final EntityResolver resolver ) { m_EntityResolver = resolver; }</span>
-<span class="source-line-no">516</span><span id="line-516"></span>
-<span class="source-line-no">517</span><span id="line-517">    /**</span>
-<span class="source-line-no">518</span><span id="line-518">     *  Sets the error handler that is used by this XMLReader. Allows an</span>
-<span class="source-line-no">519</span><span id="line-519">     *  application to register an error event handler.&lt;br&gt;</span>
-<span class="source-line-no">520</span><span id="line-520">     *  &lt;br&gt;If the application does not register an error handler, all error</span>
-<span class="source-line-no">521</span><span id="line-521">     *  events reported by the SAX parser will be written to</span>
-<span class="source-line-no">522</span><span id="line-522">     *  {@link System#err System.err}</span>
-<span class="source-line-no">523</span><span id="line-523">     *  and otherwise silently ignored; however, normal processing may not</span>
-<span class="source-line-no">524</span><span id="line-524">     *  continue. It is highly recommended that all SAX applications implement</span>
-<span class="source-line-no">525</span><span id="line-525">     *  an error handler to avoid unexpected bugs.&lt;br&gt;</span>
-<span class="source-line-no">526</span><span id="line-526">     *  &lt;br&gt;Applications may register a new or different handler in the middle</span>
-<span class="source-line-no">527</span><span id="line-527">     *  of a parse, and the SAX parser must begin using the new handler</span>
-<span class="source-line-no">528</span><span id="line-528">     *  immediately.</span>
-<span class="source-line-no">529</span><span id="line-529">     *</span>
-<span class="source-line-no">530</span><span id="line-530">     *  @param  handler The error handler; may be {@code null}.</span>
-<span class="source-line-no">531</span><span id="line-531">     *</span>
-<span class="source-line-no">532</span><span id="line-532">     *  @see org.xml.sax.XMLReader#setErrorHandler(org.xml.sax.ErrorHandler)</span>
-<span class="source-line-no">533</span><span id="line-533">     *  @see DefaultErrorHandler</span>
-<span class="source-line-no">534</span><span id="line-534">     */</span>
-<span class="source-line-no">535</span><span id="line-535">    @Override</span>
-<span class="source-line-no">536</span><span id="line-536">    public final void setErrorHandler( final ErrorHandler handler )</span>
-<span class="source-line-no">537</span><span id="line-537">    {</span>
-<span class="source-line-no">538</span><span id="line-538">        m_ErrorHandler = nonNull( handler ) ? handler : DefaultErrorHandler.INSTANCE;</span>
-<span class="source-line-no">539</span><span id="line-539">    }   //  setErrorHandler()</span>
-<span class="source-line-no">540</span><span id="line-540"></span>
-<span class="source-line-no">541</span><span id="line-541">    /**</span>
-<span class="source-line-no">542</span><span id="line-542">     *  Sets the feature flag.</span>
-<span class="source-line-no">543</span><span id="line-543">     *</span>
-<span class="source-line-no">544</span><span id="line-544">     *  @param  name    The name of the feature.</span>
-<span class="source-line-no">545</span><span id="line-545">     *  @param  value   {@code true} if the feature should be supported</span>
-<span class="source-line-no">546</span><span id="line-546">     *      by this implementation, {@code false} if not.</span>
-<span class="source-line-no">547</span><span id="line-547">     *  @throws SAXNotRecognizedException   The feature value cannot be</span>
-<span class="source-line-no">548</span><span id="line-548">     *      assigned.</span>
-<span class="source-line-no">549</span><span id="line-549">     *  @throws SAXNotSupportedException    The XMLReader recognises the</span>
-<span class="source-line-no">550</span><span id="line-550">     *      feature name but cannot set the requested value.</span>
-<span class="source-line-no">551</span><span id="line-551">     *</span>
-<span class="source-line-no">552</span><span id="line-552">     *  @see org.xml.sax.XMLReader#setFeature(java.lang.String, boolean)</span>
-<span class="source-line-no">553</span><span id="line-553">     *  @see #getFeature(String) getFeature()</span>
-<span class="source-line-no">554</span><span id="line-554">     */</span>
-<span class="source-line-no">555</span><span id="line-555">    @Override</span>
-<span class="source-line-no">556</span><span id="line-556">    public void setFeature( final String name, final boolean value ) throws SAXNotRecognizedException, SAXNotSupportedException</span>
-<span class="source-line-no">557</span><span id="line-557">    {</span>
-<span class="source-line-no">558</span><span id="line-558">        m_Features.put( requireNonNullArgument( name, "name" ), Boolean.valueOf( value ) );</span>
-<span class="source-line-no">559</span><span id="line-559">    }   //  setFeature()</span>
-<span class="source-line-no">560</span><span id="line-560"></span>
-<span class="source-line-no">561</span><span id="line-561">    /**</span>
-<span class="source-line-no">562</span><span id="line-562">     *  Sets the current location to the locator.</span>
-<span class="source-line-no">563</span><span id="line-563">     *</span>
-<span class="source-line-no">564</span><span id="line-564">     *  @param  lineNumber   The current line number.</span>
-<span class="source-line-no">565</span><span id="line-565">     *  @param  columnNumber    The current column number.</span>
-<span class="source-line-no">566</span><span id="line-566">     */</span>
-<span class="source-line-no">567</span><span id="line-567">    protected final void setLocation( final int lineNumber, final int columnNumber )</span>
-<span class="source-line-no">568</span><span id="line-568">    {</span>
-<span class="source-line-no">569</span><span id="line-569">        m_Locator.setLineNumber( lineNumber );</span>
-<span class="source-line-no">570</span><span id="line-570">        m_Locator.setColumnNumber( columnNumber );</span>
-<span class="source-line-no">571</span><span id="line-571">    }   //  setLocation()</span>
-<span class="source-line-no">572</span><span id="line-572"></span>
-<span class="source-line-no">573</span><span id="line-573">    /**</span>
-<span class="source-line-no">574</span><span id="line-574">     *  Sets the value of a property. Usually, the property name is any</span>
-<span class="source-line-no">575</span><span id="line-575">     *  fully-qualified URI. It is possible for an XMLReader to recognize a</span>
-<span class="source-line-no">576</span><span id="line-576">     *  property name but to be unable to change the current value. Some</span>
-<span class="source-line-no">577</span><span id="line-577">     *  property values may be immutable or mutable only in specific contexts,</span>
-<span class="source-line-no">578</span><span id="line-578">     *  such as before, during, or after a parse.&lt;br&gt;</span>
-<span class="source-line-no">579</span><span id="line-579">     *  &lt;br&gt;XMLReaders are not required to recognize setting any specific</span>
-<span class="source-line-no">580</span><span id="line-580">     *  property names, though a core set is defined by SAX2. But only this is</span>
-<span class="source-line-no">581</span><span id="line-581">     *  not implemented by this implementation.&lt;br&gt;</span>
-<span class="source-line-no">582</span><span id="line-582">     *  &lt;br&gt;This method is also the standard mechanism for setting extended</span>
-<span class="source-line-no">583</span><span id="line-583">     *  handlers.</span>
-<span class="source-line-no">584</span><span id="line-584">     *</span>
-<span class="source-line-no">585</span><span id="line-585">     *  @param name The property name, which is a fully-qualified URI.</span>
-<span class="source-line-no">586</span><span id="line-586">     *  @param value    The requested value for the property.</span>
-<span class="source-line-no">587</span><span id="line-587">     *  @throws SAXNotRecognizedException   The property value can't be</span>
-<span class="source-line-no">588</span><span id="line-588">     *      assigned or retrieved.</span>
-<span class="source-line-no">589</span><span id="line-589">     *  @throws SAXNotSupportedException    The XMLReader recognises the</span>
-<span class="source-line-no">590</span><span id="line-590">     *      property name but cannot set the requested value.</span>
-<span class="source-line-no">591</span><span id="line-591">     *</span>
-<span class="source-line-no">592</span><span id="line-592">     *  @see org.xml.sax.XMLReader#setProperty(java.lang.String, java.lang.Object)</span>
-<span class="source-line-no">593</span><span id="line-593">     *  @see #getProperty(String) getProperty()</span>
-<span class="source-line-no">594</span><span id="line-594">     */</span>
-<span class="source-line-no">595</span><span id="line-595">    @Override</span>
-<span class="source-line-no">596</span><span id="line-596">    public void setProperty( final String name, final Object value ) throws SAXNotRecognizedException, SAXNotSupportedException</span>
-<span class="source-line-no">597</span><span id="line-597">    {</span>
-<span class="source-line-no">598</span><span id="line-598">        requireNonNullArgument( name, "name" );</span>
-<span class="source-line-no">599</span><span id="line-599">        if( nonNull( value ) )</span>
-<span class="source-line-no">600</span><span id="line-600">        {</span>
-<span class="source-line-no">601</span><span id="line-601">            m_Properties.put( name, value );</span>
-<span class="source-line-no">602</span><span id="line-602">        }</span>
-<span class="source-line-no">603</span><span id="line-603">        else</span>
-<span class="source-line-no">604</span><span id="line-604">        {</span>
-<span class="source-line-no">605</span><span id="line-605">            m_Properties.remove( name );</span>
-<span class="source-line-no">606</span><span id="line-606">        }</span>
-<span class="source-line-no">607</span><span id="line-607">    }   //  setProperty()</span>
-<span class="source-line-no">608</span><span id="line-608"></span>
-<span class="source-line-no">609</span><span id="line-609">    /**</span>
-<span class="source-line-no">610</span><span id="line-610">     *  Sets the public id to the locator.</span>
-<span class="source-line-no">611</span><span id="line-611">     *</span>
-<span class="source-line-no">612</span><span id="line-612">     *  @param  publicId    The value for the public id; may be {@code null}.</span>
-<span class="source-line-no">613</span><span id="line-613">     */</span>
-<span class="source-line-no">614</span><span id="line-614">    protected final void setPublicId( final String publicId ) { m_Locator.setPublicId( publicId ); }</span>
-<span class="source-line-no">615</span><span id="line-615"></span>
-<span class="source-line-no">616</span><span id="line-616">    /**</span>
-<span class="source-line-no">617</span><span id="line-617">     *  Sets the system id to the locator.</span>
-<span class="source-line-no">618</span><span id="line-618">     *</span>
-<span class="source-line-no">619</span><span id="line-619">     *  @param  systemId    The value for the system id; may be {@code null}.</span>
-<span class="source-line-no">620</span><span id="line-620">     */</span>
-<span class="source-line-no">621</span><span id="line-621">    protected final void setSystemId( final String systemId ) { m_Locator.setSystemId( systemId ); }</span>
-<span class="source-line-no">622</span><span id="line-622">}</span>
-<span class="source-line-no">623</span><span id="line-623">//  class AbstractXMLReader</span>
-<span class="source-line-no">624</span><span id="line-624"></span>
-<span class="source-line-no">625</span><span id="line-625">/*</span>
-<span class="source-line-no">626</span><span id="line-626"> *  End of File</span>
-<span class="source-line-no">627</span><span id="line-627"> */</span>
+<span class="source-line-no">515</span><span id="line-515">    public final void setErrorHandler( final ErrorHandler handler )</span>
+<span class="source-line-no">516</span><span id="line-516">    {</span>
+<span class="source-line-no">517</span><span id="line-517">        m_ErrorHandler = nonNull( handler ) ? handler : DefaultErrorHandler.INSTANCE;</span>
+<span class="source-line-no">518</span><span id="line-518">    }   //  setErrorHandler()</span>
+<span class="source-line-no">519</span><span id="line-519"></span>
+<span class="source-line-no">520</span><span id="line-520">    /**</span>
+<span class="source-line-no">521</span><span id="line-521">     *  Sets the feature flag.</span>
+<span class="source-line-no">522</span><span id="line-522">     *</span>
+<span class="source-line-no">523</span><span id="line-523">     *  @param  name    The name of the feature.</span>
+<span class="source-line-no">524</span><span id="line-524">     *  @param  value   {@code true} if the feature should be supported</span>
+<span class="source-line-no">525</span><span id="line-525">     *      by this implementation, {@code false} if not.</span>
+<span class="source-line-no">526</span><span id="line-526">     *  @throws SAXNotRecognizedException   The feature value cannot be</span>
+<span class="source-line-no">527</span><span id="line-527">     *      assigned.</span>
+<span class="source-line-no">528</span><span id="line-528">     *  @throws SAXNotSupportedException    The XMLReader recognises the</span>
+<span class="source-line-no">529</span><span id="line-529">     *      feature name but cannot set the requested value.</span>
+<span class="source-line-no">530</span><span id="line-530">     *</span>
+<span class="source-line-no">531</span><span id="line-531">     *  @see #getFeature(String) getFeature()</span>
+<span class="source-line-no">532</span><span id="line-532">     */</span>
+<span class="source-line-no">533</span><span id="line-533">    @Override</span>
+<span class="source-line-no">534</span><span id="line-534">    public void setFeature( final String name, final boolean value ) throws SAXNotRecognizedException, SAXNotSupportedException</span>
+<span class="source-line-no">535</span><span id="line-535">    {</span>
+<span class="source-line-no">536</span><span id="line-536">        m_Features.put( requireNonNullArgument( name, "name" ), Boolean.valueOf( value ) );</span>
+<span class="source-line-no">537</span><span id="line-537">    }   //  setFeature()</span>
+<span class="source-line-no">538</span><span id="line-538"></span>
+<span class="source-line-no">539</span><span id="line-539">    /**</span>
+<span class="source-line-no">540</span><span id="line-540">     *  Sets the current location to the locator.</span>
+<span class="source-line-no">541</span><span id="line-541">     *</span>
+<span class="source-line-no">542</span><span id="line-542">     *  @param  lineNumber   The current line number.</span>
+<span class="source-line-no">543</span><span id="line-543">     *  @param  columnNumber    The current column number.</span>
+<span class="source-line-no">544</span><span id="line-544">     */</span>
+<span class="source-line-no">545</span><span id="line-545">    protected final void setLocation( final int lineNumber, final int columnNumber )</span>
+<span class="source-line-no">546</span><span id="line-546">    {</span>
+<span class="source-line-no">547</span><span id="line-547">        m_Locator.setLineNumber( lineNumber );</span>
+<span class="source-line-no">548</span><span id="line-548">        m_Locator.setColumnNumber( columnNumber );</span>
+<span class="source-line-no">549</span><span id="line-549">    }   //  setLocation()</span>
+<span class="source-line-no">550</span><span id="line-550"></span>
+<span class="source-line-no">551</span><span id="line-551">    /**</span>
+<span class="source-line-no">552</span><span id="line-552">     *  Sets the value of a property. Usually, the property name is any</span>
+<span class="source-line-no">553</span><span id="line-553">     *  fully-qualified URI. It is possible for an XMLReader to recognize a</span>
+<span class="source-line-no">554</span><span id="line-554">     *  property name but to be unable to change the current value. Some</span>
+<span class="source-line-no">555</span><span id="line-555">     *  property values may be immutable or mutable only in specific contexts,</span>
+<span class="source-line-no">556</span><span id="line-556">     *  such as before, during, or after a parse.&lt;br&gt;</span>
+<span class="source-line-no">557</span><span id="line-557">     *  &lt;br&gt;XMLReaders are not required to recognize setting any specific</span>
+<span class="source-line-no">558</span><span id="line-558">     *  property names, though a core set is defined by SAX2. But only this is</span>
+<span class="source-line-no">559</span><span id="line-559">     *  not implemented by this implementation.&lt;br&gt;</span>
+<span class="source-line-no">560</span><span id="line-560">     *  &lt;br&gt;This method is also the standard mechanism for setting extended</span>
+<span class="source-line-no">561</span><span id="line-561">     *  handlers.</span>
+<span class="source-line-no">562</span><span id="line-562">     *</span>
+<span class="source-line-no">563</span><span id="line-563">     *  @param name The property name, which is a fully-qualified URI.</span>
+<span class="source-line-no">564</span><span id="line-564">     *  @param value    The requested value for the property.</span>
+<span class="source-line-no">565</span><span id="line-565">     *  @throws SAXNotRecognizedException   The property value can't be</span>
+<span class="source-line-no">566</span><span id="line-566">     *      assigned or retrieved.</span>
+<span class="source-line-no">567</span><span id="line-567">     *  @throws SAXNotSupportedException    The XMLReader recognises the</span>
+<span class="source-line-no">568</span><span id="line-568">     *      property name but cannot set the requested value.</span>
+<span class="source-line-no">569</span><span id="line-569">     *</span>
+<span class="source-line-no">570</span><span id="line-570">     *  @see #getProperty(String) getProperty()</span>
+<span class="source-line-no">571</span><span id="line-571">     */</span>
+<span class="source-line-no">572</span><span id="line-572">    @Override</span>
+<span class="source-line-no">573</span><span id="line-573">    public void setProperty( final String name, final Object value ) throws SAXNotRecognizedException, SAXNotSupportedException</span>
+<span class="source-line-no">574</span><span id="line-574">    {</span>
+<span class="source-line-no">575</span><span id="line-575">        requireNonNullArgument( name, "name" );</span>
+<span class="source-line-no">576</span><span id="line-576">        if( nonNull( value ) )</span>
+<span class="source-line-no">577</span><span id="line-577">        {</span>
+<span class="source-line-no">578</span><span id="line-578">            m_Properties.put( name, value );</span>
+<span class="source-line-no">579</span><span id="line-579">        }</span>
+<span class="source-line-no">580</span><span id="line-580">        else</span>
+<span class="source-line-no">581</span><span id="line-581">        {</span>
+<span class="source-line-no">582</span><span id="line-582">            m_Properties.remove( name );</span>
+<span class="source-line-no">583</span><span id="line-583">        }</span>
+<span class="source-line-no">584</span><span id="line-584">    }   //  setProperty()</span>
+<span class="source-line-no">585</span><span id="line-585"></span>
+<span class="source-line-no">586</span><span id="line-586">    /**</span>
+<span class="source-line-no">587</span><span id="line-587">     *  Sets the public id to the locator.</span>
+<span class="source-line-no">588</span><span id="line-588">     *</span>
+<span class="source-line-no">589</span><span id="line-589">     *  @param  publicId    The value for the public id; may be {@code null}.</span>
+<span class="source-line-no">590</span><span id="line-590">     */</span>
+<span class="source-line-no">591</span><span id="line-591">    protected final void setPublicId( final String publicId ) { m_Locator.setPublicId( publicId ); }</span>
+<span class="source-line-no">592</span><span id="line-592"></span>
+<span class="source-line-no">593</span><span id="line-593">    /**</span>
+<span class="source-line-no">594</span><span id="line-594">     *  Sets the system id to the locator.</span>
+<span class="source-line-no">595</span><span id="line-595">     *</span>
+<span class="source-line-no">596</span><span id="line-596">     *  @param  systemId    The value for the system id; may be {@code null}.</span>
+<span class="source-line-no">597</span><span id="line-597">     */</span>
+<span class="source-line-no">598</span><span id="line-598">    protected final void setSystemId( final String systemId ) { m_Locator.setSystemId( systemId ); }</span>
+<span class="source-line-no">599</span><span id="line-599">}</span>
+<span class="source-line-no">600</span><span id="line-600">//  class AbstractXMLReader</span>
+<span class="source-line-no">601</span><span id="line-601"></span>
+<span class="source-line-no">602</span><span id="line-602">/*</span>
+<span class="source-line-no">603</span><span id="line-603"> *  End of File</span>
+<span class="source-line-no">604</span><span id="line-604"> */</span>
 
 
 

@@ -39,10 +39,9 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link Element}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestElement.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TestElement.java 1030 2022-04-06 13:42:02Z tquadrat $
  */
-@SuppressWarnings( "MisorderedAssertEqualsArguments" )
-@ClassVersion( sourceVersion = "$Id: TestElement.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestElement.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.spi.TestElement" )
 public class TestElement extends XMLTestBase
 {
@@ -54,9 +53,9 @@ public class TestElement extends XMLTestBase
      *  {@link Element}.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: TestElement.java 820 2020-12-29 20:34:22Z tquadrat $
+     *  @version $Id: TestElement.java 1030 2022-04-06 13:42:02Z tquadrat $
      */
-    @ClassVersion( sourceVersion = "$Id: TestElement.java 820 2020-12-29 20:34:22Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: TestElement.java 1030 2022-04-06 13:42:02Z tquadrat $" )
     private static final class CandidateElement implements Element
     {
             /*--------------*\

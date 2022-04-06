@@ -35,13 +35,13 @@ import org.tquadrat.foundation.xml.builder.spi.XMLElementFactoryBase;
  *  instances with an element name belonging to a specified namespace.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: XMLElementFactory.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: XMLElementFactory.java 1030 2022-04-06 13:42:02Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@SuppressWarnings( {"preview", "InterfaceMayBeAnnotatedFunctional"} )
-@ClassVersion( sourceVersion = "$Id: XMLElementFactory.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@SuppressWarnings( "InterfaceMayBeAnnotatedFunctional" )
+@ClassVersion( sourceVersion = "$Id: XMLElementFactory.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public sealed interface XMLElementFactory
     permits XMLElementFactoryBase
@@ -89,12 +89,12 @@ public sealed interface XMLElementFactory
     }   //  createXMLElement()
 
     /**
-     *  Creates an XML element for the given element name that supports
-     *  attributes, namespaces, children, text, {@code CDATA} and comments, and
-     *  add the the given text.<br>
-     *  <br>The given element name is validated using the method that is
+     *  <p>{@summary Creates an XML element for the given element name that
+     *  supports attributes, namespaces, children, text, {@code CDATA} and
+     *  comments, and adds the given text.}</p>
+     *  <p>The given element name is validated using the method that is
      *  provided by
-     *  {@link XMLBuilderUtils#getElementNameValidator()}.
+     *  {@link XMLBuilderUtils#getElementNameValidator()}.</p>
      *
      *  @param  elementName The element name.
      *  @param  text    The text for the new element.

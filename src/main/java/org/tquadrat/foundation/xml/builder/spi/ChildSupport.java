@@ -60,12 +60,12 @@ import org.tquadrat.foundation.xml.builder.internal.Text;
  *  {@link #addChild(Element)}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ChildSupport.java 840 2021-01-10 21:37:03Z tquadrat $
+ *  @version $Id: ChildSupport.java 1030 2022-04-06 13:42:02Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ChildSupport.java 840 2021-01-10 21:37:03Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ChildSupport.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @API( status = MAINTAINED, since = "0.0.5" )
 public final class ChildSupport
 {
@@ -320,6 +320,7 @@ public final class ChildSupport
      *  @return {@code true} when child elements are allowed, {@code false} if
      *      not.
      */
+    @SuppressWarnings( "BooleanMethodNameMustStartWithQuestion" )
     public final boolean allowsChildren() { return m_AllowChildren; }
 
     /**
@@ -330,6 +331,7 @@ public final class ChildSupport
      *  @return {@code true} if it is allowed to add text and {@code CDATA},
      *      {@code false} otherwise.
      */
+    @SuppressWarnings( "BooleanMethodNameMustStartWithQuestion" )
     public final boolean allowsText() { return m_AllowText; }
 
     /**
@@ -356,7 +358,6 @@ public final class ChildSupport
      *      owner.
      *  @throws IllegalOperationException   No children allowed for the owner.
      */
-    @SuppressWarnings( "InstanceofConcreteClass" )
     private final void checkValid( final Element child, @SuppressWarnings( "SameParameterValue" ) final String operationName ) throws IllegalArgumentException, IllegalOperationException
     {
         if( !(child instanceof Comment) && !(child instanceof Text) )
@@ -391,6 +392,7 @@ public final class ChildSupport
      *  @see #addChild(Element)
      *  @see #allowsChildren()
      */
+    @SuppressWarnings( "BooleanMethodNameMustStartWithQuestion" )
     public final boolean checksIfValid() { return m_AllowChildren && m_CheckValid; }
 
     /**
@@ -462,10 +464,11 @@ public final class ChildSupport
         }
         else
         {
-            final var t = text.toString();
+            final var str = text.toString();
             var start = 0;
             int pos;
-            while( (pos = t.indexOf( ']', start )) >= 0 )
+            //noinspection NestedAssignment
+            while( (pos = str.indexOf( "]", start )) >= 0 )
             {
                 if( pos == start )
                 {
@@ -475,7 +478,7 @@ public final class ChildSupport
                 else
                 {
                     retValue.append( CDATA_LEADIN )
-                        .append( t, start, pos )
+                        .append( str, start, pos )
                         .append( CDATA_LEADOUT )
                         .append( ']' );
                     start = pos + 1;
@@ -484,7 +487,7 @@ public final class ChildSupport
             if( start < text.length() )
             {
                 retValue.append( CDATA_LEADIN )
-                    .append( t.substring( start ) )
+                    .append( str.substring( start ) )
                     .append( CDATA_LEADOUT );
             }
         }

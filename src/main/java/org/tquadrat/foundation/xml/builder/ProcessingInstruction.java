@@ -51,13 +51,12 @@ import org.tquadrat.foundation.xml.builder.spi.Element;
  *  methods the data will be formatted as attributes.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ProcessingInstruction.java 840 2021-01-10 21:37:03Z tquadrat $
+ *  @version $Id: ProcessingInstruction.java 1030 2022-04-06 13:42:02Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@SuppressWarnings( "preview" )
-@ClassVersion( sourceVersion = "$Id: ProcessingInstruction.java 840 2021-01-10 21:37:03Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ProcessingInstruction.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public sealed interface ProcessingInstruction extends Element
     permits ProcessingInstructionImpl
@@ -79,7 +78,7 @@ public sealed interface ProcessingInstruction extends Element
      *  {@link Boolean#toString(boolean)}
      *  to convert the provided flag to a {@code String}.</p>
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  flag    The attribute's value.
      *  @return This instance.
      *  @throws IllegalArgumentException    An attribute with the given name is
@@ -96,7 +95,7 @@ public sealed interface ProcessingInstruction extends Element
      *  {@link Boolean#toString()}
      *  to convert the provided flag to a {@code String}.</p>
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  flag    The attribute's value; if {@code null} the
      *      attribute will be removed.
      *  @return This instance.
@@ -111,7 +110,7 @@ public sealed interface ProcessingInstruction extends Element
     /**
      *  Sets the attribute with the given name.
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  value   The attribute's value; if {@code null} the
      *      attribute will be removed.
      *  @return This instance.
@@ -126,7 +125,7 @@ public sealed interface ProcessingInstruction extends Element
     /**
      *  Sets the attribute with the given name.
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  value   The attribute's value; if {@code null} the
      *      attribute will be removed.
      *  @param  append  If not
@@ -146,7 +145,7 @@ public sealed interface ProcessingInstruction extends Element
      *  {@link Double#toString(double)}
      *  to convert the provided number to a {@code String}.</p>
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  number   The attribute's value.
      *  @return This instance.
      *  @throws IllegalArgumentException    An attribute with the given name is
@@ -164,7 +163,7 @@ public sealed interface ProcessingInstruction extends Element
      *  to convert the provided value to a {@code String}.</p>
      *
      *  @param  <E> The concrete enum type of {@code value}.
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  enumValue   The attribute's value; if {@code null} the
      *      attribute will be removed.
      *  @return This instance.
@@ -182,7 +181,7 @@ public sealed interface ProcessingInstruction extends Element
      *  {@link Instant#toString()}
      *  to convert the provided number to a {@code String}.</p>
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  date    The attribute's value; if {@code null} the
      *      attribute will be removed.
      *  @return This instance.
@@ -200,7 +199,7 @@ public sealed interface ProcessingInstruction extends Element
      *  {@link Integer#toString(int)}
      *  to convert the provided number to a {@code String}.</p>
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  number  The attribute's value.
      *  @return This instance.
      *  @throws IllegalArgumentException    An attribute with the given name is
@@ -217,7 +216,7 @@ public sealed interface ProcessingInstruction extends Element
      *  {@link LocalDate#toString()}
      *  to convert the provided number to a {@code String}.</p>
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  date    The attribute's value; if {@code null} the
      *      attribute will be removed.
      *  @return This instance.
@@ -235,7 +234,7 @@ public sealed interface ProcessingInstruction extends Element
      *  {@link LocalDateTime#toString()}
      *  to convert the provided number to a {@code String}.</p>
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  date    The attribute's value; if {@code null} the
      *      attribute will be removed.
      *  @return This instance.
@@ -253,7 +252,7 @@ public sealed interface ProcessingInstruction extends Element
      *  {@link Long#toString(long)}
      *  to convert the provided number to a {@code String}.</p>
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  number   The attribute's value.
      *  @return This instance.
      *  @throws IllegalArgumentException    An attribute with the given name is
@@ -270,7 +269,7 @@ public sealed interface ProcessingInstruction extends Element
      *  {@link Number#toString()}
      *  to convert the provided number to a {@code String}.</p>
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  number   The attribute's value; if {@code null} the
      *      attribute will be removed.
      *  @return This instance.
@@ -288,7 +287,7 @@ public sealed interface ProcessingInstruction extends Element
      *  {@link ZonedDateTime#toString()}
      *  to convert the provided number to a {@code String}.</p>
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  date    The attribute's value; if {@code null} the
      *      attribute will be removed.
      *  @return This instance.

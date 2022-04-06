@@ -33,10 +33,9 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link NamespaceSupport#getNamespaces()}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestGetNamespaces.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TestGetNamespaces.java 1030 2022-04-06 13:42:02Z tquadrat $
  */
-@SuppressWarnings( "MisorderedAssertEqualsArguments" )
-@ClassVersion( sourceVersion = "$Id: TestGetNamespaces.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestGetNamespaces.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.spi.namespacesupport.TestGetNamespaces" )
 public class TestGetNamespaces extends XMLTestBase
 {
@@ -47,6 +46,7 @@ public class TestGetNamespaces extends XMLTestBase
      *  Some tests for the method
      *  {@link NamespaceSupport#getNamespaces()}.
      */
+    @SuppressWarnings( "LocalVariableNamingConvention" )
     @DisplayName( "NamespaceSupport.getNamespaces()" )
     @Test
     final void testGetNamespaces()

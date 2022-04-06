@@ -56,10 +56,9 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link XMLDocumentImpl}
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestXMLDocumentImpl.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TestXMLDocumentImpl.java 1030 2022-04-06 13:42:02Z tquadrat $
  */
-@SuppressWarnings( "MisorderedAssertEqualsArguments" )
-@ClassVersion( sourceVersion = "$Id: TestXMLDocumentImpl.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestXMLDocumentImpl.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.internal.TestXMLDocumentImpl" )
 public class TestXMLDocumentImpl extends XMLTestBase
 {
@@ -72,6 +71,7 @@ public class TestXMLDocumentImpl extends XMLTestBase
      *
      *  @throws URISyntaxException   The URI is invalid.
      */
+    @SuppressWarnings( {"ImplicitNumericConversion", "GrazieInspection"} )
     @Test
     final void testConstructor() throws URISyntaxException
     {
@@ -215,6 +215,7 @@ public class TestXMLDocumentImpl extends XMLTestBase
      *  and
      *  {@link XMLDocumentImpl#XMLDocumentImpl(org.tquadrat.foundation.xml.builder.XMLElement, java.nio.charset.Charset, String, URI)}.
      */
+    @SuppressWarnings( "OverlyComplexMethod" )
     @Test
     final void testConstructorWithEmptyArgument()
     {
@@ -366,6 +367,7 @@ public class TestXMLDocumentImpl extends XMLTestBase
      *  and
      *  {@link XMLDocumentImpl#XMLDocumentImpl(org.tquadrat.foundation.xml.builder.XMLElement, java.nio.charset.Charset, String, URI)}.
      */
+    @SuppressWarnings( {"OverlyLongMethod", "OverlyComplexMethod"} )
     @Test
     final void testConstructorWithNullArgument()
     {

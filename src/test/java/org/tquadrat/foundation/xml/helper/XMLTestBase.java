@@ -43,10 +43,9 @@ import org.tquadrat.foundation.xml.builder.spi.Element;
  *  The base class for all test classes in the XML project.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: XMLTestBase.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: XMLTestBase.java 1030 2022-04-06 13:42:02Z tquadrat $
  */
-@SuppressWarnings( "ClassWithTooManyFields" )
-@ClassVersion( sourceVersion = "$Id: XMLTestBase.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: XMLTestBase.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 public class XMLTestBase extends TestBaseClass
 {
         /*------------*\

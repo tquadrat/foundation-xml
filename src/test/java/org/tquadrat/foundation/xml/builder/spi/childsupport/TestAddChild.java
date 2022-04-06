@@ -40,10 +40,9 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link ChildSupport}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestAddChild.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TestAddChild.java 1030 2022-04-06 13:42:02Z tquadrat $
  */
-@SuppressWarnings( "MisorderedAssertEqualsArguments" )
-@ClassVersion( sourceVersion = "$Id: TestAddChild.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestAddChild.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.spi.childsupport.TestAddChild" )
 public class TestAddChild extends XMLTestBase
 {
@@ -54,6 +53,7 @@ public class TestAddChild extends XMLTestBase
      *  Tests for
      *  {@link ChildSupport#addChild(Element)}
      */
+    @SuppressWarnings( "JUnitTestMethodWithNoAssertions" )
     @Test
     final void testAddChild()
     {
@@ -152,7 +152,7 @@ public class TestAddChild extends XMLTestBase
         ChildSupport candidate;
 
         /*
-         *  Usually, a child cannot assigned to another parent. But as the
+         *  Usually, a child cannot be assigned to another parent. But as the
          *  mocks do not store the parents, it works for this test.
          */
 

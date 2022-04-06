@@ -38,9 +38,9 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link SGMLPrinter#composeElementString(int, boolean, Element, boolean)}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestComposeElementString.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TestComposeElementString.java 1030 2022-04-06 13:42:02Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestComposeElementString.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestComposeElementString.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.spi.sgmlprinter.TestComposeElementString" )
 public class TestComposeElementString extends XMLTestBase
 {
@@ -51,7 +51,6 @@ public class TestComposeElementString extends XMLTestBase
      *  Tests for the method
      *  {@link SGMLPrinter#composeElementString(int, boolean, Element, boolean)}.
      */
-    @SuppressWarnings( "MisorderedAssertEqualsArguments" )
     @DisplayName( "SGMLPrinter.composeElementString()" )
     @Test
     final void testComposeElementString()

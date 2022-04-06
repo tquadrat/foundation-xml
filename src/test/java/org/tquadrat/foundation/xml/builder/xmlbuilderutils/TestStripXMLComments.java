@@ -37,10 +37,9 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link XMLBuilderUtils}
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestStripXMLComments.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TestStripXMLComments.java 1030 2022-04-06 13:42:02Z tquadrat $
  */
-@SuppressWarnings( "MisorderedAssertEqualsArguments" )
-@ClassVersion( sourceVersion = "$Id: TestStripXMLComments.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestStripXMLComments.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.xmlbuilderutils.TestStripXMLComments" )
 public class TestStripXMLComments extends XMLTestBase
 {
@@ -77,7 +76,7 @@ public class TestStripXMLComments extends XMLTestBase
         assertEquals( expected, actual );
 
         candidate = """
-                    <!-- 
+                    <!--
                         Comment only
                     -->""";
         expected = EMPTY_STRING;
@@ -92,7 +91,7 @@ public class TestStripXMLComments extends XMLTestBase
         assertEquals( expected, actual );
 
         candidate = """
-                    Text <!-- 
+                    Text <!--
                          The comment 
                          --> with a comment""";
         expected = """

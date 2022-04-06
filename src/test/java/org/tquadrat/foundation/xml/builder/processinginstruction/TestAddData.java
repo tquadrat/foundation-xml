@@ -43,10 +43,9 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link org.tquadrat.foundation.xml.builder.ProcessingInstruction}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestAddData.java 840 2021-01-10 21:37:03Z tquadrat $
+ *  @version $Id: TestAddData.java 1030 2022-04-06 13:42:02Z tquadrat $
  */
-@SuppressWarnings( "MisorderedAssertEqualsArguments" )
-@ClassVersion( sourceVersion = "$Id: TestAddData.java 840 2021-01-10 21:37:03Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestAddData.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.processinginstruction.TestAddData" )
 public class TestAddData extends XMLTestBase

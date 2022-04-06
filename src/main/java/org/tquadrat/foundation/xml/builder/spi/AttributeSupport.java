@@ -57,12 +57,12 @@ import org.tquadrat.foundation.util.LazyMap;
  *  can be configured by the user.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: AttributeSupport.java 840 2021-01-10 21:37:03Z tquadrat $
+ *  @version $Id: AttributeSupport.java 1030 2022-04-06 13:42:02Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: AttributeSupport.java 840 2021-01-10 21:37:03Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: AttributeSupport.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @API( status = MAINTAINED, since = "0.0.5" )
 public final class AttributeSupport extends NamespaceSupport
 {
@@ -82,8 +82,8 @@ public final class AttributeSupport extends NamespaceSupport
      *  {@value org.tquadrat.foundation.lang.CommonConstants#XMLATTRIBUTE_Id}
      *  is always the first attribute.
      */
-    @SuppressWarnings( "IfStatementWithTooManyBranches" )
-    public static final Comparator<String> ID_ALWAYS_FIRST_COMPARATOR = ( a1, a2) ->
+    @SuppressWarnings( {"IfStatementWithTooManyBranches", "OverlyLongLambda"} )
+    public static final Comparator<String> ID_ALWAYS_FIRST_COMPARATOR = (a1,a2) ->
     {
         var retValue = 0;
         if( a1.equals( a2 ) )
@@ -235,6 +235,7 @@ public final class AttributeSupport extends NamespaceSupport
      *
      *  @see #setAttribute(String, CharSequence, Optional)
      */
+    @SuppressWarnings( "BooleanMethodNameMustStartWithQuestion" )
     public final boolean checksIfValid() { return m_CheckValid; }
 
     /**
@@ -273,6 +274,7 @@ public final class AttributeSupport extends NamespaceSupport
      *
      *  @return The comparator that determines the attribute's sequence.
      */
+    @SuppressWarnings( "SuspiciousGetterSetter" )
     public final Comparator<String> getSortOrder() { return m_Comparator; }
 
     /**
@@ -332,7 +334,7 @@ public final class AttributeSupport extends NamespaceSupport
      *  provided by
      *  {@link org.tquadrat.foundation.xml.builder.XMLBuilderUtils#getAttributeNameValidator()}.</p>
      *
-     *  @param  name    The name of the attribute; the name is case sensitive.
+     *  @param  name    The name of the attribute; the name is case-sensitive.
      *  @param  value   The attribute's value; if {@code null} the
      *      attribute will be removed.
      *  @param  append  If not

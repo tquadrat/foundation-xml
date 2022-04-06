@@ -68,17 +68,17 @@ import org.xml.sax.SAXException;
  *
  *  @note When converting a String to an instance of {@code Document} back to a
  *      String, the final String may be different from the input because the
- *      formatting can differ, and some implicit defaults will now provided as
- *      explicit setting. Only the semantics are guaranteed to be still the
+ *      formatting can differ, and some implicit defaults will now be provided
+ *      as explicit setting. Only the semantics are guaranteed to be still the
  *      same.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: DocumentStringConverter.java 897 2021-04-06 21:34:01Z tquadrat $
+ *  @version $Id: DocumentStringConverter.java 1030 2022-04-06 13:42:02Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: DocumentStringConverter.java 897 2021-04-06 21:34:01Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DocumentStringConverter.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 @SuppressWarnings( "exports" )
 public final class DocumentStringConverter implements StringConverter<Document>
@@ -106,6 +106,14 @@ public final class DocumentStringConverter implements StringConverter<Document>
      *  An instance of this class.
      */
     public static final DocumentStringConverter INSTANCE = new DocumentStringConverter();
+
+        /*--------------*\
+    ====** Constructors **=====================================================
+        \*--------------*/
+    /**
+     *  Creates a new {@code DocumentStringConverter} instance.
+     */
+    public DocumentStringConverter() { super(); }
 
         /*---------*\
     ====** Methods **==========================================================
@@ -168,11 +176,13 @@ public final class DocumentStringConverter implements StringConverter<Document>
      *
      *  @return The instance for this {@code StringConverter} implementation.
      */
+    @SuppressWarnings( "UseOfConcreteClass" )
     public static final DocumentStringConverter provider() { return INSTANCE; }
 
     /**
      *  {@inheritDoc}
      */
+    @SuppressWarnings( "OverlyComplexMethod" )
     @Override
     public final String toString( final Document source )
     {

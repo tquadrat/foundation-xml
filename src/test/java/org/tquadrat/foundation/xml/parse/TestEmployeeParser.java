@@ -21,6 +21,7 @@ package org.tquadrat.foundation.xml.parse;
 import static java.lang.System.err;
 import static java.lang.System.out;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.tquadrat.foundation.lang.CommonConstants.UTF8;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
@@ -45,9 +46,9 @@ import com.howtodoinjava.demo.stax.TestReadXMLStaxIteratorExample;
  *  {@link org.tquadrat.foundation.xml.parse.spi.StAXParserBase}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestEmployeeParser.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TestEmployeeParser.java 1030 2022-04-06 13:42:02Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestEmployeeParser.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestEmployeeParser.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.parse.TestEmployeeParser" )
 public class TestEmployeeParser extends XMLTestBase
 {
@@ -100,7 +101,7 @@ public class TestEmployeeParser extends XMLTestBase
         final var parser = new EmployeeParser( employeeList );
 
         //---* Parse *---------------------------------------------------------
-        try( final var fileReader = new FileReader( file ) )
+        try( final var fileReader = new FileReader( file, UTF8 ) )
         {
             final var eventReader = factory.createXMLEventReader( fileReader );
             parser.parse( eventReader );

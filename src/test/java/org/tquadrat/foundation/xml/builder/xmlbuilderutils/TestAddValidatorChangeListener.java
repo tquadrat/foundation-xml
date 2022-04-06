@@ -17,6 +17,7 @@
 
 package org.tquadrat.foundation.xml.builder.xmlbuilderutils;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.tquadrat.foundation.util.StringUtils.format;
@@ -37,10 +38,9 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link XMLBuilderUtils}
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestAddValidatorChangeListener.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TestAddValidatorChangeListener.java 1030 2022-04-06 13:42:02Z tquadrat $
  */
-@SuppressWarnings( "MisorderedAssertEqualsArguments" )
-@ClassVersion( sourceVersion = "$Id: TestAddValidatorChangeListener.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestAddValidatorChangeListener.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.xmlbuilderutils.TestAddValidatorChangeListener" )
 public class TestAddValidatorChangeListener extends XMLTestBase
 {
@@ -53,6 +53,7 @@ public class TestAddValidatorChangeListener extends XMLTestBase
      *  and
      *  {@link XMLBuilderUtils#removeValidatorChangeListener(ValidatorChangeListener)}.
      */
+    @SuppressWarnings( "AnonymousInnerClassMayBeStatic" )
     @Test
     final void testAddRemoveValidatorChangeListener()
     {
@@ -63,18 +64,22 @@ public class TestAddValidatorChangeListener extends XMLTestBase
             /**
              *  {@inheritDoc}
              */
+            @SuppressWarnings( "UseOfConcreteClass" )
             @Override
             public final void validatorChanged( final ValidatorChangeEvent event ) { /* Just exists */ }
         };
+        assertNotNull( listener1 );
 
         final var listener2 = new ValidatorChangeListener()
         {
             /**
              *  {@inheritDoc}
              */
+            @SuppressWarnings( "UseOfConcreteClass" )
             @Override
             public final void validatorChanged( final ValidatorChangeEvent event ) { /* Just exists */ }
         };
+        assertNotNull( listener2 );
 
         //---* Nothing should happen *-----------------------------------------
         removeValidatorChangeListener( null );

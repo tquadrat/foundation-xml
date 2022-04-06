@@ -30,7 +30,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.exception.IllegalOperationException;
-import org.tquadrat.foundation.xml.builder.spi.XMLElementBase;
 import org.tquadrat.foundation.xml.helper.XMLTestBase;
 
 /**
@@ -38,10 +37,10 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link XMLElement}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestXMLElement.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TestXMLElement.java 1030 2022-04-06 13:42:02Z tquadrat $
  */
 @SuppressWarnings( "removal" )
-@ClassVersion( sourceVersion = "$Id: TestXMLElement.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestXMLElement.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.TestXMLElement" )
 public class TestXMLElement extends XMLTestBase
 {
@@ -54,10 +53,11 @@ public class TestXMLElement extends XMLTestBase
      *  only for test purposes.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: TestXMLElement.java 820 2020-12-29 20:34:22Z tquadrat $
+     *  @version $Id: TestXMLElement.java 1030 2022-04-06 13:42:02Z tquadrat $
      */
-    @ClassVersion( sourceVersion = "$Id: TestXMLElement.java 820 2020-12-29 20:34:22Z tquadrat $" )
-    private static final class SimpleXMLElement extends XMLElementBase
+    @SuppressWarnings( "ClassWithTooManyConstructors" )
+    @ClassVersion( sourceVersion = "$Id: TestXMLElement.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+    private static final class SimpleXMLElement extends org.tquadrat.foundation.xml.builder.spi.XMLElementBase
     {
             /*--------------*\
         ====** Constructors **=================================================
@@ -90,9 +90,9 @@ public class TestXMLElement extends XMLTestBase
          *
          *  @param  validChildren   The list of the names for valid children;
          *      if {@code null}, no children are allowed, if empty, children are
-         *      allowed, but they will not validated.
+         *      allowed, but they will not be validated.
          *  @param  validAttributes The list of the valid attributes; if empty
-         *      or {@code null}, the attributes will not validated.
+         *      or {@code null}, the attributes will not be validated.
          *  @param  attributeSequence   The sequence for the attributes; if
          *      empty or {@code null}, the attributes will be sorted
          *      alphabetically.
@@ -117,9 +117,9 @@ public class TestXMLElement extends XMLTestBase
          *  @param  elementName The element name.
          *  @param  validChildren   The list of the names for valid children;
          *      if {@code null}, no children are allowed, if empty, children are
-         *      allowed, but they will not validated.
+         *      allowed, but they will not be validated.
          *  @param  validAttributes The list of the valid attributes; if empty
-         *      or {@code null}, the attributes will not validated.
+         *      or {@code null}, the attributes will not be validated.
          *  @param  attributeSequence   The sequence for the attributes; if
          *      empty or {@code null}, the attributes will be sorted
          *      alphabetically.
@@ -149,7 +149,7 @@ public class TestXMLElement extends XMLTestBase
          * @see org.tquadrat.foundation.xml.builder.spi.AttributeSupport#registerSequence(String...)
          * @see org.tquadrat.foundation.xml.builder.spi.ChildSupport#registerChildren(String...)
          */
-        public SimpleXMLElement( Set<Flags> flags )
+        public SimpleXMLElement( final Set<Flags> flags )
         {
             this( "element", flags );
         }   //  SimpleXMLElement()
@@ -168,7 +168,7 @@ public class TestXMLElement extends XMLTestBase
          * @see org.tquadrat.foundation.xml.builder.spi.AttributeSupport#registerSequence(String...)
          * @see org.tquadrat.foundation.xml.builder.spi.ChildSupport#registerChildren(String...)
          */
-        public SimpleXMLElement( final String elementName, Set<Flags> flags )
+        public SimpleXMLElement( final String elementName, final Set<Flags> flags )
         {
             super( elementName, flags );
         }   //  SimpleXMLElement()

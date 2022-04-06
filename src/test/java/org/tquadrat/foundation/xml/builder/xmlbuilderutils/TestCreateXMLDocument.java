@@ -46,10 +46,9 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link XMLBuilderUtils}
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestCreateXMLDocument.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TestCreateXMLDocument.java 1030 2022-04-06 13:42:02Z tquadrat $
  */
-@SuppressWarnings( "MisorderedAssertEqualsArguments" )
-@ClassVersion( sourceVersion = "$Id: TestCreateXMLDocument.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestCreateXMLDocument.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.xmlbuilderutils.TestCreateXMLDocument" )
 public class TestCreateXMLDocument extends XMLTestBase
 {
@@ -108,7 +107,7 @@ public class TestCreateXMLDocument extends XMLTestBase
         expected = "<?xml version='1.0'\n" +
                    "      encoding='" + ASCII.name() + "'\n" +
                    "      standalone='no'?>\n" +
-                   "<!DOCTYPE " + elementName + " SYSTEM \"" + dtdURI.toString() + "\">\n" +
+                   "<!DOCTYPE " + elementName + " SYSTEM \"" + dtdURI + "\">\n" +
                    "<" + elementName + "/>";
         assertNotNull( candidate );
         actual = candidate.toString();
@@ -118,7 +117,7 @@ public class TestCreateXMLDocument extends XMLTestBase
         expected = "<?xml version='1.0'\n" +
                    "      encoding='" + ASCII.name() + "'\n" +
                    "      standalone='no'?>\n" +
-                   "<!DOCTYPE " + elementName + " PUBLIC \"" + dtd + "\" \"" + dtdURI.toString() + "\">\n" +
+                   "<!DOCTYPE " + elementName + " PUBLIC \"" + dtd + "\" \"" + dtdURI + "\">\n" +
                    "<" + elementName + "/>";
         assertNotNull( candidate );
         actual = candidate.toString();
@@ -176,6 +175,7 @@ public class TestCreateXMLDocument extends XMLTestBase
      *
      *  @throws URISyntaxException  Something went unexpectedly wrong.
      */
+    @SuppressWarnings( "OverlyComplexMethod" )
     @Test
     final void testCreateXMLDocumentWithNullArgument() throws URISyntaxException
     {

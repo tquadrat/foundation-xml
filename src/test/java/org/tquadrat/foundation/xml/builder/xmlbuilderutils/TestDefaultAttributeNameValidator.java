@@ -32,10 +32,9 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link XMLBuilderUtils}
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestDefaultAttributeNameValidator.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TestDefaultAttributeNameValidator.java 1030 2022-04-06 13:42:02Z tquadrat $
  */
-@SuppressWarnings( "MisorderedAssertEqualsArguments" )
-@ClassVersion( sourceVersion = "$Id: TestDefaultAttributeNameValidator.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestDefaultAttributeNameValidator.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.xmlbuilderutils.TestDefaultAttributeNameValidator" )
 public class TestDefaultAttributeNameValidator extends XMLTestBase
 {

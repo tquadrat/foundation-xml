@@ -38,13 +38,13 @@ import org.tquadrat.foundation.xml.builder.Namespace;
  *  Helper method for the conversion of SGML elements into a String.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: SGMLPrinter.java 840 2021-01-10 21:37:03Z tquadrat $
+ *  @version $Id: SGMLPrinter.java 1030 2022-04-06 13:42:02Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: SGMLPrinter.java 840 2021-01-10 21:37:03Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: SGMLPrinter.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @API( status = MAINTAINED, since = "0.0.5" )
 public final class SGMLPrinter
 {
@@ -129,6 +129,7 @@ public final class SGMLPrinter
      *  @param  children    The children.
      *  @return The children string.
      */
+    @SuppressWarnings( "OverlyComplexMethod" )
     @API( status = MAINTAINED, since = "0.0.5" )
     public static final String composeChildrenString( final int indentationLevel, final boolean prettyPrint, final Element parent, final Collection<? extends Element> children )
     {

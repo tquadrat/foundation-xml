@@ -113,10 +113,10 @@ loadScripts(document, 'script');</script>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/XMLReader.html" title="class or interface in org.xml.sax" class="external-link">XMLReader</a></code></dd>
 </dl>
 <hr>
-<div class="type-signature"><span class="annotations"><a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">@ClassVersion</a>(<a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html#sourceVersion()" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">sourceVersion</a>="$Id: AbstractXMLReader.java 840 2021-01-10 21:37:03Z tquadrat $")
+<div class="type-signature"><span class="annotations"><a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">@ClassVersion</a>(<a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html#sourceVersion()" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">sourceVersion</a>="$Id: AbstractXMLReader.java 1030 2022-04-06 13:42:02Z tquadrat $")
 <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public abstract class </span><span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-63">AbstractXMLReader</a></span>
+</span><span class="modifiers">public abstract class </span><span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-64">AbstractXMLReader</a></span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/XMLReader.html" title="class or interface in org.xml.sax" class="external-link">XMLReader</a></span></div>
 <div class="block">This class is an abstract base implementation for a XMLReader. Use this
@@ -129,7 +129,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/
 <dt><span class="simpleTagLabel">Author:</span></dt>
   <dd>Thomas Thrien (<a href="mailto:thomas.thrien@tquadrat.org">thomas.thrien@tquadrat.org</a>)</dd>
 <dt>Version:</dt>
-<dd>$Id: AbstractXMLReader.java 840 2021-01-10 21:37:03Z tquadrat $</dd>
+<dd>$Id: AbstractXMLReader.java 1030 2022-04-06 13:42:02Z tquadrat $</dd>
 <dt>Since:</dt>
 <dd>0.0.5</dd>
 <dt>See Also:</dt>
@@ -510,64 +510,46 @@ implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/
 <li>
 <section class="detail" id="getContentHandler()">
 <h3>getContentHandler</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/ContentHandler.html" title="class or interface in org.xml.sax" class="external-link">ContentHandler</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-209">getContentHandler</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/ContentHandler.html" title="class or interface in org.xml.sax" class="external-link">ContentHandler</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-206">getContentHandler</a></span>()</div>
 <div class="block">Returns the current content handler.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/XMLReader.html#getContentHandler()" title="class or interface in org.xml.sax" class="external-link">getContentHandler</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/XMLReader.html" title="class or interface in org.xml.sax" class="external-link">XMLReader</a></code></dd>
 <dt>Returns:</dt>
 <dd>A reference to the current content handler.</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list">
-<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/XMLReader.html#getContentHandler()" title="class or interface in org.xml.sax" class="external-link"><code>XMLReader.getContentHandler()</code></a></li>
-</ul>
-</dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getDTDHandler()">
 <h3>getDTDHandler</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/DTDHandler.html" title="class or interface in org.xml.sax" class="external-link">DTDHandler</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-219">getDTDHandler</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/DTDHandler.html" title="class or interface in org.xml.sax" class="external-link">DTDHandler</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-214">getDTDHandler</a></span>()</div>
 <div class="block">Returns the current DTD handler.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/XMLReader.html#getDTDHandler()" title="class or interface in org.xml.sax" class="external-link">getDTDHandler</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/XMLReader.html" title="class or interface in org.xml.sax" class="external-link">XMLReader</a></code></dd>
 <dt>Returns:</dt>
 <dd>A reference to the current DTD handler.</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list">
-<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/XMLReader.html#getDTDHandler()" title="class or interface in org.xml.sax" class="external-link"><code>XMLReader.getDTDHandler()</code></a></li>
-</ul>
-</dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getEntityResolver()">
 <h3>getEntityResolver</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/EntityResolver.html" title="class or interface in org.xml.sax" class="external-link">EntityResolver</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-229">getEntityResolver</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/EntityResolver.html" title="class or interface in org.xml.sax" class="external-link">EntityResolver</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-222">getEntityResolver</a></span>()</div>
 <div class="block">Returns the current entity resolver.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/XMLReader.html#getEntityResolver()" title="class or interface in org.xml.sax" class="external-link">getEntityResolver</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/XMLReader.html" title="class or interface in org.xml.sax" class="external-link">XMLReader</a></code></dd>
 <dt>Returns:</dt>
 <dd>A reference to the current entity resolver.</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list">
-<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/XMLReader.html#getEntityResolver()" title="class or interface in org.xml.sax" class="external-link"><code>XMLReader.getEntityResolver()</code></a></li>
-</ul>
-</dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getErrorHandler()">
 <h3>getErrorHandler</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/ErrorHandler.html" title="class or interface in org.xml.sax" class="external-link">ErrorHandler</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-243">getErrorHandler</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/ErrorHandler.html" title="class or interface in org.xml.sax" class="external-link">ErrorHandler</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-234">getErrorHandler</a></span>()</div>
 <div class="block">Returns the current error handler. It will never return
   <code>null</code>; in case no handler was set, a reference to an
   instance of
@@ -578,19 +560,13 @@ implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/XMLReader.html#getErrorHandler()" title="class or interface in org.xml.sax" class="external-link">getErrorHandler</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/XMLReader.html" title="class or interface in org.xml.sax" class="external-link">XMLReader</a></code></dd>
 <dt>Returns:</dt>
 <dd>A reference to the current error handler.</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list">
-<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/XMLReader.html#getErrorHandler()" title="class or interface in org.xml.sax" class="external-link"><code>XMLReader.getErrorHandler()</code></a></li>
-</ul>
-</dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getFeature(java.lang.String)">
 <h3>getFeature</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-265">getFeature</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-254">getFeature</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span>
                    throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/SAXNotRecognizedException.html" title="class or interface in org.xml.sax" class="external-link">SAXNotRecognizedException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/SAXNotSupportedException.html" title="class or interface in org.xml.sax" class="external-link">SAXNotSupportedException</a></span></div>
 <div class="block">
@@ -613,19 +589,13 @@ implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/
       retrieved.</dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/SAXNotSupportedException.html" title="class or interface in org.xml.sax" class="external-link">SAXNotSupportedException</a></code> - The XMLReader recognizes the
       feature name but cannot determine its value at this time.</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list-long">
-<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/XMLReader.html#getFeature(java.lang.String)" title="class or interface in org.xml.sax" class="external-link"><code>XMLReader.getFeature(java.lang.String)</code></a></li>
-</ul>
-</dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getProperty(java.lang.String)">
 <h3>getProperty</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-302">getProperty</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-290">getProperty</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span>
                    throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/SAXNotRecognizedException.html" title="class or interface in org.xml.sax" class="external-link">SAXNotRecognizedException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/SAXNotSupportedException.html" title="class or interface in org.xml.sax" class="external-link">SAXNotSupportedException</a></span></div>
 <div class="block">Returns the value for the property with the given name. Usually, this
@@ -633,7 +603,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/
   XMLReader to recognise a property name but temporarily be unable to
   return its value. Some property values may be available only in
   specific contexts, such as before, during, or after a parse.<br>
-  <br>XMLReaders are not required to recognize any specific property
+  <br>XMLReaders are not required to recognise any specific property
   names, though an initial core set is documented for SAX2. But even that
   is not supported by this specific implementation; if this is a
   requirement, a derived class has to provide its own implementation of
@@ -657,7 +627,6 @@ implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
-<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/XMLReader.html#getProperty(java.lang.String)" title="class or interface in org.xml.sax" class="external-link"><code>XMLReader.getProperty(java.lang.String)</code></a></li>
 <li><a href="#setProperty(java.lang.String,java.lang.Object)"><code>setProperty()</code></a></li>
 </ul>
 </dd>
@@ -667,7 +636,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/
 <li>
 <section class="detail" id="getLocator()">
 <h3>getLocator</h3>
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/Locator.html" title="class or interface in org.xml.sax" class="external-link">Locator</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-314">getLocator</a></span>()</div>
+<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/Locator.html" title="class or interface in org.xml.sax" class="external-link">Locator</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-302">getLocator</a></span>()</div>
 <div class="block">Returns a reference to the locator object provided by this base
   implementation.</div>
 <dl class="notes">
@@ -679,7 +648,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/
 <li>
 <section class="detail" id="parse(org.xml.sax.InputSource)">
 <h3>parse</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-356">parse</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/InputSource.html" title="class or interface in org.xml.sax" class="external-link">InputSource</a>&nbsp;input)</span>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-343">parse</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/InputSource.html" title="class or interface in org.xml.sax" class="external-link">InputSource</a>&nbsp;input)</span>
                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/SAXException.html" title="class or interface in org.xml.sax" class="external-link">SAXException</a></span></div>
 <div class="block">Parses an input data source.<br>
@@ -718,8 +687,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/
       exception.</dd>
 <dt>See Also:</dt>
 <dd>
-<ul class="see-list-long">
-<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/XMLReader.html#parse(org.xml.sax.InputSource)" title="class or interface in org.xml.sax" class="external-link"><code>XMLReader.parse(org.xml.sax.InputSource)</code></a></li>
+<ul class="see-list">
 <li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/InputSource.html" title="class or interface in org.xml.sax" class="external-link"><code>InputSource</code></a></li>
 <li><a href="#parse(java.lang.String)"><code>parse( String )</code></a></li>
 <li><a href="#setEntityResolver(org.xml.sax.EntityResolver)"><code>setEntityResolver()</code></a></li>
@@ -734,7 +702,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/
 <li>
 <section class="detail" id="parse(java.lang.String)">
 <h3>parse</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-395">parse</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;systemId)</span>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-381">parse</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;systemId)</span>
                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/SAXException.html" title="class or interface in org.xml.sax" class="external-link">SAXException</a></span></div>
 <div class="block">Parses an XML document from a system identifier (URI).<br>
@@ -756,9 +724,8 @@ implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/
       exception.</dd>
 <dt>See Also:</dt>
 <dd>
-<ul class="see-list-long">
+<ul class="see-list">
 <li><a href="#parse(org.xml.sax.InputSource)"><code>parse( InputSource )</code></a></li>
-<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/XMLReader.html#parse(java.lang.String)" title="class or interface in org.xml.sax" class="external-link"><code>XMLReader.parse(java.lang.String)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -767,7 +734,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/
 <li>
 <section class="detail" id="process(java.io.BufferedReader)">
 <h3>process</h3>
-<div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-458">process</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/BufferedReader.html" title="class or interface in java.io" class="external-link">BufferedReader</a>&nbsp;input)</span>
+<div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-444">process</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/BufferedReader.html" title="class or interface in java.io" class="external-link">BufferedReader</a>&nbsp;input)</span>
                          throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/SAXException.html" title="class or interface in org.xml.sax" class="external-link">SAXException</a></span></div>
 <div class="block">This method has to be implemented in order to perform the parsing. It
@@ -836,7 +803,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/
 <li>
 <section class="detail" id="setContentHandler(org.xml.sax.ContentHandler)">
 <h3>setContentHandler</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-474">setContentHandler</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/ContentHandler.html" title="class or interface in org.xml.sax" class="external-link">ContentHandler</a>&nbsp;handler)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-458">setContentHandler</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/ContentHandler.html" title="class or interface in org.xml.sax" class="external-link">ContentHandler</a>&nbsp;handler)</span></div>
 <div class="block">Sets the content handler used by this XMLReader. It allows an
   application to register a content event handler.<br>
   <br>If the application does not register a content handler, all
@@ -850,19 +817,13 @@ implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/XMLReader.html#setContentHandler(org.xml.sax.ContentHandler)" title="class or interface in org.xml.sax" class="external-link">setContentHandler</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/XMLReader.html" title="class or interface in org.xml.sax" class="external-link">XMLReader</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>handler</code> - The content handler; may be <code>null</code>.</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list-long">
-<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/XMLReader.html#setContentHandler(org.xml.sax.ContentHandler)" title="class or interface in org.xml.sax" class="external-link"><code>XMLReader.setContentHandler(org.xml.sax.ContentHandler)</code></a></li>
-</ul>
-</dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="setDTDHandler(org.xml.sax.DTDHandler)">
 <h3>setDTDHandler</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-490">setDTDHandler</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/DTDHandler.html" title="class or interface in org.xml.sax" class="external-link">DTDHandler</a>&nbsp;handler)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-472">setDTDHandler</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/DTDHandler.html" title="class or interface in org.xml.sax" class="external-link">DTDHandler</a>&nbsp;handler)</span></div>
 <div class="block">Sets the DTD handler used by this XMLReader. Allows an application to
   register a DTD event handler.<br>
   <br>If the application does not register a DTD handler, all DTD events
@@ -875,19 +836,13 @@ implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/XMLReader.html#setDTDHandler(org.xml.sax.DTDHandler)" title="class or interface in org.xml.sax" class="external-link">setDTDHandler</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/XMLReader.html" title="class or interface in org.xml.sax" class="external-link">XMLReader</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>handler</code> - The DTD handler; may be <code>null</code>.</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list-long">
-<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/XMLReader.html#setDTDHandler(org.xml.sax.DTDHandler)" title="class or interface in org.xml.sax" class="external-link"><code>XMLReader.setDTDHandler(org.xml.sax.DTDHandler)</code></a></li>
-</ul>
-</dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="setEncoding(java.lang.String)">
 <h3>setEncoding</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-499">setEncoding</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;encoding)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-481">setEncoding</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;encoding)</span></div>
 <div class="block">Sets the encoding for the input source. <code>null</code> means that
   the platform specific encoding is used.</div>
 <dl class="notes">
@@ -899,7 +854,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/
 <li>
 <section class="detail" id="setEntityResolver(org.xml.sax.EntityResolver)">
 <h3>setEntityResolver</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-514">setEntityResolver</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/EntityResolver.html" title="class or interface in org.xml.sax" class="external-link">EntityResolver</a>&nbsp;resolver)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-494">setEntityResolver</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/EntityResolver.html" title="class or interface in org.xml.sax" class="external-link">EntityResolver</a>&nbsp;resolver)</span></div>
 <div class="block">Sets the entity resolver that is used by this XMLReader. Allows an
   application to register an entity resolver.<br>
   <br>If the application does not register an entity resolver, the
@@ -912,19 +867,13 @@ implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/XMLReader.html#setEntityResolver(org.xml.sax.EntityResolver)" title="class or interface in org.xml.sax" class="external-link">setEntityResolver</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/XMLReader.html" title="class or interface in org.xml.sax" class="external-link">XMLReader</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>resolver</code> - The entity resolver; may be <code>null</code>.</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list-long">
-<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/XMLReader.html#setEntityResolver(org.xml.sax.EntityResolver)" title="class or interface in org.xml.sax" class="external-link"><code>XMLReader.setEntityResolver(org.xml.sax.EntityResolver)</code></a></li>
-</ul>
-</dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="setErrorHandler(org.xml.sax.ErrorHandler)">
 <h3>setErrorHandler</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-535">setErrorHandler</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/ErrorHandler.html" title="class or interface in org.xml.sax" class="external-link">ErrorHandler</a>&nbsp;handler)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-514">setErrorHandler</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/ErrorHandler.html" title="class or interface in org.xml.sax" class="external-link">ErrorHandler</a>&nbsp;handler)</span></div>
 <div class="block">Sets the error handler that is used by this XMLReader. Allows an
   application to register an error event handler.<br>
   <br>If the application does not register an error handler, all error
@@ -943,8 +892,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/
 <dd><code>handler</code> - The error handler; may be <code>null</code>.</dd>
 <dt>See Also:</dt>
 <dd>
-<ul class="see-list-long">
-<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/XMLReader.html#setErrorHandler(org.xml.sax.ErrorHandler)" title="class or interface in org.xml.sax" class="external-link"><code>XMLReader.setErrorHandler(org.xml.sax.ErrorHandler)</code></a></li>
+<ul class="see-list">
 <li><a href="DefaultErrorHandler.html" title="class in org.tquadrat.foundation.xml.parse"><code>DefaultErrorHandler</code></a></li>
 </ul>
 </dd>
@@ -954,7 +902,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/
 <li>
 <section class="detail" id="setFeature(java.lang.String,boolean)">
 <h3>setFeature</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-555">setFeature</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-533">setFeature</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  boolean&nbsp;value)</span>
                 throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/SAXNotRecognizedException.html" title="class or interface in org.xml.sax" class="external-link">SAXNotRecognizedException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/SAXNotSupportedException.html" title="class or interface in org.xml.sax" class="external-link">SAXNotSupportedException</a></span></div>
@@ -973,8 +921,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/
       feature name but cannot set the requested value.</dd>
 <dt>See Also:</dt>
 <dd>
-<ul class="see-list-long">
-<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/XMLReader.html#setFeature(java.lang.String,boolean)" title="class or interface in org.xml.sax" class="external-link"><code>XMLReader.setFeature(java.lang.String, boolean)</code></a></li>
+<ul class="see-list">
 <li><a href="#getFeature(java.lang.String)"><code>getFeature()</code></a></li>
 </ul>
 </dd>
@@ -984,7 +931,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/
 <li>
 <section class="detail" id="setLocation(int,int)">
 <h3>setLocation</h3>
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-567">setLocation</a></span><wbr><span class="parameters">(int&nbsp;lineNumber,
+<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-545">setLocation</a></span><wbr><span class="parameters">(int&nbsp;lineNumber,
  int&nbsp;columnNumber)</span></div>
 <div class="block">Sets the current location to the locator.</div>
 <dl class="notes">
@@ -997,7 +944,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/
 <li>
 <section class="detail" id="setProperty(java.lang.String,java.lang.Object)">
 <h3>setProperty</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-595">setProperty</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-572">setProperty</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value)</span>
                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/SAXNotRecognizedException.html" title="class or interface in org.xml.sax" class="external-link">SAXNotRecognizedException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/SAXNotSupportedException.html" title="class or interface in org.xml.sax" class="external-link">SAXNotSupportedException</a></span></div>
@@ -1024,8 +971,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/
       property name but cannot set the requested value.</dd>
 <dt>See Also:</dt>
 <dd>
-<ul class="see-list-long">
-<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/org/xml/sax/XMLReader.html#setProperty(java.lang.String,java.lang.Object)" title="class or interface in org.xml.sax" class="external-link"><code>XMLReader.setProperty(java.lang.String, java.lang.Object)</code></a></li>
+<ul class="see-list">
 <li><a href="#getProperty(java.lang.String)"><code>getProperty()</code></a></li>
 </ul>
 </dd>
@@ -1035,7 +981,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/
 <li>
 <section class="detail" id="setPublicId(java.lang.String)">
 <h3>setPublicId</h3>
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-614">setPublicId</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;publicId)</span></div>
+<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-591">setPublicId</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;publicId)</span></div>
 <div class="block">Sets the public id to the locator.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -1046,7 +992,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/
 <li>
 <section class="detail" id="setSystemId(java.lang.String)">
 <h3>setSystemId</h3>
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-621">setSystemId</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;systemId)</span></div>
+<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AbstractXMLReader.html#line-598">setSystemId</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;systemId)</span></div>
 <div class="block">Sets the system id to the locator.</div>
 <dl class="notes">
 <dt>Parameters:</dt>

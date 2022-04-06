@@ -85,7 +85,7 @@ loadScripts(document, 'script');</script>
 <dd><code><a href="spi/XMLElementFactoryBase.html" title="class in org.tquadrat.foundation.xml.builder.spi">XMLElementFactoryBase</a></code></dd>
 </dl>
 <hr>
-<div class="type-signature"><span class="annotations"><a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">@ClassVersion</a>(<a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html#sourceVersion()" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">sourceVersion</a>="$Id: XMLElementFactory.java 820 2020-12-29 20:34:22Z tquadrat $")
+<div class="type-signature"><span class="annotations"><a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">@ClassVersion</a>(<a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html#sourceVersion()" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">sourceVersion</a>="$Id: XMLElementFactory.java 1030 2022-04-06 13:42:02Z tquadrat $")
 <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
 </span><span class="modifiers">public sealed interface </span><span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/builder/XMLElementFactory.html#line-43">XMLElementFactory</a></span>
@@ -97,7 +97,7 @@ loadScripts(document, 'script');</script>
 <dt><span class="simpleTagLabel">Author:</span></dt>
   <dd>Thomas Thrien (<a href="mailto:thomas.thrien@tquadrat.org">thomas.thrien@tquadrat.org</a>)</dd>
 <dt>Version:</dt>
-<dd>$Id: XMLElementFactory.java 820 2020-12-29 20:34:22Z tquadrat $</dd>
+<dd>$Id: XMLElementFactory.java 1030 2022-04-06 13:42:02Z tquadrat $</dd>
 <dt>Since:</dt>
 <dd>0.0.5</dd>
 
@@ -155,12 +155,9 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#createXMLElement(java.lang.String,java.lang.CharSequence)" class="member-name-link">createXMLElement</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;elementName,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&nbsp;text)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Creates an XML element for the given element name that supports
-  attributes, namespaces, children, text, <code>CDATA</code> and comments, and
-  add the the given text.<br>
-  <br>The given element name is validated using the method that is
-  provided by
-  <a href="XMLBuilderUtils.html#getElementNameValidator()"><code>XMLBuilderUtils.getElementNameValidator()</code></a>.</div>
+<div class="block">Creates an XML element for the given element name that
+  supports attributes, namespaces, children, text, <code>CDATA</code> and
+  comments, and adds the given text.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="XMLElement.html" title="interface in org.tquadrat.foundation.xml.builder">XMLElement</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#createXMLElement(java.lang.String,org.tquadrat.foundation.xml.builder.XMLDocument)" class="member-name-link">createXMLElement</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;elementName,
@@ -271,12 +268,12 @@ loadScripts(document, 'script');</script>
 <h3>createXMLElement</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="XMLElement.html" title="interface in org.tquadrat.foundation.xml.builder">XMLElement</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/builder/XMLElementFactory.html#line-103">createXMLElement</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;elementName,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&nbsp;text)</span></div>
-<div class="block">Creates an XML element for the given element name that supports
-  attributes, namespaces, children, text, <code>CDATA</code> and comments, and
-  add the the given text.<br>
-  <br>The given element name is validated using the method that is
+<div class="block"><p>Creates an XML element for the given element name that
+  supports attributes, namespaces, children, text, <code>CDATA</code> and
+  comments, and adds the given text.</p>
+  <p>The given element name is validated using the method that is
   provided by
-  <a href="XMLBuilderUtils.html#getElementNameValidator()"><code>XMLBuilderUtils.getElementNameValidator()</code></a>.</div>
+  <a href="XMLBuilderUtils.html#getElementNameValidator()"><code>XMLBuilderUtils.getElementNameValidator()</code></a>.</p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>elementName</code> - The element name.</dd>

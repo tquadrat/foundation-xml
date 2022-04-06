@@ -61,14 +61,14 @@ import org.tquadrat.foundation.xml.builder.internal.XMLElementImpl;
  *  elements.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: XMLBuilderUtils.java 980 2022-01-06 15:29:19Z tquadrat $
+ *  @version $Id: XMLBuilderUtils.java 1030 2022-04-06 13:42:02Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "ClassWithTooManyMethods" )
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 980 2022-01-06 15:29:19Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public final class XMLBuilderUtils
 {
@@ -79,12 +79,12 @@ public final class XMLBuilderUtils
      *  The (default) validators.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: XMLBuilderUtils.java 980 2022-01-06 15:29:19Z tquadrat $
+     *  @version $Id: XMLBuilderUtils.java 1030 2022-04-06 13:42:02Z tquadrat $
      *  @since 0.0.5
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 980 2022-01-06 15:29:19Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 1030 2022-04-06 13:42:02Z tquadrat $" )
     @API( status = STABLE, since = "0.0.5" )
     public enum Validator
     {
@@ -161,6 +161,7 @@ public final class XMLBuilderUtils
          *
          *  @return The default validator.
          */
+        @SuppressWarnings( "SuspiciousGetterSetter" )
         public final Predicate<CharSequence> getDefault() { return m_DefaultValidator; }
     }
     //  enum Validator
@@ -171,13 +172,13 @@ public final class XMLBuilderUtils
      *  for changes to the validator configuration.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: XMLBuilderUtils.java 980 2022-01-06 15:29:19Z tquadrat $
+     *  @version $Id: XMLBuilderUtils.java 1030 2022-04-06 13:42:02Z tquadrat $
      *  @since 0.0.5
      *
      *  @UMLGraph.link
      */
     @SuppressWarnings( "PublicInnerClass" )
-    @ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 980 2022-01-06 15:29:19Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 1030 2022-04-06 13:42:02Z tquadrat $" )
     @API( status = STABLE, since = "0.0.5" )
     public static class ValidatorChangeEvent extends EventObject
     {
@@ -259,13 +260,13 @@ public final class XMLBuilderUtils
      *  {@link ValidatorChangeEvent}s
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: XMLBuilderUtils.java 980 2022-01-06 15:29:19Z tquadrat $
+     *  @version $Id: XMLBuilderUtils.java 1030 2022-04-06 13:42:02Z tquadrat $
      *  @since 0.0.5
      *
      *  @UMLGraph.link
      */
     @FunctionalInterface
-    @ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 980 2022-01-06 15:29:19Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 1030 2022-04-06 13:42:02Z tquadrat $" )
     @API( status = STABLE, since = "0.0.5" )
     public static interface ValidatorChangeListener
     {
@@ -303,6 +304,7 @@ public final class XMLBuilderUtils
      *  namespace aware parsers, this is used as the separator between the
      *  namespace prefix and the name itself.
      */
+    @SuppressWarnings( "ConstantExpression" )
     private static final String XML_NAME_OtherChar = "-"
         + XML_NAME_FirstChar
         + ".0-9\\u00B7\\u0300-\\u036F\\u203F-\\u2040";
@@ -313,6 +315,7 @@ public final class XMLBuilderUtils
     /**
      *  The validator change listeners.
      */
+    @SuppressWarnings( "StaticCollection" )
     private static final Collection<WeakReference<ValidatorChangeListener>> m_ValidatorChangeListeners = new ArrayList<>();
 
         /*------------------------*\
@@ -353,9 +356,9 @@ public final class XMLBuilderUtils
         //---* Defines the patterns for the validation *-----------------------
         try
         {
-            //noinspection RegExpUnnecessaryNonCapturingGroup
+            //noinspection RegExpUnnecessaryNonCapturingGroup,ConstantExpression
             m_NMTokenPattern = compile( "(?:[" + XML_NAME_FirstChar + "])(?:[" + XML_NAME_OtherChar + ":])*" );
-            //noinspection RegExpUnnecessaryNonCapturingGroup
+            //noinspection RegExpUnnecessaryNonCapturingGroup,ConstantExpression
             m_XMLNamePattern = compile( "(?:[" + XML_NAME_FirstChar + "])(?:[" + XML_NAME_OtherChar + "])*" );
         }
         catch( final PatternSyntaxException e )

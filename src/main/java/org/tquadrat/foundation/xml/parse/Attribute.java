@@ -58,13 +58,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *      element.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Attribute.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: Attribute.java 1030 2022-04-06 13:42:02Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@SuppressWarnings( {"javadoc", "hiding", "preview"} )
-@ClassVersion( sourceVersion = "$Id: Attribute.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Attribute.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public record Attribute( String qName, Optional<String> localName, Optional<URI> uri, Type type, String value, int index )
 {
@@ -75,12 +74,13 @@ public record Attribute( String qName, Optional<String> localName, Optional<URI>
      *  The attribute types.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: Attribute.java 820 2020-12-29 20:34:22Z tquadrat $
+     *  @version $Id: Attribute.java 1030 2022-04-06 13:42:02Z tquadrat $
      *  @since 0.1.0
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: Attribute.java 820 2020-12-29 20:34:22Z tquadrat $" )
+    @SuppressWarnings( "NewClassNamingConvention" )
+    @ClassVersion( sourceVersion = "$Id: Attribute.java 1030 2022-04-06 13:42:02Z tquadrat $" )
     @API( status = STABLE, since = "0.1.0" )
     public enum Type
     {

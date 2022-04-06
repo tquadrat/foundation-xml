@@ -52,10 +52,9 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link XMLBuilderUtils}
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestSetValidators.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TestSetValidators.java 1030 2022-04-06 13:42:02Z tquadrat $
  */
-@SuppressWarnings( "MisorderedAssertEqualsArguments" )
-@ClassVersion( sourceVersion = "$Id: TestSetValidators.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestSetValidators.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.xmlbuilderutils.TestSetValidators" )
 public class TestSetValidators extends XMLTestBase
 {
@@ -76,7 +75,7 @@ public class TestSetValidators extends XMLTestBase
         skipThreadTest();
 
         final var value = "value"; // Is always valid ... hope so ...
-        final Predicate<CharSequence> failAlways = s -> false;
+        final var failAlways = (Predicate<CharSequence>) s -> false;
 
         assertTrue( getAttributeNameValidator().test( value ) );
         setAttributeNameValidator( failAlways );
@@ -120,13 +119,13 @@ public class TestSetValidators extends XMLTestBase
         final List<ValidatorChangeEvent> events = new ArrayList<>();
 
         //---* The listener *--------------------------------------------------
-        final ValidatorChangeListener listener = events::add;
+        final var listener = (ValidatorChangeListener) events::add;
 
         //---* Add the listener *----------------------------------------------
         addValidatorChangeListener( listener );
 
         //---* The new validator *---------------------------------------------
-        final Predicate<CharSequence> failAlways = s -> false;
+        final var failAlways = (Predicate<CharSequence>) s -> false;
 
         final var value = "value"; // Is always valid ... hope so ...
 

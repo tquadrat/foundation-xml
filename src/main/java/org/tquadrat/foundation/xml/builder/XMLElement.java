@@ -62,13 +62,13 @@ import org.tquadrat.foundation.xml.builder.spi.Element;
  *  feature.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: XMLElement.java 980 2022-01-06 15:29:19Z tquadrat $
+ *  @version $Id: XMLElement.java 1030 2022-04-06 13:42:02Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "ClassWithTooManyMethods" )
-@ClassVersion( sourceVersion = "$Id: XMLElement.java 980 2022-01-06 15:29:19Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: XMLElement.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public sealed interface XMLElement extends Element
     permits XMLElementImpl
@@ -82,12 +82,13 @@ public sealed interface XMLElement extends Element
      *  this interface.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: XMLElement.java 980 2022-01-06 15:29:19Z tquadrat $
+     *  @version $Id: XMLElement.java 1030 2022-04-06 13:42:02Z tquadrat $
      *  @since 0.0.5
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: XMLElement.java 980 2022-01-06 15:29:19Z tquadrat $" )
+    @SuppressWarnings( "NewClassNamingConvention" )
+    @ClassVersion( sourceVersion = "$Id: XMLElement.java 1030 2022-04-06 13:42:02Z tquadrat $" )
     @API( status = STABLE, since = "0.1.0" )
     public static enum Flags
     {
@@ -1022,7 +1023,6 @@ public sealed interface XMLElement extends Element
     /**
      *  {@inheritDoc}
      */
-    @SuppressWarnings( "AbstractMethodOverridesAbstractMethod" )
     @Override
     public <E extends Element> void setParent( final E parent );
 }

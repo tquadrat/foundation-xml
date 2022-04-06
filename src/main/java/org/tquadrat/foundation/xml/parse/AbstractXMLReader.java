@@ -18,6 +18,7 @@
 package org.tquadrat.foundation.xml.parse;
 
 import static org.apiguardian.api.API.Status.STABLE;
+import static org.tquadrat.foundation.lang.CommonConstants.UTF8;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 
@@ -55,13 +56,12 @@ import org.xml.sax.helpers.LocatorImpl;
  *  @see "'Java and XSLT' from Eric M. Burke, O'Reilly 2001"
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: AbstractXMLReader.java 840 2021-01-10 21:37:03Z tquadrat $
+ *  @version $Id: AbstractXMLReader.java 1030 2022-04-06 13:42:02Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@SuppressWarnings( "ClassWithTooManyMethods" )
-@ClassVersion( sourceVersion = "$Id: AbstractXMLReader.java 840 2021-01-10 21:37:03Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: AbstractXMLReader.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public abstract class AbstractXMLReader implements XMLReader
 {
@@ -155,7 +155,6 @@ public abstract class AbstractXMLReader implements XMLReader
      *  @throws SAXException    Unable to interpret the data provided with the
      *      input source.
      */
-    @SuppressWarnings( "resource" )
     private BufferedReader createReader( final InputSource input ) throws IOException, SAXException
     {
         //---* Create a buffered reader from the input source *----------------
@@ -167,7 +166,7 @@ public abstract class AbstractXMLReader implements XMLReader
         }
         else if( nonNull( input.getByteStream() ) )
         {
-            retValue = new BufferedReader( nonNull( m_Encoding ) ? new InputStreamReader( input.getByteStream(), m_Encoding ) : new InputStreamReader( input.getByteStream() ) );
+            retValue = new BufferedReader( nonNull( m_Encoding ) ? new InputStreamReader( input.getByteStream(), m_Encoding ) : new InputStreamReader( input.getByteStream(), UTF8 ) );
         }
         else if( nonNull( input.getSystemId() ) )
         {
@@ -182,11 +181,11 @@ public abstract class AbstractXMLReader implements XMLReader
                 /*
                  * If no entity resolver is set, the system id that is stored
                  * in an InputSource will be taken directly as a fully
-                 * qualified URL to a stream somewhere. Otherwise it will be
+                 * qualified URL to a stream somewhere. Otherwise, it will be
                  * translated using that entity resolver.
                  */
                 final var url = new URL( input.getSystemId() );
-                retValue = new BufferedReader( nonNull( m_Encoding ) ? new InputStreamReader( url.openStream(), m_Encoding ) : new InputStreamReader( url.openStream() ) );
+                retValue = new BufferedReader( nonNull( m_Encoding ) ? new InputStreamReader( url.openStream(), m_Encoding ) : new InputStreamReader( url.openStream(), UTF8 ) );
             }
         }
         else
@@ -203,8 +202,6 @@ public abstract class AbstractXMLReader implements XMLReader
      *  Returns the current content handler.
      *
      *  @return A reference to the current content handler.
-     *
-     *  @see org.xml.sax.XMLReader#getContentHandler()
      */
     @Override
     public final ContentHandler getContentHandler() { return m_ContentHandler; }
@@ -213,8 +210,6 @@ public abstract class AbstractXMLReader implements XMLReader
      *  Returns the current DTD handler.
      *
      *  @return A reference to the current DTD handler.
-     *
-     *  @see org.xml.sax.XMLReader#getDTDHandler()
      */
     @Override
     public final DTDHandler getDTDHandler() { return m_DTDHandler; }
@@ -223,8 +218,6 @@ public abstract class AbstractXMLReader implements XMLReader
      *  Returns the current entity resolver.
      *
      *  @return A reference to the current entity resolver.
-     *
-     *  @see org.xml.sax.XMLReader#getEntityResolver()
      */
     @Override
     public final EntityResolver getEntityResolver() { return m_EntityResolver; }
@@ -237,8 +230,6 @@ public abstract class AbstractXMLReader implements XMLReader
      *  will be returned.
      *
      *  @return A reference to the current error handler.
-     *
-     *  @see org.xml.sax.XMLReader#getErrorHandler()
      */
     @Override
     public final ErrorHandler getErrorHandler() { return m_ErrorHandler; }
@@ -259,8 +250,6 @@ public abstract class AbstractXMLReader implements XMLReader
      *      retrieved.
      *  @throws SAXNotSupportedException    The XMLReader recognizes the
      *      feature name but cannot determine its value at this time.
-     *
-     *  @see org.xml.sax.XMLReader#getFeature(java.lang.String)
      */
     @Override
     public boolean getFeature( final String name ) throws SAXNotRecognizedException, SAXNotSupportedException
@@ -278,7 +267,7 @@ public abstract class AbstractXMLReader implements XMLReader
      *  XMLReader to recognise a property name but temporarily be unable to
      *  return its value. Some property values may be available only in
      *  specific contexts, such as before, during, or after a parse.<br>
-     *  <br>XMLReaders are not required to recognize any specific property
+     *  <br>XMLReaders are not required to recognise any specific property
      *  names, though an initial core set is documented for SAX2. But even that
      *  is not supported by this specific implementation; if this is a
      *  requirement, a derived class has to provide its own implementation of
@@ -296,7 +285,6 @@ public abstract class AbstractXMLReader implements XMLReader
      *  @throws SAXNotSupportedException    The XMLReader recognizes the
      *      property name but cannot determine its value at this time.
      *
-     *  @see org.xml.sax.XMLReader#getProperty(java.lang.String)
      *  @see #setProperty(String, Object) setProperty()
      */
     @Override
@@ -345,7 +333,6 @@ public abstract class AbstractXMLReader implements XMLReader
      *  @throws SAXException    Any SAX exception, possibly wrapping another
      *      exception.
      *
-     *  @see org.xml.sax.XMLReader#parse(org.xml.sax.InputSource)
      *  @see org.xml.sax.InputSource
      *  @see #parse(java.lang.String) parse( String )
      *  @see #setEntityResolver(EntityResolver) setEntityResolver()
@@ -390,7 +377,6 @@ public abstract class AbstractXMLReader implements XMLReader
      *      exception.
      *
      *  @see #parse(org.xml.sax.InputSource) parse( InputSource )
-     *  @see org.xml.sax.XMLReader#parse(java.lang.String)
      */
     @Override
     public final void parse( final String systemId ) throws IOException, SAXException { parse( new InputSource( systemId ) ); }
@@ -468,8 +454,6 @@ public abstract class AbstractXMLReader implements XMLReader
      *  immediately.
      *
      *  @param  handler  The content handler; may be {@code null}.
-     *
-     *  @see org.xml.sax.XMLReader#setContentHandler(org.xml.sax.ContentHandler)
      */
     @Override
     public final void setContentHandler( final ContentHandler handler )  { m_ContentHandler = handler; }
@@ -484,8 +468,6 @@ public abstract class AbstractXMLReader implements XMLReader
      *  immediately.
      *
      *  @param  handler The DTD handler; may be {@code null}.
-     *
-     *  @see org.xml.sax.XMLReader#setDTDHandler(org.xml.sax.DTDHandler)
      */
     @Override
     public final void setDTDHandler( final DTDHandler handler ) { m_DTDHandler = handler; }
@@ -508,8 +490,6 @@ public abstract class AbstractXMLReader implements XMLReader
      *  immediately.
      *
      *  @param  resolver    The entity resolver; may be {@code null}.
-     *
-     *  @see org.xml.sax.XMLReader#setEntityResolver(org.xml.sax.EntityResolver)
      */
     @Override
     public final void setEntityResolver( final EntityResolver resolver ) { m_EntityResolver = resolver; }
@@ -529,7 +509,6 @@ public abstract class AbstractXMLReader implements XMLReader
      *
      *  @param  handler The error handler; may be {@code null}.
      *
-     *  @see org.xml.sax.XMLReader#setErrorHandler(org.xml.sax.ErrorHandler)
      *  @see DefaultErrorHandler
      */
     @Override
@@ -549,7 +528,6 @@ public abstract class AbstractXMLReader implements XMLReader
      *  @throws SAXNotSupportedException    The XMLReader recognises the
      *      feature name but cannot set the requested value.
      *
-     *  @see org.xml.sax.XMLReader#setFeature(java.lang.String, boolean)
      *  @see #getFeature(String) getFeature()
      */
     @Override
@@ -589,7 +567,6 @@ public abstract class AbstractXMLReader implements XMLReader
      *  @throws SAXNotSupportedException    The XMLReader recognises the
      *      property name but cannot set the requested value.
      *
-     *  @see org.xml.sax.XMLReader#setProperty(java.lang.String, java.lang.Object)
      *  @see #getProperty(String) getProperty()
      */
     @Override

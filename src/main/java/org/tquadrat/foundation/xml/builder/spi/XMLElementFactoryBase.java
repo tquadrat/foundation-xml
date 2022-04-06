@@ -32,13 +32,13 @@ import org.tquadrat.foundation.xml.builder.XMLElementFactory;
  *  {@link XMLElementFactory}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: XMLElementFactoryBase.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: XMLElementFactoryBase.java 1030 2022-04-06 13:42:02Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@SuppressWarnings( {"AbstractClassNeverImplemented", "AbstractClassWithoutAbstractMethods", "preview"} )
-@ClassVersion( sourceVersion = "$Id: XMLElementFactoryBase.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@SuppressWarnings( "AbstractClassWithoutAbstractMethods" )
+@ClassVersion( sourceVersion = "$Id: XMLElementFactoryBase.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @API( status = MAINTAINED, since = "0.0.5" )
 public abstract non-sealed class XMLElementFactoryBase implements XMLElementFactory
 {
@@ -75,6 +75,7 @@ public abstract non-sealed class XMLElementFactoryBase implements XMLElementFact
      *  @param  namespace   The namespace that is used by this XML element
      *      factory.
      */
+    @SuppressWarnings( "UseOfConcreteClass" )
     protected XMLElementFactoryBase( final Namespace namespace )
     {
         m_Namespace = Optional.of( requireNonNullArgument( namespace, "namespace" ) );

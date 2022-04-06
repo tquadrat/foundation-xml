@@ -35,12 +35,13 @@ import org.tquadrat.foundation.xml.builder.spi.Element;
  *  such an element.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Text.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: Text.java 1030 2022-04-06 13:42:02Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: Text.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@SuppressWarnings( "NewClassNamingConvention" )
+@ClassVersion( sourceVersion = "$Id: Text.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.5" )
 public class Text implements Element
 {

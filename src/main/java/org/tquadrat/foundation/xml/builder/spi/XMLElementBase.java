@@ -35,7 +35,7 @@ import org.tquadrat.foundation.xml.builder.internal.XMLElementImpl;
  *  comments.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: XMLElementBase.java 859 2021-01-25 16:46:30Z tquadrat $
+ *  @version $Id: XMLElementBase.java 1030 2022-04-06 13:42:02Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
@@ -44,8 +44,8 @@ import org.tquadrat.foundation.xml.builder.internal.XMLElementImpl;
  *      {@link XMLElementAdapter}
  *      instead.
  */
-@SuppressWarnings( {"AbstractClassNeverImplemented", "AbstractClassExtendsConcreteClass", "preview"} )
-@ClassVersion( sourceVersion = "$Id: XMLElementBase.java 859 2021-01-25 16:46:30Z tquadrat $" )
+@SuppressWarnings( {"AbstractClassExtendsConcreteClass", "DeprecatedIsStillUsed"} )
+@ClassVersion( sourceVersion = "$Id: XMLElementBase.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @API( status = DEPRECATED, since = "0.0.5" )
 @Deprecated( since = "0.1.0", forRemoval = true )
 public abstract non-sealed class XMLElementBase extends XMLElementImpl
@@ -96,9 +96,9 @@ public abstract non-sealed class XMLElementBase extends XMLElementImpl
      *  @param  elementName The element name.
      *  @param  validChildren   The list of the names for valid children; if
      *      {@code null}, no children are allowed, if empty, children are
-     *      allowed, but they will not validated.
+     *      allowed, but they will not be validated.
      *  @param  validAttributes The list of the valid attributes; if empty or
-     *      {@code null}, the attributes will not validated.
+     *      {@code null}, the attributes will not be validated.
      *  @param  attributeSequence   The sequence for the attributes; if empty
      *      or {@code null}, the attributes will be sorted alphabetically.
      *  @param  allowText   {@code true} if the element allows text,

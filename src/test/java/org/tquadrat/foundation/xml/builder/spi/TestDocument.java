@@ -42,10 +42,9 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link Document}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestDocument.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TestDocument.java 1030 2022-04-06 13:42:02Z tquadrat $
  */
-@SuppressWarnings( "MisorderedAssertEqualsArguments" )
-@ClassVersion( sourceVersion = "$Id: TestDocument.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestDocument.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.spi.TestDocument" )
 public class TestDocument extends XMLTestBase
 {
@@ -57,9 +56,9 @@ public class TestDocument extends XMLTestBase
      *  {@link Document}.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: TestDocument.java 820 2020-12-29 20:34:22Z tquadrat $
+     *  @version $Id: TestDocument.java 1030 2022-04-06 13:42:02Z tquadrat $
      */
-    @ClassVersion( sourceVersion = "$Id: TestDocument.java 820 2020-12-29 20:34:22Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: TestDocument.java 1030 2022-04-06 13:42:02Z tquadrat $" )
     private final class CandidateDocument implements Document<Element>
     {
             /*--------------*\

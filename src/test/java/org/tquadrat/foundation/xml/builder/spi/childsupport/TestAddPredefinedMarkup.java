@@ -35,10 +35,9 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link ChildSupport}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestAddPredefinedMarkup.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TestAddPredefinedMarkup.java 1030 2022-04-06 13:42:02Z tquadrat $
  */
-@SuppressWarnings( "MisorderedAssertEqualsArguments" )
-@ClassVersion( sourceVersion = "$Id: TestAddPredefinedMarkup.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestAddPredefinedMarkup.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.spi.childsupport.TestAddPredefinedMarkup" )
 public class TestAddPredefinedMarkup extends XMLTestBase
 {
@@ -49,6 +48,7 @@ public class TestAddPredefinedMarkup extends XMLTestBase
      *  Tests for
      *  {@link ChildSupport#addPredefinedMarkup(CharSequence)}
      */
+    @SuppressWarnings( "JUnitTestMethodWithNoAssertions" )
     @Test
     final void testAddPredefinedMarkup()
     {

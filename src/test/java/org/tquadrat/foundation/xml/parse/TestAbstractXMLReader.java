@@ -57,7 +57,7 @@ import org.xml.sax.helpers.AttributesImpl;
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  */
-@ClassVersion( sourceVersion = "$Id: TestAbstractXMLReader.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestAbstractXMLReader.java 1030 2022-04-06 13:42:02Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.parse.TestAbstractXMLReader" )
 public class TestAbstractXMLReader extends XMLTestBase
 {
@@ -76,17 +76,15 @@ public class TestAbstractXMLReader extends XMLTestBase
          *  Creates a new PropertiesReader instance for the given content
          *  handler.
          *
-         *  @param  handler The content handler.
+         *  @param  contentHandler The content handler.
          */
-        public PropertiesReader( final ContentHandler handler ) { super( handler ); }
+        public PropertiesReader( final ContentHandler contentHandler ) { super( contentHandler ); }
 
             /*---------*\
         ====** Methods **======================================================
             \*---------*/
         /**
          *  {@inheritDoc}
-         *
-         *  @see AbstractXMLReader#process(BufferedReader) process()
          */
         @Override
         protected void process( final BufferedReader input ) throws IOException, SAXException
@@ -150,6 +148,7 @@ public class TestAbstractXMLReader extends XMLTestBase
     /**
      *  The properties "Stream".
      */
+    @SuppressWarnings( "StaticVariableMayNotBeInitialized" )
     private static String m_Properties;
 
     	/*---------*\
@@ -230,8 +229,8 @@ public class TestAbstractXMLReader extends XMLTestBase
         skipThreadTest();
 
         //---* Create the input source *---------------------------------------
-        final var sr = new StringReader( m_Properties );
-        final var inputSource = new InputSource( sr );
+        final var stringReader = new StringReader( m_Properties );
+        final var inputSource = new InputSource( stringReader );
 
         //---* Create the PropertiesReader object *----------------------------
         final Class<? extends Throwable> expectedException = NullArgumentException.class;
