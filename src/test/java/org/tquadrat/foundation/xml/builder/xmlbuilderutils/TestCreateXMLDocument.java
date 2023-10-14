@@ -17,6 +17,7 @@
 
 package org.tquadrat.foundation.xml.builder.xmlbuilderutils;
 
+import static java.lang.String.format;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -24,7 +25,6 @@ import static org.junit.jupiter.api.Assertions.fail;
 import static org.tquadrat.foundation.lang.CommonConstants.ASCII;
 import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
 import static org.tquadrat.foundation.lang.CommonConstants.UTF8;
-import static org.tquadrat.foundation.util.StringUtils.format;
 import static org.tquadrat.foundation.xml.builder.XMLBuilderUtils.createXMLDocument;
 import static org.tquadrat.foundation.xml.builder.XMLBuilderUtils.createXMLElement;
 
@@ -46,9 +46,9 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link XMLBuilderUtils}
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestCreateXMLDocument.java 1030 2022-04-06 13:42:02Z tquadrat $
+ *  @version $Id: TestCreateXMLDocument.java 1076 2023-10-03 18:36:07Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestCreateXMLDocument.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestCreateXMLDocument.java 1076 2023-10-03 18:36:07Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.xmlbuilderutils.TestCreateXMLDocument" )
 public class TestCreateXMLDocument extends XMLTestBase
 {

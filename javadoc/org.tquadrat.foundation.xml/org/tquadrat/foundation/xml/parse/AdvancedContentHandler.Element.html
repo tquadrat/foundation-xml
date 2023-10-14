@@ -100,7 +100,7 @@ loadScripts(document, 'script');</script>
 <dd><a href="AdvancedContentHandler.html" title="class in org.tquadrat.foundation.xml.parse">AdvancedContentHandler</a></dd>
 </dl>
 <hr>
-<div class="type-signature"><span class="annotations"><a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">@ClassVersion</a>(<a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html#sourceVersion()" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">sourceVersion</a>="$Id: AdvancedContentHandler.java 820 2020-12-29 20:34:22Z tquadrat $")
+<div class="type-signature"><span class="annotations"><a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">@ClassVersion</a>(<a href="https://tquadrat.github.io/foundation-base/javadoc/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html#sourceVersion()" title="class or interface in org.tquadrat.foundation.annotation" class="external-link">sourceVersion</a>="$Id: AdvancedContentHandler.java 1071 2023-09-30 01:49:32Z tquadrat $")
 <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.1.0")
 </span><span class="modifiers">protected static final class </span><span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AdvancedContentHandler.html#line-111">AdvancedContentHandler.Element</a></span>
@@ -111,7 +111,7 @@ loadScripts(document, 'script');</script>
 <dt><span class="simpleTagLabel">Author:</span></dt>
   <dd>Thomas Thrien (<a href="mailto:thomas.thrien@tquadrat.org">thomas.thrien@tquadrat.org</a>)</dd>
 <dt>Version:</dt>
-<dd>$Id: AdvancedContentHandler.java 820 2020-12-29 20:34:22Z tquadrat $</dd>
+<dd>$Id: AdvancedContentHandler.java 1071 2023-09-30 01:49:32Z tquadrat $</dd>
 <dt>Since:</dt>
 <dd>0.0.5</dd>
 
@@ -220,7 +220,7 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#appendData(char%5B%5D,int,int)" class="member-name-link">appendData</a><wbr>(char[]&nbsp;ch,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#appendData(char%5B%5D,int,int)" class="member-name-link">appendData</a><wbr>(char[]&nbsp;characters,
  int&nbsp;start,
  int&nbsp;end)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -300,35 +300,35 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="m_LocalName">
 <h3>m_LocalName</h3>
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AdvancedContentHandler.Element.html#line-132">m_LocalName</a></span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AdvancedContentHandler.Element.html#line-133">m_LocalName</a></span></div>
 <div class="block">The element's local name.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="m_Parent">
 <h3>m_Parent</h3>
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="AdvancedContentHandler.Element.html" title="class in org.tquadrat.foundation.xml.parse">AdvancedContentHandler.Element</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AdvancedContentHandler.Element.html#line-137">m_Parent</a></span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="AdvancedContentHandler.Element.html" title="class in org.tquadrat.foundation.xml.parse">AdvancedContentHandler.Element</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AdvancedContentHandler.Element.html#line-138">m_Parent</a></span></div>
 <div class="block">The parent for this element.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="m_Path">
 <h3>m_Path</h3>
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AdvancedContentHandler.Element.html#line-143">m_Path</a></span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AdvancedContentHandler.Element.html#line-144">m_Path</a></span></div>
 <div class="block">The path to the element.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="m_QName">
 <h3>m_QName</h3>
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AdvancedContentHandler.Element.html#line-148">m_QName</a></span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AdvancedContentHandler.Element.html#line-149">m_QName</a></span></div>
 <div class="block">The element's qualified name.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="m_URI">
 <h3>m_URI</h3>
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/URI.html" title="class or interface in java.net" class="external-link">URI</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AdvancedContentHandler.Element.html#line-157">m_URI</a></span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/URI.html" title="class or interface in java.net" class="external-link">URI</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AdvancedContentHandler.Element.html#line-158">m_URI</a></span></div>
 <div class="block">The namespace for this element; if <code>null</code>, the
   <a href="#m_QName">qualified name</a>
   and the
@@ -347,7 +347,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="&lt;init&gt;(java.lang.String,java.lang.String,java.net.URI,java.util.Map,java.lang.String,org.tquadrat.foundation.xml.parse.AdvancedContentHandler.Element)">
 <h3>Element</h3>
-<div class="member-signature"><span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AdvancedContentHandler.Element.html#line-175">Element</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;qName,
+<div class="member-signature"><span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AdvancedContentHandler.Element.html#line-176">Element</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;qName,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;localName,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/URI.html" title="class or interface in java.net" class="external-link">URI</a>&nbsp;uri,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="Attribute.html" title="class in org.tquadrat.foundation.xml.parse">Attribute</a>&gt;&nbsp;attributes,
@@ -379,13 +379,13 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="appendData(char[],int,int)">
 <h3>appendData</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AdvancedContentHandler.Element.html#line-196">appendData</a></span><wbr><span class="parameters">(char[]&nbsp;ch,
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AdvancedContentHandler.Element.html#line-198">appendData</a></span><wbr><span class="parameters">(char[]&nbsp;characters,
  int&nbsp;start,
  int&nbsp;end)</span></div>
 <div class="block">Adds another data chunk to the data block for the current element.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>ch</code> - The characters.</dd>
+<dd><code>characters</code> - The characters.</dd>
 <dd><code>start</code> - The start position inside the characters array.</dd>
 <dd><code>end</code> - The ending position inside the array.</dd>
 </dl>
@@ -394,7 +394,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getAttributes()">
 <h3>getAttributes</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="Attribute.html" title="class in org.tquadrat.foundation.xml.parse">Attribute</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AdvancedContentHandler.Element.html#line-206">getAttributes</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="Attribute.html" title="class in org.tquadrat.foundation.xml.parse">Attribute</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AdvancedContentHandler.Element.html#line-208">getAttributes</a></span>()</div>
 <div class="block">Returns the attributes of the element.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -405,7 +405,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getData()">
 <h3>getData</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AdvancedContentHandler.Element.html#line-213">getData</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AdvancedContentHandler.Element.html#line-215">getData</a></span>()</div>
 <div class="block">Returns the data block for this element.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -416,7 +416,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getLocalName()">
 <h3>getLocalName</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AdvancedContentHandler.Element.html#line-220">getLocalName</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AdvancedContentHandler.Element.html#line-222">getLocalName</a></span>()</div>
 <div class="block">Returns the local name of the element.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -427,7 +427,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getParent()">
 <h3>getParent</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="AdvancedContentHandler.Element.html" title="class in org.tquadrat.foundation.xml.parse">AdvancedContentHandler.Element</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AdvancedContentHandler.Element.html#line-231">getParent</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="AdvancedContentHandler.Element.html" title="class in org.tquadrat.foundation.xml.parse">AdvancedContentHandler.Element</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AdvancedContentHandler.Element.html#line-233">getParent</a></span>()</div>
 <div class="block">Returns the parent element.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -442,7 +442,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getPath()">
 <h3>getPath</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AdvancedContentHandler.Element.html#line-238">getPath</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AdvancedContentHandler.Element.html#line-240">getPath</a></span>()</div>
 <div class="block">Returns to XML path to this element.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -453,7 +453,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getPrefix()">
 <h3>getPrefix</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AdvancedContentHandler.Element.html#line-246">getPrefix</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AdvancedContentHandler.Element.html#line-248">getPrefix</a></span>()</div>
 <div class="block">Returns the prefix from the element's qualified name.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -465,7 +465,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getQName()">
 <h3>getQName</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AdvancedContentHandler.Element.html#line-260">getQName</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AdvancedContentHandler.Element.html#line-262">getQName</a></span>()</div>
 <div class="block">Returns the qualified name of the element.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -476,7 +476,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getURI()">
 <h3>getURI</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/URI.html" title="class or interface in java.net" class="external-link">URI</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AdvancedContentHandler.Element.html#line-269">getURI</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/URI.html" title="class or interface in java.net" class="external-link">URI</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.xml/org/tquadrat/foundation/xml/parse/AdvancedContentHandler.Element.html#line-271">getURI</a></span>()</div>
 <div class="block">Returns the namespace URI of the element.</div>
 <dl class="notes">
 <dt>Returns:</dt>

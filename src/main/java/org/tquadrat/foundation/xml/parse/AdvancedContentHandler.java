@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -17,6 +17,7 @@
 
 package org.tquadrat.foundation.xml.parse;
 
+import static java.lang.String.format;
 import static java.util.stream.Collectors.toMap;
 import static org.apiguardian.api.API.Status.MAINTAINED;
 import static org.apiguardian.api.API.Status.STABLE;
@@ -25,7 +26,6 @@ import static org.tquadrat.foundation.lang.Objects.isNull;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
-import static org.tquadrat.foundation.util.StringUtils.format;
 import static org.tquadrat.foundation.util.StringUtils.isEmptyOrBlank;
 import static org.tquadrat.foundation.util.StringUtils.isNotEmptyOrBlank;
 
@@ -85,13 +85,13 @@ import org.xml.sax.helpers.LocatorImpl;
  *  information that the b element was embedded in between is lost.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: AdvancedContentHandler.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: AdvancedContentHandler.java 1071 2023-09-30 01:49:32Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( {"ClassWithTooManyMethods", "AbstractClassWithoutAbstractMethods"} )
-@ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1071 2023-09-30 01:49:32Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public abstract class AdvancedContentHandler implements ContentHandler
 {
@@ -103,13 +103,13 @@ public abstract class AdvancedContentHandler implements ContentHandler
      *  of an XML element.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: AdvancedContentHandler.java 820 2020-12-29 20:34:22Z tquadrat $
+     *  @version $Id: AdvancedContentHandler.java 1071 2023-09-30 01:49:32Z tquadrat $
      *  @since 0.0.5
      *
      *  @UMLGraph.link
      */
     @SuppressWarnings( {"InnerClassMayBeStatic", "ProtectedInnerClass"} )
-    @ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 820 2020-12-29 20:34:22Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1071 2023-09-30 01:49:32Z tquadrat $" )
     @API( status = STABLE, since = "0.1.0" )
     protected static final class Element
     {
@@ -124,6 +124,7 @@ public abstract class AdvancedContentHandler implements ContentHandler
         /**
          *  The data.
          */
+        @SuppressWarnings( "StringBufferField" )
         private final StringBuilder m_Data;
 
         /**
@@ -172,7 +173,8 @@ public abstract class AdvancedContentHandler implements ContentHandler
          *  @param  parent  The parent element for this element; may be
          *      {@code null}.
          */
-        Element( final String qName, final String localName, final URI uri, final Map<String,Attribute>  attributes, final String path, final Element parent )
+        @SuppressWarnings( "ConstructorWithTooManyParameters" )
+        Element( final String qName, final String localName, final URI uri, final Map<String,Attribute>  attributes, final String path, @SuppressWarnings( "UseOfConcreteClass" ) final Element parent )
         {
             m_QName = requireNotEmptyArgument( qName, "qName" );
             m_LocalName = requireNotEmptyArgument( localName, "localName" );
@@ -189,13 +191,13 @@ public abstract class AdvancedContentHandler implements ContentHandler
         /**
          *  Adds another data chunk to the data block for the current element.
          *
-         *  @param  ch  The characters.
+         *  @param  characters  The characters.
          *  @param  start   The start position inside the characters array.
          *  @param  end The ending position inside the array.
          */
-        public final void appendData( final char [] ch, final int start, final int end )
+        public final void appendData( final char [] characters, final int start, final int end )
         {
-            m_Data.append( ch, start, end );
+            m_Data.append( characters, start, end );
         }   //  appendData()
 
         /**
@@ -275,14 +277,14 @@ public abstract class AdvancedContentHandler implements ContentHandler
      *  element.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: AdvancedContentHandler.java 820 2020-12-29 20:34:22Z tquadrat $
+     *  @version $Id: AdvancedContentHandler.java 1071 2023-09-30 01:49:32Z tquadrat $
      *  @since 0.1.0
      *
      *  @UMLGraph.link
      */
-    @SuppressWarnings( {"InterfaceNeverImplemented", "ProtectedInnerClass"} )
+    @SuppressWarnings( {"ProtectedInnerClass"} )
     @FunctionalInterface
-    @ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 820 2020-12-29 20:34:22Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1071 2023-09-30 01:49:32Z tquadrat $" )
     @API( status = MAINTAINED, since = "0.1.0" )
     protected interface HandlerMethod
     {
@@ -349,7 +351,7 @@ public abstract class AdvancedContentHandler implements ContentHandler
      *  This stack contains the open elements, stored as instances of
      *  {@link Element}.
      */
-    @SuppressWarnings( "InstanceVariableOfConcreteClass" )
+    @SuppressWarnings( "UseOfConcreteClass" )
     private final Stack<Element> m_ElementStack = new Stack<>();
 
     /**
@@ -387,8 +389,6 @@ public abstract class AdvancedContentHandler implements ContentHandler
      *  @param  start   The start position inside the characters array.
      *  @param  length  The length of the subset to process.
      *  @throws SAXException    Something has gone wrong.
-     *
-     *  @see ContentHandler#characters(char[], int, int)
      */
     @Override
     public final void characters( final char [] ch, final int start, final int length ) throws SAXException
@@ -416,10 +416,10 @@ public abstract class AdvancedContentHandler implements ContentHandler
     private static final Attribute composeAttribute( final Attributes attributes, final int index ) throws IllegalArgumentException, URISyntaxException
     {
         final var qName = attributes.getQName( index );
-        var v = attributes.getLocalName( index );
-        final Optional<String> localName = isEmptyOrBlank( v ) ? Optional.empty() : Optional.of( v );
-        v = attributes.getURI( index );
-        final Optional<URI> uri = isEmptyOrBlank( v ) ? Optional.empty() : Optional.of( new URI( v ) );
+        final var attributesLocalName = attributes.getLocalName( index );
+        final Optional<String> localName = isEmptyOrBlank( attributesLocalName ) ? Optional.empty() : Optional.of( attributesLocalName );
+        final var attributesURI = attributes.getURI( index );
+        final Optional<URI> uri = isEmptyOrBlank( attributesURI ) ? Optional.empty() : Optional.of( new URI( attributesURI ) );
         final var type = Attribute.Type.valueOf( attributes.getType( index ) );
         final var value = attributes.getValue( index );
 
@@ -438,8 +438,6 @@ public abstract class AdvancedContentHandler implements ContentHandler
      *
      *  @throws SAXException    Any SAX exception, possibly wrapping another
      *      exception.
-     *
-     *  @see org.xml.sax.ContentHandler#endDocument()
      */
     @SuppressWarnings( "NoopMethodInAbstractClass" )
     @Override
@@ -459,16 +457,14 @@ public abstract class AdvancedContentHandler implements ContentHandler
      *  @param  qName   The element's qualified name.
      *  @throws SAXException    The element was not correct according to the
      *      DTD.
-     *
-     *  @see ContentHandler#endElement(String, String, String)
      */
     @Override
     public final void endElement( final String uri, final String localName, final String qName ) throws SAXException
     {
-        final var element = m_ElementStack.peek().orElseThrow( () -> new SAXParseException( format( "No element '%1$s' on Stack", qName ), getLocator() ) );
+        final var element = m_ElementStack.peek().orElseThrow( () -> new SAXParseException( "No element '%1$s' on Stack".formatted( qName ), getLocator() ) );
         if( !element.getQName().equals( qName ) )
         {
-            throw new SAXParseException( format( "Closing element '%1$s' does not match open element '%2$s'", qName, element.getQName() ), getLocator() );
+            throw new SAXParseException( "Closing element '%1$s' does not match open element '%2$s'".formatted( qName, element.getQName() ), getLocator() );
         }
         processElement( element );
 
@@ -477,13 +473,11 @@ public abstract class AdvancedContentHandler implements ContentHandler
     }   //  endElement()
 
     /**
-     *  Receives the notification of the end for an name space mapping.
+     *  Receives the notification of the end for a name space mapping.
      *
      *  @param  prefix  The Namespace prefix being declared.
      *  @throws SAXException    Any SAX exception, possibly wrapping another
      *      exception.
-     *
-     *  @see org.xml.sax.ContentHandler#endPrefixMapping(java.lang.String)
      */
     @Override
     public final void endPrefixMapping( final String prefix ) throws SAXException
@@ -649,13 +643,13 @@ public abstract class AdvancedContentHandler implements ContentHandler
      *
      *  @since 0.1.0
      */
-    @SuppressWarnings( {"NoopMethodInAbstractClass", "unused"} )
+    @SuppressWarnings( {"unused"} )
     @MountPoint
     @API( status = MAINTAINED, since = "0.1.0" )
-    protected void handleElement( final Element element, final boolean terminateElement ) throws SAXException
+    protected void handleElement( @SuppressWarnings( "UseOfConcreteClass" ) final Element element, final boolean terminateElement ) throws SAXException
     {
-        final var a = element.getAttributes().entrySet().stream().collect( toMap( Map.Entry::getKey, v -> v.getValue().value() ) );
-        handleElement( terminateElement, terminateElement ? element.getData() : null, a, element.getPath() );
+        final var map = element.getAttributes().entrySet().stream().collect( toMap( Map.Entry::getKey, v -> v.getValue().value() ) );
+        handleElement( terminateElement, terminateElement ? element.getData() : null, map, element.getPath() );
     }   //  handleElement()
 
     /**
@@ -702,8 +696,6 @@ public abstract class AdvancedContentHandler implements ContentHandler
      *      array.
      *  @throws SAXException    Any SAX exception, possibly wrapping another
      *      exception.
-     *
-     *  @see org.xml.sax.ContentHandler#ignorableWhitespace(char[], int, int)
      */
     @SuppressWarnings( "NoopMethodInAbstractClass" )
     @Override
@@ -725,7 +717,7 @@ public abstract class AdvancedContentHandler implements ContentHandler
      */
     @MountPoint
     @API( status = MAINTAINED, since = "0.1.0" )
-    protected void openElement( final Element element ) throws SAXException
+    protected void openElement( @SuppressWarnings( "UseOfConcreteClass" ) final Element element ) throws SAXException
     {
         final var method = m_HandlerMethods.get( element.getQName() );
         if( isNull(method ) ) throw new SAXException( format( MSG_NoHandler, element ) );
@@ -768,7 +760,7 @@ public abstract class AdvancedContentHandler implements ContentHandler
      */
     @MountPoint
     @API( status = MAINTAINED, since = "0.1.0" )
-    protected void processElement( final Element element ) throws SAXException
+    protected void processElement( @SuppressWarnings( "UseOfConcreteClass" ) final Element element ) throws SAXException
     {
         final var method = m_HandlerMethods.get( element.getQName() );
         if( isNull(method ) ) throw new SAXException( format( MSG_NoHandler, element.getQName() ) );
@@ -808,8 +800,6 @@ public abstract class AdvancedContentHandler implements ContentHandler
      *      if none is supplied.
      *  @throws SAXException    Any SAX exception, possibly wrapping another
      *      exception.
-     *
-     *  @see org.xml.sax.ContentHandler#processingInstruction(java.lang.String, java.lang.String)
      */
     @SuppressWarnings( "NoopMethodInAbstractClass" )
     @Override
@@ -935,8 +925,6 @@ public abstract class AdvancedContentHandler implements ContentHandler
      *
      *  @param  locator An object that can return the location of any SAX
      *      document event.
-     *
-     *  @see org.xml.sax.ContentHandler#setDocumentLocator(org.xml.sax.Locator)
      */
     @Override
     public final void setDocumentLocator( final Locator locator ) { m_Locator = requireNonNullArgument( locator, "locator" ); }
@@ -951,8 +939,6 @@ public abstract class AdvancedContentHandler implements ContentHandler
      *  @param  name    The name of the skipped entity.
      *  @throws SAXException    Any SAX exception, possibly wrapping another
      *      exception.
-     *
-     *  @see org.xml.sax.ContentHandler#skippedEntity(java.lang.String)
      */
     @SuppressWarnings( "NoopMethodInAbstractClass" )
     @Override
@@ -968,9 +954,8 @@ public abstract class AdvancedContentHandler implements ContentHandler
      *  @param  attributes  The element's attributes.
      *  @throws SAXException    The element was not correct according to the
      *      DTD.
-     *
-     *  @see ContentHandler#startElement(String, String, String, Attributes)
      */
+    @SuppressWarnings( "OverlyComplexMethod" )
     @Override
     public final void startElement( final String uri, final String localName, final String qName, final Attributes attributes ) throws SAXException
     {
@@ -1029,7 +1014,7 @@ public abstract class AdvancedContentHandler implements ContentHandler
             }
             if( isNull( effectiveQName ) )
             {
-                final var prefix = retrievePrefix( namespace ).orElseThrow( () -> new SAXParseException( format( "Unknown Namespace: %s", uri ), getLocator() ) );
+                final var prefix = retrievePrefix( namespace ).orElseThrow( () -> new SAXParseException( "Unknown Namespace: %s".formatted( uri ), getLocator() ) );
                 effectiveQName = format( "%s:%s", prefix, effectiveLocalName );
             }
         }
@@ -1053,8 +1038,6 @@ public abstract class AdvancedContentHandler implements ContentHandler
      *
      *  @throws SAXException    Any SAX exception, possibly wrapping another
      *      exception.
-     *
-     *  @see org.xml.sax.ContentHandler#startDocument()
      */
     @SuppressWarnings( "NoopMethodInAbstractClass" )
     @Override
@@ -1068,8 +1051,6 @@ public abstract class AdvancedContentHandler implements ContentHandler
      *  @param  uri The Namespace URI mapped to the prefix.
      *  @throws SAXException    Any SAX exception, possibly wrapping another
      *      exception.
-     *
-     *  @see org.xml.sax.ContentHandler#startPrefixMapping(java.lang.String, java.lang.String)
      */
     @Override
     public final void startPrefixMapping( final String prefix, final String uri ) throws SAXException

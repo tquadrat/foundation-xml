@@ -17,6 +17,7 @@
 
 package org.tquadrat.foundation.xml.stringconverter;
 
+import static java.lang.String.format;
 import static java.lang.System.out;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -25,7 +26,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
 import static org.tquadrat.foundation.lang.Objects.isNull;
-import static org.tquadrat.foundation.util.StringUtils.format;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.StringReader;
@@ -47,9 +47,9 @@ import org.xml.sax.InputSource;
  *  {@link org.tquadrat.foundation.util.stringconverter.DocumentStringConverter}.
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestDocumentStringConverter.java 895 2021-04-05 12:40:34Z tquadrat $
+ *  @version $Id: TestDocumentStringConverter.java 1076 2023-10-03 18:36:07Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestDocumentStringConverter.java 895 2021-04-05 12:40:34Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestDocumentStringConverter.java 1076 2023-10-03 18:36:07Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.stringconverter.TestDocumentStringConverter" )
 public class TestDocumentStringConverter extends TestBaseClass
 {

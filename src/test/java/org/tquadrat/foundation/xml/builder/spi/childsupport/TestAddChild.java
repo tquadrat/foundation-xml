@@ -17,12 +17,12 @@
 
 package org.tquadrat.foundation.xml.builder.spi.childsupport;
 
+import static java.lang.String.format;
 import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.expectLastCall;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
-import static org.tquadrat.foundation.util.StringUtils.format;
 
 import java.util.Optional;
 
@@ -40,9 +40,9 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link ChildSupport}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestAddChild.java 1030 2022-04-06 13:42:02Z tquadrat $
+ *  @version $Id: TestAddChild.java 1076 2023-10-03 18:36:07Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestAddChild.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestAddChild.java 1076 2023-10-03 18:36:07Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.spi.childsupport.TestAddChild" )
 public class TestAddChild extends XMLTestBase
 {

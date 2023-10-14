@@ -17,12 +17,12 @@
 
 package org.tquadrat.foundation.xml.builder.spi.childsupport;
 
+import static java.lang.String.format;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
-import static org.tquadrat.foundation.util.StringUtils.format;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -38,9 +38,9 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link ChildSupport}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestConstructor.java 1030 2022-04-06 13:42:02Z tquadrat $
+ *  @version $Id: TestConstructor.java 1076 2023-10-03 18:36:07Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestConstructor.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestConstructor.java 1076 2023-10-03 18:36:07Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.spi.childsupport.TestConstructor" )
 public class TestConstructor extends XMLTestBase
 {

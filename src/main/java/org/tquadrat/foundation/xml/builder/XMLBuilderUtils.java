@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -61,14 +61,14 @@ import org.tquadrat.foundation.xml.builder.internal.XMLElementImpl;
  *  elements.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: XMLBuilderUtils.java 1030 2022-04-06 13:42:02Z tquadrat $
+ *  @version $Id: XMLBuilderUtils.java 1071 2023-09-30 01:49:32Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "ClassWithTooManyMethods" )
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 1071 2023-09-30 01:49:32Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public final class XMLBuilderUtils
 {
@@ -79,12 +79,12 @@ public final class XMLBuilderUtils
      *  The (default) validators.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: XMLBuilderUtils.java 1030 2022-04-06 13:42:02Z tquadrat $
+     *  @version $Id: XMLBuilderUtils.java 1071 2023-09-30 01:49:32Z tquadrat $
      *  @since 0.0.5
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 1071 2023-09-30 01:49:32Z tquadrat $" )
     @API( status = STABLE, since = "0.0.5" )
     public enum Validator
     {
@@ -172,13 +172,13 @@ public final class XMLBuilderUtils
      *  for changes to the validator configuration.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: XMLBuilderUtils.java 1030 2022-04-06 13:42:02Z tquadrat $
+     *  @version $Id: XMLBuilderUtils.java 1071 2023-09-30 01:49:32Z tquadrat $
      *  @since 0.0.5
      *
      *  @UMLGraph.link
      */
     @SuppressWarnings( "PublicInnerClass" )
-    @ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 1071 2023-09-30 01:49:32Z tquadrat $" )
     @API( status = STABLE, since = "0.0.5" )
     public static class ValidatorChangeEvent extends EventObject
     {
@@ -260,13 +260,13 @@ public final class XMLBuilderUtils
      *  {@link ValidatorChangeEvent}s
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: XMLBuilderUtils.java 1030 2022-04-06 13:42:02Z tquadrat $
+     *  @version $Id: XMLBuilderUtils.java 1071 2023-09-30 01:49:32Z tquadrat $
      *  @since 0.0.5
      *
      *  @UMLGraph.link
      */
     @FunctionalInterface
-    @ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 1071 2023-09-30 01:49:32Z tquadrat $" )
     @API( status = STABLE, since = "0.0.5" )
     public static interface ValidatorChangeListener
     {
@@ -727,14 +727,14 @@ public final class XMLBuilderUtils
      *  <br>Delegates to
      *  {@link StringUtils#escapeXML(CharSequence)}.
      *
-     *  @param  str The {@code String} to escape, may be null.
+     *  @param  input   The {@code String} to escape, may be null.
      *  @return A new escaped {@code String}, or {@code null} if the
      *      argument was already {@code null}.
      *
      *  @see #unescapeXML(CharSequence)
      */
     @API( status = STABLE, since = "0.0.5" )
-    public static String escapeXML( final CharSequence str ) { return StringUtils.escapeXML( str ); }
+    public static String escapeXML( final CharSequence input ) { return StringUtils.escapeXML( input ); }
 
     /**
      *  Escapes the characters in a {@code String} using XML entities and
@@ -749,7 +749,7 @@ public final class XMLBuilderUtils
      *  {@link StringUtils#escapeXML(Appendable,CharSequence)}.
      *
      *  @param  appendable  The appendable object receiving the escaped string.
-     *  @param  str  The {@code String} to escape, may be {@code null}.
+     *  @param  input   The {@code String} to escape, may be {@code null}.
      *  @throws NullArgumentException   The appendable is {@code null}.
      *  @throws IOException when {@code Appendable} passed throws the exception
      *      from calls to the
@@ -760,9 +760,9 @@ public final class XMLBuilderUtils
      *  @see #unescapeXML(CharSequence)
      */
     @API( status = STABLE, since = "0.0.5" )
-    public static void escapeXML( final Appendable appendable, final CharSequence str ) throws IOException
+    public static void escapeXML( final Appendable appendable, final CharSequence input ) throws IOException
     {
-        StringUtils.escapeXML( appendable, str );
+        StringUtils.escapeXML( appendable, input );
     }   //  escapeXML()
 
     /**
@@ -934,7 +934,7 @@ public final class XMLBuilderUtils
                     }
                 }
 
-                //---* House keeping: get rid of the dead references *---------
+                //---* Housekeeping: get rid of the dead references *----------
                 if( removed ) m_ValidatorChangeListeners.removeIf( r -> isNull( r.get() ) );
             }
         }
@@ -1056,15 +1056,15 @@ public final class XMLBuilderUtils
     }   //  setPrefixValidator()
 
     /**
-     *  Strips HTML or XML comments from the given String.<br>
-     *  <br>Delegates to
-     *  {@link StringUtils#stripXMLComments(CharSequence)}.
+     *  <p>{@summary Strips HTML or XML comments from the given String.}</p>
+     *  <p>Delegates to
+     *  {@link StringUtils#stripXMLComments(CharSequence)}.</p>
      *
-     *  @param  s   The HTML/XML string.
+     *  @param  input   The HTML/XML string.
      *  @return The string without the comments.
      */
     @API( status = STABLE, since = "0.0.5" )
-    public static final String stripXMLComments( final CharSequence s ) { return StringUtils.stripXMLComments( s ); }
+    public static final String stripXMLComments( final CharSequence input ) { return StringUtils.stripXMLComments( input ); }
 
     /**
      *  Unescapes an XML string containing XML entity escapes to a string
@@ -1076,7 +1076,7 @@ public final class XMLBuilderUtils
      *  <br>Delegates to
      *  {@link StringUtils#unescapeXML(CharSequence)}.
      *
-     *  @param  str The {@code String} to unescape, may be {@code null}.
+     *  @param  input The {@code String} to unescape, may be {@code null}.
      *  @return A new unescaped {@code String}, {@code null} if the given
      *      string was already {@code null}.
      *
@@ -1084,7 +1084,7 @@ public final class XMLBuilderUtils
      *  @see #escapeXML(Appendable,CharSequence)
      */
     @API( status = STABLE, since = "0.0.5" )
-    public static final String unescapeXML( final CharSequence str ) { return StringUtils.unescapeXML( str ); }
+    public static final String unescapeXML( final CharSequence input ) { return StringUtils.unescapeXML( input ); }
 
     /**
      *  Unescapes an XML String containing XML entity escapes to a String
@@ -1098,16 +1098,16 @@ public final class XMLBuilderUtils
      *  {@link StringUtils#unescapeXML(Appendable,CharSequence)}.
      *
      *  @param  appendable  The appendable receiving the unescaped string.
-     *  @param  str The {@code String} to unescape, may be {@code null}.
+     *  @param  input The {@code String} to unescape, may be {@code null}.
      *  @throws NullArgumentException   The writer is {@code null}.
      *  @throws IOException An IOException occurred.
      *
      *  @see #escapeXML(CharSequence)
      */
     @API( status = STABLE, since = "0.0.5" )
-    public static final void unescapeXML( final Appendable appendable, final CharSequence str ) throws IOException
+    public static final void unescapeXML( final Appendable appendable, final CharSequence input ) throws IOException
     {
-        StringUtils.unescapeXML( appendable, str );
+        StringUtils.unescapeXML( appendable, input );
     }   //  unescapeXML()
 }
 //  class XMLBuilderUtils

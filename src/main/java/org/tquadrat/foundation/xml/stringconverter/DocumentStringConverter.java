@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -18,11 +18,11 @@
 
 package org.tquadrat.foundation.xml.stringconverter;
 
+import static java.lang.String.format;
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.lang.CommonConstants.UTF8;
 import static org.tquadrat.foundation.lang.Objects.isNull;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
-import static org.tquadrat.foundation.util.StringUtils.format;
 import static org.tquadrat.foundation.util.StringUtils.isNotEmptyOrBlank;
 
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -73,12 +73,12 @@ import org.xml.sax.SAXException;
  *      same.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: DocumentStringConverter.java 1030 2022-04-06 13:42:02Z tquadrat $
+ *  @version $Id: DocumentStringConverter.java 1072 2023-09-30 20:44:38Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: DocumentStringConverter.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DocumentStringConverter.java 1072 2023-09-30 20:44:38Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 @SuppressWarnings( "exports" )
 public final class DocumentStringConverter implements StringConverter<Document>
@@ -176,7 +176,6 @@ public final class DocumentStringConverter implements StringConverter<Document>
      *
      *  @return The instance for this {@code StringConverter} implementation.
      */
-    @SuppressWarnings( "UseOfConcreteClass" )
     public static final DocumentStringConverter provider() { return INSTANCE; }
 
     /**
@@ -226,7 +225,7 @@ public final class DocumentStringConverter implements StringConverter<Document>
             }
             catch( final UnsupportedEncodingException e )
             {
-                throw new UnexpectedExceptionError( format( "Invalid encoding: %s", encoding ), e );
+                throw new UnexpectedExceptionError( "Invalid encoding: %s".formatted( encoding ), e );
             }
         }
 

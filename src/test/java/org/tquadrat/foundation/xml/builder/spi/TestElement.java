@@ -17,13 +17,13 @@
 
 package org.tquadrat.foundation.xml.builder.spi;
 
+import static java.lang.String.format;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
-import static org.tquadrat.foundation.util.StringUtils.format;
 
 import java.util.Optional;
 
@@ -39,9 +39,9 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link Element}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestElement.java 1030 2022-04-06 13:42:02Z tquadrat $
+ *  @version $Id: TestElement.java 1076 2023-10-03 18:36:07Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestElement.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestElement.java 1076 2023-10-03 18:36:07Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.spi.TestElement" )
 public class TestElement extends XMLTestBase
 {
@@ -53,9 +53,9 @@ public class TestElement extends XMLTestBase
      *  {@link Element}.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: TestElement.java 1030 2022-04-06 13:42:02Z tquadrat $
+     *  @version $Id: TestElement.java 1076 2023-10-03 18:36:07Z tquadrat $
      */
-    @ClassVersion( sourceVersion = "$Id: TestElement.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: TestElement.java 1076 2023-10-03 18:36:07Z tquadrat $" )
     private static final class CandidateElement implements Element
     {
             /*--------------*\

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -17,10 +17,10 @@
 
 package org.tquadrat.foundation.xml.parse;
 
+import static java.lang.String.format;
 import static java.lang.System.err;
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
-import static org.tquadrat.foundation.util.StringUtils.format;
 
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
@@ -39,13 +39,13 @@ import org.xml.sax.SAXParseException;
  *  Singleton setup because the error handler does not maintain a state.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: DefaultErrorHandler.java 1030 2022-04-06 13:42:02Z tquadrat $
+ *  @version $Id: DefaultErrorHandler.java 1071 2023-09-30 01:49:32Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "UseOfSystemOutOrSystemErr" )
-@ClassVersion( sourceVersion = "$Id: DefaultErrorHandler.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DefaultErrorHandler.java 1071 2023-09-30 01:49:32Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public final class DefaultErrorHandler implements ErrorHandler
 {
@@ -60,7 +60,7 @@ public final class DefaultErrorHandler implements ErrorHandler
     /**
      *  The Fatal Error Message.
      */
-    public static final String MSG_XMLFatal = "Fatal XML Parsing Error: %5$s - SystemId %1$s, PublicId %2$d, Line %3$s, Column %4$d";
+    public static final String MSG_XMLFatal = "Fatal XML Parsing Error: %5$s - SystemId %1$s, PublicId %2$s, Line %3$d, Column %4$d";
 
     /**
      *  The Warning Message.
@@ -99,6 +99,7 @@ public final class DefaultErrorHandler implements ErrorHandler
         final var systemId = exception.getSystemId();
         final var column = exception.getColumnNumber();
         final var line = exception.getLineNumber();
+        //noinspection RedundantStringFormatCall
         err.println( format( MSG_XMLError, systemId, publicId, line, column, exception.getMessage() ) );
     }   //  error()
 
@@ -115,6 +116,7 @@ public final class DefaultErrorHandler implements ErrorHandler
         final var systemId = exception.getSystemId();
         final var column = exception.getColumnNumber();
         final var line = exception.getLineNumber();
+        //noinspection RedundantStringFormatCall
         err.println( format( MSG_XMLFatal, systemId, publicId, line, column, exception.getLocalizedMessage() ) );
     }   //  fatalError()
 
@@ -131,6 +133,7 @@ public final class DefaultErrorHandler implements ErrorHandler
         final var systemId = exception.getSystemId();
         final var column = exception.getColumnNumber();
         final var line = exception.getLineNumber();
+        //noinspection RedundantStringFormatCall
         err.println( format( MSG_XMLWarning, systemId, publicId, line, column, exception.getLocalizedMessage() ) );
     }  //  warning()
 }

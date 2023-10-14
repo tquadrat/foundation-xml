@@ -17,6 +17,7 @@
 
 package org.tquadrat.foundation.xml.builder.processinginstruction;
 
+import static java.lang.String.format;
 import static java.lang.System.out;
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -24,7 +25,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
-import static org.tquadrat.foundation.util.StringUtils.format;
 
 import org.apiguardian.api.API;
 import org.junit.jupiter.api.DisplayName;
@@ -43,9 +43,9 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link org.tquadrat.foundation.xml.builder.ProcessingInstruction}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestAddData.java 1030 2022-04-06 13:42:02Z tquadrat $
+ *  @version $Id: TestAddData.java 1076 2023-10-03 18:36:07Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestAddData.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestAddData.java 1076 2023-10-03 18:36:07Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.processinginstruction.TestAddData" )
 public class TestAddData extends XMLTestBase

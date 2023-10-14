@@ -17,10 +17,10 @@
 
 package org.tquadrat.foundation.xml.builder;
 
+import static java.lang.String.format;
 import static java.util.Collections.emptySet;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
-import static org.tquadrat.foundation.util.StringUtils.format;
 import static org.tquadrat.foundation.xml.builder.XMLElement.NO_APPEND;
 
 import java.net.URI;
@@ -40,9 +40,9 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link XMLElementAdapter}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestXMLElementAdapter.java 1030 2022-04-06 13:42:02Z tquadrat $
+ *  @version $Id: TestXMLElementAdapter.java 1076 2023-10-03 18:36:07Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestXMLElementAdapter.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestXMLElementAdapter.java 1076 2023-10-03 18:36:07Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.TestXMLElement" )
 public class TestXMLElementAdapter extends XMLTestBase
 {
@@ -55,9 +55,9 @@ public class TestXMLElementAdapter extends XMLTestBase
      *  only for test purposes.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: TestXMLElementAdapter.java 1030 2022-04-06 13:42:02Z tquadrat $
+     *  @version $Id: TestXMLElementAdapter.java 1076 2023-10-03 18:36:07Z tquadrat $
      */
-    @ClassVersion( sourceVersion = "$Id: TestXMLElementAdapter.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: TestXMLElementAdapter.java 1076 2023-10-03 18:36:07Z tquadrat $" )
     private static final class SimpleXMLElement extends XMLElementAdapter
     {
             /*--------------*\

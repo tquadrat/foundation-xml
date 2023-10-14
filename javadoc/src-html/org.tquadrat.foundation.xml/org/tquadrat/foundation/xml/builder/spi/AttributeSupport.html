@@ -13,7 +13,7 @@
 <div class="source-container">
 <pre><span class="source-line-no">001</span><span id="line-1">/*</span>
 <span class="source-line-no">002</span><span id="line-2"> * ============================================================================</span>
-<span class="source-line-no">003</span><span id="line-3"> * Copyright © 2002-2021 by Thomas Thrien.</span>
+<span class="source-line-no">003</span><span id="line-3"> * Copyright © 2002-2023 by Thomas Thrien.</span>
 <span class="source-line-no">004</span><span id="line-4"> * All Rights Reserved.</span>
 <span class="source-line-no">005</span><span id="line-5"> * ============================================================================</span>
 <span class="source-line-no">006</span><span id="line-6"> * Licensed to the public under the agreements of the GNU Lesser General Public</span>
@@ -31,17 +31,17 @@
 <span class="source-line-no">018</span><span id="line-18">package org.tquadrat.foundation.xml.builder.spi;</span>
 <span class="source-line-no">019</span><span id="line-19"></span>
 <span class="source-line-no">020</span><span id="line-20">import static java.lang.Integer.signum;</span>
-<span class="source-line-no">021</span><span id="line-21">import static java.util.Collections.unmodifiableSortedMap;</span>
-<span class="source-line-no">022</span><span id="line-22">import static java.util.Comparator.naturalOrder;</span>
-<span class="source-line-no">023</span><span id="line-23">import static org.apiguardian.api.API.Status.MAINTAINED;</span>
-<span class="source-line-no">024</span><span id="line-24">import static org.tquadrat.foundation.lang.CommonConstants.XMLATTRIBUTE_Id;</span>
-<span class="source-line-no">025</span><span id="line-25">import static org.tquadrat.foundation.lang.CommonConstants.XMLATTRIBUTE_Language;</span>
-<span class="source-line-no">026</span><span id="line-26">import static org.tquadrat.foundation.lang.CommonConstants.XMLATTRIBUTE_Whitespace;</span>
-<span class="source-line-no">027</span><span id="line-27">import static org.tquadrat.foundation.lang.Objects.nonNull;</span>
-<span class="source-line-no">028</span><span id="line-28">import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;</span>
-<span class="source-line-no">029</span><span id="line-29">import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;</span>
-<span class="source-line-no">030</span><span id="line-30">import static org.tquadrat.foundation.util.Comparators.listBasedComparator;</span>
-<span class="source-line-no">031</span><span id="line-31">import static org.tquadrat.foundation.util.StringUtils.format;</span>
+<span class="source-line-no">021</span><span id="line-21">import static java.lang.String.format;</span>
+<span class="source-line-no">022</span><span id="line-22">import static java.util.Collections.unmodifiableSortedMap;</span>
+<span class="source-line-no">023</span><span id="line-23">import static java.util.Comparator.naturalOrder;</span>
+<span class="source-line-no">024</span><span id="line-24">import static org.apiguardian.api.API.Status.MAINTAINED;</span>
+<span class="source-line-no">025</span><span id="line-25">import static org.tquadrat.foundation.lang.CommonConstants.XMLATTRIBUTE_Id;</span>
+<span class="source-line-no">026</span><span id="line-26">import static org.tquadrat.foundation.lang.CommonConstants.XMLATTRIBUTE_Language;</span>
+<span class="source-line-no">027</span><span id="line-27">import static org.tquadrat.foundation.lang.CommonConstants.XMLATTRIBUTE_Whitespace;</span>
+<span class="source-line-no">028</span><span id="line-28">import static org.tquadrat.foundation.lang.Objects.nonNull;</span>
+<span class="source-line-no">029</span><span id="line-29">import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;</span>
+<span class="source-line-no">030</span><span id="line-30">import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;</span>
+<span class="source-line-no">031</span><span id="line-31">import static org.tquadrat.foundation.util.Comparators.listBasedComparator;</span>
 <span class="source-line-no">032</span><span id="line-32">import static org.tquadrat.foundation.util.StringUtils.isNotEmptyOrBlank;</span>
 <span class="source-line-no">033</span><span id="line-33">import static org.tquadrat.foundation.xml.builder.XMLBuilderUtils.getAttributeNameValidator;</span>
 <span class="source-line-no">034</span><span id="line-34">import static org.tquadrat.foundation.xml.builder.spi.SGMLPrinter.composeAttributesString;</span>
@@ -70,12 +70,12 @@
 <span class="source-line-no">057</span><span id="line-57"> *  can be configured by the user.&lt;/p&gt;</span>
 <span class="source-line-no">058</span><span id="line-58"> *</span>
 <span class="source-line-no">059</span><span id="line-59"> *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">060</span><span id="line-60"> *  @version $Id: AttributeSupport.java 1030 2022-04-06 13:42:02Z tquadrat $</span>
+<span class="source-line-no">060</span><span id="line-60"> *  @version $Id: AttributeSupport.java 1071 2023-09-30 01:49:32Z tquadrat $</span>
 <span class="source-line-no">061</span><span id="line-61"> *  @since 0.0.5</span>
 <span class="source-line-no">062</span><span id="line-62"> *</span>
 <span class="source-line-no">063</span><span id="line-63"> *  @UMLGraph.link</span>
 <span class="source-line-no">064</span><span id="line-64"> */</span>
-<span class="source-line-no">065</span><span id="line-65">@ClassVersion( sourceVersion = "$Id: AttributeSupport.java 1030 2022-04-06 13:42:02Z tquadrat $" )</span>
+<span class="source-line-no">065</span><span id="line-65">@ClassVersion( sourceVersion = "$Id: AttributeSupport.java 1071 2023-09-30 01:49:32Z tquadrat $" )</span>
 <span class="source-line-no">066</span><span id="line-66">@API( status = MAINTAINED, since = "0.0.5" )</span>
 <span class="source-line-no">067</span><span id="line-67">public final class AttributeSupport extends NamespaceSupport</span>
 <span class="source-line-no">068</span><span id="line-68">{</span>
@@ -367,7 +367,7 @@
 <span class="source-line-no">354</span><span id="line-354">    public final Optional&lt;String&gt; setAttribute( final String name, final CharSequence value, @SuppressWarnings( "OptionalUsedAsFieldOrParameterType" ) final Optional&lt;? extends CharSequence&gt; append ) throws IllegalArgumentException</span>
 <span class="source-line-no">355</span><span id="line-355">    {</span>
 <span class="source-line-no">356</span><span id="line-356">        requireNonNullArgument( append, "append" );</span>
-<span class="source-line-no">357</span><span id="line-357">        if( !checkValid( name ) ) throw new IllegalArgumentException( format( "Invalid attribute name: %s", name ) );</span>
+<span class="source-line-no">357</span><span id="line-357">        if( !checkValid( name ) ) throw new IllegalArgumentException( "Invalid attribute name: %s".formatted( name ) );</span>
 <span class="source-line-no">358</span><span id="line-358"></span>
 <span class="source-line-no">359</span><span id="line-359">        //---* Get the current value for the given name *----------------------</span>
 <span class="source-line-no">360</span><span id="line-360">        final var retValue = Optional.ofNullable( m_Attributes.get( name ) );</span>

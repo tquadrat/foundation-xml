@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2020 by Thomas Thrien.
+ *  Copyright © 2002-2023 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -45,13 +45,13 @@ import org.tquadrat.foundation.xml.builder.spi.InvalidXMLNameException;
  *  <br>It allows document comments and processing instructions to be added.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: XMLDocumentImpl.java 1030 2022-04-06 13:42:02Z tquadrat $
+ *  @version $Id: XMLDocumentImpl.java 1071 2023-09-30 01:49:32Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "ClassWithTooManyConstructors" )
-@ClassVersion( sourceVersion = "$Id: XMLDocumentImpl.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: XMLDocumentImpl.java 1071 2023-09-30 01:49:32Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.5" )
 public final class XMLDocumentImpl implements XMLDocument
 {
@@ -79,7 +79,7 @@ public final class XMLDocumentImpl implements XMLDocument
      *  root element will be {@code <root>}. The encoding is defined as
      *  UTF-8.<br>
      *  <br>Basically, this document would have the DTD
-     *  <pre><code>&lt;!ELEMENT root ANY&gt;</code></pre>.
+     *  <pre>{@code <!ELEMENT root ANY>}</pre>.
      */
     public XMLDocumentImpl() { this( "root" ); }
 

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2020 by Thomas Thrien.
+ *  Copyright © 2002-2023 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -17,10 +17,10 @@
 
 package org.tquadrat.foundation.xml.builder.internal;
 
+import static java.lang.String.format;
 import static org.apiguardian.api.API.Status.INTERNAL;
 import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
-import static org.tquadrat.foundation.util.StringUtils.format;
 import static org.tquadrat.foundation.xml.builder.spi.SGMLPrinter.repeat;
 
 import java.util.Optional;
@@ -35,13 +35,13 @@ import org.tquadrat.foundation.xml.builder.spi.Element;
  *  such an element.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Text.java 1030 2022-04-06 13:42:02Z tquadrat $
+ *  @version $Id: Text.java 1071 2023-09-30 01:49:32Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "NewClassNamingConvention" )
-@ClassVersion( sourceVersion = "$Id: Text.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Text.java 1071 2023-09-30 01:49:32Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.5" )
 public class Text implements Element
 {

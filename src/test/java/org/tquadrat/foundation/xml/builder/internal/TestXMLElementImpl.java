@@ -19,6 +19,7 @@ package org.tquadrat.foundation.xml.builder.internal;
 
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
+import static java.lang.String.format;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -27,7 +28,6 @@ import static org.junit.jupiter.api.Assertions.fail;
 import static org.junit.jupiter.api.Assumptions.assumeFalse;
 import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
 import static org.tquadrat.foundation.lang.CommonConstants.XMLATTRIBUTE_Id;
-import static org.tquadrat.foundation.util.StringUtils.format;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -54,9 +54,9 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link XMLElementImpl}
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestXMLElementImpl.java 1030 2022-04-06 13:42:02Z tquadrat $
+ *  @version $Id: TestXMLElementImpl.java 1076 2023-10-03 18:36:07Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestXMLElementImpl.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestXMLElementImpl.java 1076 2023-10-03 18:36:07Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.internal.TestXMLElementImpl" )
 public class TestXMLElementImpl extends XMLTestBase
 {

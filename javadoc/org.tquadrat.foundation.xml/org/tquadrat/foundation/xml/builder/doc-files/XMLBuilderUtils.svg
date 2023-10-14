@@ -220,10 +220,10 @@
                           class='static'>+ createXMLElement(elementName:java.lang.String,parent:org.tquadrat.foundation.xml.builder.XMLDocument,text:java.lang.CharSequence):org.tquadrat.foundation.xml.builder.XMLElement</text>
                     <text x='5.000'
                           y='344.000'
-                          class='static'>+ escapeXML(str:java.lang.CharSequence):java.lang.String</text>
+                          class='static'>+ escapeXML(input:java.lang.CharSequence):java.lang.String</text>
                     <text x='5.000'
                           y='355.000'
-                          class='static'>+ escapeXML(appendable:java.lang.Appendable,str:java.lang.CharSequence):void</text>
+                          class='static'>+ escapeXML(appendable:java.lang.Appendable,input:java.lang.CharSequence):void</text>
                     <text x='5.000'
                           y='366.000'
                           class='static'>+ getAttributeNameValidator():java.util.function.Predicate&lt;java.lang.CharSequence&gt;</text>
@@ -268,13 +268,13 @@
                           class='static'>+ setPrefixValidator(validator:java.util.function.Predicate&lt;java.lang.CharSequence&gt;):void</text>
                     <text x='5.000'
                           y='520.000'
-                          class='static'>+ stripXMLComments(s:java.lang.CharSequence):java.lang.String</text>
+                          class='static'>+ stripXMLComments(input:java.lang.CharSequence):java.lang.String</text>
                     <text x='5.000'
                           y='531.000'
-                          class='static'>+ unescapeXML(str:java.lang.CharSequence):java.lang.String</text>
+                          class='static'>+ unescapeXML(input:java.lang.CharSequence):java.lang.String</text>
                     <text x='5.000'
                           y='542.000'
-                          class='static'>+ unescapeXML(appendable:java.lang.Appendable,str:java.lang.CharSequence):void</text>
+                          class='static'>+ unescapeXML(appendable:java.lang.Appendable,input:java.lang.CharSequence):void</text>
                 </g>
             </g>
         </symbol>

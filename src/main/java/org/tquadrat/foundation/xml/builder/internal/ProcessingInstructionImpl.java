@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2021 by Thomas Thrien.
+ *  Copyright © 2002-2023 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -17,13 +17,13 @@
 
 package org.tquadrat.foundation.xml.builder.internal;
 
+import static java.lang.String.format;
 import static java.util.Collections.emptyList;
 import static java.util.Collections.emptySet;
 import static org.apiguardian.api.API.Status.INTERNAL;
 import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
-import static org.tquadrat.foundation.util.StringUtils.format;
 import static org.tquadrat.foundation.util.StringUtils.isNotEmpty;
 import static org.tquadrat.foundation.xml.builder.XMLBuilderUtils.getElementNameValidator;
 import static org.tquadrat.foundation.xml.builder.spi.SGMLPrinter.repeat;
@@ -48,12 +48,12 @@ import org.tquadrat.foundation.xml.builder.spi.InvalidXMLNameException;
  *  {@link ProcessingInstruction}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ProcessingInstructionImpl.java 1030 2022-04-06 13:42:02Z tquadrat $
+ *  @version $Id: ProcessingInstructionImpl.java 1071 2023-09-30 01:49:32Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ProcessingInstructionImpl.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ProcessingInstructionImpl.java 1071 2023-09-30 01:49:32Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.5" )
 public final class ProcessingInstructionImpl implements ProcessingInstruction
 {
@@ -230,13 +230,13 @@ public final class ProcessingInstructionImpl implements ProcessingInstruction
         }
 
         //---* Add the attributes *--------------------------------------------
-        getAttributes().forEach( (k,v) ->
+        getAttributes().forEach( (key,value) ->
         {
             if( !text.isEmpty() ) text.append( filler );
             text.append( ' ' )
-                .append( k )
+                .append( key )
                 .append( "='")
-                .append( v )
+                .append( value )
                 .append( '\'' );
         } );
 

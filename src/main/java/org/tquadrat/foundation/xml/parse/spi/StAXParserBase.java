@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -18,12 +18,12 @@
 
 package org.tquadrat.foundation.xml.parse.spi;
 
+import static java.lang.String.format;
 import static org.apiguardian.api.API.Status.EXPERIMENTAL;
 import static org.tquadrat.foundation.lang.Objects.isNull;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
-import static org.tquadrat.foundation.util.StringUtils.format;
 import static org.tquadrat.foundation.util.StringUtils.isNotEmptyOrBlank;
 
 import javax.xml.stream.Location;
@@ -55,13 +55,13 @@ import org.xml.sax.SAXParseException;
  *  @param  <T> The type of the target data structure.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: StAXParserBase.java 840 2021-01-10 21:37:03Z tquadrat $
+ *  @version $Id: StAXParserBase.java 1071 2023-09-30 01:49:32Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "AbstractClassWithoutAbstractMethods" )
-@ClassVersion( sourceVersion = "$Id: StAXParserBase.java 840 2021-01-10 21:37:03Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: StAXParserBase.java 1071 2023-09-30 01:49:32Z tquadrat $" )
 @API( status = EXPERIMENTAL, since = "0.0.5" )
 public abstract class StAXParserBase<T>
 {
@@ -188,7 +188,7 @@ public abstract class StAXParserBase<T>
      */
     protected final void registerElementHandler( final String elementName, final boolean isDocument, final XMLParseEventHandler<?> handler )
     {
-        if( isDocument && m_DocumentTag.isPresent() ) throw new IllegalStateException( format( "Document Tag was already set: %s", m_DocumentTag.get() ) );
+        if( isDocument && m_DocumentTag.isPresent() ) throw new IllegalStateException( "Document Tag was already set: %s".formatted( m_DocumentTag.get() ) );
         m_Handlers.put( requireNotEmptyArgument( elementName, "elementName" ), requireNonNullArgument( handler, "handler" ) );
         if( isDocument ) m_DocumentTag = Optional.of( elementName );
     }   //  registerElementHandler()

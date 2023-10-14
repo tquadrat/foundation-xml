@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -22,7 +22,6 @@ import static org.tquadrat.foundation.lang.CommonConstants.XMLATTRIBUTE_Id;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
-import static org.tquadrat.foundation.util.StringUtils.format;
 import static org.tquadrat.foundation.util.StringUtils.isNotEmpty;
 import static org.tquadrat.foundation.xml.builder.XMLBuilderUtils.getNMTokenValidator;
 
@@ -62,13 +61,13 @@ import org.tquadrat.foundation.xml.builder.spi.Element;
  *  feature.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: XMLElement.java 1030 2022-04-06 13:42:02Z tquadrat $
+ *  @version $Id: XMLElement.java 1071 2023-09-30 01:49:32Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "ClassWithTooManyMethods" )
-@ClassVersion( sourceVersion = "$Id: XMLElement.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: XMLElement.java 1071 2023-09-30 01:49:32Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public sealed interface XMLElement extends Element
     permits XMLElementImpl
@@ -82,13 +81,13 @@ public sealed interface XMLElement extends Element
      *  this interface.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: XMLElement.java 1030 2022-04-06 13:42:02Z tquadrat $
+     *  @version $Id: XMLElement.java 1071 2023-09-30 01:49:32Z tquadrat $
      *  @since 0.0.5
      *
      *  @UMLGraph.link
      */
     @SuppressWarnings( "NewClassNamingConvention" )
-    @ClassVersion( sourceVersion = "$Id: XMLElement.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: XMLElement.java 1071 2023-09-30 01:49:32Z tquadrat $" )
     @API( status = STABLE, since = "0.1.0" )
     public static enum Flags
     {
@@ -204,7 +203,7 @@ public sealed interface XMLElement extends Element
      */
     public default XMLElement addCDATA( final CharSequence text ) throws IllegalOperationException
     {
-        throw new IllegalOperationException( format( "No text allowed for element '%1$s'", getElementName() ) );
+        throw new IllegalOperationException( "No text allowed for element '%1$s'".formatted( getElementName() ) );
     }   //  addCDATA()
 
     /**
@@ -355,7 +354,7 @@ public sealed interface XMLElement extends Element
     @SuppressWarnings( "UnusedReturnValue" )
     public default <E extends XMLElement> XMLElement addChild( final E child ) throws IllegalArgumentException, IllegalOperationException, IllegalStateException
     {
-        throw new IllegalOperationException( format( "No children allowed for element '%1$s'", getElementName() ) );
+        throw new IllegalOperationException( "No children allowed for element '%1$s'".formatted( getElementName() ) );
     }   //  addChild()
 
     /**
@@ -368,7 +367,7 @@ public sealed interface XMLElement extends Element
     @SuppressWarnings( "UnusedReturnValue" )
     public default XMLElement addComment( final CharSequence comment ) throws IllegalOperationException
     {
-        throw new IllegalOperationException( format( "No comment allowed for element '%1$s'", getElementName() ) );
+        throw new IllegalOperationException( "No comment allowed for element '%1$s'".formatted( getElementName() ) );
     }   //  addComment()
 
     /**
@@ -387,7 +386,7 @@ public sealed interface XMLElement extends Element
     @SuppressWarnings( "UnusedReturnValue" )
     public default XMLElement addPredefinedMarkup( final CharSequence markup ) throws IllegalOperationException
     {
-        throw new IllegalOperationException( format( "No children allowed for element '%1$s'", getElementName() ) );
+        throw new IllegalOperationException( "No children allowed for element '%1$s'".formatted( getElementName() ) );
     }   //  addPredefinedMarkup()
 
     /**
@@ -458,7 +457,7 @@ public sealed interface XMLElement extends Element
      */
     public default XMLElement addText( final CharSequence text ) throws IllegalOperationException
     {
-        throw new IllegalOperationException( format( "No text allowed for element '%1$s'", getElementName() ) );
+        throw new IllegalOperationException( "No text allowed for element '%1$s'".formatted( getElementName() ) );
     }   //  addText()
 
     /**
@@ -678,7 +677,7 @@ public sealed interface XMLElement extends Element
     @SuppressWarnings( "OptionalUsedAsFieldOrParameterType" )
     public default XMLElement setAttribute( final String name, final CharSequence value, final Optional<? extends CharSequence> append ) throws IllegalArgumentException, IllegalOperationException
     {
-        throw new IllegalArgumentException( format( "No attributes allowed for element '%1$s'", getElementName() ) );
+        throw new IllegalArgumentException( "No attributes allowed for element '%1$s'".formatted( getElementName() ) );
     }   //  setAttribute()
 
     /**
@@ -921,7 +920,7 @@ public sealed interface XMLElement extends Element
      */
     public default XMLElement setId( final String id ) throws IllegalArgumentException, IllegalOperationException
     {
-        if( !getNMTokenValidator().test( requireNotEmptyArgument( id, "id" ) ) ) throw new IllegalArgumentException( format( "Invalid id: %s", id ) );
+        if( !getNMTokenValidator().test( requireNotEmptyArgument( id, "id" ) ) ) throw new IllegalArgumentException( "Invalid id: %s".formatted( id ) );
         final var retValue = setAttribute( XMLATTRIBUTE_Id, id );
 
         //---* Done *----------------------------------------------------------
@@ -1017,7 +1016,7 @@ public sealed interface XMLElement extends Element
     @SuppressWarnings( "UseOfConcreteClass" )
     public default XMLElement setNamespace( final Namespace namespace ) throws IllegalOperationException
     {
-        throw new IllegalOperationException( format( "No namespace allowed for element '%1$s'", getElementName() ) );
+        throw new IllegalOperationException( "No namespace allowed for element '%1$s'".formatted( getElementName() ) );
     }   //  setNamespace()
 
     /**

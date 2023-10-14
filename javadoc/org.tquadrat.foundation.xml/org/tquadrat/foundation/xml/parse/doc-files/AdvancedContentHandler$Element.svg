@@ -161,7 +161,7 @@
                     <text x='5.000'
                           y='113.000'>~ Element(qName:java.lang.String,localName:java.lang.String,uri:java.net.URI,attributes:java.util.Map&lt;java.lang.String,org.tquadrat.foundation.xml.parse.Attribute&gt;,path:java.lang.String,parent:org.tquadrat.foundation.xml.parse.AdvancedContentHandler.Element)</text>
                     <text x='5.000'
-                          y='124.000'>+ appendData(ch:char[],start:int,end:int):void</text>
+                          y='124.000'>+ appendData(characters:char[],start:int,end:int):void</text>
                     <text x='5.000'
                           y='135.000'>+ getAttributes():java.util.Map&lt;java.lang.String,org.tquadrat.foundation.xml.parse.Attribute&gt;</text>
                     <text x='5.000'

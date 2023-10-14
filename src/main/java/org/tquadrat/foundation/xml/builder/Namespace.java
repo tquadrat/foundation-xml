@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -17,11 +17,11 @@
 
 package org.tquadrat.foundation.xml.builder;
 
+import static java.lang.String.format;
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.lang.Objects.hash;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
-import static org.tquadrat.foundation.util.StringUtils.format;
 import static org.tquadrat.foundation.xml.builder.XMLBuilderUtils.getPrefixValidator;
 
 import java.io.Serial;
@@ -38,12 +38,12 @@ import org.tquadrat.foundation.xml.builder.spi.InvalidXMLNameException;
  *  The definition of an XML namespace entry.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Namespace.java 980 2022-01-06 15:29:19Z tquadrat $
+ *  @version $Id: Namespace.java 1071 2023-09-30 01:49:32Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: Namespace.java 980 2022-01-06 15:29:19Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Namespace.java 1071 2023-09-30 01:49:32Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public final class Namespace implements Serializable, Comparable<Namespace>
 {
@@ -184,7 +184,7 @@ public final class Namespace implements Serializable, Comparable<Namespace>
     public final boolean equals( final Object obj )
     {
         var retValue = this == obj;
-        if( !retValue && obj instanceof Namespace other )
+        if( !retValue && obj instanceof final Namespace other )
         {
             retValue = m_Prefix.equals( other.m_Prefix ) && m_Identifier.equals( other.m_Identifier );
         }

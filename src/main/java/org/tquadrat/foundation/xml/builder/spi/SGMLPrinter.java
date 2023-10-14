@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -18,12 +18,12 @@
 package org.tquadrat.foundation.xml.builder.spi;
 
 import static java.lang.Math.max;
+import static java.lang.String.format;
 import static org.apiguardian.api.API.Status.MAINTAINED;
 import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
-import static org.tquadrat.foundation.util.StringUtils.format;
 
 import java.util.Collection;
 import java.util.Map;
@@ -38,13 +38,13 @@ import org.tquadrat.foundation.xml.builder.Namespace;
  *  Helper method for the conversion of SGML elements into a String.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: SGMLPrinter.java 1030 2022-04-06 13:42:02Z tquadrat $
+ *  @version $Id: SGMLPrinter.java 1071 2023-09-30 01:49:32Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: SGMLPrinter.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: SGMLPrinter.java 1071 2023-09-30 01:49:32Z tquadrat $" )
 @API( status = MAINTAINED, since = "0.0.5" )
 public final class SGMLPrinter
 {
@@ -92,7 +92,7 @@ public final class SGMLPrinter
             final var filler = prettyPrint ? "\n" + repeat( indentationLevel, elementName.length() + 1 ) : EMPTY_STRING;
 
             //---* Create the buffer *-----------------------------------------
-            final var len = (filler.length() + 16) * attributes.size() + (filler.length() + 16) * namespaces.size();
+            final var len = (filler.length() + 16) * (attributes.size() + namespaces.size());
             final var buffer = new StringBuilder( len );
 
             //---* Add the namespaces *----------------------------------------
@@ -103,13 +103,13 @@ public final class SGMLPrinter
             }
 
             //---* Add the attributes *----------------------------------------
-            attributes.forEach( (k,v) ->
+            attributes.forEach( (key,value) ->
             {
                 if( !buffer.isEmpty() ) buffer.append( filler );
                 buffer.append( ' ' )
-                    .append( k )
+                    .append( key )
                     .append( "='")
-                    .append( v )
+                    .append( value )
                     .append( '\'' );
             });
 

@@ -17,12 +17,12 @@
 
 package org.tquadrat.foundation.xml.builder.xmlbuilderutils;
 
+import static java.lang.String.format;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
-import static org.tquadrat.foundation.util.StringUtils.format;
 import static org.tquadrat.foundation.xml.builder.XMLBuilderUtils.stripXMLComments;
 
 import org.junit.jupiter.api.DisplayName;
@@ -37,9 +37,9 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link XMLBuilderUtils}
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestStripXMLComments.java 1030 2022-04-06 13:42:02Z tquadrat $
+ *  @version $Id: TestStripXMLComments.java 1076 2023-10-03 18:36:07Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestStripXMLComments.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestStripXMLComments.java 1076 2023-10-03 18:36:07Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.xmlbuilderutils.TestStripXMLComments" )
 public class TestStripXMLComments extends XMLTestBase
 {

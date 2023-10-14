@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -18,6 +18,7 @@
 package org.tquadrat.foundation.xml.builder.spi;
 
 import static java.lang.Integer.signum;
+import static java.lang.String.format;
 import static java.util.Collections.unmodifiableSortedMap;
 import static java.util.Comparator.naturalOrder;
 import static org.apiguardian.api.API.Status.MAINTAINED;
@@ -28,7 +29,6 @@ import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
 import static org.tquadrat.foundation.util.Comparators.listBasedComparator;
-import static org.tquadrat.foundation.util.StringUtils.format;
 import static org.tquadrat.foundation.util.StringUtils.isNotEmptyOrBlank;
 import static org.tquadrat.foundation.xml.builder.XMLBuilderUtils.getAttributeNameValidator;
 import static org.tquadrat.foundation.xml.builder.spi.SGMLPrinter.composeAttributesString;
@@ -57,12 +57,12 @@ import org.tquadrat.foundation.util.LazyMap;
  *  can be configured by the user.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: AttributeSupport.java 1030 2022-04-06 13:42:02Z tquadrat $
+ *  @version $Id: AttributeSupport.java 1071 2023-09-30 01:49:32Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: AttributeSupport.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: AttributeSupport.java 1071 2023-09-30 01:49:32Z tquadrat $" )
 @API( status = MAINTAINED, since = "0.0.5" )
 public final class AttributeSupport extends NamespaceSupport
 {
@@ -354,7 +354,7 @@ public final class AttributeSupport extends NamespaceSupport
     public final Optional<String> setAttribute( final String name, final CharSequence value, @SuppressWarnings( "OptionalUsedAsFieldOrParameterType" ) final Optional<? extends CharSequence> append ) throws IllegalArgumentException
     {
         requireNonNullArgument( append, "append" );
-        if( !checkValid( name ) ) throw new IllegalArgumentException( format( "Invalid attribute name: %s", name ) );
+        if( !checkValid( name ) ) throw new IllegalArgumentException( "Invalid attribute name: %s".formatted( name ) );
 
         //---* Get the current value for the given name *----------------------
         final var retValue = Optional.ofNullable( m_Attributes.get( name ) );

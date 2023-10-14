@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -17,6 +17,7 @@
 
 package org.tquadrat.foundation.xml.builder.spi;
 
+import static java.lang.String.format;
 import static java.util.Collections.emptyList;
 import static java.util.Collections.unmodifiableCollection;
 import static org.apiguardian.api.API.Status.MAINTAINED;
@@ -25,7 +26,6 @@ import static org.tquadrat.foundation.lang.CommonConstants.CDATA_LEADOUT;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
-import static org.tquadrat.foundation.util.StringUtils.format;
 import static org.tquadrat.foundation.util.StringUtils.isEmpty;
 import static org.tquadrat.foundation.util.StringUtils.isNotEmpty;
 import static org.tquadrat.foundation.util.StringUtils.isNotEmptyOrBlank;
@@ -60,12 +60,12 @@ import org.tquadrat.foundation.xml.builder.internal.Text;
  *  {@link #addChild(Element)}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ChildSupport.java 1030 2022-04-06 13:42:02Z tquadrat $
+ *  @version $Id: ChildSupport.java 1071 2023-09-30 01:49:32Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ChildSupport.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ChildSupport.java 1071 2023-09-30 01:49:32Z tquadrat $" )
 @API( status = MAINTAINED, since = "0.0.5" )
 public final class ChildSupport
 {
@@ -307,7 +307,7 @@ public final class ChildSupport
         assert nonNull( text ) : "text is null";
         assert !m_AllowText || nonNull( escapeFunction ) : "escapeFunction is null";
 
-        if( !allowsText() ) throw new IllegalOperationException( "addText()", format( "No text allowed for element '%1$s'", m_Owner.getElementName() ) );
+        if( !allowsText() ) throw new IllegalOperationException( "addText()", "No text allowed for element '%1$s'".formatted( m_Owner.getElementName() ) );
         if( addEmpty || isNotEmpty( text ) ) addChild( new Text( text, escapeFunction ) );
     }   //  addText()
 
@@ -367,7 +367,7 @@ public final class ChildSupport
             {
                 if( !m_ValidChildren.contains( child.getElementName() ) )
                 {
-                    throw new IllegalArgumentException( format( "A child with name '%2$s' is not allowed for element '%1$s'", m_Owner.getElementName(), child.getElementName() ) );
+                    throw new IllegalArgumentException( "A child with name '%2$s' is not allowed for element '%1$s'".formatted( m_Owner.getElementName(), child.getElementName() ) );
                 }
             }
         }

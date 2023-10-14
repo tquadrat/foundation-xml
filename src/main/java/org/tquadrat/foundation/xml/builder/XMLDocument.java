@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2018 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -20,7 +20,6 @@ package org.tquadrat.foundation.xml.builder;
 
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
-import static org.tquadrat.foundation.util.StringUtils.format;
 import static org.tquadrat.foundation.xml.builder.XMLBuilderUtils.getNMTokenValidator;
 
 import java.net.URI;
@@ -40,13 +39,13 @@ import org.tquadrat.foundation.xml.builder.spi.Document;
  *  The definition for an XML document.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: XMLDocument.java 980 2022-01-06 15:29:19Z tquadrat $
+ *  @version $Id: XMLDocument.java 1071 2023-09-30 01:49:32Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@SuppressWarnings( {"ClassWithTooManyMethods", "InterfaceMayBeAnnotatedFunctional"} )
-@ClassVersion( sourceVersion = "$Id: XMLDocument.java 980 2022-01-06 15:29:19Z tquadrat $" )
+@SuppressWarnings( {"ClassWithTooManyMethods"} )
+@ClassVersion( sourceVersion = "$Id: XMLDocument.java 1071 2023-09-30 01:49:32Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public sealed interface XMLDocument extends Document<XMLElement>
     permits XMLDocumentImpl
@@ -496,7 +495,7 @@ public sealed interface XMLDocument extends Document<XMLElement>
      */
     public default XMLDocument setId( final String id ) throws IllegalArgumentException
     {
-        if( !getNMTokenValidator().test( requireNotEmptyArgument( id, "id" ) ) ) throw new IllegalArgumentException( format( "Invalid id: %s", id ) );
+        if( !getNMTokenValidator().test( requireNotEmptyArgument( id, "id" ) ) ) throw new IllegalArgumentException( "Invalid id: %s".formatted( id ) );
         getRootElement().setId( id );
 
         //---* Done *----------------------------------------------------------
