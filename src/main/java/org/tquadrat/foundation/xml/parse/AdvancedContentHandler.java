@@ -18,7 +18,6 @@
 package org.tquadrat.foundation.xml.parse;
 
 import static java.lang.String.format;
-import static java.util.stream.Collectors.toMap;
 import static org.apiguardian.api.API.Status.MAINTAINED;
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
@@ -46,15 +45,16 @@ import org.xml.sax.ContentHandler;
 import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
+import org.xml.sax.helpers.DefaultHandler;
 import org.xml.sax.helpers.LocatorImpl;
 
 /**
- *  This class implements the interface
- *  {@link org.xml.sax.ContentHandler ContentHandler}
+ *  <p>{@summary This class implements the interface
+ *  {@link ContentHandler ContentHandler}
  *  as a base class for more advanced versions of the
- *  {@link org.xml.sax.helpers.DefaultHandler DefaultHandler class}
- *  or for stand-alone use.<br>
- *  <br>Instead of implementing the three methods
+ *  {@link DefaultHandler DefaultHandler class}
+ *  or for stand-alone use.}</p>
+ *  <p>Instead of implementing the three methods
  *  {@link org.xml.sax.helpers.DefaultHandler#characters(char[],int,int) characters()},
  *  {@link org.xml.sax.helpers.DefaultHandler#endElement(String,String,String) endElement()},
  *  and
@@ -64,34 +64,36 @@ import org.xml.sax.helpers.LocatorImpl;
  *  {@link #registerElementHandler(String, HandlerMethod)}
  *  these handler methods will be called automatically by the default
  *  implementations of
- *  {@link #processElement(String,String,Map,String) processElement()}
+ *  {@link #processElement(Element) processElement()}
  *  and
- *  {@link #openElement(String, Map, String) openElement()}.<br>
- *  <br>These method can still be overwritten if a different processing is
+ *  {@link #openElement(Element) openElement()}.</p>
+ *  <p>These method can still be overwritten if a different processing is
  *  desired. When
- *  {@link #processElement(String,String,Map,String) processElement()}
+ *  {@link #processElement(Element) processElement()}
  *  is called after the element is terminated, the attributes together with the
  *  character data after closing the element is provided. The method
- *  {@link #openElement(String, Map, String) openElement()}
+ *  {@link #openElement(Element) openElement()}
  *  is called each time an element will be opened, providing the attributes
- *  only.<br>
- *  <br>Some convenience methods have been implemented that will give access
- *  to the parent element and to the path down to the current element.<br>
- *  <br><b>Note</b>: Unfortunately, this class do not work for XML streams
- *  that has elements embedded into text, as it is usual for HTML. The snippet
+ *  only.</p>
+ *  <p>Some convenience methods have been implemented that will give access
+ *  to the parent element and to the path down to the current element.</p>
+ *
+ *  <p><b>Note</b>: Unfortunately, this class do not work for XML streams
+ *  that has elements embedded into text, as it is usual for HTML. The
+ *  snippet</p>
  *  <pre><code>&lt;p&gt;First Text &lt;b&gt;Bold Text&lt;/b&gt; Second Text&lt;/p&gt;</code></pre>
- *  will be parsed as &quot;First Text Second Text&quot; for the {@code p}
+ *  <p>will be parsed as &quot;First Text Second Text&quot; for the {@code p}
  *  element and &quot;Bold Text&quot; for the {@code b} element; the
- *  information that the b element was embedded in between is lost.
+ *  information that the b element was embedded in between is lost.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: AdvancedContentHandler.java 1071 2023-09-30 01:49:32Z tquadrat $
+ *  @version $Id: AdvancedContentHandler.java 1086 2024-01-05 23:18:33Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@SuppressWarnings( {"ClassWithTooManyMethods", "AbstractClassWithoutAbstractMethods"} )
-@ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1071 2023-09-30 01:49:32Z tquadrat $" )
+@SuppressWarnings( "AbstractClassWithoutAbstractMethods" )
+@ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1086 2024-01-05 23:18:33Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public abstract class AdvancedContentHandler implements ContentHandler
 {
@@ -103,13 +105,13 @@ public abstract class AdvancedContentHandler implements ContentHandler
      *  of an XML element.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: AdvancedContentHandler.java 1071 2023-09-30 01:49:32Z tquadrat $
+     *  @version $Id: AdvancedContentHandler.java 1086 2024-01-05 23:18:33Z tquadrat $
      *  @since 0.0.5
      *
      *  @UMLGraph.link
      */
     @SuppressWarnings( {"InnerClassMayBeStatic", "ProtectedInnerClass"} )
-    @ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1071 2023-09-30 01:49:32Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1086 2024-01-05 23:18:33Z tquadrat $" )
     @API( status = STABLE, since = "0.1.0" )
     protected static final class Element
     {
@@ -277,14 +279,14 @@ public abstract class AdvancedContentHandler implements ContentHandler
      *  element.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: AdvancedContentHandler.java 1071 2023-09-30 01:49:32Z tquadrat $
+     *  @version $Id: AdvancedContentHandler.java 1086 2024-01-05 23:18:33Z tquadrat $
      *  @since 0.1.0
      *
      *  @UMLGraph.link
      */
     @SuppressWarnings( {"ProtectedInnerClass"} )
     @FunctionalInterface
-    @ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1071 2023-09-30 01:49:32Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1086 2024-01-05 23:18:33Z tquadrat $" )
     @API( status = MAINTAINED, since = "0.1.0" )
     protected interface HandlerMethod
     {
@@ -292,19 +294,19 @@ public abstract class AdvancedContentHandler implements ContentHandler
         ====** Methods **======================================================
             \*---------*/
         /**
-         *  Processes an XML element.<br>
-         *  <br>As each element should have its own handler, the tag is not
+         *  <p>{@summary Processes an XML element.}</p>
+         *  <p>As each element should have its own handler, the tag is not
          *  provided as an argument. If necessary, the tag can be derived from
-         *  the {@code path} argument.
+         *  the {@code path} argument.</p>
          *
          *  @param  terminateElement {@code true} if called by
-         *      {@link #processElement(String, String, Map, String)},
+         *      {@link #processElement(Element)},
          *      indicating that the element processing will be terminated,
          *      {@code false} when called by
-         *      {@link #openElement(String, Map, String)}.
+         *      {@link #openElement(Element)}.
          *  @param  data    The element data; will be {@code null} if called
          *      by
-         *      {@link #openElement(String, Map, String)}.
+         *      {@link #openElement(Element)}.
          *  @param  attributes  The element attributes.
          *  @param  path    The element path.
          *  @throws SAXException    The element cannot be handled properly.
@@ -445,12 +447,13 @@ public abstract class AdvancedContentHandler implements ContentHandler
     public void endDocument() throws SAXException { /* Does nothing! */ }
 
     /**
-     *  Receives the notification about the end of an element. This method will
-     *  call the
-     *  {@link #processElement(String,String,Map,String) processElement()}
+     *  {@summary Receives the notification about the end of an element.} This
+     *  method will call the
+     *  {@link #processElement(Element) processElement()}
      *  method and afterwards it will remove the element from the stack - in
-     *  exactly that order, otherwise the {@link #getPath() getPath()} method
-     *  would return wrong results.
+     *  exactly that order, otherwise the
+     *  {@link #getPath() getPath()}
+     *  method would return wrong results.
      *
      *  @param  uri The URI for the namespace of this element; can be empty.
      *  @param  localName   The local name of the element.
@@ -487,32 +490,6 @@ public abstract class AdvancedContentHandler implements ContentHandler
     }   //  endPrefixMapping()
 
     /**
-     *  Returns the current column number in the XML file. A negative value
-     *  indicates that the column is unknown.
-     *
-     *  @return The current column number.
-     *
-     *  @deprecated Use
-     *      {@link #retrieveCurrentColumn()}
-     *      instead.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    protected final int getCurrentColumn() { return retrieveCurrentColumn(); }
-
-    /**
-     *  Returns the current line number in the XML file. A negative value
-     *  indicates that the line is unknown.
-     *
-     *  @return The current line number.
-     *
-     *  @deprecated Use
-     *      {@link #retrieveCurrentLine()}
-     *      instead.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    protected final int getCurrentLine() { return retrieveCurrentLine(); }
-
-    /**
      *  Returns the name of the document type.
      *
      *  @return The document type.
@@ -526,56 +503,6 @@ public abstract class AdvancedContentHandler implements ContentHandler
      *      none provided by the parser.
      */
     protected final Locator getLocator() { return nonNull( m_Locator ) ? new LocatorImpl( m_Locator ) : null; }
-
-    /**
-     *  Returns the URI of the namespace for the given prefix.
-     *
-     *  @param  prefix  The prefix.
-     *  @return An instance of
-     *      {@link Optional}
-     *      that holds the namespace for the prefix. Will be
-     *      {@linkplain Optional#empty() empty}
-     *      if there is no namespace for the given prefix.
-     *
-     *  @deprecated Use
-     *      {@link #retrieveNamespace(String)}
-     *      instead.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    protected final Optional<URI> getNamespace( final String prefix )
-    {
-        final var retValue = Optional.ofNullable( m_Namespaces.get( requireNotEmptyArgument( prefix, "prefix" ) ) );
-
-        //---* Done *----------------------------------------------------------
-        return retValue;
-    }   //  getNamespace()
-
-    /**
-     *  Returns the qualified name of the element that is the parent of the
-     *  current element.
-     *
-     *  @return The qualified name of the parent element, or the empty string
-     *      if the current element does not have a parent.
-     *  @throws SAXException    An error occurred while retrieving the parent
-     *      element.
-     *
-     *  @deprecated Use
-     *      {@link Element#getParent()}
-     *      instead.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    protected final String getParentElement() throws SAXException
-    {
-        final var retValue = m_ElementStack
-            .peek()
-            .orElseThrow( () -> new SAXParseException( MSG_NoElementOnStack, getLocator() ) )
-            .getParent()
-            .map( Element::getQName )
-            .orElse( EMPTY_STRING );
-
-        //---* Done *----------------------------------------------------------
-        return retValue;
-    }   //  getParentElement()
 
     /**
      *  Returns the path for the element as an array, with the qualified
@@ -606,36 +533,11 @@ public abstract class AdvancedContentHandler implements ContentHandler
     protected final int getPathDepth() { return m_ElementStack.size() - 1; }
 
     /**
-     *  Returns the prefix from the current element's qualified name. If it
-     *  does not have a prefix, the empty String will be returned.
-     *
-     *  @return The prefix from the current element's qualified name.
-     *  @throws SAXException    An error occurred while retrieving the prefix.
-     *
-     *  @deprecated Use
-     *      {@link Element#getPrefix()}
-     *      instead.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    protected final String getPrefix() throws SAXException
-    {
-        final var element = m_ElementStack.peek().orElseThrow( () -> new SAXParseException( MSG_NoElementOnStack, getLocator() ) );
-        final var retValue = element.getPrefix();
-
-        //---* Done *----------------------------------------------------------
-        return retValue;
-    }   //  getPrefix()
-
-    /**
      *  The default element handling; it does nothing.
-     *
-     *  @note   Until the deprecated method
-     *      {@link #handleElement(boolean, String, Map, String)}
-     *      is removed yet will this method calls that one.
      *
      *  @param  element The element.
      *  @param  terminateElement {@code true} if called by
-     *      {@link #processElement(String, String, Map, String)},
+     *      {@link #processElement(Element)},
      *      indicating that the element processing will be terminated,
      *      {@code false} when called by
      *      {@link #openElement(Element)}.
@@ -643,41 +545,10 @@ public abstract class AdvancedContentHandler implements ContentHandler
      *
      *  @since 0.1.0
      */
-    @SuppressWarnings( {"unused"} )
+    @SuppressWarnings( {"unused", "NoopMethodInAbstractClass"} )
     @MountPoint
     @API( status = MAINTAINED, since = "0.1.0" )
     protected void handleElement( @SuppressWarnings( "UseOfConcreteClass" ) final Element element, final boolean terminateElement ) throws SAXException
-    {
-        final var map = element.getAttributes().entrySet().stream().collect( toMap( Map.Entry::getKey, v -> v.getValue().value() ) );
-        handleElement( terminateElement, terminateElement ? element.getData() : null, map, element.getPath() );
-    }   //  handleElement()
-
-    /**
-     *  The default element handling; it does nothing.
-     *
-     *  @param  terminateElement {@code true} if called by
-     *      {@link #processElement(String, String, Map, String)},
-     *      indicating that the element processing will be terminated,
-     *      {@code false} when called by
-     *      {@link #openElement(String, Map, String)}.
-     *  @param  data    The element data; will be {@code null} if called
-     *      by
-     *      {@link #openElement(String, Map, String)}.
-     *  @param  attributes  The element attributes.
-     *  @param  path    The element path.
-     *  @throws SAXException    The element cannot be handled properly.
-     *
-     *  @note   For compatibility reasons will this method be called by
-     *      {@link #handleElement(Element,boolean)}.
-     *
-     *  @deprecated Use
-     *      {@link #handleElement(Element, boolean)}
-     *      instead.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @SuppressWarnings( {"NoopMethodInAbstractClass", "unused", "DeprecatedIsStillUsed"} )
-    @MountPoint
-    protected void handleElement( final boolean terminateElement, final String data, final Map<String,String> attributes, final String path ) throws SAXException
     {
         //---* Does nothing *--------------------------------------------------
     }   //  handleElement()
@@ -727,24 +598,6 @@ public abstract class AdvancedContentHandler implements ContentHandler
     }   //  openElement()
 
     /**
-     *  @param  qName   The element's qualified name.
-     *  @param  attributes  The element's attributes.
-     *  @param  path    The path for the element.
-     *  @throws SAXException    Something has gone wrong.
-     *
-     *  @deprecated Use
-     *      {@link #openElement(Element)}
-     *      instead.
-     */
-    @SuppressWarnings( {"NoopMethodInAbstractClass", "unused"} )
-    @MountPoint
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    public void openElement( final String qName, final Map<String,String> attributes, final String path ) throws SAXException
-    {
-        //---* Does nothing *--------------------------------------------------
-    }   //  openElement()
-
-    /**
      *  Processing of an element of the XML file. This method will be called
      *  by
      *  {@link #endElement(String,String,String) endElement()}
@@ -767,25 +620,6 @@ public abstract class AdvancedContentHandler implements ContentHandler
 
         //---* Process the element *-------------------------------------------
         method.process( true, element.getData(), element.getAttributes(), element.getPath() );
-    }   //  processElement()
-
-    /**
-     *  @param  qName   The element's name.
-     *  @param  data    The data for the element.
-     *  @param  attributes  The attributes for the element.
-     *  @param  path    The path for the element.
-     *  @throws SAXException    Something has gone wrong.
-     *
-     *  @deprecated Use
-     *      {@link #processElement(Element)}
-     *      instead.
-     */
-    @SuppressWarnings( {"NoopMethodInAbstractClass", "unused"} )
-    @MountPoint
-    @Deprecated( since = "0.1.0", forRemoval = true)
-    public void processElement( final String qName, final String data, final Map<String,String> attributes, final String path ) throws SAXException
-    {
-        //---* Does nothing *--------------------------------------------------
     }   //  processElement()
 
     /**

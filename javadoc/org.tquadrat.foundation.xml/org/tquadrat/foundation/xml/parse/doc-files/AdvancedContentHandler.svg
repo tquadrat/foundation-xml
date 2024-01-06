@@ -7,7 +7,7 @@
      version='1.1'
      baseProfile='full'
      width='1038.000'
-     height='946.000'>
+     height='858.000'>
     <defs>
         <style><![CDATA[
             line
@@ -118,8 +118,8 @@
         </marker>
         <clipPath id='ID000001'>
             <rect class='focusClass'
-                  height='513.000'
-                  width='910.000'
+                  height='425.000'
+                  width='796.000'
                   x='0.000'
                   y='0.000'/>
         </clipPath>
@@ -129,23 +129,23 @@
                    clip-path='url(#ID000001)'>
                     <rect x='0.000'
                           y='0.000'
-                          width='910.000'
-                          height='513.000'
+                          width='796.000'
+                          height='425.000'
                           class='focusClass'/>
                     <line x1='0.000'
                           y1='28.000'
-                          x2='910.000'
+                          x2='796.000'
                           y2='28.000'
                           class='separator'/>
-                    <text x='440.600'
+                    <text x='383.600'
                           y='13.000'
                           class='stereotype'>&#xAB;Type&#xBB;</text>
-                    <text x='389.000'
+                    <text x='332.000'
                           y='24.000'
                           class='abstract'>AdvancedContentHandler</text>
                     <line x1='0.000'
                           y1='133.000'
-                          x2='910.000'
+                          x2='796.000'
                           y2='133.000'
                           class='separator'/>
                     <text y='41.000'
@@ -178,61 +178,45 @@
                     <text x='5.000'
                           y='201.000'>+ endPrefixMapping(prefix:java.lang.String):void</text>
                     <text x='5.000'
-                          y='212.000'># getCurrentColumn():int</text>
+                          y='212.000'>+ getDocumentType():java.lang.String</text>
                     <text x='5.000'
-                          y='223.000'># getCurrentLine():int</text>
+                          y='223.000'># getLocator():org.xml.sax.Locator</text>
                     <text x='5.000'
-                          y='234.000'>+ getDocumentType():java.lang.String</text>
+                          y='234.000'># getPath():java.lang.String[]</text>
                     <text x='5.000'
-                          y='245.000'># getLocator():org.xml.sax.Locator</text>
+                          y='245.000'># getPathDepth():int</text>
                     <text x='5.000'
-                          y='256.000'># getNamespace(prefix:java.lang.String):java.util.Optional&lt;java.net.URI&gt;</text>
+                          y='256.000'># handleElement(element:org.tquadrat.foundation.xml.parse.AdvancedContentHandler.Element,terminateElement:boolean):void</text>
                     <text x='5.000'
-                          y='267.000'># getParentElement():java.lang.String</text>
+                          y='267.000'>+ ignorableWhitespace(ch:char[],start:int,length:int):void</text>
                     <text x='5.000'
-                          y='278.000'># getPath():java.lang.String[]</text>
+                          y='278.000'># openElement(element:org.tquadrat.foundation.xml.parse.AdvancedContentHandler.Element):void</text>
                     <text x='5.000'
-                          y='289.000'># getPathDepth():int</text>
+                          y='289.000'># processElement(element:org.tquadrat.foundation.xml.parse.AdvancedContentHandler.Element):void</text>
                     <text x='5.000'
-                          y='300.000'># getPrefix():java.lang.String</text>
+                          y='300.000'>+ processingInstruction(target:java.lang.String,data:java.lang.String):void</text>
                     <text x='5.000'
-                          y='311.000'># handleElement(element:org.tquadrat.foundation.xml.parse.AdvancedContentHandler.Element,terminateElement:boolean):void</text>
+                          y='311.000'># registerElementHandler(qName:java.lang.String,method:org.tquadrat.foundation.xml.parse.AdvancedContentHandler.HandlerMethod):void</text>
                     <text x='5.000'
-                          y='322.000'># handleElement(terminateElement:boolean,data:java.lang.String,attributes:java.util.Map&lt;java.lang.String,java.lang.String&gt;,path:java.lang.String):void</text>
+                          y='322.000'># retrieveCurrentColumn():int</text>
                     <text x='5.000'
-                          y='333.000'>+ ignorableWhitespace(ch:char[],start:int,length:int):void</text>
+                          y='333.000'># retrieveCurrentLine():int</text>
                     <text x='5.000'
-                          y='344.000'># openElement(element:org.tquadrat.foundation.xml.parse.AdvancedContentHandler.Element):void</text>
+                          y='344.000'># retrieveCurrentNamespace():java.util.Optional&lt;java.net.URI&gt;</text>
                     <text x='5.000'
-                          y='355.000'>+ openElement(qName:java.lang.String,attributes:java.util.Map&lt;java.lang.String,java.lang.String&gt;,path:java.lang.String):void</text>
+                          y='355.000'># retrieveNamespace(prefix:java.lang.String):java.util.Optional&lt;java.net.URI&gt;</text>
                     <text x='5.000'
-                          y='366.000'># processElement(element:org.tquadrat.foundation.xml.parse.AdvancedContentHandler.Element):void</text>
+                          y='366.000'># retrievePrefix(namespace:java.net.URI):java.util.Optional&lt;java.lang.String&gt;</text>
                     <text x='5.000'
-                          y='377.000'>+ processElement(qName:java.lang.String,data:java.lang.String,attributes:java.util.Map&lt;java.lang.String,java.lang.String&gt;,path:java.lang.String):void</text>
+                          y='377.000'>+ setDocumentLocator(locator:org.xml.sax.Locator):void</text>
                     <text x='5.000'
-                          y='388.000'>+ processingInstruction(target:java.lang.String,data:java.lang.String):void</text>
+                          y='388.000'>+ skippedEntity(name:java.lang.String):void</text>
                     <text x='5.000'
-                          y='399.000'># registerElementHandler(qName:java.lang.String,method:org.tquadrat.foundation.xml.parse.AdvancedContentHandler.HandlerMethod):void</text>
+                          y='399.000'>+ startElement(uri:java.lang.String,localName:java.lang.String,qName:java.lang.String,attributes:org.xml.sax.Attributes):void</text>
                     <text x='5.000'
-                          y='410.000'># retrieveCurrentColumn():int</text>
+                          y='410.000'>+ startDocument():void</text>
                     <text x='5.000'
-                          y='421.000'># retrieveCurrentLine():int</text>
-                    <text x='5.000'
-                          y='432.000'># retrieveCurrentNamespace():java.util.Optional&lt;java.net.URI&gt;</text>
-                    <text x='5.000'
-                          y='443.000'># retrieveNamespace(prefix:java.lang.String):java.util.Optional&lt;java.net.URI&gt;</text>
-                    <text x='5.000'
-                          y='454.000'># retrievePrefix(namespace:java.net.URI):java.util.Optional&lt;java.lang.String&gt;</text>
-                    <text x='5.000'
-                          y='465.000'>+ setDocumentLocator(locator:org.xml.sax.Locator):void</text>
-                    <text x='5.000'
-                          y='476.000'>+ skippedEntity(name:java.lang.String):void</text>
-                    <text x='5.000'
-                          y='487.000'>+ startElement(uri:java.lang.String,localName:java.lang.String,qName:java.lang.String,attributes:org.xml.sax.Attributes):void</text>
-                    <text x='5.000'
-                          y='498.000'>+ startDocument():void</text>
-                    <text x='5.000'
-                          y='509.000'>+ startPrefixMapping(prefix:java.lang.String,uri:java.lang.String):void</text>
+                          y='421.000'>+ startPrefixMapping(prefix:java.lang.String,uri:java.lang.String):void</text>
                 </g>
             </g>
         </symbol>
@@ -376,7 +360,7 @@
     <use x='319.000'
          y='25.000'
          xlink:href='#org.xml.sax.ContentHandler'/>
-    <use x='64.000'
+    <use x='121.000'
          y='308.000'
          xlink:href='#org.tquadrat.foundation.xml.parse.AdvancedContentHandler'/>
 </svg>

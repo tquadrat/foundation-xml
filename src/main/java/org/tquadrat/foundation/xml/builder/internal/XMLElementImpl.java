@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2020 by Thomas Thrien.
+ *  Copyright © 2002-2024 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -53,24 +53,16 @@ import org.tquadrat.foundation.xml.builder.spi.InvalidXMLNameException;
  *  comments.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: XMLElementImpl.java 1030 2022-04-06 13:42:02Z tquadrat $
+ *  @version $Id: XMLElementImpl.java 1086 2024-01-05 23:18:33Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "removal" )
-@ClassVersion( sourceVersion = "$Id: XMLElementImpl.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: XMLElementImpl.java 1086 2024-01-05 23:18:33Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.5" )
 public sealed class XMLElementImpl implements XMLElement
-    permits org.tquadrat.foundation.xml.builder.spi.XMLElementAdapter, org.tquadrat.foundation.xml.builder.spi.XMLElementBase
-    /*
-     * org.tquadrat.foundation.xml.builder.spi.XMLElementBase is deprecated now
-     * and will be removed from the permits list once the class will be
-     * removed.
-     *
-     * org.tquadrat.foundation.xml.builder.spi.XMLElementAdapter is the
-     * replacement with the same functionality.
-     */
+    permits org.tquadrat.foundation.xml.builder.spi.XMLElementAdapter
 {
         /*------------*\
     ====** Attributes **=======================================================
@@ -133,7 +125,7 @@ public sealed class XMLElementImpl implements XMLElement
      *  @note   This constructor is used for the implementation of XML
      *      specialisations, like SVG or HTML (although this not really XML).
      *      It is made accessible through
-     *      {@link org.tquadrat.foundation.xml.builder.spi.XMLElementBase}
+     *      {@link org.tquadrat.foundation.xml.builder.spi.XMLElementAdapter}
      *
      *  @param  elementName The element name.
      *  @param  flags   The configuration flags for the new element.
@@ -156,50 +148,6 @@ public sealed class XMLElementImpl implements XMLElement
 
         m_Attributes = new AttributeSupport( this, checkAttributes );
         m_Children = new ChildSupport( this, checkChildren, allowChildren, allowText, XMLBuilderUtils::escapeXML );
-    }   //  XMLElementImpl()
-
-    /**
-     *  <p>{@summary Creates a new {@code XMLElementImpl} instance.}</p>
-     *  <p>The given element name is validated using the method that is
-     *  provided by
-     *  {@link XMLBuilderUtils#getElementNameValidator()}.</p>
-     *
-     *  @param  elementName The element name.
-     *  @param  validChildren   The list of the names for valid children; if
-     *      {@code null}, no children are allowed, if empty, children are
-     *      allowed, but they will not be validated.
-     *  @param  validAttributes The list of the valid attributes; if empty or
-     *      {@code null}, the attributes will not be validated.
-     *  @param  attributeSequence   The sequence for the attributes; if empty
-     *      or {@code null}, the attributes will be sorted alphabetically.
-     *  @param  allowText   {@code true} if the element allows text,
-     *      {@code false} if not.
-     *
-     *  @see AttributeSupport#registerAttributes(String...)
-     *  @see AttributeSupport#registerSequence(String...)
-     *  @see ChildSupport#registerChildren(String...)
-     *
-     *  @deprecated Use
-     *      {@link #XMLElementImpl(String, Set)}
-     *      instead.
-     */
-    @SuppressWarnings( "ThisEscapedInObjectConstruction" )
-    @Deprecated( forRemoval = true )
-    public XMLElementImpl( final String elementName, final String [] validChildren, final String [] validAttributes, final String [] attributeSequence, final boolean allowText )
-    {
-        m_ElementName = requireNotEmptyArgument( elementName, "elementName" );
-        if( !getElementNameValidator().test( elementName ) ) throw new InvalidXMLNameException( elementName );
-
-        final var checkAttributes = nonNull( validAttributes ) && (validAttributes.length > 0);
-        final var allowChildren = nonNull( validChildren );
-        final var checkChildren = allowChildren && (validChildren.length > 0);
-
-        m_Attributes = new AttributeSupport( this, checkAttributes );
-        m_Children = new ChildSupport( this, checkChildren, allowChildren, allowText, XMLBuilderUtils::escapeXML );
-
-        if( checkAttributes ) registerValidAttributes( validAttributes );
-        if( nonNull( attributeSequence ) && (attributeSequence.length > 0) ) registerAttributeSequence( attributeSequence );
-        if( checkChildren ) m_Children.registerChildren( validChildren );
     }   //  XMLElementImpl()
 
         /*---------*\

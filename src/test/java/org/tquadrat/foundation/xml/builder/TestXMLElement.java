@@ -21,9 +21,12 @@ import static java.lang.String.format;
 import static java.util.Collections.emptySet;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
+import static org.tquadrat.foundation.lang.Objects.nonNull;
+import static org.tquadrat.foundation.xml.builder.XMLElement.Flags.ALLOWS_TEXT;
 import static org.tquadrat.foundation.xml.builder.XMLElement.NO_APPEND;
 
 import java.net.URI;
+import java.util.EnumSet;
 import java.util.Set;
 
 import org.junit.jupiter.api.DisplayName;
@@ -57,7 +60,7 @@ public class TestXMLElement extends XMLTestBase
      */
     @SuppressWarnings( "ClassWithTooManyConstructors" )
     @ClassVersion( sourceVersion = "$Id: TestXMLElement.java 1076 2023-10-03 18:36:07Z tquadrat $" )
-    private static final class SimpleXMLElement extends org.tquadrat.foundation.xml.builder.spi.XMLElementBase
+    private static final class SimpleXMLElement extends org.tquadrat.foundation.xml.builder.spi.XMLElementAdapter
     {
             /*--------------*\
         ====** Constructors **=================================================
@@ -132,7 +135,11 @@ public class TestXMLElement extends XMLTestBase
          */
         public SimpleXMLElement( final String elementName, final String[] validChildren, final String[] validAttributes, final String[] attributeSequence, final boolean allowText )
         {
-            super( elementName, validChildren, validAttributes, attributeSequence, allowText );
+            //super( elementName, validChildren, validAttributes, attributeSequence, allowText );
+            super( elementName, allowText ? EnumSet.of( ALLOWS_TEXT ) : EnumSet.noneOf( Flags.class) );
+            if( nonNull( validChildren ) ) registerValidChildren( validChildren );
+            if( nonNull( validAttributes ) ) registerValidAttributes( validAttributes );
+            if( nonNull( attributeSequence ) ) registerAttributeSequence( attributeSequence );
         }   //  SimpleXMLElement()
 
         /**

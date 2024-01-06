@@ -13,7 +13,7 @@
 <div class="source-container">
 <pre><span class="source-line-no">001</span><span id="line-1">/*</span>
 <span class="source-line-no">002</span><span id="line-2"> * ============================================================================</span>
-<span class="source-line-no">003</span><span id="line-3"> *  Copyright © 2002-2020 by Thomas Thrien.</span>
+<span class="source-line-no">003</span><span id="line-3"> *  Copyright © 2002-2024 by Thomas Thrien.</span>
 <span class="source-line-no">004</span><span id="line-4"> *  All Rights Reserved.</span>
 <span class="source-line-no">005</span><span id="line-5"> * ============================================================================</span>
 <span class="source-line-no">006</span><span id="line-6"> *  Licensed to the public under the agreements of the GNU Lesser General Public</span>
@@ -66,471 +66,419 @@
 <span class="source-line-no">053</span><span id="line-53"> *  comments.</span>
 <span class="source-line-no">054</span><span id="line-54"> *</span>
 <span class="source-line-no">055</span><span id="line-55"> *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">056</span><span id="line-56"> *  @version $Id: XMLElementImpl.java 1030 2022-04-06 13:42:02Z tquadrat $</span>
+<span class="source-line-no">056</span><span id="line-56"> *  @version $Id: XMLElementImpl.java 1086 2024-01-05 23:18:33Z tquadrat $</span>
 <span class="source-line-no">057</span><span id="line-57"> *  @since 0.0.5</span>
 <span class="source-line-no">058</span><span id="line-58"> *</span>
 <span class="source-line-no">059</span><span id="line-59"> *  @UMLGraph.link</span>
 <span class="source-line-no">060</span><span id="line-60"> */</span>
 <span class="source-line-no">061</span><span id="line-61">@SuppressWarnings( "removal" )</span>
-<span class="source-line-no">062</span><span id="line-62">@ClassVersion( sourceVersion = "$Id: XMLElementImpl.java 1030 2022-04-06 13:42:02Z tquadrat $" )</span>
+<span class="source-line-no">062</span><span id="line-62">@ClassVersion( sourceVersion = "$Id: XMLElementImpl.java 1086 2024-01-05 23:18:33Z tquadrat $" )</span>
 <span class="source-line-no">063</span><span id="line-63">@API( status = INTERNAL, since = "0.0.5" )</span>
 <span class="source-line-no">064</span><span id="line-64">public sealed class XMLElementImpl implements XMLElement</span>
-<span class="source-line-no">065</span><span id="line-65">    permits org.tquadrat.foundation.xml.builder.spi.XMLElementAdapter, org.tquadrat.foundation.xml.builder.spi.XMLElementBase</span>
-<span class="source-line-no">066</span><span id="line-66">    /*</span>
-<span class="source-line-no">067</span><span id="line-67">     * org.tquadrat.foundation.xml.builder.spi.XMLElementBase is deprecated now</span>
-<span class="source-line-no">068</span><span id="line-68">     * and will be removed from the permits list once the class will be</span>
-<span class="source-line-no">069</span><span id="line-69">     * removed.</span>
-<span class="source-line-no">070</span><span id="line-70">     *</span>
-<span class="source-line-no">071</span><span id="line-71">     * org.tquadrat.foundation.xml.builder.spi.XMLElementAdapter is the</span>
-<span class="source-line-no">072</span><span id="line-72">     * replacement with the same functionality.</span>
-<span class="source-line-no">073</span><span id="line-73">     */</span>
-<span class="source-line-no">074</span><span id="line-74">{</span>
-<span class="source-line-no">075</span><span id="line-75">        /*------------*\</span>
-<span class="source-line-no">076</span><span id="line-76">    ====** Attributes **=======================================================</span>
-<span class="source-line-no">077</span><span id="line-77">        \*------------*/</span>
-<span class="source-line-no">078</span><span id="line-78">    /**</span>
-<span class="source-line-no">079</span><span id="line-79">     *  The attribute support.</span>
-<span class="source-line-no">080</span><span id="line-80">     */</span>
-<span class="source-line-no">081</span><span id="line-81">    @SuppressWarnings( "UseOfConcreteClass" )</span>
-<span class="source-line-no">082</span><span id="line-82">    private final AttributeSupport m_Attributes;</span>
-<span class="source-line-no">083</span><span id="line-83"></span>
-<span class="source-line-no">084</span><span id="line-84">    /**</span>
-<span class="source-line-no">085</span><span id="line-85">     *  The child support.</span>
-<span class="source-line-no">086</span><span id="line-86">     */</span>
-<span class="source-line-no">087</span><span id="line-87">    @SuppressWarnings( "UseOfConcreteClass" )</span>
-<span class="source-line-no">088</span><span id="line-88">    private final ChildSupport m_Children;</span>
-<span class="source-line-no">089</span><span id="line-89"></span>
-<span class="source-line-no">090</span><span id="line-90">    /**</span>
-<span class="source-line-no">091</span><span id="line-91">     *  The element name.</span>
-<span class="source-line-no">092</span><span id="line-92">     */</span>
-<span class="source-line-no">093</span><span id="line-93">    private final String m_ElementName;</span>
-<span class="source-line-no">094</span><span id="line-94"></span>
+<span class="source-line-no">065</span><span id="line-65">    permits org.tquadrat.foundation.xml.builder.spi.XMLElementAdapter</span>
+<span class="source-line-no">066</span><span id="line-66">{</span>
+<span class="source-line-no">067</span><span id="line-67">        /*------------*\</span>
+<span class="source-line-no">068</span><span id="line-68">    ====** Attributes **=======================================================</span>
+<span class="source-line-no">069</span><span id="line-69">        \*------------*/</span>
+<span class="source-line-no">070</span><span id="line-70">    /**</span>
+<span class="source-line-no">071</span><span id="line-71">     *  The attribute support.</span>
+<span class="source-line-no">072</span><span id="line-72">     */</span>
+<span class="source-line-no">073</span><span id="line-73">    @SuppressWarnings( "UseOfConcreteClass" )</span>
+<span class="source-line-no">074</span><span id="line-74">    private final AttributeSupport m_Attributes;</span>
+<span class="source-line-no">075</span><span id="line-75"></span>
+<span class="source-line-no">076</span><span id="line-76">    /**</span>
+<span class="source-line-no">077</span><span id="line-77">     *  The child support.</span>
+<span class="source-line-no">078</span><span id="line-78">     */</span>
+<span class="source-line-no">079</span><span id="line-79">    @SuppressWarnings( "UseOfConcreteClass" )</span>
+<span class="source-line-no">080</span><span id="line-80">    private final ChildSupport m_Children;</span>
+<span class="source-line-no">081</span><span id="line-81"></span>
+<span class="source-line-no">082</span><span id="line-82">    /**</span>
+<span class="source-line-no">083</span><span id="line-83">     *  The element name.</span>
+<span class="source-line-no">084</span><span id="line-84">     */</span>
+<span class="source-line-no">085</span><span id="line-85">    private final String m_ElementName;</span>
+<span class="source-line-no">086</span><span id="line-86"></span>
+<span class="source-line-no">087</span><span id="line-87">    /**</span>
+<span class="source-line-no">088</span><span id="line-88">     *  The parent element.</span>
+<span class="source-line-no">089</span><span id="line-89">     */</span>
+<span class="source-line-no">090</span><span id="line-90">    private Element m_Parent;</span>
+<span class="source-line-no">091</span><span id="line-91"></span>
+<span class="source-line-no">092</span><span id="line-92">        /*--------------*\</span>
+<span class="source-line-no">093</span><span id="line-93">    ====** Constructors **=====================================================</span>
+<span class="source-line-no">094</span><span id="line-94">        \*--------------*/</span>
 <span class="source-line-no">095</span><span id="line-95">    /**</span>
-<span class="source-line-no">096</span><span id="line-96">     *  The parent element.</span>
-<span class="source-line-no">097</span><span id="line-97">     */</span>
-<span class="source-line-no">098</span><span id="line-98">    private Element m_Parent;</span>
-<span class="source-line-no">099</span><span id="line-99"></span>
-<span class="source-line-no">100</span><span id="line-100">        /*--------------*\</span>
-<span class="source-line-no">101</span><span id="line-101">    ====** Constructors **=====================================================</span>
-<span class="source-line-no">102</span><span id="line-102">        \*--------------*/</span>
-<span class="source-line-no">103</span><span id="line-103">    /**</span>
-<span class="source-line-no">104</span><span id="line-104">     *  &lt;p&gt;{@summary Creates a new {@code XMLElementImpl} instance.}&lt;/p&gt;</span>
-<span class="source-line-no">105</span><span id="line-105">     *  &lt;p&gt;The given element name is validated using the method that is</span>
-<span class="source-line-no">106</span><span id="line-106">     *  provided by</span>
-<span class="source-line-no">107</span><span id="line-107">     *  {@link XMLBuilderUtils#getElementNameValidator()}.&lt;/p&gt;</span>
-<span class="source-line-no">108</span><span id="line-108">     *  &lt;p&gt;The new element allows attributes and children, but will not</span>
-<span class="source-line-no">109</span><span id="line-109">     *  validate them. It also allows text.&lt;/p&gt;</span>
-<span class="source-line-no">110</span><span id="line-110">     *</span>
-<span class="source-line-no">111</span><span id="line-111">     *  @note   This constructor is mainly used by the factory methods in</span>
-<span class="source-line-no">112</span><span id="line-112">     *      {@link XMLBuilderUtils}</span>
-<span class="source-line-no">113</span><span id="line-113">     *      for on-the-fly XML generation.</span>
-<span class="source-line-no">114</span><span id="line-114">     *</span>
-<span class="source-line-no">115</span><span id="line-115">     *  @param  elementName The element name.</span>
-<span class="source-line-no">116</span><span id="line-116">     */</span>
-<span class="source-line-no">117</span><span id="line-117">    @SuppressWarnings( "ThisEscapedInObjectConstruction" )</span>
-<span class="source-line-no">118</span><span id="line-118">    public XMLElementImpl( final String elementName )</span>
-<span class="source-line-no">119</span><span id="line-119">    {</span>
-<span class="source-line-no">120</span><span id="line-120">        m_ElementName = requireNotEmptyArgument( elementName, "elementName" );</span>
-<span class="source-line-no">121</span><span id="line-121">        if( !getElementNameValidator().test( elementName ) ) throw new InvalidXMLNameException( elementName );</span>
-<span class="source-line-no">122</span><span id="line-122"></span>
-<span class="source-line-no">123</span><span id="line-123">        m_Attributes = new AttributeSupport( this, false );</span>
-<span class="source-line-no">124</span><span id="line-124">        m_Children = new ChildSupport( this, false, true, true, XMLBuilderUtils::escapeXML );</span>
-<span class="source-line-no">125</span><span id="line-125">    }   //  XMLElementImpl()</span>
-<span class="source-line-no">126</span><span id="line-126"></span>
-<span class="source-line-no">127</span><span id="line-127">    /**</span>
-<span class="source-line-no">128</span><span id="line-128">     *  &lt;p&gt;{@summary Creates a new {@code XMLElementImpl} instance.}&lt;/p&gt;</span>
-<span class="source-line-no">129</span><span id="line-129">     *  &lt;p&gt;The given element name is validated using the method that is</span>
-<span class="source-line-no">130</span><span id="line-130">     *  provided by</span>
-<span class="source-line-no">131</span><span id="line-131">     *  {@link XMLBuilderUtils#getElementNameValidator()}.&lt;/p&gt;</span>
+<span class="source-line-no">096</span><span id="line-96">     *  &lt;p&gt;{@summary Creates a new {@code XMLElementImpl} instance.}&lt;/p&gt;</span>
+<span class="source-line-no">097</span><span id="line-97">     *  &lt;p&gt;The given element name is validated using the method that is</span>
+<span class="source-line-no">098</span><span id="line-98">     *  provided by</span>
+<span class="source-line-no">099</span><span id="line-99">     *  {@link XMLBuilderUtils#getElementNameValidator()}.&lt;/p&gt;</span>
+<span class="source-line-no">100</span><span id="line-100">     *  &lt;p&gt;The new element allows attributes and children, but will not</span>
+<span class="source-line-no">101</span><span id="line-101">     *  validate them. It also allows text.&lt;/p&gt;</span>
+<span class="source-line-no">102</span><span id="line-102">     *</span>
+<span class="source-line-no">103</span><span id="line-103">     *  @note   This constructor is mainly used by the factory methods in</span>
+<span class="source-line-no">104</span><span id="line-104">     *      {@link XMLBuilderUtils}</span>
+<span class="source-line-no">105</span><span id="line-105">     *      for on-the-fly XML generation.</span>
+<span class="source-line-no">106</span><span id="line-106">     *</span>
+<span class="source-line-no">107</span><span id="line-107">     *  @param  elementName The element name.</span>
+<span class="source-line-no">108</span><span id="line-108">     */</span>
+<span class="source-line-no">109</span><span id="line-109">    @SuppressWarnings( "ThisEscapedInObjectConstruction" )</span>
+<span class="source-line-no">110</span><span id="line-110">    public XMLElementImpl( final String elementName )</span>
+<span class="source-line-no">111</span><span id="line-111">    {</span>
+<span class="source-line-no">112</span><span id="line-112">        m_ElementName = requireNotEmptyArgument( elementName, "elementName" );</span>
+<span class="source-line-no">113</span><span id="line-113">        if( !getElementNameValidator().test( elementName ) ) throw new InvalidXMLNameException( elementName );</span>
+<span class="source-line-no">114</span><span id="line-114"></span>
+<span class="source-line-no">115</span><span id="line-115">        m_Attributes = new AttributeSupport( this, false );</span>
+<span class="source-line-no">116</span><span id="line-116">        m_Children = new ChildSupport( this, false, true, true, XMLBuilderUtils::escapeXML );</span>
+<span class="source-line-no">117</span><span id="line-117">    }   //  XMLElementImpl()</span>
+<span class="source-line-no">118</span><span id="line-118"></span>
+<span class="source-line-no">119</span><span id="line-119">    /**</span>
+<span class="source-line-no">120</span><span id="line-120">     *  &lt;p&gt;{@summary Creates a new {@code XMLElementImpl} instance.}&lt;/p&gt;</span>
+<span class="source-line-no">121</span><span id="line-121">     *  &lt;p&gt;The given element name is validated using the method that is</span>
+<span class="source-line-no">122</span><span id="line-122">     *  provided by</span>
+<span class="source-line-no">123</span><span id="line-123">     *  {@link XMLBuilderUtils#getElementNameValidator()}.&lt;/p&gt;</span>
+<span class="source-line-no">124</span><span id="line-124">     *</span>
+<span class="source-line-no">125</span><span id="line-125">     *  @note   This constructor is used for the implementation of XML</span>
+<span class="source-line-no">126</span><span id="line-126">     *      specialisations, like SVG or HTML (although this not really XML).</span>
+<span class="source-line-no">127</span><span id="line-127">     *      It is made accessible through</span>
+<span class="source-line-no">128</span><span id="line-128">     *      {@link org.tquadrat.foundation.xml.builder.spi.XMLElementAdapter}</span>
+<span class="source-line-no">129</span><span id="line-129">     *</span>
+<span class="source-line-no">130</span><span id="line-130">     *  @param  elementName The element name.</span>
+<span class="source-line-no">131</span><span id="line-131">     *  @param  flags   The configuration flags for the new element.</span>
 <span class="source-line-no">132</span><span id="line-132">     *</span>
-<span class="source-line-no">133</span><span id="line-133">     *  @note   This constructor is used for the implementation of XML</span>
-<span class="source-line-no">134</span><span id="line-134">     *      specialisations, like SVG or HTML (although this not really XML).</span>
-<span class="source-line-no">135</span><span id="line-135">     *      It is made accessible through</span>
-<span class="source-line-no">136</span><span id="line-136">     *      {@link org.tquadrat.foundation.xml.builder.spi.XMLElementBase}</span>
-<span class="source-line-no">137</span><span id="line-137">     *</span>
-<span class="source-line-no">138</span><span id="line-138">     *  @param  elementName The element name.</span>
-<span class="source-line-no">139</span><span id="line-139">     *  @param  flags   The configuration flags for the new element.</span>
-<span class="source-line-no">140</span><span id="line-140">     *</span>
-<span class="source-line-no">141</span><span id="line-141">     *  @see org.tquadrat.foundation.xml.builder.XMLElement.Flags</span>
-<span class="source-line-no">142</span><span id="line-142">     *  @see AttributeSupport#registerAttributes(String...)</span>
-<span class="source-line-no">143</span><span id="line-143">     *  @see AttributeSupport#registerSequence(String...)</span>
-<span class="source-line-no">144</span><span id="line-144">     *  @see ChildSupport#registerChildren(String...)</span>
-<span class="source-line-no">145</span><span id="line-145">     */</span>
-<span class="source-line-no">146</span><span id="line-146">    @SuppressWarnings( "ThisEscapedInObjectConstruction" )</span>
-<span class="source-line-no">147</span><span id="line-147">    protected XMLElementImpl( final String elementName, final Set&lt;Flags&gt; flags )</span>
-<span class="source-line-no">148</span><span id="line-148">    {</span>
-<span class="source-line-no">149</span><span id="line-149">        m_ElementName = requireNotEmptyArgument( elementName, "elementName" );</span>
-<span class="source-line-no">150</span><span id="line-150">        if( !getElementNameValidator().test( elementName ) ) throw new InvalidXMLNameException( elementName );</span>
-<span class="source-line-no">151</span><span id="line-151"></span>
-<span class="source-line-no">152</span><span id="line-152">        final var checkAttributes = requireNonNullArgument( flags, "flags" ).contains( VALIDATES_ATTRIBUTES );</span>
-<span class="source-line-no">153</span><span id="line-153">        final var checkChildren = flags.contains( VALIDATES_CHILDREN );</span>
-<span class="source-line-no">154</span><span id="line-154">        final var allowChildren = checkChildren || flags.contains( ALLOWS_CHILDREN );</span>
-<span class="source-line-no">155</span><span id="line-155">        final var allowText = flags.contains( ALLOWS_TEXT );</span>
-<span class="source-line-no">156</span><span id="line-156"></span>
-<span class="source-line-no">157</span><span id="line-157">        m_Attributes = new AttributeSupport( this, checkAttributes );</span>
-<span class="source-line-no">158</span><span id="line-158">        m_Children = new ChildSupport( this, checkChildren, allowChildren, allowText, XMLBuilderUtils::escapeXML );</span>
-<span class="source-line-no">159</span><span id="line-159">    }   //  XMLElementImpl()</span>
-<span class="source-line-no">160</span><span id="line-160"></span>
-<span class="source-line-no">161</span><span id="line-161">    /**</span>
-<span class="source-line-no">162</span><span id="line-162">     *  &lt;p&gt;{@summary Creates a new {@code XMLElementImpl} instance.}&lt;/p&gt;</span>
-<span class="source-line-no">163</span><span id="line-163">     *  &lt;p&gt;The given element name is validated using the method that is</span>
-<span class="source-line-no">164</span><span id="line-164">     *  provided by</span>
-<span class="source-line-no">165</span><span id="line-165">     *  {@link XMLBuilderUtils#getElementNameValidator()}.&lt;/p&gt;</span>
-<span class="source-line-no">166</span><span id="line-166">     *</span>
-<span class="source-line-no">167</span><span id="line-167">     *  @param  elementName The element name.</span>
-<span class="source-line-no">168</span><span id="line-168">     *  @param  validChildren   The list of the names for valid children; if</span>
-<span class="source-line-no">169</span><span id="line-169">     *      {@code null}, no children are allowed, if empty, children are</span>
-<span class="source-line-no">170</span><span id="line-170">     *      allowed, but they will not be validated.</span>
-<span class="source-line-no">171</span><span id="line-171">     *  @param  validAttributes The list of the valid attributes; if empty or</span>
-<span class="source-line-no">172</span><span id="line-172">     *      {@code null}, the attributes will not be validated.</span>
-<span class="source-line-no">173</span><span id="line-173">     *  @param  attributeSequence   The sequence for the attributes; if empty</span>
-<span class="source-line-no">174</span><span id="line-174">     *      or {@code null}, the attributes will be sorted alphabetically.</span>
-<span class="source-line-no">175</span><span id="line-175">     *  @param  allowText   {@code true} if the element allows text,</span>
-<span class="source-line-no">176</span><span id="line-176">     *      {@code false} if not.</span>
-<span class="source-line-no">177</span><span id="line-177">     *</span>
-<span class="source-line-no">178</span><span id="line-178">     *  @see AttributeSupport#registerAttributes(String...)</span>
-<span class="source-line-no">179</span><span id="line-179">     *  @see AttributeSupport#registerSequence(String...)</span>
-<span class="source-line-no">180</span><span id="line-180">     *  @see ChildSupport#registerChildren(String...)</span>
-<span class="source-line-no">181</span><span id="line-181">     *</span>
-<span class="source-line-no">182</span><span id="line-182">     *  @deprecated Use</span>
-<span class="source-line-no">183</span><span id="line-183">     *      {@link #XMLElementImpl(String, Set)}</span>
-<span class="source-line-no">184</span><span id="line-184">     *      instead.</span>
-<span class="source-line-no">185</span><span id="line-185">     */</span>
-<span class="source-line-no">186</span><span id="line-186">    @SuppressWarnings( "ThisEscapedInObjectConstruction" )</span>
-<span class="source-line-no">187</span><span id="line-187">    @Deprecated( forRemoval = true )</span>
-<span class="source-line-no">188</span><span id="line-188">    public XMLElementImpl( final String elementName, final String [] validChildren, final String [] validAttributes, final String [] attributeSequence, final boolean allowText )</span>
-<span class="source-line-no">189</span><span id="line-189">    {</span>
-<span class="source-line-no">190</span><span id="line-190">        m_ElementName = requireNotEmptyArgument( elementName, "elementName" );</span>
-<span class="source-line-no">191</span><span id="line-191">        if( !getElementNameValidator().test( elementName ) ) throw new InvalidXMLNameException( elementName );</span>
-<span class="source-line-no">192</span><span id="line-192"></span>
-<span class="source-line-no">193</span><span id="line-193">        final var checkAttributes = nonNull( validAttributes ) &amp;&amp; (validAttributes.length &gt; 0);</span>
-<span class="source-line-no">194</span><span id="line-194">        final var allowChildren = nonNull( validChildren );</span>
-<span class="source-line-no">195</span><span id="line-195">        final var checkChildren = allowChildren &amp;&amp; (validChildren.length &gt; 0);</span>
-<span class="source-line-no">196</span><span id="line-196"></span>
-<span class="source-line-no">197</span><span id="line-197">        m_Attributes = new AttributeSupport( this, checkAttributes );</span>
-<span class="source-line-no">198</span><span id="line-198">        m_Children = new ChildSupport( this, checkChildren, allowChildren, allowText, XMLBuilderUtils::escapeXML );</span>
+<span class="source-line-no">133</span><span id="line-133">     *  @see org.tquadrat.foundation.xml.builder.XMLElement.Flags</span>
+<span class="source-line-no">134</span><span id="line-134">     *  @see AttributeSupport#registerAttributes(String...)</span>
+<span class="source-line-no">135</span><span id="line-135">     *  @see AttributeSupport#registerSequence(String...)</span>
+<span class="source-line-no">136</span><span id="line-136">     *  @see ChildSupport#registerChildren(String...)</span>
+<span class="source-line-no">137</span><span id="line-137">     */</span>
+<span class="source-line-no">138</span><span id="line-138">    @SuppressWarnings( "ThisEscapedInObjectConstruction" )</span>
+<span class="source-line-no">139</span><span id="line-139">    protected XMLElementImpl( final String elementName, final Set&lt;Flags&gt; flags )</span>
+<span class="source-line-no">140</span><span id="line-140">    {</span>
+<span class="source-line-no">141</span><span id="line-141">        m_ElementName = requireNotEmptyArgument( elementName, "elementName" );</span>
+<span class="source-line-no">142</span><span id="line-142">        if( !getElementNameValidator().test( elementName ) ) throw new InvalidXMLNameException( elementName );</span>
+<span class="source-line-no">143</span><span id="line-143"></span>
+<span class="source-line-no">144</span><span id="line-144">        final var checkAttributes = requireNonNullArgument( flags, "flags" ).contains( VALIDATES_ATTRIBUTES );</span>
+<span class="source-line-no">145</span><span id="line-145">        final var checkChildren = flags.contains( VALIDATES_CHILDREN );</span>
+<span class="source-line-no">146</span><span id="line-146">        final var allowChildren = checkChildren || flags.contains( ALLOWS_CHILDREN );</span>
+<span class="source-line-no">147</span><span id="line-147">        final var allowText = flags.contains( ALLOWS_TEXT );</span>
+<span class="source-line-no">148</span><span id="line-148"></span>
+<span class="source-line-no">149</span><span id="line-149">        m_Attributes = new AttributeSupport( this, checkAttributes );</span>
+<span class="source-line-no">150</span><span id="line-150">        m_Children = new ChildSupport( this, checkChildren, allowChildren, allowText, XMLBuilderUtils::escapeXML );</span>
+<span class="source-line-no">151</span><span id="line-151">    }   //  XMLElementImpl()</span>
+<span class="source-line-no">152</span><span id="line-152"></span>
+<span class="source-line-no">153</span><span id="line-153">        /*---------*\</span>
+<span class="source-line-no">154</span><span id="line-154">    ====** Methods **==========================================================</span>
+<span class="source-line-no">155</span><span id="line-155">        \*---------*/</span>
+<span class="source-line-no">156</span><span id="line-156">    /**</span>
+<span class="source-line-no">157</span><span id="line-157">     *  {@inheritDoc}</span>
+<span class="source-line-no">158</span><span id="line-158">     */</span>
+<span class="source-line-no">159</span><span id="line-159">    @Override</span>
+<span class="source-line-no">160</span><span id="line-160">    public final XMLElement addCDATA( final CharSequence text ) throws IllegalArgumentException</span>
+<span class="source-line-no">161</span><span id="line-161">    {</span>
+<span class="source-line-no">162</span><span id="line-162">        m_Children.addCDATA( text );</span>
+<span class="source-line-no">163</span><span id="line-163"></span>
+<span class="source-line-no">164</span><span id="line-164">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">165</span><span id="line-165">        return this;</span>
+<span class="source-line-no">166</span><span id="line-166">    }   //  addCDATA()</span>
+<span class="source-line-no">167</span><span id="line-167"></span>
+<span class="source-line-no">168</span><span id="line-168">    /**</span>
+<span class="source-line-no">169</span><span id="line-169">     *  {@inheritDoc}</span>
+<span class="source-line-no">170</span><span id="line-170">     */</span>
+<span class="source-line-no">171</span><span id="line-171">    @Override</span>
+<span class="source-line-no">172</span><span id="line-172">    public final &lt;E extends XMLElement&gt; XMLElement addChild( final E child ) throws IllegalArgumentException, IllegalStateException</span>
+<span class="source-line-no">173</span><span id="line-173">    {</span>
+<span class="source-line-no">174</span><span id="line-174">        m_Children.addChild( child );</span>
+<span class="source-line-no">175</span><span id="line-175"></span>
+<span class="source-line-no">176</span><span id="line-176">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">177</span><span id="line-177">        return this;</span>
+<span class="source-line-no">178</span><span id="line-178">    }   //  addChild()</span>
+<span class="source-line-no">179</span><span id="line-179"></span>
+<span class="source-line-no">180</span><span id="line-180">    /**</span>
+<span class="source-line-no">181</span><span id="line-181">     *  {@inheritDoc}</span>
+<span class="source-line-no">182</span><span id="line-182">     */</span>
+<span class="source-line-no">183</span><span id="line-183">    @Override</span>
+<span class="source-line-no">184</span><span id="line-184">    public final XMLElement addComment( final CharSequence comment ) throws IllegalArgumentException</span>
+<span class="source-line-no">185</span><span id="line-185">    {</span>
+<span class="source-line-no">186</span><span id="line-186">        m_Children.addComment( comment );</span>
+<span class="source-line-no">187</span><span id="line-187"></span>
+<span class="source-line-no">188</span><span id="line-188">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">189</span><span id="line-189">        return this;</span>
+<span class="source-line-no">190</span><span id="line-190">    }   //  addComment()</span>
+<span class="source-line-no">191</span><span id="line-191"></span>
+<span class="source-line-no">192</span><span id="line-192">    /**</span>
+<span class="source-line-no">193</span><span id="line-193">     *  {@inheritDoc}</span>
+<span class="source-line-no">194</span><span id="line-194">     */</span>
+<span class="source-line-no">195</span><span id="line-195">    @Override</span>
+<span class="source-line-no">196</span><span id="line-196">    public final XMLElement addPredefinedMarkup( final CharSequence markup ) throws IllegalArgumentException</span>
+<span class="source-line-no">197</span><span id="line-197">    {</span>
+<span class="source-line-no">198</span><span id="line-198">        m_Children.addPredefinedMarkup( markup );</span>
 <span class="source-line-no">199</span><span id="line-199"></span>
-<span class="source-line-no">200</span><span id="line-200">        if( checkAttributes ) registerValidAttributes( validAttributes );</span>
-<span class="source-line-no">201</span><span id="line-201">        if( nonNull( attributeSequence ) &amp;&amp; (attributeSequence.length &gt; 0) ) registerAttributeSequence( attributeSequence );</span>
-<span class="source-line-no">202</span><span id="line-202">        if( checkChildren ) m_Children.registerChildren( validChildren );</span>
-<span class="source-line-no">203</span><span id="line-203">    }   //  XMLElementImpl()</span>
-<span class="source-line-no">204</span><span id="line-204"></span>
-<span class="source-line-no">205</span><span id="line-205">        /*---------*\</span>
-<span class="source-line-no">206</span><span id="line-206">    ====** Methods **==========================================================</span>
-<span class="source-line-no">207</span><span id="line-207">        \*---------*/</span>
-<span class="source-line-no">208</span><span id="line-208">    /**</span>
-<span class="source-line-no">209</span><span id="line-209">     *  {@inheritDoc}</span>
-<span class="source-line-no">210</span><span id="line-210">     */</span>
-<span class="source-line-no">211</span><span id="line-211">    @Override</span>
-<span class="source-line-no">212</span><span id="line-212">    public final XMLElement addCDATA( final CharSequence text ) throws IllegalArgumentException</span>
-<span class="source-line-no">213</span><span id="line-213">    {</span>
-<span class="source-line-no">214</span><span id="line-214">        m_Children.addCDATA( text );</span>
+<span class="source-line-no">200</span><span id="line-200">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">201</span><span id="line-201">        return this;</span>
+<span class="source-line-no">202</span><span id="line-202">    }   //  addPredefinedMarkup()</span>
+<span class="source-line-no">203</span><span id="line-203"></span>
+<span class="source-line-no">204</span><span id="line-204">    /**</span>
+<span class="source-line-no">205</span><span id="line-205">     *  {@inheritDoc}</span>
+<span class="source-line-no">206</span><span id="line-206">     */</span>
+<span class="source-line-no">207</span><span id="line-207">    @Override</span>
+<span class="source-line-no">208</span><span id="line-208">    public final XMLElement addText( final CharSequence text ) throws IllegalArgumentException</span>
+<span class="source-line-no">209</span><span id="line-209">    {</span>
+<span class="source-line-no">210</span><span id="line-210">        m_Children.addText( text );</span>
+<span class="source-line-no">211</span><span id="line-211"></span>
+<span class="source-line-no">212</span><span id="line-212">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">213</span><span id="line-213">        return this;</span>
+<span class="source-line-no">214</span><span id="line-214">    }   //  addText()</span>
 <span class="source-line-no">215</span><span id="line-215"></span>
-<span class="source-line-no">216</span><span id="line-216">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">217</span><span id="line-217">        return this;</span>
-<span class="source-line-no">218</span><span id="line-218">    }   //  addCDATA()</span>
-<span class="source-line-no">219</span><span id="line-219"></span>
-<span class="source-line-no">220</span><span id="line-220">    /**</span>
-<span class="source-line-no">221</span><span id="line-221">     *  {@inheritDoc}</span>
-<span class="source-line-no">222</span><span id="line-222">     */</span>
-<span class="source-line-no">223</span><span id="line-223">    @Override</span>
-<span class="source-line-no">224</span><span id="line-224">    public final &lt;E extends XMLElement&gt; XMLElement addChild( final E child ) throws IllegalArgumentException, IllegalStateException</span>
-<span class="source-line-no">225</span><span id="line-225">    {</span>
-<span class="source-line-no">226</span><span id="line-226">        m_Children.addChild( child );</span>
+<span class="source-line-no">216</span><span id="line-216">    /**</span>
+<span class="source-line-no">217</span><span id="line-217">     *  {@inheritDoc}</span>
+<span class="source-line-no">218</span><span id="line-218">     */</span>
+<span class="source-line-no">219</span><span id="line-219">    @Override</span>
+<span class="source-line-no">220</span><span id="line-220">    public final Optional&lt;String&gt; getAttribute( final String name ) { return m_Attributes.getAttribute( name ); }</span>
+<span class="source-line-no">221</span><span id="line-221"></span>
+<span class="source-line-no">222</span><span id="line-222">    /**</span>
+<span class="source-line-no">223</span><span id="line-223">     *  {@inheritDoc}</span>
+<span class="source-line-no">224</span><span id="line-224">     */</span>
+<span class="source-line-no">225</span><span id="line-225">    @Override</span>
+<span class="source-line-no">226</span><span id="line-226">    public Map&lt;String,String&gt; getAttributes() { return m_Attributes.getAttributes(); }</span>
 <span class="source-line-no">227</span><span id="line-227"></span>
-<span class="source-line-no">228</span><span id="line-228">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">229</span><span id="line-229">        return this;</span>
-<span class="source-line-no">230</span><span id="line-230">    }   //  addChild()</span>
-<span class="source-line-no">231</span><span id="line-231"></span>
-<span class="source-line-no">232</span><span id="line-232">    /**</span>
-<span class="source-line-no">233</span><span id="line-233">     *  {@inheritDoc}</span>
-<span class="source-line-no">234</span><span id="line-234">     */</span>
-<span class="source-line-no">235</span><span id="line-235">    @Override</span>
-<span class="source-line-no">236</span><span id="line-236">    public final XMLElement addComment( final CharSequence comment ) throws IllegalArgumentException</span>
-<span class="source-line-no">237</span><span id="line-237">    {</span>
-<span class="source-line-no">238</span><span id="line-238">        m_Children.addComment( comment );</span>
+<span class="source-line-no">228</span><span id="line-228">    /**</span>
+<span class="source-line-no">229</span><span id="line-229">     *  {@inheritDoc}</span>
+<span class="source-line-no">230</span><span id="line-230">     */</span>
+<span class="source-line-no">231</span><span id="line-231">    @Override</span>
+<span class="source-line-no">232</span><span id="line-232">    public Collection&lt;? extends Element&gt; getChildren()</span>
+<span class="source-line-no">233</span><span id="line-233">    {</span>
+<span class="source-line-no">234</span><span id="line-234">        final var retValue = m_Children.getChildren();</span>
+<span class="source-line-no">235</span><span id="line-235"></span>
+<span class="source-line-no">236</span><span id="line-236">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">237</span><span id="line-237">        return retValue;</span>
+<span class="source-line-no">238</span><span id="line-238">    }   //  getChildren()</span>
 <span class="source-line-no">239</span><span id="line-239"></span>
-<span class="source-line-no">240</span><span id="line-240">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">241</span><span id="line-241">        return this;</span>
-<span class="source-line-no">242</span><span id="line-242">    }   //  addComment()</span>
-<span class="source-line-no">243</span><span id="line-243"></span>
-<span class="source-line-no">244</span><span id="line-244">    /**</span>
-<span class="source-line-no">245</span><span id="line-245">     *  {@inheritDoc}</span>
-<span class="source-line-no">246</span><span id="line-246">     */</span>
-<span class="source-line-no">247</span><span id="line-247">    @Override</span>
-<span class="source-line-no">248</span><span id="line-248">    public final XMLElement addPredefinedMarkup( final CharSequence markup ) throws IllegalArgumentException</span>
-<span class="source-line-no">249</span><span id="line-249">    {</span>
-<span class="source-line-no">250</span><span id="line-250">        m_Children.addPredefinedMarkup( markup );</span>
-<span class="source-line-no">251</span><span id="line-251"></span>
-<span class="source-line-no">252</span><span id="line-252">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">253</span><span id="line-253">        return this;</span>
-<span class="source-line-no">254</span><span id="line-254">    }   //  addPredefinedMarkup()</span>
-<span class="source-line-no">255</span><span id="line-255"></span>
-<span class="source-line-no">256</span><span id="line-256">    /**</span>
-<span class="source-line-no">257</span><span id="line-257">     *  {@inheritDoc}</span>
-<span class="source-line-no">258</span><span id="line-258">     */</span>
-<span class="source-line-no">259</span><span id="line-259">    @Override</span>
-<span class="source-line-no">260</span><span id="line-260">    public final XMLElement addText( final CharSequence text ) throws IllegalArgumentException</span>
-<span class="source-line-no">261</span><span id="line-261">    {</span>
-<span class="source-line-no">262</span><span id="line-262">        m_Children.addText( text );</span>
-<span class="source-line-no">263</span><span id="line-263"></span>
-<span class="source-line-no">264</span><span id="line-264">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">265</span><span id="line-265">        return this;</span>
-<span class="source-line-no">266</span><span id="line-266">    }   //  addText()</span>
-<span class="source-line-no">267</span><span id="line-267"></span>
-<span class="source-line-no">268</span><span id="line-268">    /**</span>
-<span class="source-line-no">269</span><span id="line-269">     *  {@inheritDoc}</span>
-<span class="source-line-no">270</span><span id="line-270">     */</span>
-<span class="source-line-no">271</span><span id="line-271">    @Override</span>
-<span class="source-line-no">272</span><span id="line-272">    public final Optional&lt;String&gt; getAttribute( final String name ) { return m_Attributes.getAttribute( name ); }</span>
-<span class="source-line-no">273</span><span id="line-273"></span>
-<span class="source-line-no">274</span><span id="line-274">    /**</span>
-<span class="source-line-no">275</span><span id="line-275">     *  {@inheritDoc}</span>
-<span class="source-line-no">276</span><span id="line-276">     */</span>
-<span class="source-line-no">277</span><span id="line-277">    @Override</span>
-<span class="source-line-no">278</span><span id="line-278">    public Map&lt;String,String&gt; getAttributes() { return m_Attributes.getAttributes(); }</span>
-<span class="source-line-no">279</span><span id="line-279"></span>
-<span class="source-line-no">280</span><span id="line-280">    /**</span>
-<span class="source-line-no">281</span><span id="line-281">     *  {@inheritDoc}</span>
+<span class="source-line-no">240</span><span id="line-240">    /**</span>
+<span class="source-line-no">241</span><span id="line-241">     *  {@inheritDoc}</span>
+<span class="source-line-no">242</span><span id="line-242">     */</span>
+<span class="source-line-no">243</span><span id="line-243">    @Override</span>
+<span class="source-line-no">244</span><span id="line-244">    public final String getElementName() { return m_ElementName; }</span>
+<span class="source-line-no">245</span><span id="line-245"></span>
+<span class="source-line-no">246</span><span id="line-246">    /**</span>
+<span class="source-line-no">247</span><span id="line-247">     *  {@inheritDoc}</span>
+<span class="source-line-no">248</span><span id="line-248">     */</span>
+<span class="source-line-no">249</span><span id="line-249">    @Override</span>
+<span class="source-line-no">250</span><span id="line-250">    public final Set&lt;Flags&gt; getFlags()</span>
+<span class="source-line-no">251</span><span id="line-251">    {</span>
+<span class="source-line-no">252</span><span id="line-252">        final var retValue = EnumSet.noneOf( Flags.class );</span>
+<span class="source-line-no">253</span><span id="line-253">        if( nonNull( m_Children ) )</span>
+<span class="source-line-no">254</span><span id="line-254">        {</span>
+<span class="source-line-no">255</span><span id="line-255">            if( m_Children.allowsChildren() ) retValue.add( ALLOWS_CHILDREN );</span>
+<span class="source-line-no">256</span><span id="line-256">            if( m_Children.allowsText() ) retValue.add( ALLOWS_TEXT );</span>
+<span class="source-line-no">257</span><span id="line-257">            if( m_Children.checksIfValid() ) retValue.add( VALIDATES_CHILDREN );</span>
+<span class="source-line-no">258</span><span id="line-258">        }</span>
+<span class="source-line-no">259</span><span id="line-259"></span>
+<span class="source-line-no">260</span><span id="line-260">        if( m_Attributes.checksIfValid() ) retValue.add( VALIDATES_ATTRIBUTES );</span>
+<span class="source-line-no">261</span><span id="line-261"></span>
+<span class="source-line-no">262</span><span id="line-262">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">263</span><span id="line-263">        return retValue;</span>
+<span class="source-line-no">264</span><span id="line-264">    }   //  getFlags()</span>
+<span class="source-line-no">265</span><span id="line-265"></span>
+<span class="source-line-no">266</span><span id="line-266">    /**</span>
+<span class="source-line-no">267</span><span id="line-267">     *  {@inheritDoc}</span>
+<span class="source-line-no">268</span><span id="line-268">     */</span>
+<span class="source-line-no">269</span><span id="line-269">    @Override</span>
+<span class="source-line-no">270</span><span id="line-270">    public final Collection&lt;Namespace&gt; getNamespaces() { return m_Attributes.getNamespaces(); }</span>
+<span class="source-line-no">271</span><span id="line-271"></span>
+<span class="source-line-no">272</span><span id="line-272">    /**</span>
+<span class="source-line-no">273</span><span id="line-273">     *  {@inheritDoc}</span>
+<span class="source-line-no">274</span><span id="line-274">     */</span>
+<span class="source-line-no">275</span><span id="line-275">    @Override</span>
+<span class="source-line-no">276</span><span id="line-276">    public final Optional&lt;Element&gt; getParent() { return Optional.ofNullable( m_Parent ); }</span>
+<span class="source-line-no">277</span><span id="line-277"></span>
+<span class="source-line-no">278</span><span id="line-278">    /**</span>
+<span class="source-line-no">279</span><span id="line-279">     *  Returns the attribute sort order.</span>
+<span class="source-line-no">280</span><span id="line-280">     *</span>
+<span class="source-line-no">281</span><span id="line-281">     *  @return The comparator that determines the attribute's sequence.</span>
 <span class="source-line-no">282</span><span id="line-282">     */</span>
-<span class="source-line-no">283</span><span id="line-283">    @Override</span>
-<span class="source-line-no">284</span><span id="line-284">    public Collection&lt;? extends Element&gt; getChildren()</span>
-<span class="source-line-no">285</span><span id="line-285">    {</span>
-<span class="source-line-no">286</span><span id="line-286">        final var retValue = m_Children.getChildren();</span>
-<span class="source-line-no">287</span><span id="line-287"></span>
-<span class="source-line-no">288</span><span id="line-288">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">289</span><span id="line-289">        return retValue;</span>
-<span class="source-line-no">290</span><span id="line-290">    }   //  getChildren()</span>
+<span class="source-line-no">283</span><span id="line-283">    @SuppressWarnings( "PublicMethodNotExposedInInterface" )</span>
+<span class="source-line-no">284</span><span id="line-284">    public final Comparator&lt;String&gt; getSortOrder() { return m_Attributes.getSortOrder(); }</span>
+<span class="source-line-no">285</span><span id="line-285"></span>
+<span class="source-line-no">286</span><span id="line-286">    /**</span>
+<span class="source-line-no">287</span><span id="line-287">     *  {@inheritDoc}</span>
+<span class="source-line-no">288</span><span id="line-288">     */</span>
+<span class="source-line-no">289</span><span id="line-289">    @Override</span>
+<span class="source-line-no">290</span><span id="line-290">    public boolean hasChildren() { return m_Children.hasChildren(); }</span>
 <span class="source-line-no">291</span><span id="line-291"></span>
 <span class="source-line-no">292</span><span id="line-292">    /**</span>
-<span class="source-line-no">293</span><span id="line-293">     *  {@inheritDoc}</span>
-<span class="source-line-no">294</span><span id="line-294">     */</span>
-<span class="source-line-no">295</span><span id="line-295">    @Override</span>
-<span class="source-line-no">296</span><span id="line-296">    public final String getElementName() { return m_ElementName; }</span>
-<span class="source-line-no">297</span><span id="line-297"></span>
-<span class="source-line-no">298</span><span id="line-298">    /**</span>
-<span class="source-line-no">299</span><span id="line-299">     *  {@inheritDoc}</span>
+<span class="source-line-no">293</span><span id="line-293">     *  &lt;p&gt;{@summary Registers an attribute sequence for this element}; this</span>
+<span class="source-line-no">294</span><span id="line-294">     *  modifies any sort order that was previously set.&lt;/p&gt;</span>
+<span class="source-line-no">295</span><span id="line-295">     *  &lt;p&gt;The names for the attributes are not validated; in particular, it</span>
+<span class="source-line-no">296</span><span id="line-296">     *  is not checked whether an attribute is listed as valid.&lt;/p&gt;</span>
+<span class="source-line-no">297</span><span id="line-297">     *</span>
+<span class="source-line-no">298</span><span id="line-298">     *  @param  attributes  The names of the attributes in the desired</span>
+<span class="source-line-no">299</span><span id="line-299">     *      sequence.</span>
 <span class="source-line-no">300</span><span id="line-300">     */</span>
-<span class="source-line-no">301</span><span id="line-301">    @Override</span>
-<span class="source-line-no">302</span><span id="line-302">    public final Set&lt;Flags&gt; getFlags()</span>
+<span class="source-line-no">301</span><span id="line-301">    @SuppressWarnings( "PublicMethodNotExposedInInterface" )</span>
+<span class="source-line-no">302</span><span id="line-302">    public final void registerAttributeSequence( final String... attributes )</span>
 <span class="source-line-no">303</span><span id="line-303">    {</span>
-<span class="source-line-no">304</span><span id="line-304">        final var retValue = EnumSet.noneOf( Flags.class );</span>
-<span class="source-line-no">305</span><span id="line-305">        if( nonNull( m_Children ) )</span>
-<span class="source-line-no">306</span><span id="line-306">        {</span>
-<span class="source-line-no">307</span><span id="line-307">            if( m_Children.allowsChildren() ) retValue.add( ALLOWS_CHILDREN );</span>
-<span class="source-line-no">308</span><span id="line-308">            if( m_Children.allowsText() ) retValue.add( ALLOWS_TEXT );</span>
-<span class="source-line-no">309</span><span id="line-309">            if( m_Children.checksIfValid() ) retValue.add( VALIDATES_CHILDREN );</span>
-<span class="source-line-no">310</span><span id="line-310">        }</span>
-<span class="source-line-no">311</span><span id="line-311"></span>
-<span class="source-line-no">312</span><span id="line-312">        if( m_Attributes.checksIfValid() ) retValue.add( VALIDATES_ATTRIBUTES );</span>
-<span class="source-line-no">313</span><span id="line-313"></span>
-<span class="source-line-no">314</span><span id="line-314">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">315</span><span id="line-315">        return retValue;</span>
-<span class="source-line-no">316</span><span id="line-316">    }   //  getFlags()</span>
-<span class="source-line-no">317</span><span id="line-317"></span>
-<span class="source-line-no">318</span><span id="line-318">    /**</span>
-<span class="source-line-no">319</span><span id="line-319">     *  {@inheritDoc}</span>
-<span class="source-line-no">320</span><span id="line-320">     */</span>
-<span class="source-line-no">321</span><span id="line-321">    @Override</span>
-<span class="source-line-no">322</span><span id="line-322">    public final Collection&lt;Namespace&gt; getNamespaces() { return m_Attributes.getNamespaces(); }</span>
-<span class="source-line-no">323</span><span id="line-323"></span>
-<span class="source-line-no">324</span><span id="line-324">    /**</span>
-<span class="source-line-no">325</span><span id="line-325">     *  {@inheritDoc}</span>
-<span class="source-line-no">326</span><span id="line-326">     */</span>
-<span class="source-line-no">327</span><span id="line-327">    @Override</span>
-<span class="source-line-no">328</span><span id="line-328">    public final Optional&lt;Element&gt; getParent() { return Optional.ofNullable( m_Parent ); }</span>
-<span class="source-line-no">329</span><span id="line-329"></span>
-<span class="source-line-no">330</span><span id="line-330">    /**</span>
-<span class="source-line-no">331</span><span id="line-331">     *  Returns the attribute sort order.</span>
-<span class="source-line-no">332</span><span id="line-332">     *</span>
-<span class="source-line-no">333</span><span id="line-333">     *  @return The comparator that determines the attribute's sequence.</span>
-<span class="source-line-no">334</span><span id="line-334">     */</span>
-<span class="source-line-no">335</span><span id="line-335">    @SuppressWarnings( "PublicMethodNotExposedInInterface" )</span>
-<span class="source-line-no">336</span><span id="line-336">    public final Comparator&lt;String&gt; getSortOrder() { return m_Attributes.getSortOrder(); }</span>
-<span class="source-line-no">337</span><span id="line-337"></span>
-<span class="source-line-no">338</span><span id="line-338">    /**</span>
-<span class="source-line-no">339</span><span id="line-339">     *  {@inheritDoc}</span>
-<span class="source-line-no">340</span><span id="line-340">     */</span>
-<span class="source-line-no">341</span><span id="line-341">    @Override</span>
-<span class="source-line-no">342</span><span id="line-342">    public boolean hasChildren() { return m_Children.hasChildren(); }</span>
-<span class="source-line-no">343</span><span id="line-343"></span>
-<span class="source-line-no">344</span><span id="line-344">    /**</span>
-<span class="source-line-no">345</span><span id="line-345">     *  &lt;p&gt;{@summary Registers an attribute sequence for this element}; this</span>
-<span class="source-line-no">346</span><span id="line-346">     *  modifies any sort order that was previously set.&lt;/p&gt;</span>
-<span class="source-line-no">347</span><span id="line-347">     *  &lt;p&gt;The names for the attributes are not validated; in particular, it</span>
-<span class="source-line-no">348</span><span id="line-348">     *  is not checked whether an attribute is listed as valid.&lt;/p&gt;</span>
-<span class="source-line-no">349</span><span id="line-349">     *</span>
-<span class="source-line-no">350</span><span id="line-350">     *  @param  attributes  The names of the attributes in the desired</span>
-<span class="source-line-no">351</span><span id="line-351">     *      sequence.</span>
-<span class="source-line-no">352</span><span id="line-352">     */</span>
-<span class="source-line-no">353</span><span id="line-353">    @SuppressWarnings( "PublicMethodNotExposedInInterface" )</span>
-<span class="source-line-no">354</span><span id="line-354">    public final void registerAttributeSequence( final String... attributes )</span>
-<span class="source-line-no">355</span><span id="line-355">    {</span>
-<span class="source-line-no">356</span><span id="line-356">        m_Attributes.registerSequence( attributes );</span>
-<span class="source-line-no">357</span><span id="line-357">    }   //  registerAttributeSequence()</span>
+<span class="source-line-no">304</span><span id="line-304">        m_Attributes.registerSequence( attributes );</span>
+<span class="source-line-no">305</span><span id="line-305">    }   //  registerAttributeSequence()</span>
+<span class="source-line-no">306</span><span id="line-306"></span>
+<span class="source-line-no">307</span><span id="line-307">    /**</span>
+<span class="source-line-no">308</span><span id="line-308">     *  Registers an attribute sequence for this element; this modifies any</span>
+<span class="source-line-no">309</span><span id="line-309">     *  sort order that was previously set.</span>
+<span class="source-line-no">310</span><span id="line-310">     *</span>
+<span class="source-line-no">311</span><span id="line-311">     *  @param  sortOrder  The sort order for the attributes.</span>
+<span class="source-line-no">312</span><span id="line-312">     */</span>
+<span class="source-line-no">313</span><span id="line-313">    @SuppressWarnings( "PublicMethodNotExposedInInterface" )</span>
+<span class="source-line-no">314</span><span id="line-314">    public final void registerAttributeSequence( final Comparator&lt;String&gt; sortOrder )</span>
+<span class="source-line-no">315</span><span id="line-315">    {</span>
+<span class="source-line-no">316</span><span id="line-316">        m_Attributes.setSortOrder( sortOrder );</span>
+<span class="source-line-no">317</span><span id="line-317">    }   //  registerAttributeSequence()</span>
+<span class="source-line-no">318</span><span id="line-318"></span>
+<span class="source-line-no">319</span><span id="line-319">    /**</span>
+<span class="source-line-no">320</span><span id="line-320">     *  Registers the valid attributes for this element.&lt;br&gt;</span>
+<span class="source-line-no">321</span><span id="line-321">     *  &lt;br&gt;Nothing happens if</span>
+<span class="source-line-no">322</span><span id="line-322">     *  {@link AttributeSupport#checksIfValid()}</span>
+<span class="source-line-no">323</span><span id="line-323">     *  returns {@code false}, although a call to this method is obsolete then.</span>
+<span class="source-line-no">324</span><span id="line-324">     *</span>
+<span class="source-line-no">325</span><span id="line-325">     *  @note   The given attributes will be &lt;i&gt;added&lt;/i&gt; to the already</span>
+<span class="source-line-no">326</span><span id="line-326">     *      existing ones!</span>
+<span class="source-line-no">327</span><span id="line-327">     *</span>
+<span class="source-line-no">328</span><span id="line-328">     *  @param  attributes  The names of the valid attributes.</span>
+<span class="source-line-no">329</span><span id="line-329">     *  @throws InvalidXMLNameException One of the attribute names is invalid.</span>
+<span class="source-line-no">330</span><span id="line-330">     */</span>
+<span class="source-line-no">331</span><span id="line-331">    @SuppressWarnings( "PublicMethodNotExposedInInterface" )</span>
+<span class="source-line-no">332</span><span id="line-332">    public final void registerValidAttributes( final String... attributes )</span>
+<span class="source-line-no">333</span><span id="line-333">    {</span>
+<span class="source-line-no">334</span><span id="line-334">        m_Attributes.registerAttributes( attributes );</span>
+<span class="source-line-no">335</span><span id="line-335">    }   //  registerValidAttributes()</span>
+<span class="source-line-no">336</span><span id="line-336"></span>
+<span class="source-line-no">337</span><span id="line-337">    /**</span>
+<span class="source-line-no">338</span><span id="line-338">     *  Registers the element names of valid child elements for this element.</span>
+<span class="source-line-no">339</span><span id="line-339">     *</span>
+<span class="source-line-no">340</span><span id="line-340">     *  @note   The given children will be &lt;i&gt;added&lt;/i&gt; to the already existing</span>
+<span class="source-line-no">341</span><span id="line-341">     *      ones!</span>
+<span class="source-line-no">342</span><span id="line-342">     *</span>
+<span class="source-line-no">343</span><span id="line-343">     *  @param  children    The element names of the valid children.</span>
+<span class="source-line-no">344</span><span id="line-344">     */</span>
+<span class="source-line-no">345</span><span id="line-345">    @SuppressWarnings( "PublicMethodNotExposedInInterface" )</span>
+<span class="source-line-no">346</span><span id="line-346">    public final void registerValidChildren( final String... children )</span>
+<span class="source-line-no">347</span><span id="line-347">    {</span>
+<span class="source-line-no">348</span><span id="line-348">        if( nonNull( m_Children ) ) m_Children.registerChildren( children );</span>
+<span class="source-line-no">349</span><span id="line-349">    }   //  registerValidChildren()</span>
+<span class="source-line-no">350</span><span id="line-350"></span>
+<span class="source-line-no">351</span><span id="line-351">    /**</span>
+<span class="source-line-no">352</span><span id="line-352">     *  Returns the list of the registered attributes.</span>
+<span class="source-line-no">353</span><span id="line-353">     *</span>
+<span class="source-line-no">354</span><span id="line-354">     *  @return The registered attributes.</span>
+<span class="source-line-no">355</span><span id="line-355">     */</span>
+<span class="source-line-no">356</span><span id="line-356">    @SuppressWarnings( "PublicMethodNotExposedInInterface" )</span>
+<span class="source-line-no">357</span><span id="line-357">    public final Collection&lt;String&gt; retrieveValidAttributes() { return m_Attributes.retrieveValidAttributes(); }</span>
 <span class="source-line-no">358</span><span id="line-358"></span>
 <span class="source-line-no">359</span><span id="line-359">    /**</span>
-<span class="source-line-no">360</span><span id="line-360">     *  Registers an attribute sequence for this element; this modifies any</span>
-<span class="source-line-no">361</span><span id="line-361">     *  sort order that was previously set.</span>
-<span class="source-line-no">362</span><span id="line-362">     *</span>
-<span class="source-line-no">363</span><span id="line-363">     *  @param  sortOrder  The sort order for the attributes.</span>
-<span class="source-line-no">364</span><span id="line-364">     */</span>
-<span class="source-line-no">365</span><span id="line-365">    @SuppressWarnings( "PublicMethodNotExposedInInterface" )</span>
-<span class="source-line-no">366</span><span id="line-366">    public final void registerAttributeSequence( final Comparator&lt;String&gt; sortOrder )</span>
-<span class="source-line-no">367</span><span id="line-367">    {</span>
-<span class="source-line-no">368</span><span id="line-368">        m_Attributes.setSortOrder( sortOrder );</span>
-<span class="source-line-no">369</span><span id="line-369">    }   //  registerAttributeSequence()</span>
-<span class="source-line-no">370</span><span id="line-370"></span>
-<span class="source-line-no">371</span><span id="line-371">    /**</span>
-<span class="source-line-no">372</span><span id="line-372">     *  Registers the valid attributes for this element.&lt;br&gt;</span>
-<span class="source-line-no">373</span><span id="line-373">     *  &lt;br&gt;Nothing happens if</span>
-<span class="source-line-no">374</span><span id="line-374">     *  {@link AttributeSupport#checksIfValid()}</span>
-<span class="source-line-no">375</span><span id="line-375">     *  returns {@code false}, although a call to this method is obsolete then.</span>
-<span class="source-line-no">376</span><span id="line-376">     *</span>
-<span class="source-line-no">377</span><span id="line-377">     *  @note   The given attributes will be &lt;i&gt;added&lt;/i&gt; to the already</span>
-<span class="source-line-no">378</span><span id="line-378">     *      existing ones!</span>
-<span class="source-line-no">379</span><span id="line-379">     *</span>
-<span class="source-line-no">380</span><span id="line-380">     *  @param  attributes  The names of the valid attributes.</span>
-<span class="source-line-no">381</span><span id="line-381">     *  @throws InvalidXMLNameException One of the attribute names is invalid.</span>
-<span class="source-line-no">382</span><span id="line-382">     */</span>
-<span class="source-line-no">383</span><span id="line-383">    @SuppressWarnings( "PublicMethodNotExposedInInterface" )</span>
-<span class="source-line-no">384</span><span id="line-384">    public final void registerValidAttributes( final String... attributes )</span>
-<span class="source-line-no">385</span><span id="line-385">    {</span>
-<span class="source-line-no">386</span><span id="line-386">        m_Attributes.registerAttributes( attributes );</span>
-<span class="source-line-no">387</span><span id="line-387">    }   //  registerValidAttributes()</span>
-<span class="source-line-no">388</span><span id="line-388"></span>
-<span class="source-line-no">389</span><span id="line-389">    /**</span>
-<span class="source-line-no">390</span><span id="line-390">     *  Registers the element names of valid child elements for this element.</span>
-<span class="source-line-no">391</span><span id="line-391">     *</span>
-<span class="source-line-no">392</span><span id="line-392">     *  @note   The given children will be &lt;i&gt;added&lt;/i&gt; to the already existing</span>
-<span class="source-line-no">393</span><span id="line-393">     *      ones!</span>
-<span class="source-line-no">394</span><span id="line-394">     *</span>
-<span class="source-line-no">395</span><span id="line-395">     *  @param  children    The element names of the valid children.</span>
+<span class="source-line-no">360</span><span id="line-360">     *  Returns the list of the registered children.</span>
+<span class="source-line-no">361</span><span id="line-361">     *</span>
+<span class="source-line-no">362</span><span id="line-362">     *  @return The registered children.</span>
+<span class="source-line-no">363</span><span id="line-363">     */</span>
+<span class="source-line-no">364</span><span id="line-364">    @SuppressWarnings( "PublicMethodNotExposedInInterface" )</span>
+<span class="source-line-no">365</span><span id="line-365">    public final Collection&lt;String&gt; retrieveValidChildren() { return m_Children.retrieveValidChildren(); }</span>
+<span class="source-line-no">366</span><span id="line-366"></span>
+<span class="source-line-no">367</span><span id="line-367">    /**</span>
+<span class="source-line-no">368</span><span id="line-368">     *  {@inheritDoc}</span>
+<span class="source-line-no">369</span><span id="line-369">     *  &lt;p&gt;The given attribute name is validated using the method that is</span>
+<span class="source-line-no">370</span><span id="line-370">     *  provided by</span>
+<span class="source-line-no">371</span><span id="line-371">     *  {@link XMLBuilderUtils#getAttributeNameValidator()}.&lt;/p&gt;</span>
+<span class="source-line-no">372</span><span id="line-372">     */</span>
+<span class="source-line-no">373</span><span id="line-373">    @Override</span>
+<span class="source-line-no">374</span><span id="line-374">    public final XMLElement setAttribute( final String name, final CharSequence value, final Optional&lt;? extends CharSequence&gt; append ) throws IllegalArgumentException</span>
+<span class="source-line-no">375</span><span id="line-375">    {</span>
+<span class="source-line-no">376</span><span id="line-376">        m_Attributes.setAttribute( name, value, append );</span>
+<span class="source-line-no">377</span><span id="line-377"></span>
+<span class="source-line-no">378</span><span id="line-378">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">379</span><span id="line-379">        return this;</span>
+<span class="source-line-no">380</span><span id="line-380">    }   //  setAttribute()</span>
+<span class="source-line-no">381</span><span id="line-381"></span>
+<span class="source-line-no">382</span><span id="line-382">    /**</span>
+<span class="source-line-no">383</span><span id="line-383">     *  {@inheritDoc}</span>
+<span class="source-line-no">384</span><span id="line-384">     */</span>
+<span class="source-line-no">385</span><span id="line-385">    @Override</span>
+<span class="source-line-no">386</span><span id="line-386">    public final XMLElement setNamespace( final String identifier ) throws IllegalArgumentException, URISyntaxException</span>
+<span class="source-line-no">387</span><span id="line-387">    {</span>
+<span class="source-line-no">388</span><span id="line-388">        m_Attributes.setNamespace( identifier );</span>
+<span class="source-line-no">389</span><span id="line-389"></span>
+<span class="source-line-no">390</span><span id="line-390">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">391</span><span id="line-391">        return this;</span>
+<span class="source-line-no">392</span><span id="line-392">    }   //  setNamespace()</span>
+<span class="source-line-no">393</span><span id="line-393"></span>
+<span class="source-line-no">394</span><span id="line-394">    /**</span>
+<span class="source-line-no">395</span><span id="line-395">     *  {@inheritDoc}</span>
 <span class="source-line-no">396</span><span id="line-396">     */</span>
-<span class="source-line-no">397</span><span id="line-397">    @SuppressWarnings( "PublicMethodNotExposedInInterface" )</span>
-<span class="source-line-no">398</span><span id="line-398">    public final void registerValidChildren( final String... children )</span>
+<span class="source-line-no">397</span><span id="line-397">    @Override</span>
+<span class="source-line-no">398</span><span id="line-398">    public final XMLElement setNamespace( final URI identifier ) throws IllegalArgumentException</span>
 <span class="source-line-no">399</span><span id="line-399">    {</span>
-<span class="source-line-no">400</span><span id="line-400">        if( nonNull( m_Children ) ) m_Children.registerChildren( children );</span>
-<span class="source-line-no">401</span><span id="line-401">    }   //  registerValidChildren()</span>
-<span class="source-line-no">402</span><span id="line-402"></span>
-<span class="source-line-no">403</span><span id="line-403">    /**</span>
-<span class="source-line-no">404</span><span id="line-404">     *  Returns the list of the registered attributes.</span>
-<span class="source-line-no">405</span><span id="line-405">     *</span>
-<span class="source-line-no">406</span><span id="line-406">     *  @return The registered attributes.</span>
-<span class="source-line-no">407</span><span id="line-407">     */</span>
-<span class="source-line-no">408</span><span id="line-408">    @SuppressWarnings( "PublicMethodNotExposedInInterface" )</span>
-<span class="source-line-no">409</span><span id="line-409">    public final Collection&lt;String&gt; retrieveValidAttributes() { return m_Attributes.retrieveValidAttributes(); }</span>
-<span class="source-line-no">410</span><span id="line-410"></span>
-<span class="source-line-no">411</span><span id="line-411">    /**</span>
-<span class="source-line-no">412</span><span id="line-412">     *  Returns the list of the registered children.</span>
-<span class="source-line-no">413</span><span id="line-413">     *</span>
-<span class="source-line-no">414</span><span id="line-414">     *  @return The registered children.</span>
-<span class="source-line-no">415</span><span id="line-415">     */</span>
-<span class="source-line-no">416</span><span id="line-416">    @SuppressWarnings( "PublicMethodNotExposedInInterface" )</span>
-<span class="source-line-no">417</span><span id="line-417">    public final Collection&lt;String&gt; retrieveValidChildren() { return m_Children.retrieveValidChildren(); }</span>
-<span class="source-line-no">418</span><span id="line-418"></span>
-<span class="source-line-no">419</span><span id="line-419">    /**</span>
-<span class="source-line-no">420</span><span id="line-420">     *  {@inheritDoc}</span>
-<span class="source-line-no">421</span><span id="line-421">     *  &lt;p&gt;The given attribute name is validated using the method that is</span>
-<span class="source-line-no">422</span><span id="line-422">     *  provided by</span>
-<span class="source-line-no">423</span><span id="line-423">     *  {@link XMLBuilderUtils#getAttributeNameValidator()}.&lt;/p&gt;</span>
-<span class="source-line-no">424</span><span id="line-424">     */</span>
-<span class="source-line-no">425</span><span id="line-425">    @Override</span>
-<span class="source-line-no">426</span><span id="line-426">    public final XMLElement setAttribute( final String name, final CharSequence value, final Optional&lt;? extends CharSequence&gt; append ) throws IllegalArgumentException</span>
-<span class="source-line-no">427</span><span id="line-427">    {</span>
-<span class="source-line-no">428</span><span id="line-428">        m_Attributes.setAttribute( name, value, append );</span>
-<span class="source-line-no">429</span><span id="line-429"></span>
-<span class="source-line-no">430</span><span id="line-430">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">431</span><span id="line-431">        return this;</span>
-<span class="source-line-no">432</span><span id="line-432">    }   //  setAttribute()</span>
-<span class="source-line-no">433</span><span id="line-433"></span>
-<span class="source-line-no">434</span><span id="line-434">    /**</span>
-<span class="source-line-no">435</span><span id="line-435">     *  {@inheritDoc}</span>
-<span class="source-line-no">436</span><span id="line-436">     */</span>
-<span class="source-line-no">437</span><span id="line-437">    @Override</span>
-<span class="source-line-no">438</span><span id="line-438">    public final XMLElement setNamespace( final String identifier ) throws IllegalArgumentException, URISyntaxException</span>
-<span class="source-line-no">439</span><span id="line-439">    {</span>
-<span class="source-line-no">440</span><span id="line-440">        m_Attributes.setNamespace( identifier );</span>
-<span class="source-line-no">441</span><span id="line-441"></span>
-<span class="source-line-no">442</span><span id="line-442">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">443</span><span id="line-443">        return this;</span>
-<span class="source-line-no">444</span><span id="line-444">    }   //  setNamespace()</span>
-<span class="source-line-no">445</span><span id="line-445"></span>
-<span class="source-line-no">446</span><span id="line-446">    /**</span>
-<span class="source-line-no">447</span><span id="line-447">     *  {@inheritDoc}</span>
-<span class="source-line-no">448</span><span id="line-448">     */</span>
-<span class="source-line-no">449</span><span id="line-449">    @Override</span>
-<span class="source-line-no">450</span><span id="line-450">    public final XMLElement setNamespace( final URI identifier ) throws IllegalArgumentException</span>
-<span class="source-line-no">451</span><span id="line-451">    {</span>
-<span class="source-line-no">452</span><span id="line-452">        m_Attributes.setNamespace( identifier );</span>
-<span class="source-line-no">453</span><span id="line-453"></span>
-<span class="source-line-no">454</span><span id="line-454">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">455</span><span id="line-455">        return this;</span>
-<span class="source-line-no">456</span><span id="line-456">    }   //  setNamespace()</span>
+<span class="source-line-no">400</span><span id="line-400">        m_Attributes.setNamespace( identifier );</span>
+<span class="source-line-no">401</span><span id="line-401"></span>
+<span class="source-line-no">402</span><span id="line-402">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">403</span><span id="line-403">        return this;</span>
+<span class="source-line-no">404</span><span id="line-404">    }   //  setNamespace()</span>
+<span class="source-line-no">405</span><span id="line-405"></span>
+<span class="source-line-no">406</span><span id="line-406">    /**</span>
+<span class="source-line-no">407</span><span id="line-407">     *  {@inheritDoc}</span>
+<span class="source-line-no">408</span><span id="line-408">     *  &lt;p&gt;The given prefix is validated using the method that is</span>
+<span class="source-line-no">409</span><span id="line-409">     *  provided by</span>
+<span class="source-line-no">410</span><span id="line-410">     *  {@link XMLBuilderUtils#getPrefixValidator()}.&lt;/p&gt;</span>
+<span class="source-line-no">411</span><span id="line-411">     */</span>
+<span class="source-line-no">412</span><span id="line-412">    @Override</span>
+<span class="source-line-no">413</span><span id="line-413">    public final XMLElement setNamespace( final String prefix, final String identifier ) throws IllegalArgumentException, URISyntaxException</span>
+<span class="source-line-no">414</span><span id="line-414">    {</span>
+<span class="source-line-no">415</span><span id="line-415">        m_Attributes.setNamespace( prefix, identifier );</span>
+<span class="source-line-no">416</span><span id="line-416"></span>
+<span class="source-line-no">417</span><span id="line-417">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">418</span><span id="line-418">        return this;</span>
+<span class="source-line-no">419</span><span id="line-419">    }   //  setNamespace()</span>
+<span class="source-line-no">420</span><span id="line-420"></span>
+<span class="source-line-no">421</span><span id="line-421">    /**</span>
+<span class="source-line-no">422</span><span id="line-422">     *  {@inheritDoc}</span>
+<span class="source-line-no">423</span><span id="line-423">     *  &lt;p&gt;The given prefix is validated using the method that is</span>
+<span class="source-line-no">424</span><span id="line-424">     *  provided by</span>
+<span class="source-line-no">425</span><span id="line-425">     *  {@link XMLBuilderUtils#getPrefixValidator()}.&lt;/p&gt;</span>
+<span class="source-line-no">426</span><span id="line-426">     */</span>
+<span class="source-line-no">427</span><span id="line-427">    @Override</span>
+<span class="source-line-no">428</span><span id="line-428">    public final XMLElement setNamespace( final String prefix, final URI identifier ) throws IllegalArgumentException</span>
+<span class="source-line-no">429</span><span id="line-429">    {</span>
+<span class="source-line-no">430</span><span id="line-430">        m_Attributes.setNamespace( prefix, identifier );</span>
+<span class="source-line-no">431</span><span id="line-431"></span>
+<span class="source-line-no">432</span><span id="line-432">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">433</span><span id="line-433">        return this;</span>
+<span class="source-line-no">434</span><span id="line-434">    }   //  setNamespace()</span>
+<span class="source-line-no">435</span><span id="line-435"></span>
+<span class="source-line-no">436</span><span id="line-436">    /**</span>
+<span class="source-line-no">437</span><span id="line-437">     *  {@inheritDoc}</span>
+<span class="source-line-no">438</span><span id="line-438">     */</span>
+<span class="source-line-no">439</span><span id="line-439">    @SuppressWarnings( "UseOfConcreteClass" )</span>
+<span class="source-line-no">440</span><span id="line-440">    @Override</span>
+<span class="source-line-no">441</span><span id="line-441">    public final XMLElement setNamespace( final Namespace namespace ) throws IllegalArgumentException</span>
+<span class="source-line-no">442</span><span id="line-442">    {</span>
+<span class="source-line-no">443</span><span id="line-443">        m_Attributes.setNamespace( namespace );</span>
+<span class="source-line-no">444</span><span id="line-444"></span>
+<span class="source-line-no">445</span><span id="line-445">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">446</span><span id="line-446">        return this;</span>
+<span class="source-line-no">447</span><span id="line-447">    }   //  setNamespace()</span>
+<span class="source-line-no">448</span><span id="line-448"></span>
+<span class="source-line-no">449</span><span id="line-449">    /**</span>
+<span class="source-line-no">450</span><span id="line-450">     *  {@inheritDoc}</span>
+<span class="source-line-no">451</span><span id="line-451">     */</span>
+<span class="source-line-no">452</span><span id="line-452">    @Override</span>
+<span class="source-line-no">453</span><span id="line-453">    public final &lt;E extends Element&gt; void setParent( final E parent )</span>
+<span class="source-line-no">454</span><span id="line-454">    {</span>
+<span class="source-line-no">455</span><span id="line-455">        m_Parent = requireNonNullArgument( parent, "parent" );</span>
+<span class="source-line-no">456</span><span id="line-456">    }   //  setParent()</span>
 <span class="source-line-no">457</span><span id="line-457"></span>
 <span class="source-line-no">458</span><span id="line-458">    /**</span>
 <span class="source-line-no">459</span><span id="line-459">     *  {@inheritDoc}</span>
-<span class="source-line-no">460</span><span id="line-460">     *  &lt;p&gt;The given prefix is validated using the method that is</span>
-<span class="source-line-no">461</span><span id="line-461">     *  provided by</span>
-<span class="source-line-no">462</span><span id="line-462">     *  {@link XMLBuilderUtils#getPrefixValidator()}.&lt;/p&gt;</span>
-<span class="source-line-no">463</span><span id="line-463">     */</span>
-<span class="source-line-no">464</span><span id="line-464">    @Override</span>
-<span class="source-line-no">465</span><span id="line-465">    public final XMLElement setNamespace( final String prefix, final String identifier ) throws IllegalArgumentException, URISyntaxException</span>
-<span class="source-line-no">466</span><span id="line-466">    {</span>
-<span class="source-line-no">467</span><span id="line-467">        m_Attributes.setNamespace( prefix, identifier );</span>
-<span class="source-line-no">468</span><span id="line-468"></span>
-<span class="source-line-no">469</span><span id="line-469">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">470</span><span id="line-470">        return this;</span>
-<span class="source-line-no">471</span><span id="line-471">    }   //  setNamespace()</span>
-<span class="source-line-no">472</span><span id="line-472"></span>
-<span class="source-line-no">473</span><span id="line-473">    /**</span>
-<span class="source-line-no">474</span><span id="line-474">     *  {@inheritDoc}</span>
-<span class="source-line-no">475</span><span id="line-475">     *  &lt;p&gt;The given prefix is validated using the method that is</span>
-<span class="source-line-no">476</span><span id="line-476">     *  provided by</span>
-<span class="source-line-no">477</span><span id="line-477">     *  {@link XMLBuilderUtils#getPrefixValidator()}.&lt;/p&gt;</span>
-<span class="source-line-no">478</span><span id="line-478">     */</span>
-<span class="source-line-no">479</span><span id="line-479">    @Override</span>
-<span class="source-line-no">480</span><span id="line-480">    public final XMLElement setNamespace( final String prefix, final URI identifier ) throws IllegalArgumentException</span>
-<span class="source-line-no">481</span><span id="line-481">    {</span>
-<span class="source-line-no">482</span><span id="line-482">        m_Attributes.setNamespace( prefix, identifier );</span>
-<span class="source-line-no">483</span><span id="line-483"></span>
-<span class="source-line-no">484</span><span id="line-484">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">485</span><span id="line-485">        return this;</span>
-<span class="source-line-no">486</span><span id="line-486">    }   //  setNamespace()</span>
-<span class="source-line-no">487</span><span id="line-487"></span>
-<span class="source-line-no">488</span><span id="line-488">    /**</span>
-<span class="source-line-no">489</span><span id="line-489">     *  {@inheritDoc}</span>
-<span class="source-line-no">490</span><span id="line-490">     */</span>
-<span class="source-line-no">491</span><span id="line-491">    @SuppressWarnings( "UseOfConcreteClass" )</span>
-<span class="source-line-no">492</span><span id="line-492">    @Override</span>
-<span class="source-line-no">493</span><span id="line-493">    public final XMLElement setNamespace( final Namespace namespace ) throws IllegalArgumentException</span>
-<span class="source-line-no">494</span><span id="line-494">    {</span>
-<span class="source-line-no">495</span><span id="line-495">        m_Attributes.setNamespace( namespace );</span>
-<span class="source-line-no">496</span><span id="line-496"></span>
-<span class="source-line-no">497</span><span id="line-497">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">498</span><span id="line-498">        return this;</span>
-<span class="source-line-no">499</span><span id="line-499">    }   //  setNamespace()</span>
-<span class="source-line-no">500</span><span id="line-500"></span>
-<span class="source-line-no">501</span><span id="line-501">    /**</span>
-<span class="source-line-no">502</span><span id="line-502">     *  {@inheritDoc}</span>
-<span class="source-line-no">503</span><span id="line-503">     */</span>
-<span class="source-line-no">504</span><span id="line-504">    @Override</span>
-<span class="source-line-no">505</span><span id="line-505">    public final &lt;E extends Element&gt; void setParent( final E parent )</span>
-<span class="source-line-no">506</span><span id="line-506">    {</span>
-<span class="source-line-no">507</span><span id="line-507">        m_Parent = requireNonNullArgument( parent, "parent" );</span>
-<span class="source-line-no">508</span><span id="line-508">    }   //  setParent()</span>
-<span class="source-line-no">509</span><span id="line-509"></span>
-<span class="source-line-no">510</span><span id="line-510">    /**</span>
-<span class="source-line-no">511</span><span id="line-511">     *  {@inheritDoc}</span>
-<span class="source-line-no">512</span><span id="line-512">     */</span>
-<span class="source-line-no">513</span><span id="line-513">    @Override</span>
-<span class="source-line-no">514</span><span id="line-514">    public String toString() { return toString( 0, true ); }</span>
-<span class="source-line-no">515</span><span id="line-515">}</span>
-<span class="source-line-no">516</span><span id="line-516">//  class XMLElementImpl</span>
-<span class="source-line-no">517</span><span id="line-517"></span>
-<span class="source-line-no">518</span><span id="line-518">/*</span>
-<span class="source-line-no">519</span><span id="line-519"> *  End of File</span>
-<span class="source-line-no">520</span><span id="line-520"> */</span>
+<span class="source-line-no">460</span><span id="line-460">     */</span>
+<span class="source-line-no">461</span><span id="line-461">    @Override</span>
+<span class="source-line-no">462</span><span id="line-462">    public String toString() { return toString( 0, true ); }</span>
+<span class="source-line-no">463</span><span id="line-463">}</span>
+<span class="source-line-no">464</span><span id="line-464">//  class XMLElementImpl</span>
+<span class="source-line-no">465</span><span id="line-465"></span>
+<span class="source-line-no">466</span><span id="line-466">/*</span>
+<span class="source-line-no">467</span><span id="line-467"> *  End of File</span>
+<span class="source-line-no">468</span><span id="line-468"> */</span>
 
 
 
