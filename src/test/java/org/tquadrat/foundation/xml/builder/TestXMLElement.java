@@ -40,10 +40,10 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link XMLElement}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestXMLElement.java 1076 2023-10-03 18:36:07Z tquadrat $
+ *  @version $Id: TestXMLElement.java 1087 2024-01-06 09:51:27Z tquadrat $
  */
 @SuppressWarnings( "removal" )
-@ClassVersion( sourceVersion = "$Id: TestXMLElement.java 1076 2023-10-03 18:36:07Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestXMLElement.java 1087 2024-01-06 09:51:27Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.TestXMLElement" )
 public class TestXMLElement extends XMLTestBase
 {
@@ -56,10 +56,10 @@ public class TestXMLElement extends XMLTestBase
      *  only for test purposes.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: TestXMLElement.java 1076 2023-10-03 18:36:07Z tquadrat $
+     *  @version $Id: TestXMLElement.java 1087 2024-01-06 09:51:27Z tquadrat $
      */
     @SuppressWarnings( "ClassWithTooManyConstructors" )
-    @ClassVersion( sourceVersion = "$Id: TestXMLElement.java 1076 2023-10-03 18:36:07Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: TestXMLElement.java 1087 2024-01-06 09:51:27Z tquadrat $" )
     private static final class SimpleXMLElement extends org.tquadrat.foundation.xml.builder.spi.XMLElementAdapter
     {
             /*--------------*\
