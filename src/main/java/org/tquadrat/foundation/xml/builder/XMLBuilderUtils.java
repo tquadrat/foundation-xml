@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -198,16 +198,22 @@ public final class XMLBuilderUtils
             \*------------*/
         /**
          *  The new validator.
+         *
+         *  @serial
          */
         private final Predicate<CharSequence> m_NewValidator;
 
         /**
          *  The previous validator.
+         *
+         *  @serial
          */
         private final Predicate<CharSequence> m_OldValidator;
 
         /**
          *  The validator that changed.
+         *
+         *  @serial
          */
         private final Validator m_Validator;
 
@@ -486,13 +492,13 @@ public final class XMLBuilderUtils
     }   //  createProcessingInstruction()
 
     /**
-     *  Creates an XML document that will not have an explicit doc type, the
-     *  root element will be {@code <root>}. The encoding is defined as
-     *  UTF-8.<br>
-     *  <br>Basically, this document would have the DTD
-     *  <pre><code>&lt;!ELEMENT root ANY&gt;</code></pre>.<br>
-     *  <br>The root element allows attributes and children, but will not
-     *  validate them. It also allows text.
+     *  <p>{@summary Creates an XML document that will not have an explicit doc
+     *  type, the root element will be {@code <root>}}. The encoding is defined
+     *  as UTF-8.</p>
+     *  <p>Basically, this document would have the DTD</p>
+     *  <pre><code>&lt;!ELEMENT root ANY&gt;</code></pre>.
+     *  <p>The root element allows attributes and children, but will not
+     *  validate them. It also allows text.</p>
      *
      *  @return The new XML document.
      */
@@ -500,14 +506,13 @@ public final class XMLBuilderUtils
     public static final XMLDocument createXMLDocument() { return new XMLDocumentImpl(); }
 
     /**
-     *  Creates an XML document that uses the given element name for the root
-     *  element.<br>
-     *  <br>The given element name is validated using the method that is
+     *  <p>{@summary Creates an XML document that uses the given element name for the root
+      *  element.}</p>
+     *  <p>The given element name is validated using the method that is
      *  provided by
-     *  {@link #getElementNameValidator()}.<br>
-     *  <br>The created root element allows attributes and children, but will
-     *  not validate them. It also allows text.
-     *  {@link #getElementNameValidator()}.
+     *  {@link #getElementNameValidator()}.</p>
+     *  <p>The created root element allows attributes and children, but will
+     *  not validate them. It also allows text.</p>
      *
      *  @param  elementName The element name.
      *  @return The new XML document.

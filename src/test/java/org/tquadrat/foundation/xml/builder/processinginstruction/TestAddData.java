@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2021 by Thomas Thrien.
+ *  Copyright © 2002-2024 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -73,14 +73,16 @@ public class TestAddData extends XMLTestBase
 
         expected =
             """
-            <?processingInstruction?>""";
+            <?processingInstruction?>
+            """;
         actual = candidate.toString();
         assertEquals( expected, actual );
 
         candidate.addData( "data1" );
         expected =
             """
-            <?processingInstruction data1?>""";
+            <?processingInstruction data1?>
+            """;
         actual = candidate.toString();
         assertEquals( expected, actual );
 
@@ -88,7 +90,8 @@ public class TestAddData extends XMLTestBase
         expected =
             """
             <?processingInstruction data1
-                                    data2?>""";
+                                    data2?>
+            """;
         actual = candidate.toString();
         assertEquals( expected, actual );
 
@@ -99,7 +102,8 @@ public class TestAddData extends XMLTestBase
             <?processingInstruction data1
                                     data2
                                     attribute1='value1'
-                                    attribute2='value2'?>""";
+                                    attribute2='value2'?>
+            """;
         actual = candidate.toString();
         assertEquals( expected, actual );
 
@@ -107,7 +111,8 @@ public class TestAddData extends XMLTestBase
         candidate.setAttribute( "attribute1", "value1" );
         expected =
             """
-            <?processingInstruction attribute1='value1'?>""";
+            <?processingInstruction attribute1='value1'?>
+            """;
         actual = candidate.toString();
         assertEquals( expected, actual );
 
@@ -115,7 +120,8 @@ public class TestAddData extends XMLTestBase
         expected =
             """
             <?processingInstruction attribute1='value1'
-                                    attribute2='value2'?>""";
+                                    attribute2='value2'?>
+            """;
         actual = candidate.toString();
         assertEquals( expected, actual );
 
@@ -126,7 +132,8 @@ public class TestAddData extends XMLTestBase
             <?processingInstruction data1
                                     data2
                                     attribute1='value1'
-                                    attribute2='value2'?>""";
+                                    attribute2='value2'?>
+            """;
         actual = candidate.toString();
         assertEquals( expected, actual );
     }   //  testAddData()

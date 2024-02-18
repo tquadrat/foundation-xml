@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -65,11 +65,15 @@ public final class Namespace implements Serializable, Comparable<Namespace>
         \*------------*/
     /**
      *  The namespace identifier.
+     *
+     *  @serial
      */
     private final URI m_Identifier;
 
     /**
      *  The namespace prefix.
+     *
+     *  @serial
      */
     @SuppressWarnings( "OptionalUsedAsFieldOrParameterType" )
     private final Optional<String> m_Prefix;

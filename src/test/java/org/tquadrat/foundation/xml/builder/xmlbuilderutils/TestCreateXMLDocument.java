@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -83,17 +83,19 @@ public class TestCreateXMLDocument extends XMLTestBase
                    <?xml version='1.0'
                          encoding='UTF-8'
                          standalone='yes'?>
+                   
                    <root/>""";
         assertNotNull( candidate );
         actual = candidate.toString();
         assertEquals( expected, actual );
 
         candidate = createXMLDocument( elementName );
-        expected = """
+        expected = STR."""
                    <?xml version='1.0'
                          encoding='UTF-8'
                          standalone='yes'?>
-                   <""" + elementName + "/>";
+
+                   <\{elementName}/>""";
         assertNotNull( candidate );
         actual = candidate.toString();
         assertEquals( expected, actual );
@@ -104,21 +106,25 @@ public class TestCreateXMLDocument extends XMLTestBase
         assertEquals( expected, actual );
 
         candidate = createXMLDocument( element, ASCII, dtdURI );
-        expected = "<?xml version='1.0'\n" +
-                   "      encoding='" + ASCII.name() + "'\n" +
-                   "      standalone='no'?>\n" +
-                   "<!DOCTYPE " + elementName + " SYSTEM \"" + dtdURI + "\">\n" +
-                   "<" + elementName + "/>";
+        expected = STR."""
+            <?xml version='1.0'
+                  encoding='\{ASCII.name()}'
+                  standalone='no'?>
+
+            <!DOCTYPE \{elementName} SYSTEM "\{dtdURI}">
+            <\{elementName}/>""";
         assertNotNull( candidate );
         actual = candidate.toString();
         assertEquals( expected, actual );
 
         candidate = createXMLDocument( element, ASCII, dtd, dtdURI );
-        expected = "<?xml version='1.0'\n" +
-                   "      encoding='" + ASCII.name() + "'\n" +
-                   "      standalone='no'?>\n" +
-                   "<!DOCTYPE " + elementName + " PUBLIC \"" + dtd + "\" \"" + dtdURI + "\">\n" +
-                   "<" + elementName + "/>";
+        expected = STR."""
+            <?xml version='1.0'
+                  encoding='\{ASCII.name()}'
+                  standalone='no'?>
+
+            <!DOCTYPE \{elementName} PUBLIC "\{dtd}" "\{dtdURI}">
+            <\{elementName}/>""";
         assertNotNull( candidate );
         actual = candidate.toString();
         assertEquals( expected, actual );

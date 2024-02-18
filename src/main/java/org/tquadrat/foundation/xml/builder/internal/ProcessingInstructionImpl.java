@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2023 by Thomas Thrien.
+ *  Copyright © 2002-2024 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -17,10 +17,10 @@
 
 package org.tquadrat.foundation.xml.builder.internal;
 
-import static java.lang.String.format;
 import static java.util.Collections.emptyList;
 import static java.util.Collections.emptySet;
 import static org.apiguardian.api.API.Status.INTERNAL;
+import static org.tquadrat.foundation.lang.CommonConstants.CR;
 import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
@@ -190,10 +190,10 @@ public final class ProcessingInstructionImpl implements ProcessingInstruction
     public final boolean isBlock() { return true; }
 
     /**
-     *  {@inheritDoc}<br>
-     *  <br>The given attribute name is validated using the method that is
+     *  <p>{@inheritDoc}</p>
+     *  <p>The given attribute name is validated using the method that is
      *  provided by
-     *  {@link org.tquadrat.foundation.xml.builder.XMLBuilderUtils#getAttributeNameValidator()}.
+     *  {@link org.tquadrat.foundation.xml.builder.XMLBuilderUtils#getAttributeNameValidator()}.</p>
      */
     @Override
     public final ProcessingInstruction setAttribute( final String name, final CharSequence value, final Optional<? extends CharSequence> append ) throws IllegalArgumentException
@@ -242,9 +242,12 @@ public final class ProcessingInstructionImpl implements ProcessingInstruction
 
         //---* Calculate the indentation *-------------------------------------
         final var indentation = prettyPrint && (indentationLevel > 0) ? repeat( indentationLevel ) : EMPTY_STRING;
+        final var newLine = prettyPrint ? CR : EMPTY_STRING;
 
         //---* Render the element *--------------------------------------------
-        final var retValue = format( "%3$s<?%1$s%2$s?>", m_ElementName, text, indentation );
+        final var retValue = STR."""
+            \{indentation}<?\{m_ElementName}\{text}?>\{newLine}\
+            """;
 
         //---* Done *----------------------------------------------------------
         return retValue;

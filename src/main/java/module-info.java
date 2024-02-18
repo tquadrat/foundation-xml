@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -25,7 +25,6 @@ import org.tquadrat.foundation.xml.stringconverter.DocumentStringConverter;
  *
  *  @todo task.list
  */
-@SuppressWarnings( "rawtypes" )
 module org.tquadrat.foundation.xml
 {
     requires java.base;

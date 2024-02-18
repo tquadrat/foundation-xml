@@ -764,11 +764,11 @@ public abstract class AdvancedContentHandler implements ContentHandler
     public final void setDocumentLocator( final Locator locator ) { m_Locator = requireNonNullArgument( locator, "locator" ); }
 
     /**
-     *  Receives notification of a skipped entity.<br>
-     *  <br>This implementation does nothing by default. Application writers
+     *  <p>{@summary Receives notification of a skipped entity.}</p>
+     *  <p>This implementation does nothing by default. Application writers
      *  may override this method in a subclass to take specific actions for
      *  each processing instruction, such as setting status variables or
-     *  invoking other methods.
+     *  invoking other methods.</p>
      *
      *  @param  name    The name of the skipped entity.
      *  @throws SAXException    Any SAX exception, possibly wrapping another

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2020 by Thomas Thrien.
+ *  Copyright © 2002-2024 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -309,47 +309,47 @@ public class TestProcessingInstructionImpl extends XMLTestBase
         candidate = new ProcessingInstructionImpl();
         assertNotNull( candidate );
         assertEquals( "xml", candidate.getElementName() );
-        assertEquals( "<?xml?>", candidate.toString() );
+        assertEquals( "<?xml?>\n", candidate.toString() );
         assertEquals( "<?xml?>", candidate.toString( 0, false ) );
-        assertEquals( "    <?xml?>", candidate.toString( 1, true ) );
+        assertEquals( "    <?xml?>\n", candidate.toString( 1, true ) );
 
         candidate = new ProcessingInstructionImpl( elementName );
         assertNotNull( candidate );
         assertEquals( elementName, candidate.getElementName() );
-        assertEquals( "<?" + elementName + "?>", candidate.toString() );
+        assertEquals( "<?" + elementName + "?>\n", candidate.toString() );
         assertEquals( "<?" + elementName + "?>", candidate.toString( 0, false ) );
-        assertEquals( "    <?" + elementName + "?>", candidate.toString( 1, true ) );
+        assertEquals( "    <?" + elementName + "?>\n", candidate.toString( 1, true ) );
 
         candidate = new ProcessingInstructionImpl( elementName, null );
         assertNotNull( candidate );
         assertEquals( elementName, candidate.getElementName() );
-        assertEquals( "<?" + elementName + "?>", candidate.toString() );
-        assertEquals( "    <?" + elementName + "?>", candidate.toString( 1, true ) );
+        assertEquals( "<?" + elementName + "?>\n", candidate.toString() );
+        assertEquals( "    <?" + elementName + "?>\n", candidate.toString( 1, true ) );
 
         candidate = new ProcessingInstructionImpl( elementName, EMPTY_CHARSEQUENCE );
         assertNotNull( candidate );
         assertEquals( elementName, candidate.getElementName() );
-        assertEquals( "<?" + elementName + "?>", candidate.toString() );
-        assertEquals( "    <?" + elementName + "?>", candidate.toString( 1, true ) );
+        assertEquals( "<?" + elementName + "?>\n", candidate.toString() );
+        assertEquals( "    <?" + elementName + "?>\n", candidate.toString( 1, true ) );
 
         candidate = new ProcessingInstructionImpl( elementName, data );
         assertNotNull( candidate );
         assertEquals( elementName, candidate.getElementName() );
-        assertEquals( "<?" + elementName + " " + data + "?>", candidate.toString() );
-        assertEquals( "    <?" + elementName + " " + data + "?>", candidate.toString( 1, true ) );
+        assertEquals( "<?" + elementName + " " + data + "?>\n", candidate.toString() );
+        assertEquals( "    <?" + elementName + " " + data + "?>\n", candidate.toString( 1, true ) );
 
         candidate = new ProcessingInstructionImpl( elementName );
         assertNotNull( candidate );
         assertEquals( elementName, candidate.getElementName() );
         candidate.setAttribute( "attribute1", true );
-        assertEquals( "<?" + elementName + " attribute1='true'?>", candidate.toString() );
+        assertEquals( "<?" + elementName + " attribute1='true'?>\n", candidate.toString() );
         assertEquals( "<?" + elementName + " attribute1='true'?>", candidate.toString( 0, false ) );
-        assertEquals( "    <?" + elementName + " attribute1='true'?>", candidate.toString( 1, true ) );
+        assertEquals( "    <?" + elementName + " attribute1='true'?>\n", candidate.toString( 1, true ) );
 
         candidate.setAttribute( "attribute2", true );
-        assertEquals( "<?" + elementName + " attribute1='true'\n                        attribute2='true'?>", candidate.toString() );
+        assertEquals( "<?" + elementName + " attribute1='true'\n                        attribute2='true'?>\n", candidate.toString() );
         assertEquals( "<?" + elementName + " attribute1='true' attribute2='true'?>", candidate.toString( 0, false ) );
-        assertEquals( "    <?" + elementName + " attribute1='true'\n                            attribute2='true'?>", candidate.toString( 1, true ) );
+        assertEquals( "    <?" + elementName + " attribute1='true'\n                            attribute2='true'?>\n", candidate.toString( 1, true ) );
     }   //  testToString()
 }
 //  class TestProcessingInstructionImpl
