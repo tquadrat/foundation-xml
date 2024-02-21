@@ -38,12 +38,12 @@ import org.tquadrat.foundation.xml.builder.spi.InvalidXMLNameException;
  *  The definition of an XML namespace entry.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Namespace.java 1071 2023-09-30 01:49:32Z tquadrat $
+ *  @version $Id: Namespace.java 1101 2024-02-18 00:18:48Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: Namespace.java 1071 2023-09-30 01:49:32Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Namespace.java 1101 2024-02-18 00:18:48Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public final class Namespace implements Serializable, Comparable<Namespace>
 {

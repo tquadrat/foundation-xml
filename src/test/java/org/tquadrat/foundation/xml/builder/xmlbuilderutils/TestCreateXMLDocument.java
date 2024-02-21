@@ -46,9 +46,9 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link XMLBuilderUtils}
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestCreateXMLDocument.java 1076 2023-10-03 18:36:07Z tquadrat $
+ *  @version $Id: TestCreateXMLDocument.java 1101 2024-02-18 00:18:48Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestCreateXMLDocument.java 1076 2023-10-03 18:36:07Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestCreateXMLDocument.java 1101 2024-02-18 00:18:48Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.xmlbuilderutils.TestCreateXMLDocument" )
 public class TestCreateXMLDocument extends XMLTestBase
 {

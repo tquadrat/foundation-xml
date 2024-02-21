@@ -48,12 +48,12 @@ import org.tquadrat.foundation.xml.builder.spi.InvalidXMLNameException;
  *  {@link ProcessingInstruction}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ProcessingInstructionImpl.java 1071 2023-09-30 01:49:32Z tquadrat $
+ *  @version $Id: ProcessingInstructionImpl.java 1101 2024-02-18 00:18:48Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ProcessingInstructionImpl.java 1071 2023-09-30 01:49:32Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ProcessingInstructionImpl.java 1101 2024-02-18 00:18:48Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.5" )
 public final class ProcessingInstructionImpl implements ProcessingInstruction
 {

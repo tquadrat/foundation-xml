@@ -37,9 +37,9 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link XMLBuilderUtils}
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestComposeXMLHeader.java 1076 2023-10-03 18:36:07Z tquadrat $
+ *  @version $Id: TestComposeXMLHeader.java 1101 2024-02-18 00:18:48Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestComposeXMLHeader.java 1076 2023-10-03 18:36:07Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestComposeXMLHeader.java 1101 2024-02-18 00:18:48Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.xmlbuilderutils.TestComposeXMLHeader" )
 public class TestComposeXMLHeader extends XMLTestBase
 {

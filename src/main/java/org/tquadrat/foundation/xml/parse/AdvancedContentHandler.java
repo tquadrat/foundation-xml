@@ -87,13 +87,13 @@ import org.xml.sax.helpers.LocatorImpl;
  *  information that the b element was embedded in between is lost.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: AdvancedContentHandler.java 1086 2024-01-05 23:18:33Z tquadrat $
+ *  @version $Id: AdvancedContentHandler.java 1101 2024-02-18 00:18:48Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "AbstractClassWithoutAbstractMethods" )
-@ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1086 2024-01-05 23:18:33Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1101 2024-02-18 00:18:48Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public abstract class AdvancedContentHandler implements ContentHandler
 {
@@ -105,13 +105,13 @@ public abstract class AdvancedContentHandler implements ContentHandler
      *  of an XML element.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: AdvancedContentHandler.java 1086 2024-01-05 23:18:33Z tquadrat $
+     *  @version $Id: AdvancedContentHandler.java 1101 2024-02-18 00:18:48Z tquadrat $
      *  @since 0.0.5
      *
      *  @UMLGraph.link
      */
     @SuppressWarnings( {"InnerClassMayBeStatic", "ProtectedInnerClass"} )
-    @ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1086 2024-01-05 23:18:33Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1101 2024-02-18 00:18:48Z tquadrat $" )
     @API( status = STABLE, since = "0.1.0" )
     protected static final class Element
     {
@@ -279,14 +279,14 @@ public abstract class AdvancedContentHandler implements ContentHandler
      *  element.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: AdvancedContentHandler.java 1086 2024-01-05 23:18:33Z tquadrat $
+     *  @version $Id: AdvancedContentHandler.java 1101 2024-02-18 00:18:48Z tquadrat $
      *  @since 0.1.0
      *
      *  @UMLGraph.link
      */
     @SuppressWarnings( {"ProtectedInnerClass"} )
     @FunctionalInterface
-    @ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1086 2024-01-05 23:18:33Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1101 2024-02-18 00:18:48Z tquadrat $" )
     @API( status = MAINTAINED, since = "0.1.0" )
     protected interface HandlerMethod
     {
