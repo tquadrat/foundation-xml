@@ -7,7 +7,7 @@
      version='1.1'
      baseProfile='full'
      width='949.000'
-     height='805.000'>
+     height='794.000'>
     <defs>
         <style><![CDATA[
             line
@@ -144,8 +144,8 @@
                           x2='736.000'
                           y2='42.000'
                           class='separator'/>
-                    <text y='38.000'
-                          class='static final'>+ EMPTY_StAXParser_ARRAY:org.tquadrat.foundation.xml.parse.StAXParser[]</text>
+                    <text x='5.000'
+                          y='38.000'/>
                     <text x='5.000'
                           y='55.000'>+ StAXParser()</text>
                     <text x='5.000'
@@ -175,7 +175,7 @@
         </symbol>
         <clipPath id='ID000002'>
             <rect class='otherClass'
-                  height='183.000'
+                  height='172.000'
                   width='874.000'
                   x='0.000'
                   y='8.000'/>
@@ -186,7 +186,7 @@
                     <rect x='0.000'
                           y='8.000'
                           width='874.000'
-                          height='183.000'
+                          height='172.000'
                           class='otherClass'/>
                     <line x1='0.000'
                           y1='36.000'
@@ -200,35 +200,33 @@
                           y='32.000'
                           class='abstract'>StAXParserBase</text>
                     <line x1='0.000'
-                          y1='108.000'
+                          y1='97.000'
                           x2='874.000'
-                          y2='108.000'
+                          y2='97.000'
                           class='separator'/>
                     <text y='49.000'
-                          class='static final'>+ EMPTY_StAXParserBase_ARRAY:org.tquadrat.foundation.xml.parse.spi.StAXParserBase[]</text>
-                    <text y='60.000'
                           class='static final'>+ MSG_NoHandler:java.lang.String</text>
-                    <text y='71.000'
+                    <text y='60.000'
                           class='static final'>+ MSG_UnexpectedTag:java.lang.String</text>
-                    <text y='82.000'>- m_DocumentTag:java.util.Optional&lt;java.lang.String&gt;</text>
-                    <text y='93.000'
+                    <text y='71.000'>- m_DocumentTag:java.util.Optional&lt;java.lang.String&gt;</text>
+                    <text y='82.000'
                           class='final'>- m_Handlers:java.util.Map&lt;java.lang.String,org.tquadrat.foundation.xml.parse.XMLParseEventHandler&lt;?&gt;&gt;</text>
-                    <text y='104.000'>- m_Target:T</text>
+                    <text y='93.000'>- m_Target:T</text>
                     <text x='5.000'
-                          y='121.000'># StAXParserBase()</text>
+                          y='110.000'># StAXParserBase()</text>
                     <text x='5.000'
-                          y='132.000'># StAXParserBase(target:T)</text>
+                          y='121.000'># StAXParserBase(target:T)</text>
                     <text x='5.000'
-                          y='143.000'># parse(eventReader:javax.xml.stream.XMLEventReader):T</text>
+                          y='132.000'># parse(eventReader:javax.xml.stream.XMLEventReader):T</text>
                     <text x='5.000'
-                          y='154.000'># registerElementHandler(elementName:java.lang.String,isDocument:boolean,handler:org.tquadrat.foundation.xml.parse.XMLParseEventHandler&lt;?&gt;):void</text>
+                          y='143.000'># registerElementHandler(elementName:java.lang.String,isDocument:boolean,handler:org.tquadrat.foundation.xml.parse.XMLParseEventHandler&lt;?&gt;):void</text>
                     <text x='5.000'
-                          y='165.000'
+                          y='154.000'
                           class='static'># reportUnexpectedTag(elementName:java.lang.String,location:javax.xml.stream.Location):void</text>
                     <text x='5.000'
-                          y='176.000'>- retrieveHandler(elementName:java.lang.String):org.tquadrat.foundation.xml.parse.XMLParseEventHandler&lt;?&gt;</text>
+                          y='165.000'>- retrieveHandler(elementName:java.lang.String):org.tquadrat.foundation.xml.parse.XMLParseEventHandler&lt;?&gt;</text>
                     <text x='5.000'
-                          y='187.000'>- setTarget(target:T):void</text>
+                          y='176.000'>- setTarget(target:T):void</text>
                 </g>
                 <g transform='translate(849.000 0.000)'>
                     <rect x='0.000'
@@ -306,7 +304,7 @@
         </symbol>
     </defs>
     <path class='inheritance'
-          d='M462.000,596.000 L462.000,488.000'
+          d='M462.000,585.000 L462.000,477.000'
           marker-end='url(#inheritance)'/>
     <path class='inheritance'
           d='M462.000,305.000 c0.000,-93.000,12.500,0.000,12.500,-93.000 v-15'
@@ -318,6 +316,6 @@
          y='297.000'
          xlink:href='#org.tquadrat.foundation.xml.parse.spi.StAXParserBase'/>
     <use x='94.000'
-         y='588.000'
+         y='577.000'
          xlink:href='#org.tquadrat.foundation.xml.parse.StAXParser'/>
 </svg>

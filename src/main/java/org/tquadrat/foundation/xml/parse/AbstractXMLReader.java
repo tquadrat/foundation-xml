@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2025 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -25,12 +25,12 @@ import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.util.stringconverter.URLStringConverter;
 import org.xml.sax.Attributes;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.DTDHandler;
@@ -46,22 +46,22 @@ import org.xml.sax.helpers.AttributesImpl;
 import org.xml.sax.helpers.LocatorImpl;
 
 /**
- *  This class is an abstract base implementation for a XMLReader. Use this
- *  class as a base class for SAX based parsers that will parse other formats
- *  than XML. This is quite useful in combination with XSLT. Refer to the
- *  description for the abstract method
+ *  <p>{@summary This class is an abstract base implementation for a
+ *  {@link XMLReader}.} Use this class as a base class for SAX based parsers
+ *  that will parse other formats than XML. This is quite useful in combination
+ *  with XSLT. Refer to the description for the abstract method
  *  {@link #process(BufferedReader) process()}
  *  for a brief run-through how to use this class.
  *
  *  @see "'Java and XSLT' from Eric M. Burke, O'Reilly 2001"
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: AbstractXMLReader.java 1030 2022-04-06 13:42:02Z tquadrat $
+ *  @version $Id: AbstractXMLReader.java 1152 2025-12-25 09:51:42Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: AbstractXMLReader.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: AbstractXMLReader.java 1152 2025-12-25 09:51:42Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public abstract class AbstractXMLReader implements XMLReader
 {
@@ -184,7 +184,7 @@ public abstract class AbstractXMLReader implements XMLReader
                  * qualified URL to a stream somewhere. Otherwise, it will be
                  * translated using that entity resolver.
                  */
-                final var url = new URL( input.getSystemId() );
+                final var url = URLStringConverter.INSTANCE.fromString( input.getSystemId() );
                 retValue = new BufferedReader( nonNull( m_Encoding ) ? new InputStreamReader( url.openStream(), m_Encoding ) : new InputStreamReader( url.openStream(), UTF8 ) );
             }
         }
@@ -302,29 +302,29 @@ public abstract class AbstractXMLReader implements XMLReader
     protected final Locator getLocator() { return m_Locator; }
 
     /**
-     *  Parses an input data source.<br>
-     *  <br>The application can use this method to instruct the XML reader to
+     *  <p>{@summary Parses an input data source.}</p>
+     *  <p>The application can use this method to instruct the XML reader to
      *  begin parsing a document from any valid input source (a character
-     *  stream, a byte stream, or a URI).<br>
-     *  <br>Applications may not invoke this method while a parse is in
-     *  progress (they should create a new XMLReader instead for each nested
-     *  document). Once a parse is complete, an application may reuse the same
-     *  XMLReader object, possibly with a different input source. Configuration
-     *  of the XMLReader object (such as handler bindings and values
-     *  established for feature flags and properties) is unchanged by
-     *  completion of a parse, unless the definition of that aspect of the
-     *  configuration explicitly specifies other behavior (For example,
-     *  feature flags or properties exposing characteristics of the document
-     *  being parsed).<br>
-     *  <br>During the parse, the XMLReader will provide information about the
-     *  document through the registered event handlers.<br>
-     *  <br>This method is synchronous: it will not return until parsing has
+     *  stream, a byte stream, or a URI).</p>
+     *  <p>Applications may not invoke this method while a parse is in
+     *  progress (they should create a new {@code XMLReader} instead for each
+     *  nested document). Once a parse is complete, an application may reuse
+     *  the same {@code XMLReader} object, possibly with a different input
+     *  source. Configuration of the {@code XMLReader} object (such as handler
+     *  bindings and values established for feature flags and properties) is
+     *  unchanged by completion of a parse, unless the definition of that
+     *  aspect of the configuration explicitly specifies other behaviour; for
+     *  example, feature flags or properties exposing characteristics of the
+     *  document being parsed.</p>
+     *  <p>During the parse, the {@code XMLReader} will provide information
+     *  about the document through the registered event handlers.</p>
+     *  <p>This method is synchronous: it will not return until parsing has
      *  ended. If a client application wants to terminate parsing early, it
-     *  should throw an exception.<br>
-     *  <br>This implementation calls
+     *  should throw an exception.</p>
+     *  <p>This implementation calls
      *  {@link #process(BufferedReader) process()}
-     *  which is the user provided implementation for the parser.<br>
-     *  <br>If no content handler is set, this method returns immediately
+     *  which is the user provided implementation for the parser.</p>
+     *  <p>If no content handler is set, this method returns immediately
      *  without any error message.
      *
      *  @param  input   The input source for the top-level of the document.
@@ -549,16 +549,16 @@ public abstract class AbstractXMLReader implements XMLReader
     }   //  setLocation()
 
     /**
-     *  Sets the value of a property. Usually, the property name is any
-     *  fully-qualified URI. It is possible for an XMLReader to recognize a
-     *  property name but to be unable to change the current value. Some
-     *  property values may be immutable or mutable only in specific contexts,
-     *  such as before, during, or after a parse.<br>
-     *  <br>XMLReaders are not required to recognize setting any specific
-     *  property names, though a core set is defined by SAX2. But only this is
-     *  not implemented by this implementation.<br>
-     *  <br>This method is also the standard mechanism for setting extended
-     *  handlers.
+     *  <p>{@summary Sets the value of a property. Usually, the property name
+     *  is any fully-qualified URI.} It is possible for an {@code XMLReader} to
+     *  recognise a property name but to be unable to change the current value.
+     *  Some property values may be immutable or mutable only in specific
+     *  contexts, such as before, during, or after a parse.</p>
+     *  <p>{@code XMLReader}s are not required to recognise setting any
+     *  specific property names, though a core set is defined by SAX2. But only
+     *  this is not implemented by this implementation.</p>
+     *  <p>This method is also the standard mechanism for setting extended
+     *  handlers.</p>
      *
      *  @param name The property name, which is a fully-qualified URI.
      *  @param value    The requested value for the property.

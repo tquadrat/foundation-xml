@@ -6,8 +6,8 @@
      xmlns:xlink="http://www.w3.org/1999/xlink"
      version='1.1'
      baseProfile='full'
-     width='1038.000'
-     height='858.000'>
+     width='2724.000'
+     height='1196.000'>
     <defs>
         <style><![CDATA[
             line
@@ -222,6 +222,74 @@
         </symbol>
         <clipPath id='ID000002'>
             <rect class='externalClass'
+                  height='238.000'
+                  width='694.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.xml.sax.helpers.DefaultHandler'>
+            <g>
+                <g clip-path='url(#ID000002)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='694.000'
+                          height='238.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='694.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='305.000'
+                          y='13.000'>DefaultHandler</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='694.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='30.000'/>
+                    <text x='5.000'
+                          y='47.000'>+ DefaultHandler()</text>
+                    <text x='5.000'
+                          y='58.000'>+ resolveEntity(arg0:java.lang.String,arg1:java.lang.String):org.xml.sax.InputSource</text>
+                    <text x='5.000'
+                          y='69.000'>+ notationDecl(arg0:java.lang.String,arg1:java.lang.String,arg2:java.lang.String):void</text>
+                    <text x='5.000'
+                          y='80.000'>+ unparsedEntityDecl(arg0:java.lang.String,arg1:java.lang.String,arg2:java.lang.String,arg3:java.lang.String):void</text>
+                    <text x='5.000'
+                          y='91.000'>+ setDocumentLocator(arg0:org.xml.sax.Locator):void</text>
+                    <text x='5.000'
+                          y='102.000'>+ startDocument():void</text>
+                    <text x='5.000'
+                          y='113.000'>+ endDocument():void</text>
+                    <text x='5.000'
+                          y='124.000'>+ startPrefixMapping(arg0:java.lang.String,arg1:java.lang.String):void</text>
+                    <text x='5.000'
+                          y='135.000'>+ endPrefixMapping(arg0:java.lang.String):void</text>
+                    <text x='5.000'
+                          y='146.000'>+ startElement(arg0:java.lang.String,arg1:java.lang.String,arg2:java.lang.String,arg3:org.xml.sax.Attributes):void</text>
+                    <text x='5.000'
+                          y='157.000'>+ endElement(arg0:java.lang.String,arg1:java.lang.String,arg2:java.lang.String):void</text>
+                    <text x='5.000'
+                          y='168.000'>+ characters(arg0:char[],arg1:int,arg2:int):void</text>
+                    <text x='5.000'
+                          y='179.000'>+ ignorableWhitespace(arg0:char[],arg1:int,arg2:int):void</text>
+                    <text x='5.000'
+                          y='190.000'>+ processingInstruction(arg0:java.lang.String,arg1:java.lang.String):void</text>
+                    <text x='5.000'
+                          y='201.000'>+ skippedEntity(arg0:java.lang.String):void</text>
+                    <text x='5.000'
+                          y='212.000'>+ warning(arg0:org.xml.sax.SAXParseException):void</text>
+                    <text x='5.000'
+                          y='223.000'>+ error(arg0:org.xml.sax.SAXParseException):void</text>
+                    <text x='5.000'
+                          y='234.000'>+ fatalError(arg0:org.xml.sax.SAXParseException):void</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000003'>
+            <rect class='externalClass'
                   height='172.000'
                   width='244.000'
                   x='0.000'
@@ -229,7 +297,7 @@
         </clipPath>
         <symbol id='java.lang.Object'>
             <g>
-                <g clip-path='url(#ID000002)'>
+                <g clip-path='url(#ID000003)'>
                     <rect x='0.000'
                           y='0.000'
                           width='244.000'
@@ -276,7 +344,88 @@
                 </g>
             </g>
         </symbol>
-        <clipPath id='ID000003'>
+        <clipPath id='ID000004'>
+            <rect class='externalClass'
+                  height='62.000'
+                  width='514.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.xml.sax.EntityResolver'>
+            <g>
+                <g clip-path='url(#ID000004)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='514.000'
+                          height='62.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='28.000'
+                          x2='514.000'
+                          y2='28.000'
+                          class='separator'/>
+                    <text x='230.600'
+                          y='13.000'
+                          class='stereotype'>&#xAB;Interface&#xBB;</text>
+                    <text x='215.000'
+                          y='24.000'
+                          class='abstract'>EntityResolver</text>
+                    <line x1='0.000'
+                          y1='45.000'
+                          x2='514.000'
+                          y2='45.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='41.000'/>
+                    <text x='5.000'
+                          y='58.000'
+                          class='abstract'>+ resolveEntity(arg0:java.lang.String,arg1:java.lang.String):org.xml.sax.InputSource</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000005'>
+            <rect class='externalClass'
+                  height='73.000'
+                  width='694.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.xml.sax.DTDHandler'>
+            <g>
+                <g clip-path='url(#ID000005)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='694.000'
+                          height='73.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='28.000'
+                          x2='694.000'
+                          y2='28.000'
+                          class='separator'/>
+                    <text x='320.600'
+                          y='13.000'
+                          class='stereotype'>&#xAB;Interface&#xBB;</text>
+                    <text x='317.000'
+                          y='24.000'
+                          class='abstract'>DTDHandler</text>
+                    <line x1='0.000'
+                          y1='45.000'
+                          x2='694.000'
+                          y2='45.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='41.000'/>
+                    <text x='5.000'
+                          y='58.000'
+                          class='abstract'>+ notationDecl(arg0:java.lang.String,arg1:java.lang.String,arg2:java.lang.String):void</text>
+                    <text x='5.000'
+                          y='69.000'
+                          class='abstract'>+ unparsedEntityDecl(arg0:java.lang.String,arg1:java.lang.String,arg2:java.lang.String,arg3:java.lang.String):void</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000006'>
             <rect class='externalClass'
                   height='183.000'
                   width='694.000'
@@ -285,7 +434,7 @@
         </clipPath>
         <symbol id='org.xml.sax.ContentHandler'>
             <g>
-                <g clip-path='url(#ID000003)'>
+                <g clip-path='url(#ID000006)'>
                     <rect x='0.000'
                           y='0.000'
                           width='694.000'
@@ -347,20 +496,89 @@
                 </g>
             </g>
         </symbol>
+        <clipPath id='ID000007'>
+            <rect class='externalClass'
+                  height='84.000'
+                  width='328.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.xml.sax.ErrorHandler'>
+            <g>
+                <g clip-path='url(#ID000007)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='328.000'
+                          height='84.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='28.000'
+                          x2='328.000'
+                          y2='28.000'
+                          class='separator'/>
+                    <text x='137.600'
+                          y='13.000'
+                          class='stereotype'>&#xAB;Interface&#xBB;</text>
+                    <text x='128.000'
+                          y='24.000'
+                          class='abstract'>ErrorHandler</text>
+                    <line x1='0.000'
+                          y1='45.000'
+                          x2='328.000'
+                          y2='45.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='41.000'/>
+                    <text x='5.000'
+                          y='58.000'
+                          class='abstract'>+ warning(arg0:org.xml.sax.SAXParseException):void</text>
+                    <text x='5.000'
+                          y='69.000'
+                          class='abstract'>+ error(arg0:org.xml.sax.SAXParseException):void</text>
+                    <text x='5.000'
+                          y='80.000'
+                          class='abstract'>+ fatalError(arg0:org.xml.sax.SAXParseException):void</text>
+                </g>
+            </g>
+        </symbol>
     </defs>
     <path class='inheritance'
-          d='M494.000,308.000 c0.000,-96.000,-347.000,0.000,-347.000,-96.000 v-15'
+          d='M1362.000,646.000 L1362.000,546.000'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M1262.000,308.000 c0.000,-96.000,-1115.000,0.000,-1115.000,-96.000 v-15'
           marker-end='url(#inheritance)'/>
     <path class='implementation'
-          d='M544.000,308.000 c0.000,-85.000,122.000,0.000,122.000,-85.000 v-15'
+          d='M1312.000,308.000 c0.000,-206.000,-736.000,0.000,-736.000,-206.000 v-15'
+          marker-end='url(#implementation)'/>
+    <path class='implementation'
+          d='M1362.000,308.000 c0.000,-195.000,-132.000,0.000,-132.000,-195.000 v-15'
+          marker-end='url(#implementation)'/>
+    <path class='implementation'
+          d='M1412.000,308.000 c0.000,-85.000,562.000,0.000,562.000,-85.000 v-15'
+          marker-end='url(#implementation)'/>
+    <path class='implementation'
+          d='M1462.000,308.000 c0.000,-184.000,1073.000,0.000,1073.000,-184.000 v-15'
           marker-end='url(#implementation)'/>
     <use x='25.000'
          y='25.000'
          xlink:href='#java.lang.Object'/>
     <use x='319.000'
          y='25.000'
+         xlink:href='#org.xml.sax.EntityResolver'/>
+    <use x='883.000'
+         y='25.000'
+         xlink:href='#org.xml.sax.DTDHandler'/>
+    <use x='1627.000'
+         y='25.000'
          xlink:href='#org.xml.sax.ContentHandler'/>
-    <use x='121.000'
+    <use x='2371.000'
+         y='25.000'
+         xlink:href='#org.xml.sax.ErrorHandler'/>
+    <use x='1015.000'
          y='308.000'
+         xlink:href='#org.xml.sax.helpers.DefaultHandler'/>
+    <use x='964.000'
+         y='646.000'
          xlink:href='#org.tquadrat.foundation.xml.parse.AdvancedContentHandler'/>
 </svg>

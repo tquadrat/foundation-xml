@@ -48,12 +48,12 @@ import org.tquadrat.foundation.xml.builder.spi.InvalidXMLNameException;
  *  {@link ProcessingInstruction}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ProcessingInstructionImpl.java 1101 2024-02-18 00:18:48Z tquadrat $
+ *  @version $Id: ProcessingInstructionImpl.java 1150 2025-09-29 09:14:54Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ProcessingInstructionImpl.java 1101 2024-02-18 00:18:48Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ProcessingInstructionImpl.java 1150 2025-09-29 09:14:54Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.5" )
 public final class ProcessingInstructionImpl implements ProcessingInstruction
 {
@@ -245,9 +245,11 @@ public final class ProcessingInstructionImpl implements ProcessingInstruction
         final var newLine = prettyPrint ? CR : EMPTY_STRING;
 
         //---* Render the element *--------------------------------------------
-        final var retValue = STR."""
-            \{indentation}<?\{m_ElementName}\{text}?>\{newLine}\
-            """;
+//        final var retValue = STR."""
+//            \{indentation}<?\{m_ElementName}\{text}?>\{newLine}\
+//            """;
+
+        final var retValue = "%3$s<?%1$s%2$s?>%4$s".formatted( m_ElementName, text, indentation, newLine );
 
         //---* Done *----------------------------------------------------------
         return retValue;

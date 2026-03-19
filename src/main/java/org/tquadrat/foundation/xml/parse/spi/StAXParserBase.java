@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2025 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -55,25 +55,19 @@ import org.xml.sax.SAXParseException;
  *  @param  <T> The type of the target data structure.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: StAXParserBase.java 1071 2023-09-30 01:49:32Z tquadrat $
+ *  @version $Id: StAXParserBase.java 1152 2025-12-25 09:51:42Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "AbstractClassWithoutAbstractMethods" )
-@ClassVersion( sourceVersion = "$Id: StAXParserBase.java 1071 2023-09-30 01:49:32Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: StAXParserBase.java 1152 2025-12-25 09:51:42Z tquadrat $" )
 @API( status = EXPERIMENTAL, since = "0.0.5" )
 public abstract class StAXParserBase<T>
 {
         /*-----------*\
     ====** Constants **========================================================
         \*-----------*/
-    /**
-     *  An empty array of {@code StAXParserBase} objects.
-     */
-    @SuppressWarnings( "rawtypes" )
-    public static final StAXParserBase [] EMPTY_StAXParserBase_ARRAY = new StAXParserBase [0];
-
     /**
      *  The message for missing handlers: {@value}.
      */

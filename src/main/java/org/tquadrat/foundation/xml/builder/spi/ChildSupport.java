@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2025 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -60,12 +60,12 @@ import org.tquadrat.foundation.xml.builder.internal.Text;
  *  {@link #addChild(Element)}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ChildSupport.java 1071 2023-09-30 01:49:32Z tquadrat $
+ *  @version $Id: ChildSupport.java 1151 2025-10-01 21:32:15Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ChildSupport.java 1071 2023-09-30 01:49:32Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ChildSupport.java 1151 2025-10-01 21:32:15Z tquadrat $" )
 @API( status = MAINTAINED, since = "0.0.5" )
 public final class ChildSupport
 {
@@ -349,7 +349,7 @@ public final class ChildSupport
      *  {@linkplain #m_Owner owner's}
      *  {@linkplain Element#getElementName() element name},
      *  or the child's element name is explicitly configured. Obviously, it is
-     *  not valid, when no children (other then text or comments) are allowed
+     *  not valid, when no children (other than text or comments) are allowed
      *  at all.</p>
      *
      *  @param  child   The child to check for.

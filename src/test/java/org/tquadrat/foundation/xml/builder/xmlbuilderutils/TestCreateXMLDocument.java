@@ -46,9 +46,9 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link XMLBuilderUtils}
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestCreateXMLDocument.java 1101 2024-02-18 00:18:48Z tquadrat $
+ *  @version $Id: TestCreateXMLDocument.java 1150 2025-09-29 09:14:54Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestCreateXMLDocument.java 1101 2024-02-18 00:18:48Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestCreateXMLDocument.java 1150 2025-09-29 09:14:54Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.xmlbuilderutils.TestCreateXMLDocument" )
 public class TestCreateXMLDocument extends XMLTestBase
 {
@@ -90,12 +90,18 @@ public class TestCreateXMLDocument extends XMLTestBase
         assertEquals( expected, actual );
 
         candidate = createXMLDocument( elementName );
-        expected = STR."""
+//        expected = STR."""
+//                   <?xml version='1.0'
+//                         encoding='UTF-8'
+//                         standalone='yes'?>
+//
+//                   <\{elementName}/>""";
+        expected = """
                    <?xml version='1.0'
                          encoding='UTF-8'
                          standalone='yes'?>
 
-                   <\{elementName}/>""";
+                   <%s/>""".formatted( elementName );
         assertNotNull( candidate );
         actual = candidate.toString();
         assertEquals( expected, actual );
@@ -106,25 +112,39 @@ public class TestCreateXMLDocument extends XMLTestBase
         assertEquals( expected, actual );
 
         candidate = createXMLDocument( element, ASCII, dtdURI );
-        expected = STR."""
+//        expected = STR."""
+//            <?xml version='1.0'
+//                  encoding='\{ASCII.name()}'
+//                  standalone='no'?>
+//
+//            <!DOCTYPE \{elementName} SYSTEM "\{dtdURI}">
+//            <\{elementName}/>""";
+        expected = """
             <?xml version='1.0'
-                  encoding='\{ASCII.name()}'
+                  encoding='%2$s'
                   standalone='no'?>
 
-            <!DOCTYPE \{elementName} SYSTEM "\{dtdURI}">
-            <\{elementName}/>""";
+            <!DOCTYPE %1$s SYSTEM "%3$s">
+            <%1$s/>""".formatted( elementName, ASCII.name(), dtdURI );
         assertNotNull( candidate );
         actual = candidate.toString();
         assertEquals( expected, actual );
 
         candidate = createXMLDocument( element, ASCII, dtd, dtdURI );
-        expected = STR."""
+//        expected = STR."""
+//            <?xml version='1.0'
+//                  encoding='\{ASCII.name()}'
+//                  standalone='no'?>
+//
+//            <!DOCTYPE \{elementName} PUBLIC "\{dtd}" "\{dtdURI}">
+//            <\{elementName}/>""";
+        expected = """
             <?xml version='1.0'
-                  encoding='\{ASCII.name()}'
+                  encoding='%2$s'
                   standalone='no'?>
 
-            <!DOCTYPE \{elementName} PUBLIC "\{dtd}" "\{dtdURI}">
-            <\{elementName}/>""";
+            <!DOCTYPE %1$s PUBLIC "%3$s" "%4$s">
+            <%1$s/>""".formatted( elementName, ASCII.name(), dtd, dtdURI );
         assertNotNull( candidate );
         actual = candidate.toString();
         assertEquals( expected, actual );

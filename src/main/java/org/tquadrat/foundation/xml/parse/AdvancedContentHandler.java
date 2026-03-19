@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2025 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -59,8 +59,8 @@ import org.xml.sax.helpers.LocatorImpl;
  *  {@link org.xml.sax.helpers.DefaultHandler#endElement(String,String,String) endElement()},
  *  and
  *  {@link org.xml.sax.helpers.DefaultHandler#startElement(String,String,String,Attributes) startElement()}
- *  only handlers for the elements have to implemented; after registration of
- *  these handlers using
+ *  only handlers for the elements have to be implemented; after registration
+ *  of these handlers using
  *  {@link #registerElementHandler(String, HandlerMethod)}
  *  these handler methods will be called automatically by the default
  *  implementations of
@@ -87,15 +87,15 @@ import org.xml.sax.helpers.LocatorImpl;
  *  information that the b element was embedded in between is lost.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: AdvancedContentHandler.java 1101 2024-02-18 00:18:48Z tquadrat $
+ *  @version $Id: AdvancedContentHandler.java 1157 2025-12-31 14:05:44Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@SuppressWarnings( "AbstractClassWithoutAbstractMethods" )
-@ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1101 2024-02-18 00:18:48Z tquadrat $" )
+@SuppressWarnings( "AbstractClassExtendsConcreteClass" )
+@ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1157 2025-12-31 14:05:44Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
-public abstract class AdvancedContentHandler implements ContentHandler
+public abstract class AdvancedContentHandler extends DefaultHandler
 {
         /*---------------*\
     ====** Inner Classes **====================================================
@@ -105,13 +105,13 @@ public abstract class AdvancedContentHandler implements ContentHandler
      *  of an XML element.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: AdvancedContentHandler.java 1101 2024-02-18 00:18:48Z tquadrat $
+     *  @version $Id: AdvancedContentHandler.java 1157 2025-12-31 14:05:44Z tquadrat $
      *  @since 0.0.5
      *
      *  @UMLGraph.link
      */
     @SuppressWarnings( {"InnerClassMayBeStatic", "ProtectedInnerClass"} )
-    @ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1101 2024-02-18 00:18:48Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1157 2025-12-31 14:05:44Z tquadrat $" )
     @API( status = STABLE, since = "0.1.0" )
     protected static final class Element
     {
@@ -271,6 +271,12 @@ public abstract class AdvancedContentHandler implements ContentHandler
          *      that holds the namespace URI of the element.
          */
         public final Optional<URI> getURI() { return Optional.ofNullable( m_URI ); }
+
+        /**
+         *  {@inheritDoc}
+         */
+        @Override
+        public final String toString() { return getQName(); }
     }
     //  class Element
 
@@ -279,14 +285,14 @@ public abstract class AdvancedContentHandler implements ContentHandler
      *  element.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: AdvancedContentHandler.java 1101 2024-02-18 00:18:48Z tquadrat $
+     *  @version $Id: AdvancedContentHandler.java 1157 2025-12-31 14:05:44Z tquadrat $
      *  @since 0.1.0
      *
      *  @UMLGraph.link
      */
     @SuppressWarnings( {"ProtectedInnerClass"} )
     @FunctionalInterface
-    @ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1101 2024-02-18 00:18:48Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1157 2025-12-31 14:05:44Z tquadrat $" )
     @API( status = MAINTAINED, since = "0.1.0" )
     protected interface HandlerMethod
     {
@@ -574,15 +580,18 @@ public abstract class AdvancedContentHandler implements ContentHandler
     public void ignorableWhitespace( final char [] ch, final int start, final int length ) throws SAXException { /* Does nothing! */ }
 
     /**
-     *  This method is called every time a new element was encountered by the
-     *  parser. It should be overwritten if it is necessary to perform any
-     *  activities for a specific element.<br>
-     *  <br>The default implementation looks up a method handler in the map of
+     *  <p>{@summary This method is called every time a new element was
+     *  encountered by the parser.} It should be overwritten if it is necessary
+     *  to perform any activities for a specific element.</p>
+     *  <p>The default implementation looks up a method handler in the map of
      *  element handlers and calls that, or throws an exception if no handler
-     *  was registered for that element.
+     *  was registered for that element.</p>
      *
      *  @param  element The element.
      *  @throws SAXException    Something has gone wrong.
+     *
+     *  @see #registerElementHandler(String,HandlerMethod)
+     *  @see #processElement(Element)
      *
      *  @since 0.1.0
      */
@@ -591,23 +600,26 @@ public abstract class AdvancedContentHandler implements ContentHandler
     protected void openElement( @SuppressWarnings( "UseOfConcreteClass" ) final Element element ) throws SAXException
     {
         final var method = m_HandlerMethods.get( element.getQName() );
-        if( isNull(method ) ) throw new SAXException( format( MSG_NoHandler, element ) );
+        if( isNull(method ) ) throw new SAXParseException( format( MSG_NoHandler, element ), getLocator() );
 
         //---* Process the element *-------------------------------------------
         method.process( false, null, element.getAttributes(), element.getPath() );
     }   //  openElement()
 
     /**
-     *  Processing of an element of the XML file. This method will be called
+     *  <p>{@summary Processing of an element of the XML file.} This method will be called
      *  by
      *  {@link #endElement(String,String,String) endElement()}
-     *  any time an element was closed.<br>
-     *  <br>The default implementation looks up a method handler in the map of
+     *  any time an element was closed.</p>
+     *  <p>The default implementation looks up a method handler in the map of
      *  element handlers and calls that, or throws an exception if no handler
-     *  was registered for that element.
+     *  was registered for that element.</p>
      *
      *  @param  element The element.
      *  @throws SAXException    Something has gone wrong.
+     *
+     *  @see #registerElementHandler(String,HandlerMethod)
+     *  @see #openElement(Element)
      *
      *  @since 0.1.0
      */
@@ -616,7 +628,7 @@ public abstract class AdvancedContentHandler implements ContentHandler
     protected void processElement( @SuppressWarnings( "UseOfConcreteClass" ) final Element element ) throws SAXException
     {
         final var method = m_HandlerMethods.get( element.getQName() );
-        if( isNull(method ) ) throw new SAXException( format( MSG_NoHandler, element.getQName() ) );
+        if( isNull(method ) ) throw new SAXParseException( format( MSG_NoHandler, element.getQName() ), getLocator() );
 
         //---* Process the element *-------------------------------------------
         method.process( true, element.getData(), element.getAttributes(), element.getPath() );
@@ -646,6 +658,9 @@ public abstract class AdvancedContentHandler implements ContentHandler
      *  @param  qName   The qualified name of the elements that should be
      *      processed by the handler .
      *  @param  method  The method reference for the handler.
+     *
+     *  @see #openElement(Element)
+     *  @see #processElement(Element)
      */
     protected final void registerElementHandler( final String qName, final HandlerMethod method )
     {
@@ -740,22 +755,25 @@ public abstract class AdvancedContentHandler implements ContentHandler
     }   //  retrievePrefix()
 
     /**
-     *  Receives an object for locating the origin of SAX document
-     *  events.<br>
-     *  <br>SAX parsers are strongly encouraged (though not absolutely
+     *  <p>{@summary Receives an object for locating the origin of SAX document
+     *  events.}</p>
+     *  <p>SAX parsers are strongly encouraged (though not absolutely
      *  required) to supply a locator: if it does so, it must supply the
      *  locator to the application by invoking this method before invoking any
-     *  of the other methods in the ContentHandler interface.<br>
-     *  <br>The locator allows the application to determine the end position
+     *  of the other methods in the ContentHandler interface.</p>
+     *  <p>The locator allows the application to determine the end position
      *  of any document-related event, even if the parser is not reporting an
      *  error. Typically, the application will use this information for
      *  reporting its own errors (such as character content that does not match
      *  an application's business rules). The information returned by the
-     *  locator is probably not sufficient for use with a search engine.<br>
-     *  <br>Note that the locator will return correct information only during
-     *  the invocation SAX event callbacks after startDocument returns and
-     *  before endDocument is called. The application should not attempt to use
-     *  it at any other time.
+     *  locator is probably not sufficient for use with a search engine.</p>
+     *  <p>Note that the locator will return correct information only during
+     *  the invocation of SAX event callbacks after
+     *  {@link #startDocument()}
+     *  returns and before
+     *  {@link #endDocument()}
+     *  is called. The application should not attempt to use it at any other
+     *  time.</p>
      *
      *  @param  locator An object that can return the location of any SAX
      *      document event.
@@ -854,8 +872,8 @@ public abstract class AdvancedContentHandler implements ContentHandler
         }
         else
         {
-            if( isNull( effectiveLocalName ) ) effectiveLocalName = effectiveQName;
-            if( isNull( effectiveQName ) ) effectiveQName = effectiveLocalName;
+            if( isEmptyOrBlank( effectiveLocalName ) ) effectiveLocalName = effectiveQName;
+            if( isEmptyOrBlank( effectiveQName ) ) effectiveQName = effectiveLocalName;
         }
 
         final var element = new Element( effectiveQName, effectiveLocalName, namespace, attributesMap, path.toString(), parent );
@@ -864,11 +882,12 @@ public abstract class AdvancedContentHandler implements ContentHandler
     }  //  startElement()
 
     /**
-     *  Receives the notification of the beginning of the document.<br>
-     *  <br>This implementation does nothing by default. Application writers
+     *  <p>{@summary Receives the notification of the beginning of the
+     *  document.}</p>
+     *  <p>This implementation does nothing by default. Application writers
      *  may override this method in a subclass to take specific actions at the
      *  beginning of a document (such as allocating the root node of a tree or
-     *  creating an output file).
+     *  creating an output file).</p>
      *
      *  @throws SAXException    Any SAX exception, possibly wrapping another
      *      exception.

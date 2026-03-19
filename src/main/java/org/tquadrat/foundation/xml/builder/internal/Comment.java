@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2023 by Thomas Thrien.
+ *  Copyright © 2002-2025 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -34,15 +34,15 @@ import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.xml.builder.spi.Element;
 
 /**
- *  This class defines a SGML comment.
+ *  This class defines an SGML comment.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Comment.java 1071 2023-09-30 01:49:32Z tquadrat $
+ *  @version $Id: Comment.java 1151 2025-10-01 21:32:15Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: Comment.java 1071 2023-09-30 01:49:32Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Comment.java 1151 2025-10-01 21:32:15Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.5" )
 public class Comment implements Element
 {

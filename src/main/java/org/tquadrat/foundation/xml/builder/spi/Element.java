@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -17,6 +17,14 @@
 
 package org.tquadrat.foundation.xml.builder.spi;
 
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.xml.builder.Namespace;
+
+import java.util.Collection;
+import java.util.Map;
+import java.util.Optional;
+
 import static java.util.Collections.emptyList;
 import static java.util.Collections.emptyMap;
 import static java.util.Collections.emptySet;
@@ -24,24 +32,16 @@ import static org.apiguardian.api.API.Status.MAINTAINED;
 import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
 import static org.tquadrat.foundation.xml.builder.spi.SGMLPrinter.composeElementString;
 
-import java.util.Collection;
-import java.util.Map;
-import java.util.Optional;
-
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.xml.builder.Namespace;
-
 /**
  *  The definition for an SGML element.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Element.java 980 2022-01-06 15:29:19Z tquadrat $
+ *  @version $Id: Element.java 1158 2026-03-14 16:23:29Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: Element.java 980 2022-01-06 15:29:19Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Element.java 1158 2026-03-14 16:23:29Z tquadrat $" )
 @API( status = MAINTAINED, since = "0.0.5" )
 public interface Element
 {
@@ -116,19 +116,20 @@ public interface Element
     public default boolean hasChildren() { return !getChildren().isEmpty(); }
 
     /**
-     *  Returns the block flag.<br>
-     *  <br>This flag is used in the conversion of the element into a String;
-     *  it indicates whether the element is 'inline' (like an HTML
-     *  <i>&lt;span&gt;</i>) or 'block' (as an HTML <i>&lt;div&gt;</i>). This is
-     *  important only for elements where whitespace is relevant, like for HTML
-     *  elements, as <i>pretty printing</i> will add additional whitespace
-     *  around inline elements that can become visible on parsing (for HTML: on
-     *  the rendered page).<br>
-     *  <br>XML elements for example will be always <i>block</i> as there
-     *  whitespace is not that important.<br>
-     *  <br>Obviously, {@code true} indicates a block element, while
-     *  {@code false} stands for an inline element.<br>
-     *  <br>The default is {@code true}.
+     *  <p>{@summary Returns the block flag.}</p>
+     *  <p>This flag is used in the conversion of the element into a String; it
+     *  indicates whether the element is 'inline'
+     *  (like an HTML <i>&lt;span&gt;</i>) or 'block'
+     *  (as an HTML <i>&lt;div&gt;</i>). This is important only for elements
+     *  where whitespace is relevant, like for HTML elements, as
+     *  <i>pretty printing</i> will add additional whitespace around inline
+     *  elements that can become visible on parsing (for HTML: on the rendered
+     *  page).</p>
+     *  <p>XML elements for example will be always <i>block</i> as there
+     *  whitespace is not that important.</p>
+     *  <p>Obviously, {@code true} indicates a block element, while
+     *  {@code false} stands for an inline element.</p>
+     *  <p>The default is {@code true}.</p>
      *
      *  @return  The flag.
      */
