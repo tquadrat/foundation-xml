@@ -17,17 +17,6 @@
 
 package org.tquadrat.foundation.xml.parse;
 
-import static org.apiguardian.api.API.Status.STABLE;
-import static org.tquadrat.foundation.lang.CommonConstants.UTF8;
-import static org.tquadrat.foundation.lang.Objects.nonNull;
-import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.HashMap;
-import java.util.Map;
-
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.util.stringconverter.URLStringConverter;
@@ -45,6 +34,17 @@ import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.AttributesImpl;
 import org.xml.sax.helpers.LocatorImpl;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.Map;
+
+import static org.apiguardian.api.API.Status.STABLE;
+import static org.tquadrat.foundation.lang.CommonConstants.UTF8;
+import static org.tquadrat.foundation.lang.Objects.nonNull;
+import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
+
 /**
  *  <p>{@summary This class is an abstract base implementation for a
  *  {@link XMLReader}.} Use this class as a base class for SAX based parsers
@@ -56,12 +56,12 @@ import org.xml.sax.helpers.LocatorImpl;
  *  @see "'Java and XSLT' from Eric M. Burke, O'Reilly 2001"
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: AbstractXMLReader.java 1152 2025-12-25 09:51:42Z tquadrat $
+ *  @version $Id: AbstractXMLReader.java 1163 2026-03-20 15:28:33Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: AbstractXMLReader.java 1152 2025-12-25 09:51:42Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: AbstractXMLReader.java 1163 2026-03-20 15:28:33Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public abstract class AbstractXMLReader implements XMLReader
 {

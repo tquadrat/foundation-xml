@@ -17,6 +17,15 @@
 
 package org.tquadrat.foundation.xml.builder.spi;
 
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.annotation.UtilityClass;
+import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledError;
+import org.tquadrat.foundation.xml.builder.Namespace;
+
+import java.util.Collection;
+import java.util.Map;
+
 import static java.lang.Math.max;
 import static java.lang.String.format;
 import static org.apiguardian.api.API.Status.MAINTAINED;
@@ -25,26 +34,17 @@ import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
 
-import java.util.Collection;
-import java.util.Map;
-
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.annotation.UtilityClass;
-import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledError;
-import org.tquadrat.foundation.xml.builder.Namespace;
-
 /**
  *  Helper method for the conversion of SGML elements into a String.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: SGMLPrinter.java 1071 2023-09-30 01:49:32Z tquadrat $
+ *  @version $Id: SGMLPrinter.java 1163 2026-03-20 15:28:33Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: SGMLPrinter.java 1071 2023-09-30 01:49:32Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: SGMLPrinter.java 1163 2026-03-20 15:28:33Z tquadrat $" )
 @API( status = MAINTAINED, since = "0.0.5" )
 public final class SGMLPrinter
 {
