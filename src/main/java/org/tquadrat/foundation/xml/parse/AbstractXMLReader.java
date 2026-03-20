@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2025 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -398,7 +398,7 @@ public abstract class AbstractXMLReader implements XMLReader
      *  here how to parse the input. But assuming that the input stream is a
      *  Java properties file, the implementation for {@code process()} might
      *  look like this:
-     *  <pre><code>
+     *  <div class="source-container"><pre>
      *  protected void process( BufferedReader input ) throws IOException, SAXException
      *  {
      *      ContentHandler handler = getContentHandler();
@@ -435,7 +435,7 @@ public abstract class AbstractXMLReader implements XMLReader
      *      handler.endElement( null, null, "properties" );
      *      handler.endDocument();
      *  }   //  process()
-     *  </code></pre>
+     *  </pre></div>
      *
      *  @param  input   The input stream.
      *  @throws IOException Problems reading the input stream.

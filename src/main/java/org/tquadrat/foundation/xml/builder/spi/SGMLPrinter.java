@@ -206,13 +206,13 @@ public final class SGMLPrinter
      *  like {@code <script>}; in pure XML, all elements are self-closing when
      *  empty, while other flavours may define elements that always need a
      *  closing tag. Therefore</p>
-     *  <pre><code>  &hellip;
+     *  <div class="source-container"><pre>&hellip;
      *  &lt;script/&gt;
-     *  &hellip;</code></pre>
+     *  &hellip;</pre></div>
      *  <p>is valid in pure XML, but not in HTML where it has to be</p>
-     *  <pre><code>  &hellip;
+     *  <div class="source-container"><pre>&hellip;
      *  &lt;script&gt;&lt;/script&gt;
-     *  &hellip;</code></pre>
+     *  &hellip;</pre></div>
      *
      *  @param  indentationLevel    The indentation level.
      *  @param  prettyPrint The pretty print flag.
