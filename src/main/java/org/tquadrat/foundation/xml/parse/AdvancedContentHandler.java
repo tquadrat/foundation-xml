@@ -87,13 +87,13 @@ import org.xml.sax.helpers.LocatorImpl;
  *  information that the b element was embedded in between is lost.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: AdvancedContentHandler.java 1157 2025-12-31 14:05:44Z tquadrat $
+ *  @version $Id: AdvancedContentHandler.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "AbstractClassExtendsConcreteClass" )
-@ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1157 2025-12-31 14:05:44Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public abstract class AdvancedContentHandler extends DefaultHandler
 {
@@ -105,13 +105,13 @@ public abstract class AdvancedContentHandler extends DefaultHandler
      *  of an XML element.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: AdvancedContentHandler.java 1157 2025-12-31 14:05:44Z tquadrat $
+     *  @version $Id: AdvancedContentHandler.java 1258 2026-06-04 18:33:06Z tquadrat $
      *  @since 0.0.5
      *
      *  @UMLGraph.link
      */
     @SuppressWarnings( {"InnerClassMayBeStatic", "ProtectedInnerClass"} )
-    @ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1157 2025-12-31 14:05:44Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1258 2026-06-04 18:33:06Z tquadrat $" )
     @API( status = STABLE, since = "0.1.0" )
     protected static final class Element
     {
@@ -151,7 +151,7 @@ public abstract class AdvancedContentHandler extends DefaultHandler
         private final String m_QName;
 
         /**
-         *  The namespace for this element; if {@code null}, the
+         *  The namespace for this element; if {@null}, the
          *  {@linkplain #m_QName qualified name}
          *  and the
          *  {@linkplain #m_LocalName local name}
@@ -168,12 +168,12 @@ public abstract class AdvancedContentHandler extends DefaultHandler
          *
          *  @param  qName   The element's qualified name.
          *  @param  localName   The element's local name.
-         *  @param  uri The namespace for the element; can be {@code null}.
+         *  @param  uri The namespace for the element; can be {@null}.
          *  @param  attributes  The element's attributes.
          *  @param  path    The path to the element; this is a string, compiled
          *      from the element's name, separated by slashes ("/").
          *  @param  parent  The parent element for this element; may be
-         *      {@code null}.
+         *      {@null}.
          */
         @SuppressWarnings( "ConstructorWithTooManyParameters" )
         Element( final String qName, final String localName, final URI uri, final Map<String,Attribute>  attributes, final String path, @SuppressWarnings( "UseOfConcreteClass" ) final Element parent )
@@ -285,14 +285,14 @@ public abstract class AdvancedContentHandler extends DefaultHandler
      *  element.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: AdvancedContentHandler.java 1157 2025-12-31 14:05:44Z tquadrat $
+     *  @version $Id: AdvancedContentHandler.java 1258 2026-06-04 18:33:06Z tquadrat $
      *  @since 0.1.0
      *
      *  @UMLGraph.link
      */
     @SuppressWarnings( {"ProtectedInnerClass"} )
     @FunctionalInterface
-    @ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1157 2025-12-31 14:05:44Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1258 2026-06-04 18:33:06Z tquadrat $" )
     @API( status = MAINTAINED, since = "0.1.0" )
     protected interface HandlerMethod
     {
@@ -305,12 +305,12 @@ public abstract class AdvancedContentHandler extends DefaultHandler
          *  provided as an argument. If necessary, the tag can be derived from
          *  the {@code path} argument.</p>
          *
-         *  @param  terminateElement {@code true} if called by
+         *  @param  terminateElement {@true} if called by
          *      {@link #processElement(Element)},
          *      indicating that the element processing will be terminated,
-         *      {@code false} when called by
+         *      {@false} when called by
          *      {@link #openElement(Element)}.
-         *  @param  data    The element data; will be {@code null} if called
+         *  @param  data    The element data; will be {@null} if called
          *      by
          *      {@link #openElement(Element)}.
          *  @param  attributes  The element attributes.
@@ -505,7 +505,7 @@ public abstract class AdvancedContentHandler extends DefaultHandler
     /**
      *  Returns a copy of the locator.
      *
-     *  @return A copy of the locator object or {@code null} if there was
+     *  @return A copy of the locator object or {@null} if there was
      *      none provided by the parser.
      */
     protected final Locator getLocator() { return nonNull( m_Locator ) ? new LocatorImpl( m_Locator ) : null; }
@@ -542,10 +542,10 @@ public abstract class AdvancedContentHandler extends DefaultHandler
      *  The default element handling; it does nothing.
      *
      *  @param  element The element.
-     *  @param  terminateElement {@code true} if called by
+     *  @param  terminateElement {@true} if called by
      *      {@link #processElement(Element)},
      *      indicating that the element processing will be terminated,
-     *      {@code false} when called by
+     *      {@false} when called by
      *      {@link #openElement(Element)}.
      *  @throws SAXException    The element cannot be handled properly.
      *
@@ -642,7 +642,7 @@ public abstract class AdvancedContentHandler extends DefaultHandler
      *  invoking other methods.
      *
      *  @param  target  The processing instruction target.
-     *  @param  data    The processing instruction data, or {@code null}
+     *  @param  data    The processing instruction data, or {@null}
      *      if none is supplied.
      *  @throws SAXException    Any SAX exception, possibly wrapping another
      *      exception.

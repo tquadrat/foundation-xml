@@ -37,12 +37,12 @@ import org.tquadrat.foundation.xml.parse.spi.HandlerProvider;
  *  @param  <T> The type of the target data structure.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: XMLParseEventHandler.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: XMLParseEventHandler.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: XMLParseEventHandler.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: XMLParseEventHandler.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @FunctionalInterface
 @API( status = EXPERIMENTAL, since = "0.0.5" )
 public interface XMLParseEventHandler<T>
@@ -65,12 +65,12 @@ public interface XMLParseEventHandler<T>
      *  @param  reader  The XML event reader.
      *  @param  xmlEvent    The current XML event.
      *  @param  target  The instance that takes the parse result; can be
-     *      {@code null} if the handler will create a new target.
+     *      {@null} if the handler will create a new target.
      *  @param  handlerProvider A provider for XML parse event handlers that
      *      are needed to process child elements.
      *  @return The instance that took the parse result; this is either the
      *      object that was provided with the {@code target} argument, or a new
-     *      object if {@code target} was {@code null}.
+     *      object if {@code target} was {@null}.
      *  @throws XMLStreamException  Something went wrong.
      */
     public T process( XMLEventReader reader, XMLEvent xmlEvent, T target, HandlerProvider handlerProvider ) throws XMLStreamException;

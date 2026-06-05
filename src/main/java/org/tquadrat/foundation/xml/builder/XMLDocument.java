@@ -39,13 +39,13 @@ import org.tquadrat.foundation.xml.builder.spi.Document;
  *  The definition for an XML document.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: XMLDocument.java 1071 2023-09-30 01:49:32Z tquadrat $
+ *  @version $Id: XMLDocument.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( {"ClassWithTooManyMethods"} )
-@ClassVersion( sourceVersion = "$Id: XMLDocument.java 1071 2023-09-30 01:49:32Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: XMLDocument.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public sealed interface XMLDocument extends Document<XMLElement>
     permits XMLDocumentImpl
@@ -106,7 +106,7 @@ public sealed interface XMLDocument extends Document<XMLElement>
 
     /**
      *  Adds predefined XML markup to the root element of this document. The
-     *  given markup will not be validated, it just may not be {@code null}. So
+     *  given markup will not be validated, it just may not be {@null}. So
      *  the caller is responsible that it will be proper XML.<br>
      *  <br>As the markup may be formatted differently (or not formatted at
      *  all), the pretty printed output may be distorted when this is used.
@@ -171,7 +171,7 @@ public sealed interface XMLDocument extends Document<XMLElement>
      *  to convert the provided flag to a {@code String}.
      *
      *  @param  name    The name of the attribute; the name is case-sensitive.
-     *  @param  flag    The attribute's value; if {@code null} the
+     *  @param  flag    The attribute's value; if {@null} the
      *      attribute will be removed.
      *  @return This instance.
      *  @throws IllegalArgumentException    The attribute is not allowed for
@@ -191,7 +191,7 @@ public sealed interface XMLDocument extends Document<XMLElement>
      *  document.
      *
      *  @param  name    The name of the attribute; the name is case-sensitive.
-     *  @param  value   The attribute's value; if {@code null} the
+     *  @param  value   The attribute's value; if {@null} the
      *      attribute will be removed.
      *  @return This instance.
      *  @throws IllegalArgumentException    The attribute is not allowed for
@@ -211,7 +211,7 @@ public sealed interface XMLDocument extends Document<XMLElement>
      *  document.
      *
      *  @param  name    The name of the attribute; the name is case-sensitive.
-     *  @param  value   The attribute's value; if {@code null} the
+     *  @param  value   The attribute's value; if {@null} the
      *      attribute will be removed.
      *  @param  append  If not
      *      {@linkplain Optional#empty() empty}, the new value will be appended
@@ -262,7 +262,7 @@ public sealed interface XMLDocument extends Document<XMLElement>
      *
      *  @param  <E> The concrete enum type of {@code value}.
      *  @param  name    The name of the attribute; the name is case-sensitive.
-     *  @param  enumValue   The attribute's value; if {@code null} the
+     *  @param  enumValue   The attribute's value; if {@null} the
      *      attribute will be removed.
      *  @return This instance.
      *  @throws IllegalArgumentException    The attribute is not allowed for
@@ -285,7 +285,7 @@ public sealed interface XMLDocument extends Document<XMLElement>
      *  to convert the provided number to a {@code String}.
      *
      *  @param  name    The name of the attribute; the name is case-sensitive.
-     *  @param  date    The attribute's value; if {@code null} the
+     *  @param  date    The attribute's value; if {@null} the
      *      attribute will be removed.
      *  @return This instance.
      *  @throws IllegalArgumentException    The attribute is not allowed for
@@ -330,7 +330,7 @@ public sealed interface XMLDocument extends Document<XMLElement>
      *  to convert the provided number to a {@code String}.
      *
      *  @param  name    The name of the attribute; the name is case-sensitive.
-     *  @param  date    The attribute's value; if {@code null} the
+     *  @param  date    The attribute's value; if {@null} the
      *      attribute will be removed.
      *  @return This instance.
      *  @throws IllegalArgumentException    The attribute is not allowed for
@@ -353,7 +353,7 @@ public sealed interface XMLDocument extends Document<XMLElement>
      *  to convert the provided number to a {@code String}.
      *
      *  @param  name    The name of the attribute; the name is case-sensitive.
-     *  @param  date    The attribute's value; if {@code null} the
+     *  @param  date    The attribute's value; if {@null} the
      *      attribute will be removed.
      *  @return This instance.
      *  @throws IllegalArgumentException    The attribute is not allowed for
@@ -398,7 +398,7 @@ public sealed interface XMLDocument extends Document<XMLElement>
      *  to convert the provided number to a {@code String}.
      *
      *  @param  name    The name of the attribute; the name is case-sensitive.
-     *  @param  number   The attribute's value; if {@code null} the
+     *  @param  number   The attribute's value; if {@null} the
      *      attribute will be removed.
      *  @return This instance.
      *  @throws IllegalArgumentException    The attribute is not allowed for
@@ -421,7 +421,7 @@ public sealed interface XMLDocument extends Document<XMLElement>
      *  to convert the provided number to a {@code String}.
      *
      *  @param  name    The name of the attribute; the name is case-sensitive.
-     *  @param  date    The attribute's value; if {@code null} the
+     *  @param  date    The attribute's value; if {@null} the
      *      attribute will be removed.
      *  @return This instance.
      *  @throws IllegalArgumentException    The attribute is not allowed for
@@ -444,7 +444,7 @@ public sealed interface XMLDocument extends Document<XMLElement>
      *  to test if the given value is empty.
      *
      *  @param  name    The name of the attribute.
-     *  @param  value   The value for the attribute; can be {@code null}.
+     *  @param  value   The value for the attribute; can be {@null}.
      *  @return This instance.
      *  @throws IllegalArgumentException    The attribute is not allowed for
      *      the root element, or the root element does not allow attributes at

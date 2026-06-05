@@ -56,12 +56,12 @@ import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
  *  @see "'Java and XSLT' from Eric M. Burke, O'Reilly 2001"
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: AbstractXMLReader.java 1163 2026-03-20 15:28:33Z tquadrat $
+ *  @version $Id: AbstractXMLReader.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: AbstractXMLReader.java 1163 2026-03-20 15:28:33Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: AbstractXMLReader.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public abstract class AbstractXMLReader implements XMLReader
 {
@@ -82,12 +82,12 @@ public abstract class AbstractXMLReader implements XMLReader
     private ContentHandler m_ContentHandler;
 
     /**
-     *  The DTD handler used by this XMLReader; usually {@code null}.
+     *  The DTD handler used by this XMLReader; usually {@null}.
      */
     private DTDHandler m_DTDHandler;
 
     /**
-     *  The encoding that is used for the input source. If {@code null},
+     *  The encoding that is used for the input source. If {@null},
      *  the platform specific encoding will be used.
      */
     private String m_Encoding = null;
@@ -224,7 +224,7 @@ public abstract class AbstractXMLReader implements XMLReader
 
     /**
      *  Returns the current error handler. It will never return
-     *  {@code null}; in case no handler was set, a reference to an
+     *  {@null}; in case no handler was set, a reference to an
      *  instance of
      *  {@link DefaultErrorHandler DefaultErrorHandler}
      *  will be returned.
@@ -244,8 +244,8 @@ public abstract class AbstractXMLReader implements XMLReader
      *  {@link #setFeature(String, boolean) setFeature()}.
      *
      *  @param  name    The name of the feature.
-     *  @return {@code true} if the feature is supported,
-     *      {@code false} if not or if the name is unknown.
+     *  @return {@true} if the feature is supported,
+     *      {@false} if not or if the name is unknown.
      *  @throws SAXNotRecognizedException   The feature value cannot be
      *      retrieved.
      *  @throws SAXNotSupportedException    The XMLReader recognizes the
@@ -277,7 +277,7 @@ public abstract class AbstractXMLReader implements XMLReader
      *
      *  @param  name    The property name, which is a fully-qualified URI.
      *  @return The current value of the property. If the name is not known,
-     *      {@code null} will be returned instead of throwing an
+     *      {@null} will be returned instead of throwing an
      *      exception.
      *
      *  @throws SAXNotRecognizedException   The property value can't be
@@ -453,7 +453,7 @@ public abstract class AbstractXMLReader implements XMLReader
      *  of a parse, and the SAX parser must begin using the new handler
      *  immediately.
      *
-     *  @param  handler  The content handler; may be {@code null}.
+     *  @param  handler  The content handler; may be {@null}.
      */
     @Override
     public final void setContentHandler( final ContentHandler handler )  { m_ContentHandler = handler; }
@@ -467,16 +467,16 @@ public abstract class AbstractXMLReader implements XMLReader
      *  of a parse, and the SAX parser must begin using the new handler
      *  immediately.
      *
-     *  @param  handler The DTD handler; may be {@code null}.
+     *  @param  handler The DTD handler; may be {@null}.
      */
     @Override
     public final void setDTDHandler( final DTDHandler handler ) { m_DTDHandler = handler; }
 
     /**
-     *  Sets the encoding for the input source. {@code null} means that
+     *  Sets the encoding for the input source. {@null} means that
      *  the platform specific encoding is used.
      *
-     *  @param  encoding    The encoding to use; may be {@code null}.
+     *  @param  encoding    The encoding to use; may be {@null}.
      */
     public final void setEncoding( final String encoding ) { m_Encoding = encoding; }
 
@@ -489,7 +489,7 @@ public abstract class AbstractXMLReader implements XMLReader
      *  middle of a parse, and the SAX parser must begin using the new resolver
      *  immediately.
      *
-     *  @param  resolver    The entity resolver; may be {@code null}.
+     *  @param  resolver    The entity resolver; may be {@null}.
      */
     @Override
     public final void setEntityResolver( final EntityResolver resolver ) { m_EntityResolver = resolver; }
@@ -507,7 +507,7 @@ public abstract class AbstractXMLReader implements XMLReader
      *  of a parse, and the SAX parser must begin using the new handler
      *  immediately.
      *
-     *  @param  handler The error handler; may be {@code null}.
+     *  @param  handler The error handler; may be {@null}.
      *
      *  @see DefaultErrorHandler
      */
@@ -521,8 +521,8 @@ public abstract class AbstractXMLReader implements XMLReader
      *  Sets the feature flag.
      *
      *  @param  name    The name of the feature.
-     *  @param  value   {@code true} if the feature should be supported
-     *      by this implementation, {@code false} if not.
+     *  @param  value   {@true} if the feature should be supported
+     *      by this implementation, {@false} if not.
      *  @throws SAXNotRecognizedException   The feature value cannot be
      *      assigned.
      *  @throws SAXNotSupportedException    The XMLReader recognises the
@@ -586,14 +586,14 @@ public abstract class AbstractXMLReader implements XMLReader
     /**
      *  Sets the public id to the locator.
      *
-     *  @param  publicId    The value for the public id; may be {@code null}.
+     *  @param  publicId    The value for the public id; may be {@null}.
      */
     protected final void setPublicId( final String publicId ) { m_Locator.setPublicId( publicId ); }
 
     /**
      *  Sets the system id to the locator.
      *
-     *  @param  systemId    The value for the system id; may be {@code null}.
+     *  @param  systemId    The value for the system id; may be {@null}.
      */
     protected final void setSystemId( final String systemId ) { m_Locator.setSystemId( systemId ); }
 }

@@ -100,13 +100,13 @@
 <span class="source-line-no">087</span><span id="line-87"> *  information that the b element was embedded in between is lost.&lt;/p&gt;</span>
 <span class="source-line-no">088</span><span id="line-88"> *</span>
 <span class="source-line-no">089</span><span id="line-89"> *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">090</span><span id="line-90"> *  @version $Id: AdvancedContentHandler.java 1157 2025-12-31 14:05:44Z tquadrat $</span>
+<span class="source-line-no">090</span><span id="line-90"> *  @version $Id: AdvancedContentHandler.java 1258 2026-06-04 18:33:06Z tquadrat $</span>
 <span class="source-line-no">091</span><span id="line-91"> *  @since 0.0.5</span>
 <span class="source-line-no">092</span><span id="line-92"> *</span>
 <span class="source-line-no">093</span><span id="line-93"> *  @UMLGraph.link</span>
 <span class="source-line-no">094</span><span id="line-94"> */</span>
 <span class="source-line-no">095</span><span id="line-95">@SuppressWarnings( "AbstractClassExtendsConcreteClass" )</span>
-<span class="source-line-no">096</span><span id="line-96">@ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1157 2025-12-31 14:05:44Z tquadrat $" )</span>
+<span class="source-line-no">096</span><span id="line-96">@ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1258 2026-06-04 18:33:06Z tquadrat $" )</span>
 <span class="source-line-no">097</span><span id="line-97">@API( status = STABLE, since = "0.0.5" )</span>
 <span class="source-line-no">098</span><span id="line-98">public abstract class AdvancedContentHandler extends DefaultHandler</span>
 <span class="source-line-no">099</span><span id="line-99">{</span>
@@ -118,13 +118,13 @@
 <span class="source-line-no">105</span><span id="line-105">     *  of an XML element.</span>
 <span class="source-line-no">106</span><span id="line-106">     *</span>
 <span class="source-line-no">107</span><span id="line-107">     *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">108</span><span id="line-108">     *  @version $Id: AdvancedContentHandler.java 1157 2025-12-31 14:05:44Z tquadrat $</span>
+<span class="source-line-no">108</span><span id="line-108">     *  @version $Id: AdvancedContentHandler.java 1258 2026-06-04 18:33:06Z tquadrat $</span>
 <span class="source-line-no">109</span><span id="line-109">     *  @since 0.0.5</span>
 <span class="source-line-no">110</span><span id="line-110">     *</span>
 <span class="source-line-no">111</span><span id="line-111">     *  @UMLGraph.link</span>
 <span class="source-line-no">112</span><span id="line-112">     */</span>
 <span class="source-line-no">113</span><span id="line-113">    @SuppressWarnings( {"InnerClassMayBeStatic", "ProtectedInnerClass"} )</span>
-<span class="source-line-no">114</span><span id="line-114">    @ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1157 2025-12-31 14:05:44Z tquadrat $" )</span>
+<span class="source-line-no">114</span><span id="line-114">    @ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1258 2026-06-04 18:33:06Z tquadrat $" )</span>
 <span class="source-line-no">115</span><span id="line-115">    @API( status = STABLE, since = "0.1.0" )</span>
 <span class="source-line-no">116</span><span id="line-116">    protected static final class Element</span>
 <span class="source-line-no">117</span><span id="line-117">    {</span>
@@ -164,7 +164,7 @@
 <span class="source-line-no">151</span><span id="line-151">        private final String m_QName;</span>
 <span class="source-line-no">152</span><span id="line-152"></span>
 <span class="source-line-no">153</span><span id="line-153">        /**</span>
-<span class="source-line-no">154</span><span id="line-154">         *  The namespace for this element; if {@code null}, the</span>
+<span class="source-line-no">154</span><span id="line-154">         *  The namespace for this element; if {@null}, the</span>
 <span class="source-line-no">155</span><span id="line-155">         *  {@linkplain #m_QName qualified name}</span>
 <span class="source-line-no">156</span><span id="line-156">         *  and the</span>
 <span class="source-line-no">157</span><span id="line-157">         *  {@linkplain #m_LocalName local name}</span>
@@ -181,12 +181,12 @@
 <span class="source-line-no">168</span><span id="line-168">         *</span>
 <span class="source-line-no">169</span><span id="line-169">         *  @param  qName   The element's qualified name.</span>
 <span class="source-line-no">170</span><span id="line-170">         *  @param  localName   The element's local name.</span>
-<span class="source-line-no">171</span><span id="line-171">         *  @param  uri The namespace for the element; can be {@code null}.</span>
+<span class="source-line-no">171</span><span id="line-171">         *  @param  uri The namespace for the element; can be {@null}.</span>
 <span class="source-line-no">172</span><span id="line-172">         *  @param  attributes  The element's attributes.</span>
 <span class="source-line-no">173</span><span id="line-173">         *  @param  path    The path to the element; this is a string, compiled</span>
 <span class="source-line-no">174</span><span id="line-174">         *      from the element's name, separated by slashes ("/").</span>
 <span class="source-line-no">175</span><span id="line-175">         *  @param  parent  The parent element for this element; may be</span>
-<span class="source-line-no">176</span><span id="line-176">         *      {@code null}.</span>
+<span class="source-line-no">176</span><span id="line-176">         *      {@null}.</span>
 <span class="source-line-no">177</span><span id="line-177">         */</span>
 <span class="source-line-no">178</span><span id="line-178">        @SuppressWarnings( "ConstructorWithTooManyParameters" )</span>
 <span class="source-line-no">179</span><span id="line-179">        Element( final String qName, final String localName, final URI uri, final Map&lt;String,Attribute&gt;  attributes, final String path, @SuppressWarnings( "UseOfConcreteClass" ) final Element parent )</span>
@@ -298,14 +298,14 @@
 <span class="source-line-no">285</span><span id="line-285">     *  element.</span>
 <span class="source-line-no">286</span><span id="line-286">     *</span>
 <span class="source-line-no">287</span><span id="line-287">     *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">288</span><span id="line-288">     *  @version $Id: AdvancedContentHandler.java 1157 2025-12-31 14:05:44Z tquadrat $</span>
+<span class="source-line-no">288</span><span id="line-288">     *  @version $Id: AdvancedContentHandler.java 1258 2026-06-04 18:33:06Z tquadrat $</span>
 <span class="source-line-no">289</span><span id="line-289">     *  @since 0.1.0</span>
 <span class="source-line-no">290</span><span id="line-290">     *</span>
 <span class="source-line-no">291</span><span id="line-291">     *  @UMLGraph.link</span>
 <span class="source-line-no">292</span><span id="line-292">     */</span>
 <span class="source-line-no">293</span><span id="line-293">    @SuppressWarnings( {"ProtectedInnerClass"} )</span>
 <span class="source-line-no">294</span><span id="line-294">    @FunctionalInterface</span>
-<span class="source-line-no">295</span><span id="line-295">    @ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1157 2025-12-31 14:05:44Z tquadrat $" )</span>
+<span class="source-line-no">295</span><span id="line-295">    @ClassVersion( sourceVersion = "$Id: AdvancedContentHandler.java 1258 2026-06-04 18:33:06Z tquadrat $" )</span>
 <span class="source-line-no">296</span><span id="line-296">    @API( status = MAINTAINED, since = "0.1.0" )</span>
 <span class="source-line-no">297</span><span id="line-297">    protected interface HandlerMethod</span>
 <span class="source-line-no">298</span><span id="line-298">    {</span>
@@ -318,12 +318,12 @@
 <span class="source-line-no">305</span><span id="line-305">         *  provided as an argument. If necessary, the tag can be derived from</span>
 <span class="source-line-no">306</span><span id="line-306">         *  the {@code path} argument.&lt;/p&gt;</span>
 <span class="source-line-no">307</span><span id="line-307">         *</span>
-<span class="source-line-no">308</span><span id="line-308">         *  @param  terminateElement {@code true} if called by</span>
+<span class="source-line-no">308</span><span id="line-308">         *  @param  terminateElement {@true} if called by</span>
 <span class="source-line-no">309</span><span id="line-309">         *      {@link #processElement(Element)},</span>
 <span class="source-line-no">310</span><span id="line-310">         *      indicating that the element processing will be terminated,</span>
-<span class="source-line-no">311</span><span id="line-311">         *      {@code false} when called by</span>
+<span class="source-line-no">311</span><span id="line-311">         *      {@false} when called by</span>
 <span class="source-line-no">312</span><span id="line-312">         *      {@link #openElement(Element)}.</span>
-<span class="source-line-no">313</span><span id="line-313">         *  @param  data    The element data; will be {@code null} if called</span>
+<span class="source-line-no">313</span><span id="line-313">         *  @param  data    The element data; will be {@null} if called</span>
 <span class="source-line-no">314</span><span id="line-314">         *      by</span>
 <span class="source-line-no">315</span><span id="line-315">         *      {@link #openElement(Element)}.</span>
 <span class="source-line-no">316</span><span id="line-316">         *  @param  attributes  The element attributes.</span>
@@ -518,7 +518,7 @@
 <span class="source-line-no">505</span><span id="line-505">    /**</span>
 <span class="source-line-no">506</span><span id="line-506">     *  Returns a copy of the locator.</span>
 <span class="source-line-no">507</span><span id="line-507">     *</span>
-<span class="source-line-no">508</span><span id="line-508">     *  @return A copy of the locator object or {@code null} if there was</span>
+<span class="source-line-no">508</span><span id="line-508">     *  @return A copy of the locator object or {@null} if there was</span>
 <span class="source-line-no">509</span><span id="line-509">     *      none provided by the parser.</span>
 <span class="source-line-no">510</span><span id="line-510">     */</span>
 <span class="source-line-no">511</span><span id="line-511">    protected final Locator getLocator() { return nonNull( m_Locator ) ? new LocatorImpl( m_Locator ) : null; }</span>
@@ -555,10 +555,10 @@
 <span class="source-line-no">542</span><span id="line-542">     *  The default element handling; it does nothing.</span>
 <span class="source-line-no">543</span><span id="line-543">     *</span>
 <span class="source-line-no">544</span><span id="line-544">     *  @param  element The element.</span>
-<span class="source-line-no">545</span><span id="line-545">     *  @param  terminateElement {@code true} if called by</span>
+<span class="source-line-no">545</span><span id="line-545">     *  @param  terminateElement {@true} if called by</span>
 <span class="source-line-no">546</span><span id="line-546">     *      {@link #processElement(Element)},</span>
 <span class="source-line-no">547</span><span id="line-547">     *      indicating that the element processing will be terminated,</span>
-<span class="source-line-no">548</span><span id="line-548">     *      {@code false} when called by</span>
+<span class="source-line-no">548</span><span id="line-548">     *      {@false} when called by</span>
 <span class="source-line-no">549</span><span id="line-549">     *      {@link #openElement(Element)}.</span>
 <span class="source-line-no">550</span><span id="line-550">     *  @throws SAXException    The element cannot be handled properly.</span>
 <span class="source-line-no">551</span><span id="line-551">     *</span>
@@ -655,7 +655,7 @@
 <span class="source-line-no">642</span><span id="line-642">     *  invoking other methods.</span>
 <span class="source-line-no">643</span><span id="line-643">     *</span>
 <span class="source-line-no">644</span><span id="line-644">     *  @param  target  The processing instruction target.</span>
-<span class="source-line-no">645</span><span id="line-645">     *  @param  data    The processing instruction data, or {@code null}</span>
+<span class="source-line-no">645</span><span id="line-645">     *  @param  data    The processing instruction data, or {@null}</span>
 <span class="source-line-no">646</span><span id="line-646">     *      if none is supplied.</span>
 <span class="source-line-no">647</span><span id="line-647">     *  @throws SAXException    Any SAX exception, possibly wrapping another</span>
 <span class="source-line-no">648</span><span id="line-648">     *      exception.</span>

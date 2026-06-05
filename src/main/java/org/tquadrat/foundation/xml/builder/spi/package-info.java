@@ -17,7 +17,7 @@
  *  <p>{@summary Several classes that are not part of the API for the XML
  *  builder tools, but required to implement tools for other, XML-derived
  *  languages, like SVG or HTML.}</p>
- *  <p>Unless otherwise stated, {@code null} argument values will cause
+ *  <p>Unless otherwise stated, {@null} argument values will cause
  *  methods and constructors of all classes in this package to throw an
  *  {@link java.lang.Exception Exception},
  *  usually a

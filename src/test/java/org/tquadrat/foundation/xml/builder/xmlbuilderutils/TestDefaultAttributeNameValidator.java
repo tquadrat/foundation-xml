@@ -32,9 +32,9 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link XMLBuilderUtils}
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestDefaultAttributeNameValidator.java 1030 2022-04-06 13:42:02Z tquadrat $
+ *  @version $Id: TestDefaultAttributeNameValidator.java 1258 2026-06-04 18:33:06Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestDefaultAttributeNameValidator.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestDefaultAttributeNameValidator.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.xmlbuilderutils.TestDefaultAttributeNameValidator" )
 public class TestDefaultAttributeNameValidator extends XMLTestBase
 {
@@ -44,8 +44,8 @@ public class TestDefaultAttributeNameValidator extends XMLTestBase
     /**
      *  Tests for the default attribute name validator.
      *
-     *  @param  result  The result of the test: {@code true} if the given
-     *      attribute name is valid, {@code false} otherwise.
+     *  @param  result  The result of the test: {@true} if the given
+     *      attribute name is valid, {@false} otherwise.
      *  @param  attributeName   The attribute name to test.
      */
     @ParameterizedTest

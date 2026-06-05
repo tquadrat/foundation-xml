@@ -36,12 +36,12 @@ import static org.tquadrat.foundation.xml.builder.spi.SGMLPrinter.composeElement
  *  The definition for an SGML element.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Element.java 1158 2026-03-14 16:23:29Z tquadrat $
+ *  @version $Id: Element.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: Element.java 1158 2026-03-14 16:23:29Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Element.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = MAINTAINED, since = "0.0.5" )
 public interface Element
 {
@@ -108,10 +108,10 @@ public interface Element
     public Optional<Element> getParent();
 
     /**
-     *  Returns {@code true} if the element has children, {@code false}
+     *  Returns {@true} if the element has children, {@false}
      *  otherwise.
      *
-     *  @return {@code true} if the element has children.
+     *  @return {@true} if the element has children.
      */
     public default boolean hasChildren() { return !getChildren().isEmpty(); }
 
@@ -127,9 +127,9 @@ public interface Element
      *  page).</p>
      *  <p>XML elements for example will be always <i>block</i> as there
      *  whitespace is not that important.</p>
-     *  <p>Obviously, {@code true} indicates a block element, while
-     *  {@code false} stands for an inline element.</p>
-     *  <p>The default is {@code true}.</p>
+     *  <p>Obviously, {@true} indicates a block element, while
+     *  {@false} stands for an inline element.</p>
+     *  <p>The default is {@true}.</p>
      *
      *  @return  The flag.
      */

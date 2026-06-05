@@ -38,13 +38,13 @@ import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
  *  Helper method for the conversion of SGML elements into a String.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: SGMLPrinter.java 1163 2026-03-20 15:28:33Z tquadrat $
+ *  @version $Id: SGMLPrinter.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: SGMLPrinter.java 1163 2026-03-20 15:28:33Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: SGMLPrinter.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = MAINTAINED, since = "0.0.5" )
 public final class SGMLPrinter
 {
@@ -217,8 +217,8 @@ public final class SGMLPrinter
      *  @param  indentationLevel    The indentation level.
      *  @param  prettyPrint The pretty print flag.
      *  @param  element The element.
-     *  @param  selfClosing {@code true} if an empty element is self-closing or
-     *      {@code false} if an empty element still needs a closing tag.
+     *  @param  selfClosing {@true} if an empty element is self-closing or
+     *      {@false} if an empty element still needs a closing tag.
      *  @return The element string.
      */
     @SuppressWarnings( "BooleanParameter" )

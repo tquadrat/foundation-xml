@@ -56,9 +56,9 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link XMLDocumentImpl}
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestXMLDocumentImpl.java 1101 2024-02-18 00:18:48Z tquadrat $
+ *  @version $Id: TestXMLDocumentImpl.java 1258 2026-06-04 18:33:06Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestXMLDocumentImpl.java 1101 2024-02-18 00:18:48Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestXMLDocumentImpl.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.internal.TestXMLDocumentImpl" )
 public class TestXMLDocumentImpl extends XMLTestBase
 {
@@ -302,8 +302,8 @@ public class TestXMLDocumentImpl extends XMLTestBase
      *  and
      *  {@link XMLDocumentImpl#XMLDocumentImpl(String, java.nio.charset.Charset, String, URI)}.
      *
-     *  @param  isValid {@code true} if the given element name is valid,
-     *      {@code false} otherwise.
+     *  @param  isValid {@true} if the given element name is valid,
+     *      {@false} otherwise.
      *  @param  elementName The name of the root element.
      */
     @ParameterizedTest

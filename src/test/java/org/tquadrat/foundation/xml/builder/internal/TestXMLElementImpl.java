@@ -54,9 +54,9 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link XMLElementImpl}
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestXMLElementImpl.java 1076 2023-10-03 18:36:07Z tquadrat $
+ *  @version $Id: TestXMLElementImpl.java 1258 2026-06-04 18:33:06Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestXMLElementImpl.java 1076 2023-10-03 18:36:07Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestXMLElementImpl.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.internal.TestXMLElementImpl" )
 public class TestXMLElementImpl extends XMLTestBase
 {
@@ -288,8 +288,8 @@ public class TestXMLElementImpl extends XMLTestBase
      *  Tests for
      *  {@link XMLElementImpl#XMLElementImpl(String)}.
      *
-     *  @param  isValid {@code true} if the given element name is valid,
-     *      {@code false} otherwise.
+     *  @param  isValid {@true} if the given element name is valid,
+     *      {@false} otherwise.
      *  @param  elementName The name of the new element.
      */
     @ParameterizedTest

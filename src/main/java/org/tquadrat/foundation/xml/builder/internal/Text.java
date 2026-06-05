@@ -35,13 +35,13 @@ import org.tquadrat.foundation.xml.builder.spi.Element;
  *  such an element.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Text.java 1071 2023-09-30 01:49:32Z tquadrat $
+ *  @version $Id: Text.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "NewClassNamingConvention" )
-@ClassVersion( sourceVersion = "$Id: Text.java 1071 2023-09-30 01:49:32Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Text.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.5" )
 public class Text implements Element
 {
@@ -55,8 +55,8 @@ public class Text implements Element
 
     /**
      *  The flag that indicates if this text element is to be treated as a
-     *  block element. This is usually {@code false}, but for predefined
-     *  markup, it can be {@code true}.
+     *  block element. This is usually {@false}, but for predefined
+     *  markup, it can be {@true}.
      *
      *  @see org.tquadrat.foundation.xml.builder.spi.ChildSupport#addPredefinedMarkup(CharSequence)
      */
@@ -82,8 +82,8 @@ public class Text implements Element
      *  @param  escapeFunction  The function that is used to escape special
      *      characters in the given text according to the target format.
      *  @param  isBlock The flag that indicates if this text element is to be
-     *      treated as a block element. This is usually {@code false}, but for
-     *      predefined markup, it can be {@code true}.
+     *      treated as a block element. This is usually {@false}, but for
+     *      predefined markup, it can be {@true}.
      *
      *  @see org.tquadrat.foundation.xml.builder.spi.ChildSupport#addPredefinedMarkup(CharSequence)
      */

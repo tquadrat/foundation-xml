@@ -40,10 +40,10 @@ import org.tquadrat.foundation.xml.helper.XMLTestBase;
  *  {@link XMLElement}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestXMLElement.java 1087 2024-01-06 09:51:27Z tquadrat $
+ *  @version $Id: TestXMLElement.java 1258 2026-06-04 18:33:06Z tquadrat $
  */
 @SuppressWarnings( "removal" )
-@ClassVersion( sourceVersion = "$Id: TestXMLElement.java 1087 2024-01-06 09:51:27Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestXMLElement.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.xml.builder.TestXMLElement" )
 public class TestXMLElement extends XMLTestBase
 {
@@ -56,10 +56,10 @@ public class TestXMLElement extends XMLTestBase
      *  only for test purposes.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: TestXMLElement.java 1087 2024-01-06 09:51:27Z tquadrat $
+     *  @version $Id: TestXMLElement.java 1258 2026-06-04 18:33:06Z tquadrat $
      */
     @SuppressWarnings( "ClassWithTooManyConstructors" )
-    @ClassVersion( sourceVersion = "$Id: TestXMLElement.java 1087 2024-01-06 09:51:27Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: TestXMLElement.java 1258 2026-06-04 18:33:06Z tquadrat $" )
     private static final class SimpleXMLElement extends org.tquadrat.foundation.xml.builder.spi.XMLElementAdapter
     {
             /*--------------*\
@@ -92,15 +92,15 @@ public class TestXMLElement extends XMLTestBase
          *  {@link XMLBuilderUtils#getElementNameValidator()}.
          *
          *  @param  validChildren   The list of the names for valid children;
-         *      if {@code null}, no children are allowed, if empty, children are
+         *      if {@null}, no children are allowed, if empty, children are
          *      allowed, but they will not be validated.
          *  @param  validAttributes The list of the valid attributes; if empty
-         *      or {@code null}, the attributes will not be validated.
+         *      or {@null}, the attributes will not be validated.
          *  @param  attributeSequence   The sequence for the attributes; if
-         *      empty or {@code null}, the attributes will be sorted
+         *      empty or {@null}, the attributes will be sorted
          *      alphabetically.
-         *  @param  allowText   {@code true} if the element allows text,
-         *      {@code false} if not.
+         *  @param  allowText   {@true} if the element allows text,
+         *      {@false} if not.
          *
          * @see org.tquadrat.foundation.xml.builder.spi.AttributeSupport#registerAttributes(String...)
          * @see org.tquadrat.foundation.xml.builder.spi.AttributeSupport#registerSequence(String...)
@@ -119,15 +119,15 @@ public class TestXMLElement extends XMLTestBase
          *
          *  @param  elementName The element name.
          *  @param  validChildren   The list of the names for valid children;
-         *      if {@code null}, no children are allowed, if empty, children are
+         *      if {@null}, no children are allowed, if empty, children are
          *      allowed, but they will not be validated.
          *  @param  validAttributes The list of the valid attributes; if empty
-         *      or {@code null}, the attributes will not be validated.
+         *      or {@null}, the attributes will not be validated.
          *  @param  attributeSequence   The sequence for the attributes; if
-         *      empty or {@code null}, the attributes will be sorted
+         *      empty or {@null}, the attributes will be sorted
          *      alphabetically.
-         *  @param  allowText   {@code true} if the element allows text,
-         *      {@code false} if not.
+         *  @param  allowText   {@true} if the element allows text,
+         *      {@false} if not.
          *
          * @see org.tquadrat.foundation.xml.builder.spi.AttributeSupport#registerAttributes(String...)
          * @see org.tquadrat.foundation.xml.builder.spi.AttributeSupport#registerSequence(String...)

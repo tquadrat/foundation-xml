@@ -53,13 +53,13 @@ import org.tquadrat.foundation.xml.builder.spi.InvalidXMLNameException;
  *  comments.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: XMLElementImpl.java 1086 2024-01-05 23:18:33Z tquadrat $
+ *  @version $Id: XMLElementImpl.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "removal" )
-@ClassVersion( sourceVersion = "$Id: XMLElementImpl.java 1086 2024-01-05 23:18:33Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: XMLElementImpl.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.5" )
 public sealed class XMLElementImpl implements XMLElement
     permits org.tquadrat.foundation.xml.builder.spi.XMLElementAdapter
@@ -320,7 +320,7 @@ public sealed class XMLElementImpl implements XMLElement
      *  Registers the valid attributes for this element.<br>
      *  <br>Nothing happens if
      *  {@link AttributeSupport#checksIfValid()}
-     *  returns {@code false}, although a call to this method is obsolete then.
+     *  returns {@false}, although a call to this method is obsolete then.
      *
      *  @note   The given attributes will be <i>added</i> to the already
      *      existing ones!

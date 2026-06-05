@@ -37,10 +37,10 @@ import com.howtodoinjava.demo.stax.Employee;
  *  {@link StAXParserBase}
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: EmployeeParser.java 1030 2022-04-06 13:42:02Z tquadrat $
+ *  @version $Id: EmployeeParser.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 11
  */
-@ClassVersion( sourceVersion = "$Id: EmployeeParser.java 1030 2022-04-06 13:42:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: EmployeeParser.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 public class EmployeeParser extends StAXParserBase<List<Employee>>
 {
         /*--------------*\
@@ -70,12 +70,12 @@ public class EmployeeParser extends StAXParserBase<List<Employee>>
      *  @param  reader  The XML event reader.
      *  @param  xmlEvent    The current XML event.
      *  @param  target  The instance that takes the parse result; can be
-     *      {@code null} if the handler will create a new target.
+     *      {@null} if the handler will create a new target.
      *  @param  handlerProvider A provider for XML parse event handlers that
      *      are needed to process child elements.
      *  @return The instance that took the parse result; this is either the
      *      object that was provided with the {@code target} argument, or a new
-     *      object if {@code target} was {@code null}.
+     *      object if {@code target} was {@null}.
      *  @throws XMLStreamException    Something went wrong.
      */
     @SuppressWarnings( "UseOfConcreteClass" )
@@ -119,12 +119,12 @@ public class EmployeeParser extends StAXParserBase<List<Employee>>
      *  @param  reader  The XML event reader.
      *  @param  xmlEvent    The current XML event.
      *  @param  target  The instance that takes the parse result; can be
-     *      {@code null} if the handler will create a new target.
+     *      {@null} if the handler will create a new target.
      *  @param  handlerProvider A provider for XML parse event handlers that
      *      are needed to process child elements.
      *  @return The instance that took the parse result; this is either the
      *      object that was provided with the {@code target} argument, or a new
-     *      object if {@code target} was {@code null}.
+     *      object if {@code target} was {@null}.
      *  @throws XMLStreamException  Something went wrong.
      */
     private final List<Employee> handleEmployees( final XMLEventReader reader, final XMLEvent xmlEvent, final Object target, final HandlerProvider handlerProvider ) throws XMLStreamException
@@ -170,12 +170,12 @@ public class EmployeeParser extends StAXParserBase<List<Employee>>
      *  @param  reader  The XML event reader.
      *  @param  xmlEvent    The current XML event.
      *  @param  target  The instance that takes the parse result; can be
-     *      {@code null} if the handler will create a new target.
+     *      {@null} if the handler will create a new target.
      *  @param  handlerProvider A provider for XML parse event handlers that
      *      are needed to process child elements.
      *  @return The instance that took the parse result; this is either the
      *      object that was provided with the {@code target} argument, or a new
-     *      object if {@code target} was {@code null}.
+     *      object if {@code target} was {@null}.
      *  @throws XMLStreamException    Something went wrong.
      */
     @SuppressWarnings( "UseOfConcreteClass" )
@@ -196,12 +196,12 @@ public class EmployeeParser extends StAXParserBase<List<Employee>>
      *  @param  reader  The XML event reader.
      *  @param  xmlEvent    The current XML event.
      *  @param  target  The instance that takes the parse result; can be
-     *      {@code null} if the handler will create a new target.
+     *      {@null} if the handler will create a new target.
      *  @param  handlerProvider A provider for XML parse event handlers that
      *      are needed to process child elements.
      *  @return The instance that took the parse result; this is either the
      *      object that was provided with the {@code target} argument, or a new
-     *      object if {@code target} was {@code null}.
+     *      object if {@code target} was {@null}.
      *  @throws XMLStreamException    Something went wrong.
      */
     @SuppressWarnings( "UseOfConcreteClass" )

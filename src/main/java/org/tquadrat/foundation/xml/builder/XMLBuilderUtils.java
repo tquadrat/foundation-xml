@@ -61,14 +61,14 @@ import org.tquadrat.foundation.xml.builder.internal.XMLElementImpl;
  *  elements.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: XMLBuilderUtils.java 1101 2024-02-18 00:18:48Z tquadrat $
+ *  @version $Id: XMLBuilderUtils.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "ClassWithTooManyMethods" )
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 1101 2024-02-18 00:18:48Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public final class XMLBuilderUtils
 {
@@ -79,12 +79,12 @@ public final class XMLBuilderUtils
      *  The (default) validators.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: XMLBuilderUtils.java 1101 2024-02-18 00:18:48Z tquadrat $
+     *  @version $Id: XMLBuilderUtils.java 1258 2026-06-04 18:33:06Z tquadrat $
      *  @since 0.0.5
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 1101 2024-02-18 00:18:48Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 1258 2026-06-04 18:33:06Z tquadrat $" )
     @API( status = STABLE, since = "0.0.5" )
     public enum Validator
     {
@@ -172,13 +172,13 @@ public final class XMLBuilderUtils
      *  for changes to the validator configuration.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: XMLBuilderUtils.java 1101 2024-02-18 00:18:48Z tquadrat $
+     *  @version $Id: XMLBuilderUtils.java 1258 2026-06-04 18:33:06Z tquadrat $
      *  @since 0.0.5
      *
      *  @UMLGraph.link
      */
     @SuppressWarnings( "PublicInnerClass" )
-    @ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 1101 2024-02-18 00:18:48Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 1258 2026-06-04 18:33:06Z tquadrat $" )
     @API( status = STABLE, since = "0.0.5" )
     public static class ValidatorChangeEvent extends EventObject
     {
@@ -266,13 +266,13 @@ public final class XMLBuilderUtils
      *  {@link ValidatorChangeEvent}s
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: XMLBuilderUtils.java 1101 2024-02-18 00:18:48Z tquadrat $
+     *  @version $Id: XMLBuilderUtils.java 1258 2026-06-04 18:33:06Z tquadrat $
      *  @since 0.0.5
      *
      *  @UMLGraph.link
      */
     @FunctionalInterface
-    @ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 1101 2024-02-18 00:18:48Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: XMLBuilderUtils.java 1258 2026-06-04 18:33:06Z tquadrat $" )
     @API( status = STABLE, since = "0.0.5" )
     public static interface ValidatorChangeListener
     {
@@ -405,8 +405,8 @@ public final class XMLBuilderUtils
      *  for the XML file header.
      *
      *  @param  encoding    The encoding for the resulting document.
-     *  @param  standalone  {@code true} if the XML document is standalone,
-     *      {@code false} if not.
+     *  @param  standalone  {@true} if the XML document is standalone,
+     *      {@false} if not.
      *  @return The new processing instruction.
      */
     @API( status = STABLE, since = "0.0.5" )
@@ -541,8 +541,8 @@ public final class XMLBuilderUtils
      *  element.
      *
      *  @param  rootElement The root element.
-     *  @param  standalone  {@code true} for a standalone document,
-     *      {@code false} otherwise.
+     *  @param  standalone  {@true} for a standalone document,
+     *      {@false} otherwise.
      *  @return The new XML document.
      */
     @API( status = STABLE, since = "0.0.5" )
@@ -733,8 +733,8 @@ public final class XMLBuilderUtils
      *  {@link StringUtils#escapeXML(CharSequence)}.
      *
      *  @param  input   The {@code String} to escape, may be null.
-     *  @return A new escaped {@code String}, or {@code null} if the
-     *      argument was already {@code null}.
+     *  @return A new escaped {@code String}, or {@null} if the
+     *      argument was already {@null}.
      *
      *  @see #unescapeXML(CharSequence)
      */
@@ -754,8 +754,8 @@ public final class XMLBuilderUtils
      *  {@link StringUtils#escapeXML(Appendable,CharSequence)}.
      *
      *  @param  appendable  The appendable object receiving the escaped string.
-     *  @param  input   The {@code String} to escape, may be {@code null}.
-     *  @throws NullArgumentException   The appendable is {@code null}.
+     *  @param  input   The {@code String} to escape, may be {@null}.
+     *  @throws NullArgumentException   The appendable is {@null}.
      *  @throws IOException when {@code Appendable} passed throws the exception
      *      from calls to the
      *      {@link Appendable#append(char)}
@@ -806,7 +806,7 @@ public final class XMLBuilderUtils
      *  The default implementation for an attribute name validator.
      *
      *  @param  attributeName   The name to test.
-     *  @return {@code true} if the given name is valid, {@code false}
+     *  @return {@true} if the given name is valid, {@false}
      *  otherwise.
      *
      *  @see #getAttributeNameValidator()
@@ -843,7 +843,7 @@ public final class XMLBuilderUtils
      *  The default implementation for an element name validator.
      *
      *  @param  elementName   The name to test.
-     *  @return {@code true} if the given name is valid, {@code false}
+     *  @return {@true} if the given name is valid, {@false}
      *  otherwise.
      *
      *  @see #getElementNameValidator()
@@ -880,7 +880,7 @@ public final class XMLBuilderUtils
      *  The default implementation for an NMToken validator.
      *
      *  @param  nmtoken   The NMToken to test.
-     *  @return {@code true} if the given NMToke is valid, {@code false}
+     *  @return {@true} if the given NMToke is valid, {@false}
      *  otherwise.
      *
      *  @see #getNMTokenValidator()
@@ -898,7 +898,7 @@ public final class XMLBuilderUtils
      *  The default implementation for a prefix validator.
      *
      *  @param  prefix  The prefix to test.
-     *  @return {@code true} if the given prefix is valid, {@code false}
+     *  @return {@true} if the given prefix is valid, {@false}
      *  otherwise.
      *
      *  @see #getPrefixValidator()
@@ -1081,9 +1081,9 @@ public final class XMLBuilderUtils
      *  <br>Delegates to
      *  {@link StringUtils#unescapeXML(CharSequence)}.
      *
-     *  @param  input The {@code String} to unescape, may be {@code null}.
-     *  @return A new unescaped {@code String}, {@code null} if the given
-     *      string was already {@code null}.
+     *  @param  input The {@code String} to unescape, may be {@null}.
+     *  @return A new unescaped {@code String}, {@null} if the given
+     *      string was already {@null}.
      *
      *  @see #escapeXML(CharSequence)
      *  @see #escapeXML(Appendable,CharSequence)
@@ -1103,8 +1103,8 @@ public final class XMLBuilderUtils
      *  {@link StringUtils#unescapeXML(Appendable,CharSequence)}.
      *
      *  @param  appendable  The appendable receiving the unescaped string.
-     *  @param  input The {@code String} to unescape, may be {@code null}.
-     *  @throws NullArgumentException   The writer is {@code null}.
+     *  @param  input The {@code String} to unescape, may be {@null}.
+     *  @throws NullArgumentException   The writer is {@null}.
      *  @throws IOException An IOException occurred.
      *
      *  @see #escapeXML(CharSequence)

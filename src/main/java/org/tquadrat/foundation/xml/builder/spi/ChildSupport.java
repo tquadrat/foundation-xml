@@ -60,12 +60,12 @@ import org.tquadrat.foundation.xml.builder.internal.Text;
  *  {@link #addChild(Element)}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ChildSupport.java 1151 2025-10-01 21:32:15Z tquadrat $
+ *  @version $Id: ChildSupport.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ChildSupport.java 1151 2025-10-01 21:32:15Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ChildSupport.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = MAINTAINED, since = "0.0.5" )
 public final class ChildSupport
 {
@@ -139,7 +139,7 @@ public final class ChildSupport
      *      instance.
      *  @param  escapeFunction  The escape function that is used to convert
      *      special characters in texts; only required when {@code allowText}
-     *      is {@code true}.
+     *      is {@true}.
      */
     public ChildSupport( final Element owner, final Function<CharSequence,String> escapeFunction )
     {
@@ -152,7 +152,7 @@ public final class ChildSupport
      *
      *  @param  owner   The element that owns this {@code ChildSupport}
      *      instance.
-     *  @param  checkValid  {@code true} whether children are checked to be
+     *  @param  checkValid  {@true} whether children are checked to be
      *      allowed before they are added.
      */
     public ChildSupport( final Element owner, final boolean checkValid )
@@ -165,15 +165,15 @@ public final class ChildSupport
      *
      *  @param  owner   The element that owns this {@code ChildSupport}
      *      instance.
-     *  @param  checkValid  {@code true} whether children are checked to be
+     *  @param  checkValid  {@true} whether children are checked to be
      *      allowed before they are added.
-     *  @param  allowChildren   {@code true} if other elements could be added
-     *      as children, {@code false} otherwise.
-     *  @param  allowText   {@code true} it text could be added to the element,
-     *      {@code false} if not.
+     *  @param  allowChildren   {@true} if other elements could be added
+     *      as children, {@false} otherwise.
+     *  @param  allowText   {@true} it text could be added to the element,
+     *      {@false} if not.
      *  @param  escapeFunction  The escape function that is used to convert
      *      special characters in texts; only required when {@code allowText}
-     *      is {@code true}.
+     *      is {@true}.
      */
     @SuppressWarnings( "BooleanParameter" )
     public ChildSupport( final Element owner, final boolean checkValid, final boolean allowChildren, final boolean allowText, final Function<CharSequence,String> escapeFunction )
@@ -257,7 +257,7 @@ public final class ChildSupport
     /**
      *  <p>{@summary Adds predefined markup.}</p>
      *  <p>The given markup will not be validated, it just may not be
-     *  {@code null}. So the caller is responsible that it will be proper
+     *  {@null}. So the caller is responsible that it will be proper
      *  markup.</p>
      *  <p>As the markup may be formatted differently (or not formatted at
      *  all), the pretty printed output may be distorted when this is used.</p>
@@ -296,9 +296,9 @@ public final class ChildSupport
      *  @param  text    The text.
      *  @param  escapeFunction  The function the escapes the text in compliance
      *      with the type.
-     *  @param  addEmpty    If {@code true} a new
+     *  @param  addEmpty    If {@true} a new
      *      {@link Text} instance will be added even when the given
-     *      {@code text} is empty, {@code false} means that empty {@code text}
+     *      {@code text} is empty, {@false} means that empty {@code text}
      *      will be omitted.
      *  @throws IllegalOperationException    No text is allowed for the owner.
      */
@@ -317,7 +317,7 @@ public final class ChildSupport
      *  {@linkplain Element elements}
      *  to be added as children.
      *
-     *  @return {@code true} when child elements are allowed, {@code false} if
+     *  @return {@true} when child elements are allowed, {@false} if
      *      not.
      */
     @SuppressWarnings( "BooleanMethodNameMustStartWithQuestion" )
@@ -328,8 +328,8 @@ public final class ChildSupport
      *  {@code ChildSupport} allows that text and {@code CDATA} elements can
      *  be added.
      *
-     *  @return {@code true} if it is allowed to add text and {@code CDATA},
-     *      {@code false} otherwise.
+     *  @return {@true} if it is allowed to add text and {@code CDATA},
+     *      {@false} otherwise.
      */
     @SuppressWarnings( "BooleanMethodNameMustStartWithQuestion" )
     public final boolean allowsText() { return m_AllowText; }
@@ -339,7 +339,7 @@ public final class ChildSupport
      *  this {@code ChildSupport} instance.}</p>
      *  <p>The child is valid either when
      *  {@link #m_CheckValid checkValid}
-     *  is {@code false},
+     *  is {@false},
      *  the child is a
      *  {@link Comment}
      *  or
@@ -384,10 +384,10 @@ public final class ChildSupport
      *  Returns a flag that indicates whether an extended validity check is
      *  performed on child elements before adding them.
      *
-     *  @return {@code true} if extended validation are performed,
-     *      {@code false} if any instance of
+     *  @return {@true} if extended validation are performed,
+     *      {@false} if any instance of
      *      {@link Element}
-     *      can be added. Also {@code false} if no children are allowed at all.
+     *      can be added. Also {@false} if no children are allowed at all.
      *
      *  @see #addChild(Element)
      *  @see #allowsChildren()
@@ -405,10 +405,10 @@ public final class ChildSupport
     public final Collection<? extends Element> getChildren() { return unmodifiableCollection( m_Children ); }
 
     /**
-     *  Returns {@code true} if the element has children, {@code false}
+     *  Returns {@true} if the element has children, {@false}
      *  otherwise.
      *
-     *  @return {@code true} if the element has children.
+     *  @return {@true} if the element has children.
      */
     public final boolean hasChildren() { return !m_Children.isEmpty(); }
 

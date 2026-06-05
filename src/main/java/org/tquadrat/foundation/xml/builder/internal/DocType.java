@@ -43,12 +43,12 @@ import org.tquadrat.foundation.xml.builder.spi.InvalidXMLNameException;
  *  The definition for the XML DocType element.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: DocType.java 980 2022-01-06 15:29:19Z tquadrat $
+ *  @version $Id: DocType.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: DocType.java 980 2022-01-06 15:29:19Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DocType.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.5" )
 public class DocType implements Element
 {
@@ -56,7 +56,7 @@ public class DocType implements Element
     ====** Attributes **=======================================================
         \*------------*/
     /**
-     *  The name of the DTD; may be {@code null}.
+     *  The name of the DTD; may be {@null}.
      */
     private final String m_DTDName;
 
@@ -172,7 +172,7 @@ public class DocType implements Element
     /**
      *  Checks if the doc type is based on a public or a local (system) DTD.
      *
-     *  @return {@code true} if the DTD is public, {@code false} if
+     *  @return {@true} if the DTD is public, {@false} if
      *      it is a local DTD.
      */
     @SuppressWarnings( "PublicMethodNotExposedInInterface" )

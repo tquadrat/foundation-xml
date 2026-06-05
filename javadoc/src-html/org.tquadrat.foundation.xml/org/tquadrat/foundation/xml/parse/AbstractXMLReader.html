@@ -69,12 +69,12 @@
 <span class="source-line-no">056</span><span id="line-56"> *  @see "'Java and XSLT' from Eric M. Burke, O'Reilly 2001"</span>
 <span class="source-line-no">057</span><span id="line-57"> *</span>
 <span class="source-line-no">058</span><span id="line-58"> *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">059</span><span id="line-59"> *  @version $Id: AbstractXMLReader.java 1163 2026-03-20 15:28:33Z tquadrat $</span>
+<span class="source-line-no">059</span><span id="line-59"> *  @version $Id: AbstractXMLReader.java 1258 2026-06-04 18:33:06Z tquadrat $</span>
 <span class="source-line-no">060</span><span id="line-60"> *  @since 0.0.5</span>
 <span class="source-line-no">061</span><span id="line-61"> *</span>
 <span class="source-line-no">062</span><span id="line-62"> *  @UMLGraph.link</span>
 <span class="source-line-no">063</span><span id="line-63"> */</span>
-<span class="source-line-no">064</span><span id="line-64">@ClassVersion( sourceVersion = "$Id: AbstractXMLReader.java 1163 2026-03-20 15:28:33Z tquadrat $" )</span>
+<span class="source-line-no">064</span><span id="line-64">@ClassVersion( sourceVersion = "$Id: AbstractXMLReader.java 1258 2026-06-04 18:33:06Z tquadrat $" )</span>
 <span class="source-line-no">065</span><span id="line-65">@API( status = STABLE, since = "0.0.5" )</span>
 <span class="source-line-no">066</span><span id="line-66">public abstract class AbstractXMLReader implements XMLReader</span>
 <span class="source-line-no">067</span><span id="line-67">{</span>
@@ -95,12 +95,12 @@
 <span class="source-line-no">082</span><span id="line-82">    private ContentHandler m_ContentHandler;</span>
 <span class="source-line-no">083</span><span id="line-83"></span>
 <span class="source-line-no">084</span><span id="line-84">    /**</span>
-<span class="source-line-no">085</span><span id="line-85">     *  The DTD handler used by this XMLReader; usually {@code null}.</span>
+<span class="source-line-no">085</span><span id="line-85">     *  The DTD handler used by this XMLReader; usually {@null}.</span>
 <span class="source-line-no">086</span><span id="line-86">     */</span>
 <span class="source-line-no">087</span><span id="line-87">    private DTDHandler m_DTDHandler;</span>
 <span class="source-line-no">088</span><span id="line-88"></span>
 <span class="source-line-no">089</span><span id="line-89">    /**</span>
-<span class="source-line-no">090</span><span id="line-90">     *  The encoding that is used for the input source. If {@code null},</span>
+<span class="source-line-no">090</span><span id="line-90">     *  The encoding that is used for the input source. If {@null},</span>
 <span class="source-line-no">091</span><span id="line-91">     *  the platform specific encoding will be used.</span>
 <span class="source-line-no">092</span><span id="line-92">     */</span>
 <span class="source-line-no">093</span><span id="line-93">    private String m_Encoding = null;</span>
@@ -237,7 +237,7 @@
 <span class="source-line-no">224</span><span id="line-224"></span>
 <span class="source-line-no">225</span><span id="line-225">    /**</span>
 <span class="source-line-no">226</span><span id="line-226">     *  Returns the current error handler. It will never return</span>
-<span class="source-line-no">227</span><span id="line-227">     *  {@code null}; in case no handler was set, a reference to an</span>
+<span class="source-line-no">227</span><span id="line-227">     *  {@null}; in case no handler was set, a reference to an</span>
 <span class="source-line-no">228</span><span id="line-228">     *  instance of</span>
 <span class="source-line-no">229</span><span id="line-229">     *  {@link DefaultErrorHandler DefaultErrorHandler}</span>
 <span class="source-line-no">230</span><span id="line-230">     *  will be returned.</span>
@@ -257,8 +257,8 @@
 <span class="source-line-no">244</span><span id="line-244">     *  {@link #setFeature(String, boolean) setFeature()}.</span>
 <span class="source-line-no">245</span><span id="line-245">     *</span>
 <span class="source-line-no">246</span><span id="line-246">     *  @param  name    The name of the feature.</span>
-<span class="source-line-no">247</span><span id="line-247">     *  @return {@code true} if the feature is supported,</span>
-<span class="source-line-no">248</span><span id="line-248">     *      {@code false} if not or if the name is unknown.</span>
+<span class="source-line-no">247</span><span id="line-247">     *  @return {@true} if the feature is supported,</span>
+<span class="source-line-no">248</span><span id="line-248">     *      {@false} if not or if the name is unknown.</span>
 <span class="source-line-no">249</span><span id="line-249">     *  @throws SAXNotRecognizedException   The feature value cannot be</span>
 <span class="source-line-no">250</span><span id="line-250">     *      retrieved.</span>
 <span class="source-line-no">251</span><span id="line-251">     *  @throws SAXNotSupportedException    The XMLReader recognizes the</span>
@@ -290,7 +290,7 @@
 <span class="source-line-no">277</span><span id="line-277">     *</span>
 <span class="source-line-no">278</span><span id="line-278">     *  @param  name    The property name, which is a fully-qualified URI.</span>
 <span class="source-line-no">279</span><span id="line-279">     *  @return The current value of the property. If the name is not known,</span>
-<span class="source-line-no">280</span><span id="line-280">     *      {@code null} will be returned instead of throwing an</span>
+<span class="source-line-no">280</span><span id="line-280">     *      {@null} will be returned instead of throwing an</span>
 <span class="source-line-no">281</span><span id="line-281">     *      exception.</span>
 <span class="source-line-no">282</span><span id="line-282">     *</span>
 <span class="source-line-no">283</span><span id="line-283">     *  @throws SAXNotRecognizedException   The property value can't be</span>
@@ -466,7 +466,7 @@
 <span class="source-line-no">453</span><span id="line-453">     *  of a parse, and the SAX parser must begin using the new handler</span>
 <span class="source-line-no">454</span><span id="line-454">     *  immediately.</span>
 <span class="source-line-no">455</span><span id="line-455">     *</span>
-<span class="source-line-no">456</span><span id="line-456">     *  @param  handler  The content handler; may be {@code null}.</span>
+<span class="source-line-no">456</span><span id="line-456">     *  @param  handler  The content handler; may be {@null}.</span>
 <span class="source-line-no">457</span><span id="line-457">     */</span>
 <span class="source-line-no">458</span><span id="line-458">    @Override</span>
 <span class="source-line-no">459</span><span id="line-459">    public final void setContentHandler( final ContentHandler handler )  { m_ContentHandler = handler; }</span>
@@ -480,16 +480,16 @@
 <span class="source-line-no">467</span><span id="line-467">     *  of a parse, and the SAX parser must begin using the new handler</span>
 <span class="source-line-no">468</span><span id="line-468">     *  immediately.</span>
 <span class="source-line-no">469</span><span id="line-469">     *</span>
-<span class="source-line-no">470</span><span id="line-470">     *  @param  handler The DTD handler; may be {@code null}.</span>
+<span class="source-line-no">470</span><span id="line-470">     *  @param  handler The DTD handler; may be {@null}.</span>
 <span class="source-line-no">471</span><span id="line-471">     */</span>
 <span class="source-line-no">472</span><span id="line-472">    @Override</span>
 <span class="source-line-no">473</span><span id="line-473">    public final void setDTDHandler( final DTDHandler handler ) { m_DTDHandler = handler; }</span>
 <span class="source-line-no">474</span><span id="line-474"></span>
 <span class="source-line-no">475</span><span id="line-475">    /**</span>
-<span class="source-line-no">476</span><span id="line-476">     *  Sets the encoding for the input source. {@code null} means that</span>
+<span class="source-line-no">476</span><span id="line-476">     *  Sets the encoding for the input source. {@null} means that</span>
 <span class="source-line-no">477</span><span id="line-477">     *  the platform specific encoding is used.</span>
 <span class="source-line-no">478</span><span id="line-478">     *</span>
-<span class="source-line-no">479</span><span id="line-479">     *  @param  encoding    The encoding to use; may be {@code null}.</span>
+<span class="source-line-no">479</span><span id="line-479">     *  @param  encoding    The encoding to use; may be {@null}.</span>
 <span class="source-line-no">480</span><span id="line-480">     */</span>
 <span class="source-line-no">481</span><span id="line-481">    public final void setEncoding( final String encoding ) { m_Encoding = encoding; }</span>
 <span class="source-line-no">482</span><span id="line-482"></span>
@@ -502,7 +502,7 @@
 <span class="source-line-no">489</span><span id="line-489">     *  middle of a parse, and the SAX parser must begin using the new resolver</span>
 <span class="source-line-no">490</span><span id="line-490">     *  immediately.</span>
 <span class="source-line-no">491</span><span id="line-491">     *</span>
-<span class="source-line-no">492</span><span id="line-492">     *  @param  resolver    The entity resolver; may be {@code null}.</span>
+<span class="source-line-no">492</span><span id="line-492">     *  @param  resolver    The entity resolver; may be {@null}.</span>
 <span class="source-line-no">493</span><span id="line-493">     */</span>
 <span class="source-line-no">494</span><span id="line-494">    @Override</span>
 <span class="source-line-no">495</span><span id="line-495">    public final void setEntityResolver( final EntityResolver resolver ) { m_EntityResolver = resolver; }</span>
@@ -520,7 +520,7 @@
 <span class="source-line-no">507</span><span id="line-507">     *  of a parse, and the SAX parser must begin using the new handler</span>
 <span class="source-line-no">508</span><span id="line-508">     *  immediately.</span>
 <span class="source-line-no">509</span><span id="line-509">     *</span>
-<span class="source-line-no">510</span><span id="line-510">     *  @param  handler The error handler; may be {@code null}.</span>
+<span class="source-line-no">510</span><span id="line-510">     *  @param  handler The error handler; may be {@null}.</span>
 <span class="source-line-no">511</span><span id="line-511">     *</span>
 <span class="source-line-no">512</span><span id="line-512">     *  @see DefaultErrorHandler</span>
 <span class="source-line-no">513</span><span id="line-513">     */</span>
@@ -534,8 +534,8 @@
 <span class="source-line-no">521</span><span id="line-521">     *  Sets the feature flag.</span>
 <span class="source-line-no">522</span><span id="line-522">     *</span>
 <span class="source-line-no">523</span><span id="line-523">     *  @param  name    The name of the feature.</span>
-<span class="source-line-no">524</span><span id="line-524">     *  @param  value   {@code true} if the feature should be supported</span>
-<span class="source-line-no">525</span><span id="line-525">     *      by this implementation, {@code false} if not.</span>
+<span class="source-line-no">524</span><span id="line-524">     *  @param  value   {@true} if the feature should be supported</span>
+<span class="source-line-no">525</span><span id="line-525">     *      by this implementation, {@false} if not.</span>
 <span class="source-line-no">526</span><span id="line-526">     *  @throws SAXNotRecognizedException   The feature value cannot be</span>
 <span class="source-line-no">527</span><span id="line-527">     *      assigned.</span>
 <span class="source-line-no">528</span><span id="line-528">     *  @throws SAXNotSupportedException    The XMLReader recognises the</span>
@@ -599,14 +599,14 @@
 <span class="source-line-no">586</span><span id="line-586">    /**</span>
 <span class="source-line-no">587</span><span id="line-587">     *  Sets the public id to the locator.</span>
 <span class="source-line-no">588</span><span id="line-588">     *</span>
-<span class="source-line-no">589</span><span id="line-589">     *  @param  publicId    The value for the public id; may be {@code null}.</span>
+<span class="source-line-no">589</span><span id="line-589">     *  @param  publicId    The value for the public id; may be {@null}.</span>
 <span class="source-line-no">590</span><span id="line-590">     */</span>
 <span class="source-line-no">591</span><span id="line-591">    protected final void setPublicId( final String publicId ) { m_Locator.setPublicId( publicId ); }</span>
 <span class="source-line-no">592</span><span id="line-592"></span>
 <span class="source-line-no">593</span><span id="line-593">    /**</span>
 <span class="source-line-no">594</span><span id="line-594">     *  Sets the system id to the locator.</span>
 <span class="source-line-no">595</span><span id="line-595">     *</span>
-<span class="source-line-no">596</span><span id="line-596">     *  @param  systemId    The value for the system id; may be {@code null}.</span>
+<span class="source-line-no">596</span><span id="line-596">     *  @param  systemId    The value for the system id; may be {@null}.</span>
 <span class="source-line-no">597</span><span id="line-597">     */</span>
 <span class="source-line-no">598</span><span id="line-598">    protected final void setSystemId( final String systemId ) { m_Locator.setSystemId( systemId ); }</span>
 <span class="source-line-no">599</span><span id="line-599">}</span>

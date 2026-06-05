@@ -37,7 +37,7 @@ import org.xml.sax.SAXParseException;
  *  <p>This error handler is useful when really no internal error handling is
  *  desired; calling
  *  {@link javax.xml.parsers.DocumentBuilder#setErrorHandler(ErrorHandler)}
- *  with {@code null} as argument will activate a built-in error handler with
+ *  with {@null} as argument will activate a built-in error handler with
  *  an unpredictable behaviour.</p>
  *  <p>The one and only instance for this class can be obtained using the
  *  {@link #INSTANCE}
@@ -46,14 +46,14 @@ import org.xml.sax.SAXParseException;
  *  Singleton setup because the error handler does not maintain a state.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: NullErrorHandler.java 895 2021-04-05 12:40:34Z tquadrat $
+ *  @version $Id: NullErrorHandler.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.1.0
  *
  *  @see    org.tquadrat.foundation.xml.stringconverter.DocumentStringConverter
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: NullErrorHandler.java 895 2021-04-05 12:40:34Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: NullErrorHandler.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public final class NullErrorHandler implements ErrorHandler
 {

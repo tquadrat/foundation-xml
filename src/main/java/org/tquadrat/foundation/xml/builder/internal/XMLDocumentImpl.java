@@ -45,13 +45,13 @@ import org.tquadrat.foundation.xml.builder.spi.InvalidXMLNameException;
  *  <br>It allows document comments and processing instructions to be added.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: XMLDocumentImpl.java 1071 2023-09-30 01:49:32Z tquadrat $
+ *  @version $Id: XMLDocumentImpl.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "ClassWithTooManyConstructors" )
-@ClassVersion( sourceVersion = "$Id: XMLDocumentImpl.java 1071 2023-09-30 01:49:32Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: XMLDocumentImpl.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.5" )
 public final class XMLDocumentImpl implements XMLDocument
 {
@@ -104,8 +104,8 @@ public final class XMLDocumentImpl implements XMLDocument
      *  encoding is defined as UTF-8.
      *
      *  @param  rootElement The root element for this document.
-     *  @param  standalone  {@code true} if the XML document is standalone,
-     *      {@code false} if not.
+     *  @param  standalone  {@true} if the XML document is standalone,
+     *      {@false} if not.
      */
     public XMLDocumentImpl( final XMLElement rootElement, final boolean standalone )
     {

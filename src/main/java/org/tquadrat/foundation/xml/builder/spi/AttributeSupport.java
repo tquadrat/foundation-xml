@@ -57,12 +57,12 @@ import org.tquadrat.foundation.util.LazyMap;
  *  can be configured by the user.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: AttributeSupport.java 1071 2023-09-30 01:49:32Z tquadrat $
+ *  @version $Id: AttributeSupport.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: AttributeSupport.java 1071 2023-09-30 01:49:32Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: AttributeSupport.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = MAINTAINED, since = "0.0.5" )
 public final class AttributeSupport extends NamespaceSupport
 {
@@ -152,8 +152,8 @@ public final class AttributeSupport extends NamespaceSupport
      *
      *  @param  owner   The element that owns this {@code AttributeSupport}
      *      instance.
-     *  @param  checkValid  {@code true} when the validity of attributes should
-     *      be checked, {@code false} if all attributes can be added.
+     *  @param  checkValid  {@true} when the validity of attributes should
+     *      be checked, {@false} if all attributes can be added.
      */
     public AttributeSupport( final Element owner, final boolean checkValid )
     {
@@ -179,8 +179,8 @@ public final class AttributeSupport extends NamespaceSupport
      *
      *  @param  owner   The element that owns this {@code AttributeSupport}
      *      instance.
-     *  @param  checkValid  {@code true} when the validity of attributes should
-     *      be checked, {@code false} if all attributes can be added.
+     *  @param  checkValid  {@true} when the validity of attributes should
+     *      be checked, {@false} if all attributes can be added.
      *  @param  sortOrder   The comparator that determines the sort order for
      *      the attribute of the owning element.
      */
@@ -209,11 +209,11 @@ public final class AttributeSupport extends NamespaceSupport
      *  <p>The attribute is valid if there is a respective entry in the list
      *  of valid attributes, or when
      *  {@link #checksIfValid()}
-     *  returns {@code false}.</p>
+     *  returns {@false}.</p>
      *
      *  @param  attribute   The name of the attribute.
-     *  @return {@code true} if the attribute is valid for the given element,
-     *      {@code false} otherwise.
+     *  @return {@true} if the attribute is valid for the given element,
+     *      {@false} otherwise.
      *  @throws InvalidXMLNameException The attribute name is invalid.
      */
     public final boolean checkValid( final String attribute ) throws InvalidXMLNameException
@@ -230,8 +230,8 @@ public final class AttributeSupport extends NamespaceSupport
      *  Returns a flag that indicates whether an extended validity check is
      *  performed on attributes before adding them.
      *
-     *  @return {@code true} if extended validation are performed,
-     *      {@code false} if attribute can be added.
+     *  @return {@true} if extended validation are performed,
+     *      {@false} if attribute can be added.
      *
      *  @see #setAttribute(String, CharSequence, Optional)
      */
@@ -282,7 +282,7 @@ public final class AttributeSupport extends NamespaceSupport
      *  element.}</p>
      *  <p>Nothing happens if
      *  {@link #checksIfValid()}
-     *  returns {@code false}, although a call to this method is obsolete
+     *  returns {@false}, although a call to this method is obsolete
      *  then.</p>
      *
      *  @note   The given attributes will be <i>added</i> to the already
@@ -335,7 +335,7 @@ public final class AttributeSupport extends NamespaceSupport
      *  {@link org.tquadrat.foundation.xml.builder.XMLBuilderUtils#getAttributeNameValidator()}.</p>
      *
      *  @param  name    The name of the attribute; the name is case-sensitive.
-     *  @param  value   The attribute's value; if {@code null} the
+     *  @param  value   The attribute's value; if {@null} the
      *      attribute will be removed.
      *  @param  append  If not
      *      {@linkplain Optional#empty() empty}, the new value will be appended

@@ -64,12 +64,12 @@
 <span class="source-line-no">051</span><span id="line-51"> *  methods the data will be formatted as attributes.&lt;/p&gt;</span>
 <span class="source-line-no">052</span><span id="line-52"> *</span>
 <span class="source-line-no">053</span><span id="line-53"> *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">054</span><span id="line-54"> *  @version $Id: ProcessingInstruction.java 1030 2022-04-06 13:42:02Z tquadrat $</span>
+<span class="source-line-no">054</span><span id="line-54"> *  @version $Id: ProcessingInstruction.java 1258 2026-06-04 18:33:06Z tquadrat $</span>
 <span class="source-line-no">055</span><span id="line-55"> *  @since 0.0.5</span>
 <span class="source-line-no">056</span><span id="line-56"> *</span>
 <span class="source-line-no">057</span><span id="line-57"> *  @UMLGraph.link</span>
 <span class="source-line-no">058</span><span id="line-58"> */</span>
-<span class="source-line-no">059</span><span id="line-59">@ClassVersion( sourceVersion = "$Id: ProcessingInstruction.java 1030 2022-04-06 13:42:02Z tquadrat $" )</span>
+<span class="source-line-no">059</span><span id="line-59">@ClassVersion( sourceVersion = "$Id: ProcessingInstruction.java 1258 2026-06-04 18:33:06Z tquadrat $" )</span>
 <span class="source-line-no">060</span><span id="line-60">@API( status = STABLE, since = "0.0.5" )</span>
 <span class="source-line-no">061</span><span id="line-61">public sealed interface ProcessingInstruction extends Element</span>
 <span class="source-line-no">062</span><span id="line-62">    permits ProcessingInstructionImpl</span>
@@ -109,7 +109,7 @@
 <span class="source-line-no">096</span><span id="line-96">     *  to convert the provided flag to a {@code String}.&lt;/p&gt;</span>
 <span class="source-line-no">097</span><span id="line-97">     *</span>
 <span class="source-line-no">098</span><span id="line-98">     *  @param  name    The name of the attribute; the name is case-sensitive.</span>
-<span class="source-line-no">099</span><span id="line-99">     *  @param  flag    The attribute's value; if {@code null} the</span>
+<span class="source-line-no">099</span><span id="line-99">     *  @param  flag    The attribute's value; if {@null} the</span>
 <span class="source-line-no">100</span><span id="line-100">     *      attribute will be removed.</span>
 <span class="source-line-no">101</span><span id="line-101">     *  @return This instance.</span>
 <span class="source-line-no">102</span><span id="line-102">     *  @throws IllegalArgumentException    An attribute with the given name is</span>
@@ -124,7 +124,7 @@
 <span class="source-line-no">111</span><span id="line-111">     *  Sets the attribute with the given name.</span>
 <span class="source-line-no">112</span><span id="line-112">     *</span>
 <span class="source-line-no">113</span><span id="line-113">     *  @param  name    The name of the attribute; the name is case-sensitive.</span>
-<span class="source-line-no">114</span><span id="line-114">     *  @param  value   The attribute's value; if {@code null} the</span>
+<span class="source-line-no">114</span><span id="line-114">     *  @param  value   The attribute's value; if {@null} the</span>
 <span class="source-line-no">115</span><span id="line-115">     *      attribute will be removed.</span>
 <span class="source-line-no">116</span><span id="line-116">     *  @return This instance.</span>
 <span class="source-line-no">117</span><span id="line-117">     *  @throws IllegalArgumentException    An attribute with the given name is</span>
@@ -139,7 +139,7 @@
 <span class="source-line-no">126</span><span id="line-126">     *  Sets the attribute with the given name.</span>
 <span class="source-line-no">127</span><span id="line-127">     *</span>
 <span class="source-line-no">128</span><span id="line-128">     *  @param  name    The name of the attribute; the name is case-sensitive.</span>
-<span class="source-line-no">129</span><span id="line-129">     *  @param  value   The attribute's value; if {@code null} the</span>
+<span class="source-line-no">129</span><span id="line-129">     *  @param  value   The attribute's value; if {@null} the</span>
 <span class="source-line-no">130</span><span id="line-130">     *      attribute will be removed.</span>
 <span class="source-line-no">131</span><span id="line-131">     *  @param  append  If not</span>
 <span class="source-line-no">132</span><span id="line-132">     *      {@linkplain Optional#empty() empty}, the new value will be appended</span>
@@ -177,7 +177,7 @@
 <span class="source-line-no">164</span><span id="line-164">     *</span>
 <span class="source-line-no">165</span><span id="line-165">     *  @param  &lt;E&gt; The concrete enum type of {@code value}.</span>
 <span class="source-line-no">166</span><span id="line-166">     *  @param  name    The name of the attribute; the name is case-sensitive.</span>
-<span class="source-line-no">167</span><span id="line-167">     *  @param  enumValue   The attribute's value; if {@code null} the</span>
+<span class="source-line-no">167</span><span id="line-167">     *  @param  enumValue   The attribute's value; if {@null} the</span>
 <span class="source-line-no">168</span><span id="line-168">     *      attribute will be removed.</span>
 <span class="source-line-no">169</span><span id="line-169">     *  @return This instance.</span>
 <span class="source-line-no">170</span><span id="line-170">     *  @throws IllegalArgumentException    An attribute with the given name is</span>
@@ -195,7 +195,7 @@
 <span class="source-line-no">182</span><span id="line-182">     *  to convert the provided number to a {@code String}.&lt;/p&gt;</span>
 <span class="source-line-no">183</span><span id="line-183">     *</span>
 <span class="source-line-no">184</span><span id="line-184">     *  @param  name    The name of the attribute; the name is case-sensitive.</span>
-<span class="source-line-no">185</span><span id="line-185">     *  @param  date    The attribute's value; if {@code null} the</span>
+<span class="source-line-no">185</span><span id="line-185">     *  @param  date    The attribute's value; if {@null} the</span>
 <span class="source-line-no">186</span><span id="line-186">     *      attribute will be removed.</span>
 <span class="source-line-no">187</span><span id="line-187">     *  @return This instance.</span>
 <span class="source-line-no">188</span><span id="line-188">     *  @throws IllegalArgumentException    An attribute with the given name is</span>
@@ -230,7 +230,7 @@
 <span class="source-line-no">217</span><span id="line-217">     *  to convert the provided number to a {@code String}.&lt;/p&gt;</span>
 <span class="source-line-no">218</span><span id="line-218">     *</span>
 <span class="source-line-no">219</span><span id="line-219">     *  @param  name    The name of the attribute; the name is case-sensitive.</span>
-<span class="source-line-no">220</span><span id="line-220">     *  @param  date    The attribute's value; if {@code null} the</span>
+<span class="source-line-no">220</span><span id="line-220">     *  @param  date    The attribute's value; if {@null} the</span>
 <span class="source-line-no">221</span><span id="line-221">     *      attribute will be removed.</span>
 <span class="source-line-no">222</span><span id="line-222">     *  @return This instance.</span>
 <span class="source-line-no">223</span><span id="line-223">     *  @throws IllegalArgumentException    An attribute with the given name is</span>
@@ -248,7 +248,7 @@
 <span class="source-line-no">235</span><span id="line-235">     *  to convert the provided number to a {@code String}.&lt;/p&gt;</span>
 <span class="source-line-no">236</span><span id="line-236">     *</span>
 <span class="source-line-no">237</span><span id="line-237">     *  @param  name    The name of the attribute; the name is case-sensitive.</span>
-<span class="source-line-no">238</span><span id="line-238">     *  @param  date    The attribute's value; if {@code null} the</span>
+<span class="source-line-no">238</span><span id="line-238">     *  @param  date    The attribute's value; if {@null} the</span>
 <span class="source-line-no">239</span><span id="line-239">     *      attribute will be removed.</span>
 <span class="source-line-no">240</span><span id="line-240">     *  @return This instance.</span>
 <span class="source-line-no">241</span><span id="line-241">     *  @throws IllegalArgumentException    An attribute with the given name is</span>
@@ -283,7 +283,7 @@
 <span class="source-line-no">270</span><span id="line-270">     *  to convert the provided number to a {@code String}.&lt;/p&gt;</span>
 <span class="source-line-no">271</span><span id="line-271">     *</span>
 <span class="source-line-no">272</span><span id="line-272">     *  @param  name    The name of the attribute; the name is case-sensitive.</span>
-<span class="source-line-no">273</span><span id="line-273">     *  @param  number   The attribute's value; if {@code null} the</span>
+<span class="source-line-no">273</span><span id="line-273">     *  @param  number   The attribute's value; if {@null} the</span>
 <span class="source-line-no">274</span><span id="line-274">     *      attribute will be removed.</span>
 <span class="source-line-no">275</span><span id="line-275">     *  @return This instance.</span>
 <span class="source-line-no">276</span><span id="line-276">     *  @throws IllegalArgumentException    An attribute with the given name is</span>
@@ -301,7 +301,7 @@
 <span class="source-line-no">288</span><span id="line-288">     *  to convert the provided number to a {@code String}.&lt;/p&gt;</span>
 <span class="source-line-no">289</span><span id="line-289">     *</span>
 <span class="source-line-no">290</span><span id="line-290">     *  @param  name    The name of the attribute; the name is case-sensitive.</span>
-<span class="source-line-no">291</span><span id="line-291">     *  @param  date    The attribute's value; if {@code null} the</span>
+<span class="source-line-no">291</span><span id="line-291">     *  @param  date    The attribute's value; if {@null} the</span>
 <span class="source-line-no">292</span><span id="line-292">     *      attribute will be removed.</span>
 <span class="source-line-no">293</span><span id="line-293">     *  @return This instance.</span>
 <span class="source-line-no">294</span><span id="line-294">     *  @throws IllegalArgumentException    An attribute with the given name is</span>
@@ -320,7 +320,7 @@
 <span class="source-line-no">307</span><span id="line-307">     *  to test if the given value is empty.&lt;/p&gt;</span>
 <span class="source-line-no">308</span><span id="line-308">     *</span>
 <span class="source-line-no">309</span><span id="line-309">     *  @param  name    The name of the attribute.</span>
-<span class="source-line-no">310</span><span id="line-310">     *  @param  value   The value for the attribute; can be {@code null}.</span>
+<span class="source-line-no">310</span><span id="line-310">     *  @param  value   The value for the attribute; can be {@null}.</span>
 <span class="source-line-no">311</span><span id="line-311">     *  @return This instance.</span>
 <span class="source-line-no">312</span><span id="line-312">     *  @throws IllegalArgumentException    An attribute with the given name is</span>
 <span class="source-line-no">313</span><span id="line-313">     *      not valid for the element, or no attributes are allowed at all.</span>

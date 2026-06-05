@@ -55,13 +55,13 @@ import org.xml.sax.SAXParseException;
  *  @param  <T> The type of the target data structure.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: StAXParserBase.java 1152 2025-12-25 09:51:42Z tquadrat $
+ *  @version $Id: StAXParserBase.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "AbstractClassWithoutAbstractMethods" )
-@ClassVersion( sourceVersion = "$Id: StAXParserBase.java 1152 2025-12-25 09:51:42Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: StAXParserBase.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = EXPERIMENTAL, since = "0.0.5" )
 public abstract class StAXParserBase<T>
 {
@@ -176,7 +176,7 @@ public abstract class StAXParserBase<T>
      *  Registers an element handler.
      *
      *  @param  elementName The element name.
-     *  @param  isDocument  {@code true} if the element name is the document
+     *  @param  isDocument  {@true} if the element name is the document
      *      name.
      *  @param  handler The parse event handler.
      */

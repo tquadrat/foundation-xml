@@ -61,13 +61,13 @@ import org.tquadrat.foundation.xml.builder.spi.Element;
  *  feature.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: XMLElement.java 1071 2023-09-30 01:49:32Z tquadrat $
+ *  @version $Id: XMLElement.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "ClassWithTooManyMethods" )
-@ClassVersion( sourceVersion = "$Id: XMLElement.java 1071 2023-09-30 01:49:32Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: XMLElement.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public sealed interface XMLElement extends Element
     permits XMLElementImpl
@@ -81,13 +81,13 @@ public sealed interface XMLElement extends Element
      *  this interface.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: XMLElement.java 1071 2023-09-30 01:49:32Z tquadrat $
+     *  @version $Id: XMLElement.java 1258 2026-06-04 18:33:06Z tquadrat $
      *  @since 0.0.5
      *
      *  @UMLGraph.link
      */
     @SuppressWarnings( "NewClassNamingConvention" )
-    @ClassVersion( sourceVersion = "$Id: XMLElement.java 1071 2023-09-30 01:49:32Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: XMLElement.java 1258 2026-06-04 18:33:06Z tquadrat $" )
     @API( status = STABLE, since = "0.1.0" )
     public static enum Flags
     {
@@ -373,7 +373,7 @@ public sealed interface XMLElement extends Element
     /**
      *  <p>{@summary Adds predefined markup.}</p>
      *  <p>The given markup will not be validated, it just may not be
-     *  {@code null}. So the caller is responsible that it will be proper
+     *  {@null}. So the caller is responsible that it will be proper
      *  markup.</p>
      *  <p>As the markup may be formatted differently (or not formatted at
      *  all), the pretty printed output may be distorted when this is used.</p>
@@ -627,7 +627,7 @@ public sealed interface XMLElement extends Element
      *  to convert the provided flag to a {@code String}.</p>
      *
      *  @param  name    The name of the attribute; the name is case-sensitive.
-     *  @param  flag    The attribute's value; if {@code null} the
+     *  @param  flag    The attribute's value; if {@null} the
      *      attribute will be removed.
      *  @return This instance.
      *  @throws IllegalArgumentException    An attribute with the given name is
@@ -644,7 +644,7 @@ public sealed interface XMLElement extends Element
      *  Sets the attribute with the given name.
      *
      *  @param  name    The name of the attribute; the name is case-sensitive.
-     *  @param  value   The attribute's value; if {@code null} the
+     *  @param  value   The attribute's value; if {@null} the
      *      attribute will be removed.
      *  @return This instance.
      *  @throws IllegalArgumentException    An attribute with the given name is
@@ -661,7 +661,7 @@ public sealed interface XMLElement extends Element
      *  Sets the attribute with the given name.
      *
      *  @param  name    The name of the attribute; the name is case-sensitive.
-     *  @param  value   The attribute's value; if {@code null} the
+     *  @param  value   The attribute's value; if {@null} the
      *      attribute will be removed.
      *  @param  append  If not
      *      {@linkplain Optional#empty() empty}
@@ -707,7 +707,7 @@ public sealed interface XMLElement extends Element
      *
      *  @param  <E> The concrete enum type of {@code value}.
      *  @param  name    The name of the attribute; the name is case-sensitive.
-     *  @param  enumValue   The attribute's value; if {@code null} the
+     *  @param  enumValue   The attribute's value; if {@null} the
      *      attribute will be removed.
      *  @return This instance.
      *  @throws IllegalArgumentException    An attribute with the given name is
@@ -727,7 +727,7 @@ public sealed interface XMLElement extends Element
      *  to convert the provided number to a {@code String}.</p>
      *
      *  @param  name    The name of the attribute; the name is case-sensitive.
-     *  @param  date    The attribute's value; if {@code null} the
+     *  @param  date    The attribute's value; if {@null} the
      *      attribute will be removed.
      *  @return This instance.
      *  @throws IllegalArgumentException    An attribute with the given name is
@@ -766,7 +766,7 @@ public sealed interface XMLElement extends Element
      *  to convert the provided number to a {@code String}.</p>
      *
      *  @param  name    The name of the attribute; the name is case-sensitive.
-     *  @param  date    The attribute's value; if {@code null} the
+     *  @param  date    The attribute's value; if {@null} the
      *      attribute will be removed.
      *  @return This instance.
      *  @throws IllegalArgumentException    An attribute with the given name is
@@ -786,7 +786,7 @@ public sealed interface XMLElement extends Element
      *  to convert the provided number to a {@code String}.</p>
      *
      *  @param  name    The name of the attribute; the name is case-sensitive.
-     *  @param  date    The attribute's value; if {@code null} the
+     *  @param  date    The attribute's value; if {@null} the
      *      attribute will be removed.
      *  @return This instance.
      *  @throws IllegalArgumentException    An attribute with the given name is
@@ -825,7 +825,7 @@ public sealed interface XMLElement extends Element
      *  to convert the provided number to a {@code String}.</p>
      *
      *  @param  name    The name of the attribute; the name is case-sensitive.
-     *  @param  number   The attribute's value; if {@code null} the
+     *  @param  number   The attribute's value; if {@null} the
      *      attribute will be removed.
      *  @return This instance.
      *  @throws IllegalArgumentException    An attribute with the given name is
@@ -845,7 +845,7 @@ public sealed interface XMLElement extends Element
      *  to convert the provided number to a {@code String}.</p>
      *
      *  @param  name    The name of the attribute; the name is case-sensitive.
-     *  @param  date    The attribute's value; if {@code null} the
+     *  @param  date    The attribute's value; if {@null} the
      *      attribute will be removed.
      *  @return This instance.
      *  @throws IllegalArgumentException    An attribute with the given name is
@@ -866,7 +866,7 @@ public sealed interface XMLElement extends Element
      *  to test if the given value is empty.</p>
      *
      *  @param  name    The name of the attribute.
-     *  @param  value   The value for the attribute; can be {@code null}.
+     *  @param  value   The value for the attribute; can be {@null}.
      *  @return This instance.
      *  @throws IllegalArgumentException    An attribute with the given name is
      *      not valid for the element
