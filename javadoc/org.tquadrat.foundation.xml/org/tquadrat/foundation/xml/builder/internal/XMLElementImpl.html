@@ -47,7 +47,7 @@ loadScripts(document, 'script');</script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
 </noscript>
-<header role="banner"><div style="overflow:auto;"><img src="../../../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.xml 0.25.12 API</p></div>      <p>Build: 2026-06-05T20:55:38.286914414Z[UTC]</p>      </div>
+<header role="banner"><div style="overflow:auto;"><img src="../../../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.xml 0.25.12 API</p></div>      <p>Build: 2026-09-09T09:33:47.854051693Z[UTC]</p>      </div>
 <nav role="navigation">
 <!-- ========= START OF TOP NAVBAR ======= -->
 <div class="top-nav" id="navbar-top">
@@ -166,8 +166,8 @@ implements <a href="../XMLElement.html" title="interface in org.tquadrat.foundat
 that supports attributes, namespaces, children, text, <code>CDATA</code> and
 comments.</div>
 <dl class="notes">
-<dt><span class="simpleTagLabel">Author:</span></dt>
-  <dd>Thomas Thrien (<a href="mailto:thomas.thrien@tquadrat.org">thomas.thrien@tquadrat.org</a>)</dd>
+<dt>Extauthor:</dt>
+<dd>Thomas Thrien - thomas.thrien@tquadrat.org</dd>
 <dt>Version:</dt>
 <dd>$Id: XMLElementImpl.java 1258 2026-06-04 18:33:06Z tquadrat $</dd>
 <dt>Since:</dt>
@@ -506,7 +506,7 @@ validate them. It also allows text.</p></div>
     <ul>
 
 <li>This constructor is mainly used by the factory methods in
-    
+    <code>XMLBuilderUtils</code>
     for on-the-fly XML generation.</li>
     </ul>
   </dd>
@@ -534,7 +534,7 @@ provided by
 <li>This constructor is used for the implementation of XML
     specialisations, like SVG or HTML (although this not really XML).
     It is made accessible through
-    </li>
+    <code>org.tquadrat.foundation.xml.builder.spi.XMLElementAdapter</code></li>
     </ul>
   </dd>
 <dt>Parameters:</dt>
@@ -869,7 +869,7 @@ returns <code>false</code>, although a call to this method is obsolete then.</di
   <dd>
     <ul>
 
-<li>The given attributes will be <i>added</i> to the already
+<li>The given attributes will be added to the already
     existing ones!</li>
     </ul>
   </dd>
@@ -892,7 +892,7 @@ returns <code>false</code>, although a call to this method is obsolete then.</di
   <dd>
     <ul>
 
-<li>The given children will be <i>added</i> to the already existing
+<li>The given children will be added to the already existing
     ones!</li>
     </ul>
   </dd>
