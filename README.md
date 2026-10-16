@@ -14,4 +14,4 @@ It provides also some helpers for the parsing of XML files.
     </dependency>
     ```
 ---  
-Last updated: 2026-09-26T15:16:21.614864105+02:00[Europe/Berlin]
+Last updated: 2026-10-16T14:35:28.966746968+02:00[Europe/Berlin]
