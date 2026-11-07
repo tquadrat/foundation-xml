@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -42,7 +42,7 @@ import java.util.List;
 
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.exception.UnexpectedExceptionError;
+import org.tquadrat.foundation.exception.UnlikelyExceptionError;
 import org.tquadrat.foundation.lang.StringConverter;
 import org.tquadrat.foundation.xml.parse.NullErrorHandler;
 import org.w3c.dom.Document;
@@ -111,7 +111,7 @@ public final class DocumentStringConverter implements StringConverter<Document>
     ====** Constructors **=====================================================
         \*--------------*/
     /**
-     *  Creates a new {@code DocumentStringConverter} instance.
+     *  <p>{@summary {@constructor}}</p>
      */
     public DocumentStringConverter() { super(); }
 
@@ -129,6 +129,7 @@ public final class DocumentStringConverter implements StringConverter<Document>
         {
             try
             {
+                @SuppressWarnings( "LocalVariableNamingConvention" )
                 final var documentBuilderFactory = DocumentBuilderFactory.newInstance();
                 documentBuilderFactory.setNamespaceAware( true );
                 documentBuilderFactory.setValidating( false );
@@ -143,7 +144,7 @@ public final class DocumentStringConverter implements StringConverter<Document>
             }
             catch( final ParserConfigurationException e )
             {
-                throw new UnexpectedExceptionError( "Cannot instantiate DocumentBuilder", e );
+                throw new UnlikelyExceptionError( "Cannot instantiate DocumentBuilder", e );
             }
             catch( final SAXException e )
             {
@@ -151,7 +152,7 @@ public final class DocumentStringConverter implements StringConverter<Document>
             }
             catch( final IOException e )
             {
-                throw new UnexpectedExceptionError( e );
+                throw new UnlikelyExceptionError( e );
             }
         }
 
@@ -217,7 +218,7 @@ public final class DocumentStringConverter implements StringConverter<Document>
             }
             catch( final TransformerConfigurationException e )
             {
-                throw new UnexpectedExceptionError( "Cannot instantiate Transformer", e );
+                throw new UnlikelyExceptionError( "Cannot instantiate Transformer", e );
             }
             catch( final TransformerException e )
             {
@@ -225,7 +226,7 @@ public final class DocumentStringConverter implements StringConverter<Document>
             }
             catch( final UnsupportedEncodingException e )
             {
-                throw new UnexpectedExceptionError( "Invalid encoding: %s".formatted( encoding ), e );
+                throw new UnlikelyExceptionError( "Invalid encoding: %s".formatted( encoding ), e );
             }
         }
 

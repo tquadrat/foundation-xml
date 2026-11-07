@@ -21,8 +21,6 @@ import org.tquadrat.foundation.xml.stringconverter.DocumentStringConverter;
 /**
  *  The Foundation library module for XML handling.
  *
- *  @version $Id: module-info.java 1101 2024-02-18 00:18:48Z tquadrat $
- *
  *  @todo task.list
  */
 module org.tquadrat.foundation.xml
