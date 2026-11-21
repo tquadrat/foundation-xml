@@ -73,12 +73,12 @@ import org.xml.sax.SAXException;
  *      same.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: DocumentStringConverter.java 1072 2023-09-30 20:44:38Z tquadrat $
+ *  @version $Id: DocumentStringConverter.java 1297 2026-11-07 17:15:43Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: DocumentStringConverter.java 1072 2023-09-30 20:44:38Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DocumentStringConverter.java 1297 2026-11-07 17:15:43Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 @SuppressWarnings( "exports" )
 public final class DocumentStringConverter implements StringConverter<Document>
