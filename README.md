@@ -10,8 +10,8 @@ It provides also some helpers for the parsing of XML files.
     <dependency>
       <groupId>org.tquadrat.library</groupId>
       <artifactId>org.tquadrat.foundation.xml</artifactId>
-      <version>0.25.15</version>
+      <version>0.25.16</version>
     </dependency>
     ```
 ---  
-Last updated: 2026-11-22T12:23:54.929764759+01:00[Europe/Berlin]
+Last updated: 2026-11-24T02:18:11.891016046+01:00[Europe/Berlin]
